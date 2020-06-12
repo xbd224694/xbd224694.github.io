@@ -86,14 +86,14 @@
 
 
 
-<meta name="description" content="总结自己一些知识，一些事">
+<meta name="description" content="本文主要介绍fork me on github，点击鼠标出现桃心效果，博文压缩，修改文章页面宽度，文章分块显示，增大首页文章与文章距离，主页文章添加阴影效果。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="个人静态博客-Hexo-Next-（六）">
 <meta property="og:url" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AD%EF%BC%89/index.html">
 <meta property="og:site_name" content="伶仃浩瀚">
-<meta property="og:description" content="总结自己一些知识，一些事">
+<meta property="og:description" content="本文主要介绍fork me on github，点击鼠标出现桃心效果，博文压缩，修改文章页面宽度，文章分块显示，增大首页文章与文章距离，主页文章添加阴影效果。">
 <meta property="article:published_time" content="2020-06-12T10:27:10.000Z">
-<meta property="article:modified_time" content="2020-06-12T10:27:34.314Z">
+<meta property="article:modified_time" content="2020-06-12T14:21:47.607Z">
 <meta property="article:author" content="潇 卟 甸">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="美化">
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1.2k 字
                 </span>
               
 
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -460,7 +460,45 @@
       
 
       
-        
+        <p>本文主要介绍fork me on github，点击鼠标出现桃心效果，博文压缩，修改文章页面宽度，文章分块显示，增大首页文章与文章距离，主页文章添加阴影效果。</p>
+<a id="more"></a>
+<h1 id="一、fork-me-on-github"><a class="header-anchor" href="#一、fork-me-on-github">¶</a>一、fork me on github</h1>
+<p>1.首先访问图标网站：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.blog&#x2F;2008-12-19-github-ribbons&#x2F;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;tholman.com&#x2F;github-corners&#x2F;</span><br></pre></td></tr></table></figure>
+<p>挑选自己喜欢的样式，有数字也有图标。复制代码。</p>
+<p>2.打开文件夹，路径：<code>...themes/next/layout</code>，打开<code>_layout.swig</code></p>
+<p>粘贴刚才复制的代码，（放在<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>的下面）。并把<code>href</code>也就是链接改为你的github地址。</p>
+<h1 id="二、点击鼠标出现桃心效果"><a class="header-anchor" href="#二、点击鼠标出现桃心效果">¶</a>二、点击鼠标出现桃心效果</h1>
+<p>复制下列代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">(function(window,document,undefined)&#123;</span><br><span class="line">        var hearts &#x3D; [];</span><br><span class="line">        window.requestAnimationFrame &#x3D; (function()&#123;</span><br><span class="line">                return window.requestAnimationFrame || </span><br><span class="line">                           window.webkitRequestAnimationFrame ||</span><br><span class="line">                           window.mozRequestAnimationFrame ||</span><br><span class="line">                           window.oRequestAnimationFrame ||</span><br><span class="line">                           window.msRequestAnimationFrame ||</span><br><span class="line">                           function (callback)&#123;</span><br><span class="line">                                   setTimeout(callback,1000&#x2F;60);</span><br><span class="line">                           &#125;</span><br><span class="line">        &#125;)();</span><br><span class="line">        init();</span><br><span class="line">        function init()&#123;</span><br><span class="line">                css(&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &#39;&#39;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;);</span><br><span class="line">                attachEvent();</span><br><span class="line">                gameloop();</span><br><span class="line">        &#125;</span><br><span class="line">        function gameloop()&#123;</span><br><span class="line">                for(var i&#x3D;0;i&lt;hearts.length;i++)&#123;</span><br><span class="line">                    if(hearts[i].alpha &lt;&#x3D;0)&#123;</span><br><span class="line">                            document.body.removeChild(hearts[i].el);</span><br><span class="line">                            hearts.splice(i,1);</span><br><span class="line">                            continue;</span><br><span class="line">                    &#125;</span><br><span class="line">                    hearts[i].y--;</span><br><span class="line">                    hearts[i].scale +&#x3D; 0.004;</span><br><span class="line">                    hearts[i].alpha -&#x3D; 0.013;</span><br><span class="line">                    hearts[i].el.style.cssText &#x3D; &quot;left:&quot;+hearts[i].x+&quot;px;top:&quot;+hearts[i].y+&quot;px;opacity:&quot;+hearts[i].alpha+&quot;;transform:scale(&quot;+hearts[i].scale+&quot;,&quot;+hearts[i].scale+&quot;) rotate(45deg);background:&quot;+hearts[i].color;</span><br><span class="line">            &#125;</span><br><span class="line">            requestAnimationFrame(gameloop);</span><br><span class="line">        &#125;</span><br><span class="line">        function attachEvent()&#123;</span><br><span class="line">                var old &#x3D; typeof window.onclick&#x3D;&#x3D;&#x3D;&quot;function&quot; &amp;&amp; window.onclick;</span><br><span class="line">                window.onclick &#x3D; function(event)&#123;</span><br><span class="line">                        old &amp;&amp; old();</span><br><span class="line">                        createHeart(event);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        function createHeart(event)&#123;</span><br><span class="line">            var d &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">            d.className &#x3D; &quot;heart&quot;;</span><br><span class="line">            hearts.push(&#123;</span><br><span class="line">                    el : d,</span><br><span class="line">                    x : event.clientX - 5,</span><br><span class="line">                    y : event.clientY - 5,</span><br><span class="line">                    scale : 1,</span><br><span class="line">                    alpha : 1,</span><br><span class="line">                    color : randomColor()</span><br><span class="line">            &#125;);</span><br><span class="line">            document.body.appendChild(d);</span><br><span class="line">    &#125;</span><br><span class="line">    function css(css)&#123;</span><br><span class="line">            var style &#x3D; document.createElement(&quot;style&quot;);</span><br><span class="line">                style.type&#x3D;&quot;text&#x2F;css&quot;;</span><br><span class="line">                try&#123;</span><br><span class="line">                    style.appendChild(document.createTextNode(css));</span><br><span class="line">                &#125;catch(ex)&#123;</span><br><span class="line">                    style.styleSheet.cssText &#x3D; css;</span><br><span class="line">                &#125;</span><br><span class="line">                document.getElementsByTagName(&#39;head&#39;)[0].appendChild(style);</span><br><span class="line">    &#125;</span><br><span class="line">        function randomColor()&#123;</span><br><span class="line">                return &quot;rgb(&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;)&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;)(window,document);</span><br></pre></td></tr></table></figure>
+<p>在路径：<code>/themes/next/source/js/src</code>里面新建<code>love.js</code>文件。</p>
+<p>打开<code>love.js</code>粘贴刚才复制的代码。</p>
+<p>然后打开<code>\themes\next\layout\_layout.swig</code>。添加下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;js&#x2F;src&#x2F;love.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="三、博文压缩"><a class="header-anchor" href="#三、博文压缩">¶</a>三、博文压缩</h1>
+<p>首先git输入以下两个命令安装gulp：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gulp -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save</span><br></pre></td></tr></table></figure>
+<p>之后在博客根目录新建<code>gulpfile.js</code>文件。</p>
+<p>打开<code>gulpfile.js</code>，粘贴以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var gulp &#x3D; require(&#39;gulp&#39;);</span><br><span class="line">var minifycss &#x3D; require(&#39;gulp-minify-css&#39;);</span><br><span class="line">var uglify &#x3D; require(&#39;gulp-uglify&#39;);</span><br><span class="line">var htmlmin &#x3D; require(&#39;gulp-htmlmin&#39;);</span><br><span class="line">var htmlclean &#x3D; require(&#39;gulp-htmlclean&#39;);</span><br><span class="line">&#x2F;&#x2F; 压缩 public 目录 css</span><br><span class="line">gulp.task(&#39;minify-css&#39;, function() &#123;</span><br><span class="line">  return gulp.src(&#39;.&#x2F;public&#x2F;**&#x2F;*.css&#39;)</span><br><span class="line">      .pipe(minifycss())</span><br><span class="line">      .pipe(gulp.dest(&#39;.&#x2F;public&#39;));</span><br><span class="line">&#125;);</span><br><span class="line">&#x2F;&#x2F; 压缩 public 目录 html</span><br><span class="line">gulp.task(&#39;minify-html&#39;, function() &#123;</span><br><span class="line">  return gulp.src(&#39;.&#x2F;public&#x2F;**&#x2F;*.html&#39;)</span><br><span class="line">      .pipe(htmlclean())</span><br><span class="line">      .pipe(htmlmin(&#123;</span><br><span class="line">          removeComments: true,</span><br><span class="line">          minifyJS: true,</span><br><span class="line">          minifyCSS: true,</span><br><span class="line">          minifyURLs: true,</span><br><span class="line">      &#125;))</span><br><span class="line">      .pipe(gulp.dest(&#39;.&#x2F;public&#39;))</span><br><span class="line">&#125;);</span><br><span class="line">&#x2F;&#x2F; 压缩 public&#x2F;js 目录 js</span><br><span class="line">gulp.task(&#39;minify-js&#39;, function() &#123;</span><br><span class="line">  return gulp.src(&#39;.&#x2F;public&#x2F;**&#x2F;*.js&#39;)</span><br><span class="line">      .pipe(uglify())</span><br><span class="line">      .pipe(gulp.dest(&#39;.&#x2F;public&#39;));</span><br><span class="line">&#125;);</span><br><span class="line">&#x2F;&#x2F; 执行 gulp 命令时执行的任务</span><br><span class="line">&#x2F;&#x2F; gulp 4.0 适用的方式</span><br><span class="line">gulp.task(&#39;build&#39;, gulp.parallel(&#39;minify-html&#39;, &#39;minify-css&#39;, &#39;minify-js&#39;</span><br><span class="line">  &#x2F;&#x2F;build the website</span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+<p>生成博文是执行 <code>hexo g &amp;&amp; gulp</code> 就会根据 <code>gulpfile.js</code> 中的配置，对 public 目录中的静态资源文件进行压缩。</p>
+<p>当你想要压缩的话执行上面命令就行，压缩后再上传部署。</p>
+<h1 id="四、修改文章页面宽度"><a class="header-anchor" href="#四、修改文章页面宽度">¶</a>四、修改文章页面宽度</h1>
+<p>打开文件，路径：<code>\themes\next\source/css/_schemes/Picses/_layout.styl</code></p>
+<p>文件末尾添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 以下为新增代码！！修改post宽度</span><br><span class="line">header&#123; width: 80% !important; &#125;</span><br><span class="line">header.post-header &#123;</span><br><span class="line">width: auto !important;</span><br><span class="line">&#125;</span><br><span class="line">.container .main-inner &#123; width: 80%; &#125;</span><br><span class="line">.content-wrap &#123; width: calc(100% - 260px); &#125;</span><br><span class="line"></span><br><span class="line">.header &#123;</span><br><span class="line">+tablet() &#123;</span><br><span class="line">  width: auto !important;</span><br><span class="line">&#125;</span><br><span class="line">+mobile() &#123;</span><br><span class="line">  width: auto !important;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.container .main-inner &#123;</span><br><span class="line">+tablet() &#123;</span><br><span class="line">  width: auto !important;</span><br><span class="line">&#125;</span><br><span class="line">+mobile() &#123;</span><br><span class="line">  width: auto !important;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.content-wrap &#123;</span><br><span class="line">+tablet() &#123;</span><br><span class="line">  width: 100% !important;</span><br><span class="line">&#125;</span><br><span class="line">+mobile() &#123;</span><br><span class="line">  width: 100% !important;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="五、文章分块显示"><a class="header-anchor" href="#五、文章分块显示">¶</a>五、文章分块显示</h1>
+<p>打开<strong>主题配置</strong>文件，找到<code>scheme</code> 把主题改为<strong>Gemini</strong>。</p>
+<h1 id="六、增大首页文章与文章距离"><a class="header-anchor" href="#六、增大首页文章与文章距离">¶</a>六、增大首页文章与文章距离</h1>
+<p>打开文件，路径<code>\themes\next\source\css\_custom\custom.styl</code>。</p>
+<p>添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 主页文章添加阴影效果</span><br><span class="line">.post &#123;</span><br><span class="line">  margin-top: 60px;</span><br><span class="line">  margin-bottom: 60px;</span><br><span class="line">  padding: 0px;</span><br><span class="line">  -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">  -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>margin-top</code>和<code>margin-bottom</code>就是间距，根据自己的喜好选择吧。</p>
+<h1 id="七、主页文章添加阴影效果"><a class="header-anchor" href="#七、主页文章添加阴影效果">¶</a>七、主页文章添加阴影效果</h1>
+<p>在第6步的基础上修改<code>padding</code>，也就是阴影的宽度。</p>
+
       
     </div>
     
@@ -544,7 +582,7 @@
 <!-- 修改时间 -->
 <li>
   <strong>修改时间： </strong>
-  2020年06月12日 - 18时06分
+  2020年06月12日 - 22时06分
 </li>
 
 <!-- 引用链接 -->
@@ -635,6 +673,10 @@ clipboard.on("success", function(target) {
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%83%EF%BC%89/" rel="prev" title="个人静态博客-Hexo-Next-（七）">
+                个人静态博客-Hexo-Next-（七） <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -688,8 +730,17 @@ clipboard.on("success", function(target) {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -710,7 +761,7 @@ clipboard.on("success", function(target) {
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -732,7 +783,7 @@ clipboard.on("success", function(target) {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -744,7 +795,7 @@ clipboard.on("success", function(target) {
 				<div class="widget-wrap">
 					<div id="myCanvasContainer" class="widget tagcloud">
 						<canvas width="250" height="250" id="resCanvas" style="width=100%">
-							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">1</span></li></ul>
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">3</span></li></ul>
 						</canvas>
 					</div>
 				</div>
@@ -768,23 +819,23 @@ clipboard.on("success", function(target) {
 				
 				
 					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%8D%81%EF%BC%89/" title="个人静态博客-Hexo-Next-（十）" target="_blank">个人静态博客-Hexo-Next-（十）</a>
+					</li>
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B9%9D%EF%BC%89/" title="个人静态博客-Hexo-Next-（九）" target="_blank">个人静态博客-Hexo-Next-（九）</a>
+					</li>
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AB%EF%BC%89/" title="个人静态博客-Hexo-Next-（八）" target="_blank">个人静态博客-Hexo-Next-（八）</a>
+					</li>
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%83%EF%BC%89/" title="个人静态博客-Hexo-Next-（七）" target="_blank">个人静态博客-Hexo-Next-（七）</a>
+					</li>
+				
+					<li>
 					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AD%EF%BC%89/" title="个人静态博客-Hexo-Next-（六）" target="_blank">个人静态博客-Hexo-Next-（六）</a>
-					</li>
-				
-					<li>
-					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%94%EF%BC%89/" title="个人静态博客-Hexo-Next-（五）" target="_blank">个人静态博客-Hexo-Next-（五）</a>
-					</li>
-				
-					<li>
-					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/" title="个人静态博客-Hexo-Next-（四）" target="_blank">个人静态博客-Hexo-Next-（四）</a>
-					</li>
-				
-					<li>
-					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%89%EF%BC%89/" title="个人静态博客-Hexo-Next-（三）" target="_blank">个人静态博客-Hexo-Next-（三）</a>
-					</li>
-				
-					<li>
-					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%8C%EF%BC%89/" title="个人静态博客-Hexo-Next-（二）" target="_blank">个人静态博客-Hexo-Next-（二）</a>
 					</li>
 				
 				</ul>
@@ -1083,6 +1134,22 @@ if(canvas.getContext){
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、fork-me-on-github"><span class="nav-text">一、fork me on github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、点击鼠标出现桃心效果"><span class="nav-text">二、点击鼠标出现桃心效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、博文压缩"><span class="nav-text">三、博文压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、修改文章页面宽度"><span class="nav-text">四、修改文章页面宽度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、文章分块显示"><span class="nav-text">五、文章分块显示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、增大首页文章与文章距离"><span class="nav-text">六、增大首页文章与文章距离</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、主页文章添加阴影效果"><span class="nav-text">七、主页文章添加阴影效果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

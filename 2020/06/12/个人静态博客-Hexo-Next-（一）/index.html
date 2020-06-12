@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -68,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="入门,网站,教程," />
+  <meta name="keywords" content="编程,基础," />
 
 
 
@@ -79,19 +86,25 @@
 
 
 
-<meta name="description" content="Welcome to Hexo!  😷This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="本文主要介绍个人静态博客安装时，需要用到的软件及安装地址，注册Github账户，创建SSH密钥，Github Pages仓库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World hello world ！！">
-<meta property="og:url" content="http://yoursite.com/2020/06/10/hello-world/index.html">
+<meta property="og:title" content="个人静态博客 Hexo+Next （一）">
+<meta property="og:url" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="伶仃浩瀚">
-<meta property="og:description" content="Welcome to Hexo!  😷This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="article:published_time" content="2020-06-10T05:19:43.830Z">
-<meta property="article:modified_time" content="2020-06-11T23:43:17.451Z">
+<meta property="og:description" content="本文主要介绍个人静态博客安装时，需要用到的软件及安装地址，注册Github账户，创建SSH密钥，Github Pages仓库">
+<meta property="og:image" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/cmd.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/setting.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/SSH.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/%E5%8A%A0%E5%8F%B7.png">
+<meta property="article:published_time" content="2020-06-12T07:54:04.000Z">
+<meta property="article:modified_time" content="2020-06-12T08:47:58.935Z">
 <meta property="article:author" content="潇 卟 甸">
-<meta property="article:tag" content="入门">
-<meta property="article:tag" content="网站">
-<meta property="article:tag" content="教程">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="基础">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png">
 
 
 
@@ -121,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/06/10/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/06/12/个人静态博客-Hexo-Next-（一）/"/>
 
 
 
@@ -131,8 +144,8 @@
 
 <script>
     (function(){
-        if('123456'){
-            if (prompt('请输入文章密码') !== '123456'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 history.back();
             }
@@ -140,7 +153,7 @@
     })();
 </script>
 
-  <title>Hello World hello world ！！ | 伶仃浩瀚</title>
+  <title>个人静态博客 Hexo+Next （一） | 伶仃浩瀚</title>
   
 
 
@@ -312,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="潇 卟 甸">
@@ -329,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World hello world ！！</h1>
+          <h1 class="post-title" itemprop="name headline">个人静态博客 Hexo+Next （一）</h1>
         
 
         <div class="post-meta">
@@ -341,8 +354,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-10T13:19:43+08:00">
-                2020-06-10
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2020-06-12T15:54:04+08:00">
+                2020-06-12
               </time>
             
 
@@ -364,8 +377,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index">
+                    <span itemprop="name">静态博客</span>
                   </a>
                 </span>
 
@@ -382,8 +395,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/06/10/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/10/hello-world/" itemprop="commentCount"></span>
+                <a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -391,7 +404,7 @@
 
           
           
-             <span id="/2020/06/10/hello-world/" class="leancloud_visitors" data-flag-title="Hello World hello world ！！">
+             <span id="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="个人静态博客 Hexo+Next （一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -417,7 +430,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  851 字
+                  604 字
                 </span>
               
 
@@ -433,7 +446,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -454,22 +467,62 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>!  😷This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>本文主要介绍个人静态博客安装时，需要用到的软件及安装地址，注册Github账户，创建SSH密钥，Github Pages仓库</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a class="header-anchor" href="#Quick-Start">¶</a>Quick Start</h2>
-<h3 id="Create-a-new-post"><a class="header-anchor" href="#Create-a-new-post">¶</a>Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a class="header-anchor" href="#Run-server">¶</a>Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a class="header-anchor" href="#Generate-static-files">¶</a>Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a class="header-anchor" href="#Deploy-to-remote-sites">¶</a>Deploy to remote sites</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;此函数用于创建复制按钮</span><br><span class="line">function createCopyBtns() &#123;</span><br><span class="line">    var $codeArea &#x3D; $(&quot;figure table&quot;);</span><br><span class="line">    &#x2F;&#x2F;查看页面是否具有代码区域，没有代码块则不创建 复制按钮</span><br><span class="line">    if ($codeArea.length &gt; 0) &#123;</span><br><span class="line">        &#x2F;&#x2F;复制成功后将要干的事情</span><br><span class="line">        function changeToSuccess(item) &#123;</span><br><span class="line">             $imgOK &#x3D; $(&quot;#copyBtn&quot;).find(&quot;#imgSuccess&quot;);</span><br><span class="line">                if ($imgOK.css(&quot;display&quot;) &#x3D;&#x3D; &quot;none&quot;) &#123;</span><br><span class="line">                    $imgOK.css(&#123;</span><br><span class="line">                        opacity: 0,</span><br><span class="line">                        display: &quot;block&quot;</span><br><span class="line">                    &#125;);</span><br><span class="line">                    $imgOK.animate(&#123;</span><br><span class="line">                        opacity: 1</span><br><span class="line">                    &#125;, 1000);</span><br><span class="line">                    setTimeout(function() &#123;</span><br><span class="line">                        $imgOK.animate(&#123;</span><br><span class="line">                            opacity: 0</span><br><span class="line">                        &#125;, 2000);</span><br><span class="line">                    &#125;, 2000);</span><br><span class="line">                    setTimeout(function() &#123;</span><br><span class="line">                        $imgOK.css(&quot;display&quot;, &quot;none&quot;);</span><br><span class="line">                    &#125;, 4000);</span><br><span class="line">                &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">        &#x2F;&#x2F;创建 全局复制按钮，仅有一组。包含：复制按钮，复制成功响应按钮</span><br><span class="line">        &#x2F;&#x2F;值得注意的是：1.按钮默认隐藏，2.位置使用绝对位置 position: absolute; (position: fixed 也可以，需要修改代码)</span><br><span class="line">        $(&quot;.post-body&quot;).before(&#39;&lt;div id&#x3D;&quot;copyBtn&quot; style&#x3D;&quot;opacity: 0; position: absolute;top:0px;display: none;line-height: 1; font-size:1.5em&quot;&gt;&lt;span id&#x3D;&quot;imgCopy&quot; &gt;&lt;i class&#x3D;&quot;fa fa-paste fa-fw&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;span&gt;&lt;span id&#x3D;&quot;imgSuccess&quot; style&#x3D;&quot;display: none;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-check-circle fa-fw&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;span&gt;&#39;);</span><br><span class="line">        &#x2F;&#x2F;创建 复制 插件，绑定单机时间到 指定元素，支持JQuery</span><br><span class="line">        var clipboard &#x3D; new Clipboard(&#39;#copyBtn&#39;, &#123;</span><br><span class="line">            target: function() &#123;</span><br><span class="line">                &#x2F;&#x2F;返回需要复制的元素内容</span><br><span class="line">                return document.querySelector(&quot;[copyFlag]&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">            isSupported: function() &#123;</span><br><span class="line">                &#x2F;&#x2F;支持复制内容</span><br><span class="line">                return document.querySelector(&quot;[copyFlag]&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        &#x2F;&#x2F;复制成功事件绑定</span><br><span class="line">        clipboard.on(&#39;success&#39;,</span><br><span class="line">            function(e) &#123;</span><br><span class="line">                &#x2F;&#x2F;清除内容被选择状态</span><br><span class="line">                e.clearSelection();</span><br><span class="line">                changeToSuccess(e);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#x2F;&#x2F;复制失败绑定事件</span><br><span class="line">        clipboard.on(&#39;error&#39;,</span><br><span class="line">            function(e) &#123;</span><br><span class="line">                console.error(&#39;Action:&#39;, e.action);</span><br><span class="line">                console.error(&#39;Trigger:&#39;, e.trigger);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#x2F;&#x2F;鼠标 在复制按钮上滑动和离开后渐变显示&#x2F;隐藏效果</span><br><span class="line">        $(&quot;#copyBtn&quot;).hover(</span><br><span class="line">            function() &#123;</span><br><span class="line">                $(this).stop();</span><br><span class="line">                $(this).css(&quot;opacity&quot;, 1);</span><br><span class="line">            &#125;,</span><br><span class="line">            function() &#123;</span><br><span class="line">                $(this).animate(&#123;</span><br><span class="line">                    opacity: 0</span><br><span class="line">                &#125;, 2000);</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;感应鼠标是否在代码区</span><br><span class="line">$(&quot;figure&quot;).hover(</span><br><span class="line">    function() &#123;</span><br><span class="line">        &#x2F;&#x2F;-------鼠标活动在代码块内</span><br><span class="line">        &#x2F;&#x2F;移除之前含有复制标志代码块的 copyFlag</span><br><span class="line">        $(&quot;[copyFlag]&quot;).removeAttr(&quot;copyFlag&quot;);</span><br><span class="line">        &#x2F;&#x2F;在新的（当前鼠标所在代码区）代码块插入标志：copyFlag</span><br><span class="line">        $(this).find(&quot;.code&quot;).attr(&quot;copyFlag&quot;, 1);</span><br><span class="line">        &#x2F;&#x2F;获取复制按钮</span><br><span class="line">        $copyBtn &#x3D; $(&quot;#copyBtn&quot;);</span><br><span class="line">        if ($copyBtn.lenght !&#x3D; 0) &#123;</span><br><span class="line">            &#x2F;&#x2F;获取到按钮的前提下进行一下操作</span><br><span class="line">            &#x2F;&#x2F;停止按钮动画效果</span><br><span class="line">            &#x2F;&#x2F;设置为 显示状态</span><br><span class="line">            &#x2F;&#x2F;修改 复制按钮 位置到 当前代码块开始部位</span><br><span class="line">            &#x2F;&#x2F;设置代码块 左侧位置</span><br><span class="line">            $copyBtn.stop();</span><br><span class="line">            $copyBtn.css(&quot;opacity&quot;, 0.8);</span><br><span class="line">            $copyBtn.css(&quot;display&quot;, &quot;block&quot;);</span><br><span class="line">            $copyBtn.css(&quot;top&quot;, parseInt($copyBtn.css(&quot;top&quot;)) + $(this).offset().top - $copyBtn.offset().top + 3);</span><br><span class="line">            $copyBtn.css(&quot;left&quot;, -$copyBtn.width() - 3);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    function() &#123;</span><br><span class="line">        &#x2F;&#x2F;-------鼠标离开代码块</span><br><span class="line">        &#x2F;&#x2F;设置复制按钮可见度 2秒内到 0</span><br><span class="line">        $(&quot;#copyBtn&quot;).animate(&#123;</span><br><span class="line">            opacity: 0</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line">&#x2F;&#x2F;页面载入完成后，创建复制按钮</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">  createCopyBtns();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h1 id="一、Node-js安装"><a class="header-anchor" href="#一、Node-js安装">¶</a>一、Node.js安装</h1>
+<p>1.Hexo基于Node.js，搭建中还需要npm（Node.js自带）和git，因此我们需要首先安装Node.js和Git。</p>
+<p><strong>Node.js安装：</strong></p>
+<p><strong>Node.js官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></strong></p>
+<p>进入官网后下载Windows（x64）长期支持版。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt></p>
+<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
+<h1 id="二、Git安装"><a class="header-anchor" href="#二、Git安装">¶</a>二、Git安装</h1>
+<p>1.<strong>Git官网下载网址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></strong></p>
+<p>进入官网后选择Windows就会自动下载，或是选择电脑位数下载。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt="node下载"></p>
+<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
+<h1 id="三、验证是否完成安装"><a class="header-anchor" href="#三、验证是否完成安装">¶</a>三、验证是否完成安装</h1>
+<p>1.验证Node.js和Git是否安装成功，也就是本地环境是否搭建成功。Win+R打开运行。输入cmd，进入命令提示符。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/cmd.png" alt="cmd"></p>
+<p>2.依次输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>如果出现对应的版本号，那么表示本地环境搭建成功。</p>
+<h1 id="四、注册Github账户，密码"><a class="header-anchor" href="#四、注册Github账户，密码">¶</a>四、注册Github账户，密码</h1>
+<p>1.<strong>GitHub官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></strong></p>
+<p>2.点击 <strong>Sign up</strong> 进入注册界面</p>
+<p>3.输入信息，验证邮箱信息，即可完成注册</p>
+<h1 id="五、创建SSH密钥"><a class="header-anchor" href="#五、创建SSH密钥">¶</a>五、创建SSH密钥</h1>
+<p>1.在桌面，鼠标右键，点击【Git Bash Here】。</p>
+<p>2.依次输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;GitHub用户名&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>3.输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>回车，创建SSH密钥。</p>
+<h1 id="六、添加密钥"><a class="header-anchor" href="#六、添加密钥">¶</a>六、添加密钥</h1>
+<p>1.在<strong>C：\用户\用户名\ .ssh</strong>下找到<strong>id_rsa.pub</strong>文件。复制文件中的内容。</p>
+<p>2.登陆GitHub，点击setting。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/setting.png" alt></p>
+<p>3.选择左边SSH and GPG Keys选项。进行添加密匙。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/SSH.png" alt></p>
+<p>4.点击New SSH Key进行添加。</p>
+<p>5.title随便取，把刚才复制的密匙粘贴到Key中，点击Add SSH Key添加完成。</p>
+<p>6.打开Git Bash，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>出现Are you sure……的时候输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yes</span><br></pre></td></tr></table></figure>
+<p>回车。</p>
+<p>最后显示**You’ve successfully……**的时候表示连接成功。</p>
+<h1 id="七、新建GitHub-Pages仓库。"><a class="header-anchor" href="#七、新建GitHub-Pages仓库。">¶</a>七、新建GitHub Pages仓库。</h1>
+<p>1.点击右上角加号，点击New repository新建GitHub Pages仓库。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/%E5%8A%A0%E5%8F%B7.png" alt></p>
+<p>2.在Repository name中输入：<strong><a href="http://xn--eqr924avxo.github.io" target="_blank" rel="noopener">用户名.github.io</a></strong></p>
+<p><strong>勾选</strong>“Initialize this repository with a README”</p>
+<p>Description不填。</p>
+<p>填好后点击Create repository。创建后默认启用HTTPS。</p>
+<p><strong>博客的地址为:<a href="https://xn--eqr924avxo.github.io" target="_blank" rel="noopener">https://用户名.github.io</a></strong></p>
 
       
     </div>
@@ -525,16 +578,89 @@
     
 
     
+      <div>
+        <!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<ul class="post-copyright">
+<!-- 本文标题 -->
+<li>
+  <strong>本文标题： </strong>
+  个人静态博客 Hexo+Next （一）
+</li>
+
+<!-- 本文作者 -->
+<li class="post-copyright-author">
+  <strong>本文作者： </strong>
+  
+</li>
+
+<!-- 创建时间 -->
+<li>
+  <strong>创建时间： </strong>
+  2020年06月12日 - 15时06分
+</li>
+
+<!-- 修改时间 -->
+<li>
+  <strong>修改时间： </strong>
+  2020年06月12日 - 16时06分
+</li>
+
+<!-- 引用链接 -->
+<li class="post-copyright-link">
+  <strong>本文链接：</strong>
+  <a href="http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/" title="个人静态博客 Hexo+Next （一）"
+    >http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/</a
+  >
+  <span class="copy-path" title="点击复制引用链接"
+    ><i
+      style="cursor: pointer"
+      class="fa fa-clipboard"
+      data-clipboard-text="['s Blog | 个人静态博客 Hexo+Next （一）](http://yoursite.com/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/)"
+      aria-label="复制成功"
+    ></i
+  ></span>
+</li>
+
+<!-- 版权声明 -->
+<li class="post-copyright-license">
+  <strong
+    >版权声明：
+  </strong>
+  本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+</li>
+</ul>
+
+<script>
+var clipboard = new ClipboardJS(".fa-clipboard");
+clipboard.on("success", function(target) {
+  var message = document.createElement("div");
+  message.innerHTML =
+    '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+    target.trigger.getAttribute("aria-label") +
+    "</span>";
+  swal({
+    content: message,
+    className: "copy-success-message",
+    timer: 1000,
+    button: false
+  });
+});
+</script>
+      </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%85%A5%E9%97%A8/" rel="tag"><i class="fa fa-tag"></i> 入门</a>
+            <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
           
-            <a href="/tags/%E7%BD%91%E7%AB%99/" rel="tag"><i class="fa fa-tag"></i> 网站</a>
-          
-            <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+            <a href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
           
         </div>
       
@@ -558,6 +684,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="prev" title="个人静态博客-Hexo-Next-（二）">
+                个人静态博客-Hexo-Next-（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -640,7 +782,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -674,7 +816,7 @@
 				<div class="widget-wrap">
 					<div id="myCanvasContainer" class="widget tagcloud">
 						<canvas width="250" height="250" id="resCanvas" style="width=100%">
-							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A5%E9%97%A8/" rel="tag">入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a><span class="tag-list-count">1</span></li></ul>
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">1</span></li></ul>
 						</canvas>
 					</div>
 				</div>
@@ -685,11 +827,60 @@
           
 
           
+		  
+		  <!-- 添加近期文章 -->
+			
+				<div class="links-of-blogroll motion-element links-of-blogroll-block">
+				<div class="links-of-blogroll-title">
+				<!-- modify icon to fire by szw -->
+				<i class="fa fa-history fa-" aria-hidden="true"></i>
+				近期文章
+				</div>
+				<ul class="links-of-blogroll-list">
+				
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AD%EF%BC%89/" title="个人静态博客-Hexo-Next-（六）" target="_blank">个人静态博客-Hexo-Next-（六）</a>
+					</li>
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%94%EF%BC%89/" title="个人静态博客-Hexo-Next-（五）" target="_blank">个人静态博客-Hexo-Next-（五）</a>
+					</li>
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/" title="个人静态博客-Hexo-Next-（四）" target="_blank">个人静态博客-Hexo-Next-（四）</a>
+					</li>
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%89%EF%BC%89/" title="个人静态博客-Hexo-Next-（三）" target="_blank">个人静态博客-Hexo-Next-（三）</a>
+					</li>
+				
+					<li>
+					<a href="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%8C%EF%BC%89/" title="个人静态博客-Hexo-Next-（二）" target="_blank">个人静态博客-Hexo-Next-（二）</a>
+					</li>
+				
+				</ul>
+			</div>
+			
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sushan102.top/posts/1410804403/" title="博客搭建" target="_blank">博客搭建</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 		  
 		  
@@ -974,7 +1165,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Node-js安装"><span class="nav-text">一、Node.js安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Git安装"><span class="nav-text">二、Git安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、验证是否完成安装"><span class="nav-text">三、验证是否完成安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、注册Github账户，密码"><span class="nav-text">四、注册Github账户，密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、创建SSH密钥"><span class="nav-text">五、创建SSH密钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、添加密钥"><span class="nav-text">六、添加密钥</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、新建GitHub-Pages仓库。"><span class="nav-text">七、新建GitHub Pages仓库。</span></a></li></ol></div>
             
 
           </div>

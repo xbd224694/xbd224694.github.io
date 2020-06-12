@@ -1,32 +1,360 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World hello world ！！</title>
-    <url>/2020/06/10/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>!  😷This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    <title>个人静态博客 Hexo+Next （一）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p>本文主要介绍个人静态博客安装时，需要用到的软件及安装地址，注册Github账户，创建SSH密钥，Github Pages仓库</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a class="header-anchor" href="#Quick-Start">¶</a>Quick Start</h2>
-<h3 id="Create-a-new-post"><a class="header-anchor" href="#Create-a-new-post">¶</a>Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a class="header-anchor" href="#Run-server">¶</a>Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a class="header-anchor" href="#Generate-static-files">¶</a>Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a class="header-anchor" href="#Deploy-to-remote-sites">¶</a>Deploy to remote sites</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;此函数用于创建复制按钮</span><br><span class="line">function createCopyBtns() &#123;</span><br><span class="line">    var $codeArea &#x3D; $(&quot;figure table&quot;);</span><br><span class="line">    &#x2F;&#x2F;查看页面是否具有代码区域，没有代码块则不创建 复制按钮</span><br><span class="line">    if ($codeArea.length &gt; 0) &#123;</span><br><span class="line">        &#x2F;&#x2F;复制成功后将要干的事情</span><br><span class="line">        function changeToSuccess(item) &#123;</span><br><span class="line">             $imgOK &#x3D; $(&quot;#copyBtn&quot;).find(&quot;#imgSuccess&quot;);</span><br><span class="line">                if ($imgOK.css(&quot;display&quot;) &#x3D;&#x3D; &quot;none&quot;) &#123;</span><br><span class="line">                    $imgOK.css(&#123;</span><br><span class="line">                        opacity: 0,</span><br><span class="line">                        display: &quot;block&quot;</span><br><span class="line">                    &#125;);</span><br><span class="line">                    $imgOK.animate(&#123;</span><br><span class="line">                        opacity: 1</span><br><span class="line">                    &#125;, 1000);</span><br><span class="line">                    setTimeout(function() &#123;</span><br><span class="line">                        $imgOK.animate(&#123;</span><br><span class="line">                            opacity: 0</span><br><span class="line">                        &#125;, 2000);</span><br><span class="line">                    &#125;, 2000);</span><br><span class="line">                    setTimeout(function() &#123;</span><br><span class="line">                        $imgOK.css(&quot;display&quot;, &quot;none&quot;);</span><br><span class="line">                    &#125;, 4000);</span><br><span class="line">                &#125;;</span><br><span class="line">        &#125;;</span><br><span class="line">        &#x2F;&#x2F;创建 全局复制按钮，仅有一组。包含：复制按钮，复制成功响应按钮</span><br><span class="line">        &#x2F;&#x2F;值得注意的是：1.按钮默认隐藏，2.位置使用绝对位置 position: absolute; (position: fixed 也可以，需要修改代码)</span><br><span class="line">        $(&quot;.post-body&quot;).before(&#39;&lt;div id&#x3D;&quot;copyBtn&quot; style&#x3D;&quot;opacity: 0; position: absolute;top:0px;display: none;line-height: 1; font-size:1.5em&quot;&gt;&lt;span id&#x3D;&quot;imgCopy&quot; &gt;&lt;i class&#x3D;&quot;fa fa-paste fa-fw&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;span&gt;&lt;span id&#x3D;&quot;imgSuccess&quot; style&#x3D;&quot;display: none;&quot;&gt;&lt;i class&#x3D;&quot;fa fa-check-circle fa-fw&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;span&gt;&#39;);</span><br><span class="line">        &#x2F;&#x2F;创建 复制 插件，绑定单机时间到 指定元素，支持JQuery</span><br><span class="line">        var clipboard &#x3D; new Clipboard(&#39;#copyBtn&#39;, &#123;</span><br><span class="line">            target: function() &#123;</span><br><span class="line">                &#x2F;&#x2F;返回需要复制的元素内容</span><br><span class="line">                return document.querySelector(&quot;[copyFlag]&quot;);</span><br><span class="line">            &#125;,</span><br><span class="line">            isSupported: function() &#123;</span><br><span class="line">                &#x2F;&#x2F;支持复制内容</span><br><span class="line">                return document.querySelector(&quot;[copyFlag]&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        &#x2F;&#x2F;复制成功事件绑定</span><br><span class="line">        clipboard.on(&#39;success&#39;,</span><br><span class="line">            function(e) &#123;</span><br><span class="line">                &#x2F;&#x2F;清除内容被选择状态</span><br><span class="line">                e.clearSelection();</span><br><span class="line">                changeToSuccess(e);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#x2F;&#x2F;复制失败绑定事件</span><br><span class="line">        clipboard.on(&#39;error&#39;,</span><br><span class="line">            function(e) &#123;</span><br><span class="line">                console.error(&#39;Action:&#39;, e.action);</span><br><span class="line">                console.error(&#39;Trigger:&#39;, e.trigger);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#x2F;&#x2F;鼠标 在复制按钮上滑动和离开后渐变显示&#x2F;隐藏效果</span><br><span class="line">        $(&quot;#copyBtn&quot;).hover(</span><br><span class="line">            function() &#123;</span><br><span class="line">                $(this).stop();</span><br><span class="line">                $(this).css(&quot;opacity&quot;, 1);</span><br><span class="line">            &#125;,</span><br><span class="line">            function() &#123;</span><br><span class="line">                $(this).animate(&#123;</span><br><span class="line">                    opacity: 0</span><br><span class="line">                &#125;, 2000);</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;感应鼠标是否在代码区</span><br><span class="line">$(&quot;figure&quot;).hover(</span><br><span class="line">    function() &#123;</span><br><span class="line">        &#x2F;&#x2F;-------鼠标活动在代码块内</span><br><span class="line">        &#x2F;&#x2F;移除之前含有复制标志代码块的 copyFlag</span><br><span class="line">        $(&quot;[copyFlag]&quot;).removeAttr(&quot;copyFlag&quot;);</span><br><span class="line">        &#x2F;&#x2F;在新的（当前鼠标所在代码区）代码块插入标志：copyFlag</span><br><span class="line">        $(this).find(&quot;.code&quot;).attr(&quot;copyFlag&quot;, 1);</span><br><span class="line">        &#x2F;&#x2F;获取复制按钮</span><br><span class="line">        $copyBtn &#x3D; $(&quot;#copyBtn&quot;);</span><br><span class="line">        if ($copyBtn.lenght !&#x3D; 0) &#123;</span><br><span class="line">            &#x2F;&#x2F;获取到按钮的前提下进行一下操作</span><br><span class="line">            &#x2F;&#x2F;停止按钮动画效果</span><br><span class="line">            &#x2F;&#x2F;设置为 显示状态</span><br><span class="line">            &#x2F;&#x2F;修改 复制按钮 位置到 当前代码块开始部位</span><br><span class="line">            &#x2F;&#x2F;设置代码块 左侧位置</span><br><span class="line">            $copyBtn.stop();</span><br><span class="line">            $copyBtn.css(&quot;opacity&quot;, 0.8);</span><br><span class="line">            $copyBtn.css(&quot;display&quot;, &quot;block&quot;);</span><br><span class="line">            $copyBtn.css(&quot;top&quot;, parseInt($copyBtn.css(&quot;top&quot;)) + $(this).offset().top - $copyBtn.offset().top + 3);</span><br><span class="line">            $copyBtn.css(&quot;left&quot;, -$copyBtn.width() - 3);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    function() &#123;</span><br><span class="line">        &#x2F;&#x2F;-------鼠标离开代码块</span><br><span class="line">        &#x2F;&#x2F;设置复制按钮可见度 2秒内到 0</span><br><span class="line">        $(&quot;#copyBtn&quot;).animate(&#123;</span><br><span class="line">            opacity: 0</span><br><span class="line">        &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br><span class="line">&#x2F;&#x2F;页面载入完成后，创建复制按钮</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">  createCopyBtns();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h1 id="一、Node-js安装"><a class="header-anchor" href="#一、Node-js安装">¶</a>一、Node.js安装</h1>
+<p>1.Hexo基于Node.js，搭建中还需要npm（Node.js自带）和git，因此我们需要首先安装Node.js和Git。</p>
+<p><strong>Node.js安装：</strong></p>
+<p><strong>Node.js官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></strong></p>
+<p>进入官网后下载Windows（x64）长期支持版。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt></p>
+<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
+<h1 id="二、Git安装"><a class="header-anchor" href="#二、Git安装">¶</a>二、Git安装</h1>
+<p>1.<strong>Git官网下载网址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></strong></p>
+<p>进入官网后选择Windows就会自动下载，或是选择电脑位数下载。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt="node下载"></p>
+<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
+<h1 id="三、验证是否完成安装"><a class="header-anchor" href="#三、验证是否完成安装">¶</a>三、验证是否完成安装</h1>
+<p>1.验证Node.js和Git是否安装成功，也就是本地环境是否搭建成功。Win+R打开运行。输入cmd，进入命令提示符。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/cmd.png" alt="cmd"></p>
+<p>2.依次输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>如果出现对应的版本号，那么表示本地环境搭建成功。</p>
+<h1 id="四、注册Github账户，密码"><a class="header-anchor" href="#四、注册Github账户，密码">¶</a>四、注册Github账户，密码</h1>
+<p>1.<strong>GitHub官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></strong></p>
+<p>2.点击 <strong>Sign up</strong> 进入注册界面</p>
+<p>3.输入信息，验证邮箱信息，即可完成注册</p>
+<h1 id="五、创建SSH密钥"><a class="header-anchor" href="#五、创建SSH密钥">¶</a>五、创建SSH密钥</h1>
+<p>1.在桌面，鼠标右键，点击【Git Bash Here】。</p>
+<p>2.依次输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;GitHub用户名&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>3.输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>回车，创建SSH密钥。</p>
+<h1 id="六、添加密钥"><a class="header-anchor" href="#六、添加密钥">¶</a>六、添加密钥</h1>
+<p>1.在<strong>C：\用户\用户名\ .ssh</strong>下找到<strong>id_rsa.pub</strong>文件。复制文件中的内容。</p>
+<p>2.登陆GitHub，点击setting。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/setting.png" alt></p>
+<p>3.选择左边SSH and GPG Keys选项。进行添加密匙。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/SSH.png" alt></p>
+<p>4.点击New SSH Key进行添加。</p>
+<p>5.title随便取，把刚才复制的密匙粘贴到Key中，点击Add SSH Key添加完成。</p>
+<p>6.打开Git Bash，输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>出现Are you sure……的时候输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yes</span><br></pre></td></tr></table></figure>
+<p>回车。</p>
+<p>最后显示**You’ve successfully……**的时候表示连接成功。</p>
+<h1 id="七、新建GitHub-Pages仓库。"><a class="header-anchor" href="#七、新建GitHub-Pages仓库。">¶</a>七、新建GitHub Pages仓库。</h1>
+<p>1.点击右上角加号，点击New repository新建GitHub Pages仓库。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/%E5%8A%A0%E5%8F%B7.png" alt></p>
+<p>2.在Repository name中输入：<strong><a href="http://xn--eqr924avxo.github.io" target="_blank" rel="noopener">用户名.github.io</a></strong></p>
+<p><strong>勾选</strong>“Initialize this repository with a README”</p>
+<p>Description不填。</p>
+<p>填好后点击Create repository。创建后默认启用HTTPS。</p>
+<p><strong>博客的地址为:<a href="https://xn--eqr924avxo.github.io" target="_blank" rel="noopener">https://用户名.github.io</a></strong></p>
 ]]></content>
       <categories>
-        <category>编程</category>
+        <category>静态博客</category>
       </categories>
       <tags>
-        <tag>入门</tag>
-        <tag>网站</tag>
-        <tag>教程</tag>
+        <tag>编程</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人静态博客-Hexo-Next-（三）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[<p>本文主要介绍如何写博客，如何搭配图文，如何上传部署博客。</p>
+<a id="more"></a>
+<h1 id="一、写博客软件"><a class="header-anchor" href="#一、写博客软件">¶</a>一、写博客软件</h1>
+<p>推荐下载<strong>Typora</strong></p>
+<p><strong>官网地址：<a href="https://www.typora.io/" target="_blank" rel="noopener">https://www.typora.io/</a></strong></p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%89%EF%BC%89/typora.png" alt></p>
+<p>下载完成后要在偏好设置里-图像-优先使用相对路径，勾选上，方便以后使用。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%89%EF%BC%89/%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE.png" alt></p>
+<h1 id="二、创建新博客"><a class="header-anchor" href="#二、创建新博客">¶</a>二、创建新博客</h1>
+<p>1.首先在博客文件夹在根目录里进入source文件夹，再进入_posts文件夹，这个文件夹上期也介绍了，主要就是存放博客的文章。我这里<strong>在 _posts里打开Git</strong>。记住以后打开Git都是这样。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%89%EF%BC%89/%E6%96%B0%E5%BB%BA.png" alt></p>
+<p>2.创建新博客文章命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;文章题目&quot;</span><br></pre></td></tr></table></figure>
+<p>可以看到在_posts文件夹中创建了.md格式的Markdown文件。</p>
+<p>3.实现在创建.md的同时创建一个同名文件夹，<strong>把该博客需要用到的图片全部放入</strong>。</p>
+<p>打开<strong>博客</strong>配置文件_config.yml 找到：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<p>默认应该是false，改为true，**注意冒号和true之间有一个空格，别删。**之后保存。再次完成步骤2，即可实现文件夹创建。</p>
+<h1 id="三、常用命令"><a class="header-anchor" href="#三、常用命令">¶</a>三、常用命令</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;name&quot;       # 新建文章</span><br><span class="line">hexo new page &quot;name&quot; # 新建页面</span><br><span class="line">hexo g               # 生成页面</span><br><span class="line">hexo d               # 部署</span><br><span class="line">hexo g -d             # 生成页面并部署</span><br><span class="line">hexo s               # 本地预览</span><br><span class="line">hexo clean           # 清除缓存和已生成的静态文件</span><br><span class="line">hexo help             # 帮助</span><br></pre></td></tr></table></figure>
+<p>发布常用命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean           # 清除缓存和已生成的静态文件</span><br><span class="line">hexo g               # 生成页面</span><br><span class="line">hexo s               # 本地预览</span><br><span class="line">hexo d               # 部署</span><br></pre></td></tr></table></figure>
+<p>hexo clean 和 hexo s没必要每次都用，但是hexo g和hexo d每次部署都要用到。</p>
+<h1 id="四、解决无法显示图片问题"><a class="header-anchor" href="#四、解决无法显示图片问题">¶</a>四、解决无法显示图片问题</h1>
+<p>1.解决方法是需要一个插件，Git输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<p>2.下载好后，打开**/node_modules/hexo-asset-image/index.js**，将内容更换为下面的代码。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#39;use strict&#39;;</span><br><span class="line">var cheerio &#x3D; require(&#39;cheerio&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; http:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;14480345&#x2F;how-to-get-the-nth-occurrence-in-a-string</span><br><span class="line">function getPosition(str, m, i) &#123;</span><br><span class="line">return str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var version &#x3D; String(hexo.version).split(&#39;.&#39;);</span><br><span class="line">hexo.extend.filter.register(&#39;after_post_render&#39;, function(data)&#123;</span><br><span class="line">var config &#x3D; hexo.config;</span><br><span class="line">if(config.post_asset_folder)&#123;</span><br><span class="line">  var link &#x3D; data.permalink;</span><br><span class="line">if(version.length &gt; 0 &amp;&amp; Number(version[0]) &#x3D;&#x3D; 3)</span><br><span class="line">  var beginPos &#x3D; getPosition(link, &#39;&#x2F;&#39;, 1) + 1;</span><br><span class="line">else</span><br><span class="line">  var beginPos &#x3D; getPosition(link, &#39;&#x2F;&#39;, 3) + 1;</span><br><span class="line">&#x2F;&#x2F; In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;...&#x2F;about&#x2F;index.html&quot;.</span><br><span class="line">var endPos &#x3D; link.lastIndexOf(&#39;&#x2F;&#39;) + 1;</span><br><span class="line">  link &#x3D; link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">  var toprocess &#x3D; [&#39;excerpt&#39;, &#39;more&#39;, &#39;content&#39;];</span><br><span class="line">  for(var i &#x3D; 0; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">    var key &#x3D; toprocess[i];</span><br><span class="line"></span><br><span class="line">    var $ &#x3D; cheerio.load(data[key], &#123;</span><br><span class="line">      ignoreWhitespace: false,</span><br><span class="line">      xmlMode: false,</span><br><span class="line">      lowerCaseTags: false,</span><br><span class="line">      decodeEntities: false</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(&#39;img&#39;).each(function()&#123;</span><br><span class="line">if ($(this).attr(&#39;src&#39;))&#123;</span><br><span class="line">&#x2F;&#x2F; For windows style path, we replace &#39;\&#39; to &#39;&#x2F;&#39;.</span><br><span class="line">var src &#x3D; $(this).attr(&#39;src&#39;).replace(&#39;\\&#39;, &#39;&#x2F;&#39;);</span><br><span class="line">if(!&#x2F;http[s]*.*|\&#x2F;\&#x2F;.*&#x2F;.test(src) &amp;&amp;</span><br><span class="line">  !&#x2F;^\s*\&#x2F;&#x2F;.test(src)) &#123;</span><br><span class="line">&#x2F;&#x2F; For &quot;about&quot; page, the first part of &quot;src&quot; can&#39;t be removed.</span><br><span class="line">&#x2F;&#x2F; In addition, to support multi-level local directory.</span><br><span class="line">var linkArray &#x3D; link.split(&#39;&#x2F;&#39;).filter(function(elem)&#123;</span><br><span class="line">return elem !&#x3D; &#39;&#39;;</span><br><span class="line">&#125;);</span><br><span class="line">var srcArray &#x3D; src.split(&#39;&#x2F;&#39;).filter(function(elem)&#123;</span><br><span class="line">return elem !&#x3D; &#39;&#39; &amp;&amp; elem !&#x3D; &#39;.&#39;;</span><br><span class="line">&#125;);</span><br><span class="line">if(srcArray.length &gt; 1)</span><br><span class="line">srcArray.shift();</span><br><span class="line">src &#x3D; srcArray.join(&#39;&#x2F;&#39;);</span><br><span class="line">$(this).attr(&#39;src&#39;, config.root + link + src);</span><br><span class="line">console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span><br><span class="line">&#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);</span><br><span class="line">console.info&amp;&amp;console.info($(this));</span><br><span class="line">&#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    data[key] &#x3D; $.html();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>3.更改保存后重新清除缓存上传，可以看到图片可以显示出来了。</p>
+]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人静态博客-Hexo-Next-（二）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<p>本文主要介绍在本地安装Hexo博客，以及把预览博客，并上传到GitHub上去。</p>
+<a id="more"></a>
+<h1 id="一、安装Hexo程序及预览博客内容"><a class="header-anchor" href="#一、安装Hexo程序及预览博客内容">¶</a>一、安装Hexo程序及预览博客内容</h1>
+<p>1.首先在磁盘里新建一个文件夹，用来存放个人博客的程序、主题以及后面你要写的文章。<strong>路径最好不要有中文</strong>。新建后打开文件夹，右键，点击【Git Bash Here】。进入git命令窗口。</p>
+<p>2.使用npm安装Hexo博客程序。输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>3.初始化和安装所需的组件，输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>4.初始化完成后安装组件，继续输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>5.完成安装后启用本地服务器进行本地预览，输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g     #生成页面</span><br></pre></td></tr></table></figure>
+<p>6.继续输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s    #启动预览</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Ctrl +C   #停止预览</span><br></pre></td></tr></table></figure>
+<p>7.在上面不关闭预览的前提下在浏览器中输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:4000</span><br></pre></td></tr></table></figure>
+<p>已经可以看到个人博客的主题了，这是Hexo的默认界面，本地博客安装到此成功。</p>
+<h1 id="二、介绍主要配置"><a class="header-anchor" href="#二、介绍主要配置">¶</a>二、介绍主要配置</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public     #网站文件</span><br><span class="line">themes     #主题文件夹，用来存放主题，美化博客</span><br><span class="line">source     #存放用户文件，主要存放用户写的文章，图片等等。</span><br><span class="line">_config.yml     #网站的配置信息，要跟主题里的配置信息分开，主题文件夹里也有一个同名的文件。</span><br></pre></td></tr></table></figure>
+<h1 id="三、上传部署"><a class="header-anchor" href="#三、上传部署">¶</a>三、上传部署</h1>
+<p>1.本地刚才预览已经没有问题，就要上传到GitHub进行部署。使其能够通过域名或者网址访问。首先安装hexo-deployer-git。输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>2.打开<strong>网站</strong>配置文件_config.yml。在文件的末尾加上下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository: git@github.com:用户名&#x2F;用户名.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<p>3.完成后输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d     #部署发布</span><br></pre></td></tr></table></figure>
+<p>将网站上传部署到GitHub仓库中。</p>
+<p>4.上传成功后我们就可以用网址进行访问了，网址为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;用户名.github.io</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人静态博客-Hexo-Next-（五）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%94%EF%BC%89/</url>
+    <content><![CDATA[<p>本文主要介绍主题的一些配置，主要是语言、外观、菜单、头像、作者，站点描述，博客标题，字体大小的配置。</p>
+<a id="more"></a>
+<h1 id="一、设置博客语言"><a class="header-anchor" href="#一、设置博客语言">¶</a>一、设置博客语言</h1>
+<p>编辑<strong>站点</strong>配置文件，找到 language并修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
+<p>目前NexT支持的语言如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语言</th>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">设定示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">English</td>
+<td style="text-align:center"><code>en</code></td>
+<td style="text-align:center"><code>language: en</code></td>
+</tr>
+<tr>
+<td style="text-align:center">简体中文</td>
+<td style="text-align:center"><code>zh-Hans</code></td>
+<td style="text-align:center"><code>language: zh-Hans</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Français</td>
+<td style="text-align:center"><code>fr-FR</code></td>
+<td style="text-align:center"><code>language: fr-FR</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Português</td>
+<td style="text-align:center"><code>pt</code></td>
+<td style="text-align:center"><code>language: pt</code> or <code>language: pt-BR</code></td>
+</tr>
+<tr>
+<td style="text-align:center">繁體中文</td>
+<td style="text-align:center"><code>zh-hk</code> 或者 <code>zh-tw</code></td>
+<td style="text-align:center"><code>language: zh-hk</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Русский язык</td>
+<td style="text-align:center"><code>ru</code></td>
+<td style="text-align:center"><code>language: ru</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Deutsch</td>
+<td style="text-align:center"><code>de</code></td>
+<td style="text-align:center"><code>language: de</code></td>
+</tr>
+<tr>
+<td style="text-align:center">日本語</td>
+<td style="text-align:center"><code>ja</code></td>
+<td style="text-align:center"><code>language: ja</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Indonesian</td>
+<td style="text-align:center"><code>id</code></td>
+<td style="text-align:center"><code>language: id</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Korean</td>
+<td style="text-align:center"><code>ko</code></td>
+<td style="text-align:center"><code>language: ko</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="二、设置外观主题"><a class="header-anchor" href="#二、设置外观主题">¶</a>二、设置外观主题</h1>
+<p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
+<ul>
+<li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
+<li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
+<li>Pisces - 双栏 Scheme，小家碧玉似的清新</li>
+</ul>
+<p>编辑主题配置文件。</p>
+<p>搜索scheme关键词。要选择哪个外观，把#相当于注释去掉。</p>
+<h1 id="三、设置菜单选项"><a class="header-anchor" href="#三、设置菜单选项">¶</a>三、设置菜单选项</h1>
+<p>1.编辑<strong>主题</strong>配置文件。搜索找到menu。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">键值</th>
+<th style="text-align:center">设定值</th>
+<th style="text-align:center">显示文本（简体中文）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">home</td>
+<td style="text-align:center"><code>home: /</code></td>
+<td style="text-align:center">主页</td>
+</tr>
+<tr>
+<td style="text-align:center">archives</td>
+<td style="text-align:center"><code>archives: /archives</code></td>
+<td style="text-align:center">归档页</td>
+</tr>
+<tr>
+<td style="text-align:center">categories</td>
+<td style="text-align:center"><code>categories: /categories</code></td>
+<td style="text-align:center">分类页</td>
+</tr>
+<tr>
+<td style="text-align:center">tags</td>
+<td style="text-align:center"><code>tags: /tags</code></td>
+<td style="text-align:center">标签页</td>
+</tr>
+<tr>
+<td style="text-align:center">about</td>
+<td style="text-align:center"><code>about: /about</code></td>
+<td style="text-align:center">关于页面</td>
+</tr>
+<tr>
+<td style="text-align:center">commonweal</td>
+<td style="text-align:center"><code>commonweal: /404.html</code></td>
+<td style="text-align:center">公益 404</td>
+</tr>
+</tbody>
+</table>
+<p>只需要把自己想要的菜单项注释#去掉，位置也可以更改，互相换行就行。就可以显示。</p>
+<p>2.更换菜单栏位置</p>
+<p>编辑<strong>主题</strong>配置文件。找到<strong>sidebar</strong>。</p>
+<p>按照自己的喜好来。修改时去掉注释。</p>
+<p>设置侧栏的显示时机。</p>
+<ul>
+<li><code>post</code> - 默认行为，在文章页面（拥有目录列表）时显示</li>
+<li><code>always</code> - 在所有页面中都显示</li>
+<li><code>hide</code> - 在所有页面中都隐藏（可以手动展开）</li>
+<li><code>remove</code> - 完全移除</li>
+</ul>
+<h1 id="四、设置头像"><a class="header-anchor" href="#四、设置头像">¶</a>四、设置头像</h1>
+<p>1.将头像放置主题目录下的 <code>source/uploads/</code> （若不存在新建uploads） 配置为：<code>next/source/uploads/picture.png</code></p>
+<p>2.编辑<strong>主题</strong>配置文件，找到avatar。修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">avatar: &#x2F;uploads&#x2F;picture.png</span><br></pre></td></tr></table></figure>
+<p>3.修改后本地预览。头像方框为方形。</p>
+<h1 id="五、设置头像为圆形"><a class="header-anchor" href="#五、设置头像为圆形">¶</a>五、设置头像为圆形</h1>
+<p>进入下面的文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...&#x2F;themes&#x2F;next&#x2F;source&#x2F;css&#x2F;_common&#x2F;components&#x2F;sidebar</span><br></pre></td></tr></table></figure>
+<p>打开<code>sidebar-author.styl</code></p>
+<p>在<code>.site-author-image</code>末尾位置增加代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;头像圆形</span><br><span class="line">border-radius: 50%;</span><br><span class="line">webkit-border-radius: 1.4s all;</span><br><span class="line">moz-transition: 1.4s all;</span><br><span class="line">ms-transition: 1.4s all;</span><br><span class="line">transition: 1.4s all;</span><br></pre></td></tr></table></figure>
+<h1 id="六、头像360°旋转"><a class="header-anchor" href="#六、头像360°旋转">¶</a>六、头像360°旋转</h1>
+<p>打开<code>sidebar-author.styl</code></p>
+<p>在代码末尾加上下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;头像旋转</span><br><span class="line">.site-author-image:hover &#123;</span><br><span class="line">background-color: #55DAE1;</span><br><span class="line">webkit-transform: rotate(360deg) scale(1.1);</span><br><span class="line">moz-transform: rotate(360deg) scale(1.1);</span><br><span class="line">ms-transform: rotate(360deg) scale(1.1);</span><br><span class="line">transform: rotate(360deg) scale(1.1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="七、设置作者、站点描述、博客标题"><a class="header-anchor" href="#七、设置作者、站点描述、博客标题">¶</a>七、设置作者、站点描述、博客标题</h1>
+<p>编辑<strong>站点</strong>配置文件，搜素找到<strong>author</strong>。</p>
+<p>修改作者、博客标题、站点描述等等。</p>
+<h1 id="八、修改字体大小"><a class="header-anchor" href="#八、修改字体大小">¶</a>八、修改字体大小</h1>
+<p>打开下面文件夹<code>...\themes\next\source\css\ _variables</code></p>
+<p>打开<code>base.styl</code></p>
+<p>找到<code>Font-size</code></p>
+<p>把<code>font-size-base</code>的14px修改为16px。</p>
+]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人静态博客-Hexo-Next-（六）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AD%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>美化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人静态博客-Hexo-Next-（四）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
+    <content><![CDATA[<p>本文主要介绍更改Hexo主题以及博客不是全文显示的设置。</p>
+<a id="more"></a>
+<h1 id="一、主题更改"><a class="header-anchor" href="#一、主题更改">¶</a>一、主题更改</h1>
+<p>1.访问Hexo网站，<strong>网址：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></strong></p>
+<p>2.推荐下载NexT主题配置，<strong>网址：<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></strong></p>
+<p>打开Git，输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+<p>安装NexT主题。</p>
+<p>3.打开<strong>网站</strong>配置文件 _config.yml。找到theme。修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<h1 id="二、只显示部分摘要"><a class="header-anchor" href="#二、只显示部分摘要">¶</a>二、只显示部分摘要</h1>
+<p>要前面写一点摘要或者概述，之后加上</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/1.png" alt></p>
+<p>之后再书写全文。</p>
+<h1 id="三、推荐书写格式"><a class="header-anchor" href="#三、推荐书写格式">¶</a>三、推荐书写格式</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: Hello World # 标题</span><br><span class="line">date: 2019&#x2F;3&#x2F;26 hh:mm:ss # 时间</span><br><span class="line">categories: # 分类</span><br><span class="line">- Diary</span><br><span class="line">tags: # 标签</span><br><span class="line">- PS4</span><br><span class="line">- Games</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">摘要</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">正文</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
 </search>

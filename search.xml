@@ -1,71 +1,906 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>个人静态博客 Hexo+Next （一）</title>
-    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍个人静态博客安装时，需要用到的软件及安装地址，注册Github账户，创建SSH密钥，Github Pages仓库</p>
+    <title>Java学习笔记【求知课堂】（一）</title>
+    <url>/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>网址：<a href="https://www.bilibili.com/video/av76235341" target="_blank" rel="noopener">https://www.bilibili.com/video/av76235341</a></strong></p>
+<p>【P1-P12】</p>
 <a id="more"></a>
-<h1 id="一、Node-js安装"><a class="header-anchor" href="#一、Node-js安装">¶</a>一、Node.js安装</h1>
-<p>1.Hexo基于Node.js，搭建中还需要npm（Node.js自带）和git，因此我们需要首先安装Node.js和Git。</p>
-<p><strong>Node.js安装：</strong></p>
-<p><strong>Node.js官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></strong></p>
-<p>进入官网后下载Windows（x64）长期支持版。</p>
-<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt></p>
-<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
-<h1 id="二、Git安装"><a class="header-anchor" href="#二、Git安装">¶</a>二、Git安装</h1>
-<p>1.<strong>Git官网下载网址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></strong></p>
-<p>进入官网后选择Windows就会自动下载，或是选择电脑位数下载。</p>
-<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt="node下载"></p>
-<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
-<h1 id="三、验证是否完成安装"><a class="header-anchor" href="#三、验证是否完成安装">¶</a>三、验证是否完成安装</h1>
-<p>1.验证Node.js和Git是否安装成功，也就是本地环境是否搭建成功。Win+R打开运行。输入cmd，进入命令提示符。</p>
-<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/cmd.png" alt="cmd"></p>
-<p>2.依次输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<p>如果出现对应的版本号，那么表示本地环境搭建成功。</p>
-<h1 id="四、注册Github账户，密码"><a class="header-anchor" href="#四、注册Github账户，密码">¶</a>四、注册Github账户，密码</h1>
-<p>1.<strong>GitHub官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></strong></p>
-<p>2.点击 <strong>Sign up</strong> 进入注册界面</p>
-<p>3.输入信息，验证邮箱信息，即可完成注册</p>
-<h1 id="五、创建SSH密钥"><a class="header-anchor" href="#五、创建SSH密钥">¶</a>五、创建SSH密钥</h1>
-<p>1.在桌面，鼠标右键，点击【Git Bash Here】。</p>
-<p>2.依次输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;GitHub用户名&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
-<p>3.输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
-<p>回车，创建SSH密钥。</p>
-<h1 id="六、添加密钥"><a class="header-anchor" href="#六、添加密钥">¶</a>六、添加密钥</h1>
-<p>1.在<strong>C：\用户\用户名\ .ssh</strong>下找到<strong>id_rsa.pub</strong>文件。复制文件中的内容。</p>
-<p>2.登陆GitHub，点击setting。</p>
-<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/setting.png" alt></p>
-<p>3.选择左边SSH and GPG Keys选项。进行添加密匙。</p>
-<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/SSH.png" alt></p>
-<p>4.点击New SSH Key进行添加。</p>
-<p>5.title随便取，把刚才复制的密匙粘贴到Key中，点击Add SSH Key添加完成。</p>
-<p>6.打开Git Bash，输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>出现Are you sure……的时候输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yes</span><br></pre></td></tr></table></figure>
-<p>回车。</p>
-<p>最后显示**You’ve successfully……**的时候表示连接成功。</p>
-<h1 id="七、新建GitHub-Pages仓库。"><a class="header-anchor" href="#七、新建GitHub-Pages仓库。">¶</a>七、新建GitHub Pages仓库。</h1>
-<p>1.点击右上角加号，点击New repository新建GitHub Pages仓库。</p>
-<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/%E5%8A%A0%E5%8F%B7.png" alt></p>
-<p>2.在Repository name中输入：<strong><a href="http://xn--eqr924avxo.github.io" target="_blank" rel="noopener">用户名.github.io</a></strong></p>
-<p><strong>勾选</strong>“Initialize this repository with a README”</p>
-<p>Description不填。</p>
-<p>填好后点击Create repository。创建后默认启用HTTPS。</p>
-<p><strong>博客的地址为:<a href="https://xn--eqr924avxo.github.io" target="_blank" rel="noopener">https://用户名.github.io</a></strong></p>
+<h1 id="零、入门"><a class="header-anchor" href="#零、入门">¶</a>零、入门</h1>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/1.png" alt></p>
+<h1 id="一、Java语言概述"><a class="header-anchor" href="#一、Java语言概述">¶</a>一、Java语言概述</h1>
+<h2 id="1-1基础常识"><a class="header-anchor" href="#1-1基础常识">¶</a>1.1基础常识</h2>
+<h3 id="软件开发"><a class="header-anchor" href="#软件开发">¶</a>软件开发</h3>
+<p>​        软件，即一系列按照特定顺序组织的计算机数据和指令的集合。有<strong>系统软件</strong>和<strong>应用软件</strong>之分。</p>
+<h3 id="人机交互方式"><a class="header-anchor" href="#人机交互方式">¶</a>人机交互方式</h3>
+<p>​        图形化界面(Graphical User Interface GUI)这种方式简单直观，使用者易于接受，容易上手操作。<br>
+​        命令行方式(Command Line Interface CLI)：需要有一个控制台，输入特定的指令，让计算机完成一些操作。较为麻烦，需要记录住一些命令。</p>
+<h3 id="常用的DOS命令"><a class="header-anchor" href="#常用的DOS命令">¶</a>常用的DOS命令</h3>
+<p><strong>打开DOS界面：按win+R，输入cmd，回车即可进入</strong></p>
+<p>注意:在输入dos命令时，要使用英文输入，所有标点都有是英文<br>
+d:<br>
+这冒号是英文</p>
+<p><code>dir</code> :    列出当前目录下的文件以及文件夹<br>
+<code>md</code> :   创建目录<br>
+<code>rd</code> :     删除目录<br>
+<code>cd</code> :    进入指定目录<br>
+<code>cd..</code> :  退回到上一级目录<br>
+<code>cd\</code>:    退回到根目录<br>
+<code>del</code> :    删除文件<br>
+<code>exit</code> :   退出 dos 命令行</p>
+<h2 id="1-2-Java语言概述"><a class="header-anchor" href="#1-2-Java语言概述">¶</a>1.2 Java语言概述</h2>
+<h3 id="什么是计算机语言"><a class="header-anchor" href="#什么是计算机语言">¶</a>什么是计算机语言</h3>
+<p>​        语言：是人与人之间用于沟通的一种方式。例如：中国人与中国人用普通话沟通。而中国人要和英国人交流，英国人要学习中文。<br>
+<strong>计算机语言：人与计算机交流的方式。</strong><br>
+​     如果人要与计算机交流，那么就要学习计算机语言。<br>
+​     计算机语言有很多种，如：C，C++，Java，python，PHP等。</p>
+<p><strong>第一代语言</strong><br>
+打孔机——纯机器语言<br>
+<strong>第二代语言</strong><br>
+汇编<br>
+<strong>第三代语言</strong><br>
+C、Pascal、Fortran面向过程的语言<br>
+C++面向过程/面向对象<br>
+Java跨平台的纯面向对象的语言<br>
+.NET跨语言的平台</p>
+<h3 id="Java技术体系平台"><a class="header-anchor" href="#Java技术体系平台">¶</a>Java技术体系平台</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Java</strong> <strong>SE</strong>(Java Standard Edition)标准版</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支持面向桌面级应用（如Windows下的应用程序）的Java平台，提供了完整的Java核心API，此版本以前称为<strong>J2SE</strong></td>
+</tr>
+<tr>
+<td><strong>Java</strong> <strong>EE(Java Enterprise Edition)企业版</strong></td>
+</tr>
+<tr>
+<td>是为开发企业环境下的应用程序提供的一套解决方案。该技术体系中包含的技术如:Servlet 、Jsp等，主要针对于Web应用程序开发。版本以前称为<strong>J2EE</strong></td>
+</tr>
+<tr>
+<td><strong>Java</strong> <strong>ME(Java Micro Edition)小型版</strong></td>
+</tr>
+<tr>
+<td>支持Java程序运行在移动终端（手机、PDA）上的平台，对Java API有所精简，并加入了针对移动终端的支持，此版本以前称为<strong>J2ME</strong></td>
+</tr>
+<tr>
+<td><strong>Java Card</strong></td>
+</tr>
+<tr>
+<td>支持一些Java小程序（Applets）运行在小内存设备（如智能卡）上的平台</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-3-Java语言运行机制及运行过程"><a class="header-anchor" href="#1-3-Java语言运行机制及运行过程">¶</a>1.3  Java语言运行机制及运行过程</h2>
+<h3 id="Java语言的特点"><a class="header-anchor" href="#Java语言的特点">¶</a>Java语言的特点</h3>
+<p>特点一：面向对象   女朋友才叫对象<br>
+两个基本概念：类、对象<br>
+三大特性：封装、继承、多态</p>
+<p>面向过程，例如张三打篮球，还有再做一个李四踢足球的程序？</p>
+<p>面向对象，人的对象，人的运动的动作，运动的器械这三个对象，<br>
+实例化一个张三的对象，对象有一个打篮球的动作，器械是篮球<br>
+实例化一个李四的对象，对象有一个踢足球的动作，器械是足球</p>
+<p>面向对象能够更好的在抽象的层面来分析问题，在程序实现跨越极大的赋予之前的代码<br>
+这些是面向过程编程很难实现的</p>
+<p>特点二：健壮性 完善性<br>
+吸收了C/C++语言的优点，但去掉了其影响程序健壮性的部分（如指针、内存的申请与释放等），提供了一个相对安全的内存管理和访问机制</p>
+<p>特点三：跨平台性  jvm<br>
+跨平台性：通过Java语言编写的应用程序在不同的系统平台上都可以运行。“Write 	once , Run Anywhere”，一次编写，处处运行<br>
+原理：只要在需要运行 java 应用程序的操作系统上，先安装一个Java虚拟机 (JVM Java Virtual Machine) 即可。由JVM来负责Java程序在该系统中的运行。</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E8%B7%A8%E5%B9%B3%E5%8F%B0.png" alt></p>
+<h3 id="Java两种核心机制"><a class="header-anchor" href="#Java两种核心机制">¶</a>Java两种核心机制</h3>
+<p>Java虚拟机（Java Virtal Machine），JVM</p>
+<p>​		JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器。<br>
+​		对于不同的平台，有不同的虚拟机。<br>
+​		Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，到处运行”</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/2.png" alt></p>
+<p><strong>垃圾收集机制（Garbage Collection），GC</strong></p>
+<p>​        不再使用的内存空间应回收—— 垃圾回收。<br>
+​		在C/C++等语言中，由程序员负责回收无用内存。<br>
+​		Java 语言消除了程序员回收无用内存空间的责任：它提供一种系统级线程跟踪存储空间的分配情况。并在JVM空闲时，检查并释放那些可被释放的存储空间。<br>
+​		垃圾回收在Java程序运行过程中自动进行，程序员无法精确控制和干预。</p>
+<p>c，c++，由程序员回收，手动编写代码回收（优点：能够在内存不使用时快速回收，准确高效；缺点：容易失误出现bug，例如忘记编写回收内存的代码？内存一直不回收）</p>
+<p>java，垃圾回收是自动，开了一个习题集线程自动去检测哪些内存不用了然后回收掉（优点：自动的，意味着不会出现忘记回收；缺点：回收不及时）</p>
+<p>一般的观点是，宁可回收不及时但是一定要回收，使用自动的垃圾回收更合适</p>
+<h2 id="1-4-Java语言的环境搭建"><a class="header-anchor" href="#1-4-Java语言的环境搭建">¶</a>1.4 Java语言的环境搭建</h2>
+<h3 id="下载-JDK、安装-JDK"><a class="header-anchor" href="#下载-JDK、安装-JDK">¶</a>下载 JDK、安装 JDK</h3>
+<p><strong>官方网址：</strong><br>
+<strong><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a></strong><br>
+安装JDK<br>
+傻瓜式安装，下一步即可。<br>
+建议：安装路径不要有中文或者特殊符号如空格等。<br>
+当提示安装 JRE 时，可以选择不安装。</p>
+<p><strong>推荐下载</strong>绿色压缩版JDK，解压使用<br>
+<strong>链接：<a href="https://pan.baidu.com/s/1-gzYKrnW7IvUhGOBDl7J0g" target="_blank" rel="noopener">https://pan.baidu.com/s/1-gzYKrnW7IvUhGOBDl7J0g</a></strong><br>
+提取码：1bm4<br>
+这个jdk是32位</p>
+<p>​		正规的开发工作中，你之前的工作要求统一1.6.0.102，之后换了一个项目组，这个项目组要求使用1.8.0.1_103<br>
+可以先卸载掉前面的jdk，根据需要安装新的jdk</p>
+<p>​		你做技术核心同时支持3个项目，这3个项目分别使用不同版本的jdk</p>
+<p>​		正确的打开方式是？就是使用压缩版的jdk，根据情况解压不同版本来使用</p>
+<h3 id="配置环境变量"><a class="header-anchor" href="#配置环境变量">¶</a>配置环境变量</h3>
+<p><strong>设置JAVA_HOME</strong><br>
+解压jdk的目录</p>
+<p><strong>设置CLASSPATH</strong><br>
+.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</p>
+<p><strong>在path中加入两个新的配置</strong><br>
+%JAVA_HOME%\bin<br>
+%JAVA_HOME%\jre\bin</p>
+<h3 id="验证是否成功：java-version"><a class="header-anchor" href="#验证是否成功：java-version">¶</a>验证是否成功：java -version</h3>
+<h3 id="什么是JDK，JRE"><a class="header-anchor" href="#什么是JDK，JRE">¶</a>什么是JDK，JRE</h3>
+<table>
+<thead>
+<tr>
+<th><strong>JDK(Java Development Kit  Java开发工具包)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JDK是提供给Java开发人员使用的，其中包含了java的开发工具，也包括了JRE。所以安装了JDK，就不用在单独安装JRE了。 其中的开发工具：编译工具(javac.exe) 打包工具(jar.exe)等</td>
+</tr>
+<tr>
+<td><strong>JRE(Java Runtime Environment  Java运行环境)</strong></td>
+</tr>
+<tr>
+<td>包括Java虚拟机(JVM Java Virtual Machine)和Java程序所需的核心类库等，如果想要<strong>运行</strong>一个开发好的Java程序，计算机中只需要安装JRE即可。</td>
+</tr>
+</tbody>
+</table>
+<p>简单而言，使用JDK的开发工具完成的java程序，交给JRE去运行。</p>
+<h3 id="JVM、JRE、JDK-关系"><a class="header-anchor" href="#JVM、JRE、JDK-关系">¶</a>JVM、JRE、JDK 关系</h3>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%871.png" alt></p>
+<h2 id="1-5-开发体验-—-HelloWorld"><a class="header-anchor" href="#1-5-开发体验-—-HelloWorld">¶</a>1.5 开发体验 — HelloWorld</h2>
+<p><strong>步骤：</strong><br>
+将 Java 代码编写到扩展名为 .java 的文件中。<br>
+通过 javac 命令对该 java 文件进行编译。<br>
+通过 java 命令对生成的 class 文件进行运行。</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%872.png" alt></p>
+<p>Test.java文件代码如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*文档注释</span><br><span class="line">*这是一个打印hello world的类</span><br><span class="line">*@author lby</span><br><span class="line">*@version 1.0.0</span><br><span class="line">*&#x2F;</span><br><span class="line">public class Test&#123;</span><br><span class="line">        public static void main(String[] args)&#123;</span><br><span class="line">	&#x2F;&#x2F;单行注释，打印helloworld</span><br><span class="line">                System.out.print(&quot;hello world\n&quot;);</span><br><span class="line">	System.out.print(&quot;abc&quot;);</span><br><span class="line">	&#x2F;*</span><br><span class="line">	多行注释</span><br><span class="line">	下面准备写一个打印abc的程序</span><br><span class="line">	*&#x2F;</span><br><span class="line">	&#x2F;&#x2F;System.out.print(&quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">	&#x2F;*System.out.print(&quot;abc&quot;);</span><br><span class="line">	System.out.print(&quot;abc&quot;);</span><br><span class="line">	System.out.print(&quot;abc&quot;);*&#x2F;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在DOS中输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">javac Test.java</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java Test</span><br></pre></td></tr></table></figure>
+<h2 id="1-6-小结第一个程序"><a class="header-anchor" href="#1-6-小结第一个程序">¶</a>1.6 小结第一个程序</h2>
+<p>​		Java源文件以“java”为扩展名。源文件的基本组成部分是类（class），如本类中的Test类。<br>
+​		Java应用程序的执行入口是main()方法。它有固定的书写格式：<code>public static void main(String[] args)  {...}</code><br>
+​		Java语言严格区分大小写。<br>
+​		Java方法由一条条语句构成，每个语句以“;”结束。<br>
+​		括号都是成对出现的，缺一不可。</p>
+<h2 id="1-7-常见问题及解决方法"><a class="header-anchor" href="#1-7-常见问题及解决方法">¶</a>1.7 常见问题及解决方法</h2>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%873.png" alt></p>
+<p>源文件名不存在或者写错，或者当前路径错误。</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%874.png" alt></p>
+<p>类文件名写错，或者类文件不在当前路径下，或者不在classpath指定路径下。</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%875.png" alt></p>
+<p>声明为public的主类应与文件名一致，否则编译失败</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%876.png" alt></p>
+<p>编译失败，注意错误出现的行数，再到源代码中指定位置改错</p>
+<h2 id="1-8-注-释"><a class="header-anchor" href="#1-8-注-释">¶</a>1.8 注  释</h2>
+<p>​		用于注解说明解释程序的文字就是注释。<br>
+​		提高了代码的阅读性；调试程序的重要方法。<br>
+​		Java中的注释类型：<br>
+​				单行注释   //<br>
+​				多行注释/* */<br>
+​				文档注释（java特有）<br>
+​		注释是一个程序员必须要具有的良好编程习惯。<br>
+​		将自己的思想通过注释先整理出来，再用代码去体现</p>
+<p><strong>注：</strong><br>
+对于单行和多行注释，被注释的文字，不会被JVM（java虚拟机）解释执行。<br>
+多行注释里面不允许有多行注释嵌套。</p>
+<p>文档注释（java特有）<br>
+格式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*@author  指定java程序的作者</span><br><span class="line">*@version  指定源文件的版本</span><br><span class="line">*@param   方法的参数说明信息</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<p>注释内容可以被JDK提供的工具 <code>javadoc</code> 所解析，生成一套以网页文件形式体现的该程序的说明文档。</p>
+<h2 id="知识回顾"><a class="header-anchor" href="#知识回顾">¶</a>知识回顾</h2>
+<p>●  JDK,JRE,JVM的关系。</p>
+<p>●  环境变量path配置及其作用。</p>
+<p>●  Java程序的编写、编译、运行步骤。</p>
+<p>●  Java程序编写的规则。</p>
+<p>●  在配置环境、编译、运行各个步骤中常见的错误以及解决方法。</p>
+<p>●  注释</p>
 ]]></content>
       <categories>
-        <category>静态博客</category>
+        <category>求知课堂</category>
       </categories>
       <tags>
         <tag>编程</tag>
+        <tag>Java</tag>
         <tag>基础</tag>
+        <tag>b站视频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java学习笔记【求知课堂】（二）</title>
+    <url>/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>网址：<a href="https://www.bilibili.com/video/av76235341" target="_blank" rel="noopener">https://www.bilibili.com/video/av76235341</a></strong></p>
+<p>【P13-】</p>
+<a id="more"></a>
+<h1 id="二、Java基本语法"><a class="header-anchor" href="#二、Java基本语法">¶</a>二、Java基本语法</h1>
+<h2 id="2-1-关键字"><a class="header-anchor" href="#2-1-关键字">¶</a>2.1  关键字</h2>
+<p><strong>关键字的定义和特点</strong><br>
+定义：被Java语言赋予了特殊含义，用做专门用途的字符串（单词）<br>
+特点：关键字中所有字母都为小写</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">用于定义数据类型的关键字</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>class</code></td>
+<td style="text-align:center"><code>interface</code></td>
+<td style="text-align:center"><code>enum</code></td>
+<td style="text-align:center"><code>byte</code></td>
+<td style="text-align:center"><code>short</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>int</code></td>
+<td style="text-align:center"><code>long</code></td>
+<td style="text-align:center"><code>float</code></td>
+<td style="text-align:center"><code>double</code></td>
+<td style="text-align:center"><code>char</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>boolean</code></td>
+<td style="text-align:center"><code>void</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>用于定义数据类型值的关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>true</code></td>
+<td style="text-align:center"><code>false</code></td>
+<td style="text-align:center"><code>null</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>用于定义流程控制的关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>if</code></td>
+<td style="text-align:center"><code>else</code></td>
+<td style="text-align:center"><code>switch</code></td>
+<td style="text-align:center"><code>case</code></td>
+<td style="text-align:center"><code>default</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>while</code></td>
+<td style="text-align:center"><code>do</code></td>
+<td style="text-align:center"><code>for</code></td>
+<td style="text-align:center"><code>break</code></td>
+<td style="text-align:center"><code>continue</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>return</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">用于定义访问权限修饰符的关键字</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>Private</code></td>
+<td style="text-align:center"><code>Protected</code></td>
+<td style="text-align:center"><code>Public</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>用于定义类，函数，变量修饰符的关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>abstract</code></td>
+<td style="text-align:center"><code>final</code></td>
+<td style="text-align:center"><code>static</code></td>
+<td style="text-align:center"><code>synchronized</code></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>用于定义类与类之间关系的关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>extends</code></td>
+<td style="text-align:center"><code>implements</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>用于定义建立实例及引用实例，判断实例的关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>new</code></td>
+<td style="text-align:center"><code>this</code></td>
+<td style="text-align:center"><code>super</code></td>
+<td style="text-align:center"><code>instanceof</code></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>用于异常处理的关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>try</code></td>
+<td style="text-align:center"><code>catch</code></td>
+<td style="text-align:center"><code>finally</code></td>
+<td style="text-align:center"><code>throw</code></td>
+<td style="text-align:center"><code>throws</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>用于包的关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>package</code></td>
+<td style="text-align:center"><code>import</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>其他修饰符关键字</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>native</code></td>
+<td style="text-align:center"><code>strictfp</code></td>
+<td style="text-align:center"><code>transient</code></td>
+<td style="text-align:center"><code>volatile</code></td>
+<td style="text-align:center"><code>assert</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="保留字"><a class="header-anchor" href="#保留字">¶</a>保留字</h3>
+<p>Java保留字：现有Java版本尚未使用，但以后版本可能会作为关键字使用。自己命名标记符时要避免使用这些保留字：<code>byValue</code>、<code>cast</code>、<code>future</code>、 <code>generic</code>、 <code>inner</code>、 <code>operator</code>、 <code>outer</code>、 <code>rest</code>、 <code>var</code> 、 <code>goto</code> 、<code>const</code>。</p>
+<h3 id="文本编辑器"><a class="header-anchor" href="#文本编辑器">¶</a>文本编辑器</h3>
+<p>Windows： Notepad++、UltraEdit 、EditPlus</p>
+<p>Mac： Sublime Text、BBEdit</p>
+<h2 id="2-2-标识符"><a class="header-anchor" href="#2-2-标识符">¶</a>2.2  标识符</h2>
+<p><strong>标识符：</strong><br>
+Java 对各种变量、方法和类等要素命名时使用的字符序列称为标识符<br>
+凡是自己可以起名字的地方都叫标识符。<br>
+<strong>定义合法标识符规则：</strong><br>
+由26个英文字母大小写，0-9 ，_或 $ 组成<br>
+数字不可以开头。<br>
+不可以使用关键字和保留字，但能包含关键字和保留字。<br>
+Java中严格区分大小写，长度无限制。<br>
+标识符不能包含空格。<br>
+**注意：**在起名字时，为了提高阅读性，要尽量有意义，“见名知意”。</p>
+<h3 id="Java中的名称命名规范"><a class="header-anchor" href="#Java中的名称命名规范">¶</a>Java中的名称命名规范</h3>
+<p>Java中的名称命名规范：<br>
+包名：多单词组成时所有字母都小写：xxxyyyzzz<br>
+类名、接口名：多单词组成时，所有单词的首字母大写：XxxYyyZzz<br>
+变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz<br>
+常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ</p>
+<h2 id="2-3-变量"><a class="header-anchor" href="#2-3-变量">¶</a>2.3  变量</h2>
+<p><strong>变量的概念：</strong><br>
+内存中的一个存储区域<br>
+该区域有自己的名称（变量名）和类型（数据类型）<br>
+Java中每个变量必须先声明，后使用<br>
+该区域的数据可以在同一类型范围内不断变化<br>
+<strong>使用变量注意：</strong><br>
+变量的作用域：一对{ }之间有效	<br>
+初始化值<br>
+**定义变量的格式：**数据类型    变量名  =  初始化值<br>
+变量是通过使用变量名来访问这块区域的</p>
+<h3 id="变量的分类-按数据类型"><a class="header-anchor" href="#变量的分类-按数据类型">¶</a>变量的分类-按数据类型</h3>
+<p>对于每一种数据都定义了明确的具体数据类型，在内存中分配了不同大小的内存空间。</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/1.png" alt></p>
+<p>补充：变量的分类-按声明的位置的不同</p>
+<p>​		<strong>在方法体外，类体内声明的变量称为成员变量。</strong><br>
+​		<strong>在方法体内部声明的变量称为局部变量。</strong></p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/2.png" alt></p>
+<p><strong>注意：二者在初始化值方面的异同:</strong><br>
+**同：**都有生命周期      **异：**局部变量除形参外，需显式初始化。</p>
+<h3 id="整数类型：byte、short、int、long"><a class="header-anchor" href="#整数类型：byte、short、int、long">¶</a>整数类型：byte、short、int、long</h3>
+<p>​		Java各整数类型有固定的表数范围和字段长度，不受具体OS的影响，以保证java程序的可移植性。<br>
+​		java的整型常量默认为 int 型，声明long型常量须后加‘l’或‘L’</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>类  型</strong></th>
+<th style="text-align:center"><strong>占用存储空间</strong></th>
+<th style="text-align:center"><strong>表数范围</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">1字节=8bit</td>
+<td style="text-align:center">-128 ~ 127</td>
+</tr>
+<tr>
+<td style="text-align:center">short</td>
+<td style="text-align:center">2字节</td>
+<td style="text-align:center">-215 ~215-1</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">4字节</td>
+<td style="text-align:center">-231 ~ 231-1</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">8字节</td>
+<td style="text-align:center">-263 ~ 263-1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="浮点类型：float、double"><a class="header-anchor" href="#浮点类型：float、double">¶</a>浮点类型：float、double</h3>
+<p>与整数类型类似，Java 浮点类型也有固定的表数范围和字段长度，不受具体OS的影响。<br>
+<strong>Java 的浮点型常量默认为double型，声明float型常量，须后加‘f’或‘F’。</strong><br>
+浮点型常量有两种表示形式：<br>
+十进制数形式：如：5.12       512.0f        .512   (必须有小数点）<br>
+科学计数法形式:如：5.12e2      512E2     100E-2</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>类 型</strong></th>
+<th style="text-align:center"><strong>占用存储空间</strong></th>
+<th style="text-align:center"><strong>表数范围</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">单精度float</td>
+<td style="text-align:center">4字节</td>
+<td style="text-align:center">-3.403E38 ~ 3.403E38</td>
+</tr>
+<tr>
+<td style="text-align:center">双精度double</td>
+<td style="text-align:center">8字节</td>
+<td style="text-align:center">-1.798E308 ~ 1.798E308</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符类型：char"><a class="header-anchor" href="#字符类型：char">¶</a>字符类型：char</h3>
+<p>char 型数据用来表示通常意义上“字符”(2字节)<br>
+字符型常量的三种表现形式：<br>
+字符常量是用单引号(‘ ’)括起来的单个字符，涵盖世界上所有书面语的字符。例如：<code>char c1 = 'a';   char c2 = '中'; char c3 =  '9';</code><br>
+Java中还允许使用转义字符‘\’来将其后的字符转变为特殊字符型常量。例如：<code>char c3 = ‘\n’;  // '\n'表示换行符</code><br>
+直接使用 Unicode 值来表示字符型常量：<code>‘\uXXXX’</code>。其中，XXXX代表一个十六进制整数。如：<code>\u000a</code> 表示 <code>\n</code>。<br>
+char类型是可以进行运算的。因为它都对应有Unicode码。</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/3.png" alt></p>
+<h3 id="布尔类型：boolean"><a class="header-anchor" href="#布尔类型：boolean">¶</a>布尔类型：boolean</h3>
+<p><code>boolean</code> 类型适于逻辑运算，一般用于程序流程控制：<br>
+if条件控制语句；<br>
+while循环控制语句；<br>
+do-while循环控制语句；<br>
+for循环控制语句；<br>
+<code>boolean</code>类型数据只允许取值true和false，无null。<br>
+不可以0或非 0 的整数替代false和true，这点和C语言不同。</p>
+<h3 id="字符串：-String类"><a class="header-anchor" href="#字符串：-String类">¶</a>字符串： String类</h3>
+<p>​		值null可以赋值给任何引用类型（类、接口、数组）的变量，用以表示这个引用类型变量中保存的地址为空。<br>
+​		String类属于引用类型，可用null赋值。<br>
+​		String类是一个典型的不可变类，String对象创建出来就不可能被改变。创建出的字符串将存放在数据区，保证每个字符串常量只有一个，不会产生多个副本。<br>
+​</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String s0 &#x3D; “hello”;</span><br><span class="line">   String s1 &#x3D; “hello”;</span><br><span class="line">   String s2 &#x3D; “he” + “ll”+”o”;</span><br><span class="line">   System.out.println(s0 &#x3D;&#x3D;s1);</span><br><span class="line">   System.out.println(s0 &#x3D;&#x3D;s2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输出：</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<h3 id="集成开发环境（IDE）"><a class="header-anchor" href="#集成开发环境（IDE）">¶</a>集成开发环境（IDE）</h3>
+<p>Eclipse安装（推荐）<br>
+官网下载，方法看以下<strong>网址</strong><br>
+<strong><a href="https://jingyan.baidu.com/article/b0b63dbf02e4d24a4830701a.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/b0b63dbf02e4d24a4830701a.html</a></strong></p>
+<h3 id="基本数据类型转换"><a class="header-anchor" href="#基本数据类型转换">¶</a>基本数据类型转换</h3>
+<p>​		自动类型转换：容量小的类型自动转换为容量大的数据类型。数据类型按容量大小排序为：</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/4.png" alt></p>
+<p>​		有多种类型的数据混合运算时，系统首先自动将所有数据转换成容量最大的那种数据类型，然后再进行计算。<br>
+​		byte,short,char之间不会相互转换，他们三者在计算时首先转换为int类型。<br>
+​		当把任何基本类型的值和字符串值进行连接运算时(+)，基本类型的值将自动转化为字符串类型。</p>
+<h3 id="练习1"><a class="header-anchor" href="#练习1">¶</a>练习1</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String str1 &#x3D; 4;        &#x2F;&#x2F;判断对错：错  需要加上双引号</span><br><span class="line">String str2 &#x3D; 3.5f + “”;             &#x2F;&#x2F;判断str2对错：对</span><br><span class="line">System.out.println(str2);        &#x2F;&#x2F;输出：3.5</span><br><span class="line">System.out .println(3+4+“Hello!”);      &#x2F;&#x2F;输出：7Hello!</span><br><span class="line">System.out.println(“Hello!”+3+4);      &#x2F;&#x2F;输出：Hello!34</span><br><span class="line">System.out.println(‘a’+1+“Hello!”);    &#x2F;&#x2F;输出：98Hello!</span><br><span class="line">System.out.println(“Hello!”+‘a’+1);            &#x2F;&#x2F;输出：Hello!a1</span><br></pre></td></tr></table></figure>
+<h3 id="强制类型转换"><a class="header-anchor" href="#强制类型转换">¶</a>强制类型转换</h3>
+<p>​		自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型。使用时要加上强制转换符（<code>()</code>），但可能造成精度降低或溢出,格外要注意。<br>
+​		通常，字符串不能直接转换为基本类型，但通过基本类型对应的包装类则可以实现把字符串转换成基本类型。<br>
+​		如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String a &#x3D; “43”; int i &#x3D; Integer.parseInt(a);</span><br></pre></td></tr></table></figure>
+<p>​		<code>boolean</code>类型不可以转换为其它的数据类型。</p>
+<h3 id="练习2"><a class="header-anchor" href="#练习2">¶</a>练习2</h3>
+<p>判断是否能通过编译</p>
+<p>1）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">short  s &#x3D; 5;</span><br><span class="line">   s &#x3D; s-2;                       &#x2F;&#x2F;判断：错</span><br></pre></td></tr></table></figure>
+<p>2）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">byte b &#x3D; 3;</span><br><span class="line">   b &#x3D; b + 4;                  &#x2F;&#x2F;判断：错</span><br><span class="line">   b &#x3D; (byte)(b+4);        &#x2F;&#x2F;判断：对</span><br></pre></td></tr></table></figure>
+<p>3）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">char c &#x3D; ‘a’;</span><br><span class="line">   int  i &#x3D; 5;</span><br><span class="line">   double d &#x3D; .314;</span><br><span class="line">   double result &#x3D; c+i+d;     &#x2F;&#x2F;判断：对   102.314</span><br></pre></td></tr></table></figure>
+<p>4）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">byte b &#x3D; 5;</span><br><span class="line">   short s &#x3D; 3;</span><br><span class="line">   short t &#x3D; s + b;          &#x2F;&#x2F;判断：错</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-运算符"><a class="header-anchor" href="#2-4-运算符">¶</a>2.4  运算符</h2>
+<p>运算符是一种特殊的符号，用以表示数据的运算、赋值和比较等。<br>
+算术运算符<br>
+赋值运算符<br>
+比较运算符（关系运算符）<br>
+逻辑运算符<br>
+位运算符<br>
+三元运算符</p>
+<h3 id="1-算术运算符"><a class="header-anchor" href="#1-算术运算符">¶</a>1.算术运算符</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>运算符</strong></th>
+<th style="text-align:center"><strong>运算</strong></th>
+<th style="text-align:center"><strong>范例</strong></th>
+<th style="text-align:center"><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>+</strong></td>
+<td style="text-align:center">正号</td>
+<td style="text-align:center">+3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>-</strong></td>
+<td style="text-align:center">负号</td>
+<td style="text-align:center">b=4; -b</td>
+<td style="text-align:center">-4</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>+</strong></td>
+<td style="text-align:center">加</td>
+<td style="text-align:center">5+5</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>-</strong></td>
+<td style="text-align:center">减</td>
+<td style="text-align:center">6-4</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">*****</td>
+<td style="text-align:center">乘</td>
+<td style="text-align:center">3*4</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/</strong></td>
+<td style="text-align:center">除</td>
+<td style="text-align:center">5/5</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%</strong></td>
+<td style="text-align:center">取模</td>
+<td style="text-align:center">7%5</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>++</strong> <br><strong>++</strong></td>
+<td style="text-align:center">自增（前）：先运算后取值自增（后）：先取值后运算</td>
+<td style="text-align:center">a=2;b=<ins>a; a=2;b=a</ins>;</td>
+<td style="text-align:center">a=3;b=3 a=3;b=2</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>- - <strong><br></strong>- -</strong></td>
+<td style="text-align:center">自减（前）：先运算后取值 自减（后）：先取值后运算</td>
+<td style="text-align:center">a=2;b=- -a a=2;b=a- -</td>
+<td style="text-align:center">a=1;b=1 a=1;b=2</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>+</strong></td>
+<td style="text-align:center">字符串相加</td>
+<td style="text-align:center">“He”+”llo”</td>
+<td style="text-align:center">“Hello”</td>
+</tr>
+</tbody>
+</table>
+<h3 id="算术运算符的注意问题"><a class="header-anchor" href="#算术运算符的注意问题">¶</a>算术运算符的注意问题</h3>
+<p>​		如果对负数取模，可以把模数负号忽略不记，如：<code>5%-2=1</code>。 但被模数是负数则不可忽略。此外，取模运算的结果不一定总是整数。</p>
+<p>​		对于除号“/”，它的整数除和小数除是有区别的：整数之间做除法时，只保留整数部分而舍弃小数部分。<br>
+<strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int x&#x3D;3510;x&#x3D;x&#x2F;1000*1000;</span><br></pre></td></tr></table></figure>
+<p>​		 <strong>x的结果是？</strong></p>
+<p>​		“+”除字符串相加功能外，还能把非字符串转换成字符串.例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">System.out.println(&quot;5+5&#x3D;&quot;+5+5); &#x2F;&#x2F;打印结果是？5+5&#x3D;55</span><br></pre></td></tr></table></figure>
+<p>以下二者的区别：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">System.out.println(&#39;*&#39; + &#39;\t&#39; +&#39;*&#39;);</span><br><span class="line">System.out.println(&quot;*&quot; + &#39;\t&#39; +&#39;*&#39;);</span><br></pre></td></tr></table></figure>
+<h3 id="练习1：算术运算符：自加、自减"><a class="header-anchor" href="#练习1：算术运算符：自加、自减">¶</a>练习1：算术运算符：自加、自减</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class TestSign&#123;</span><br><span class="line">        public static void main(String[] args)&#123;</span><br><span class="line">                int i1 &#x3D; 10,i2 &#x3D; 20;</span><br><span class="line">                int i &#x3D; i1++;</span><br><span class="line">                System.out.print(“i&#x3D;”+i);  &#x2F;&#x2F;i&#x3D;10</span><br><span class="line">                System.out.println(“i1&#x3D;”+i1);&#x2F;&#x2F;i1&#x3D;11</span><br><span class="line">                i &#x3D; ++i1;</span><br><span class="line">                System.out.print(“i&#x3D;”+i);&#x2F;&#x2F;i&#x3D;12</span><br><span class="line">                System.out.println(“i1&#x3D;”+i1);&#x2F;&#x2F;i1&#x3D;10 11 12 13</span><br><span class="line">                i &#x3D; i2--;</span><br><span class="line">                System.out.print(“i&#x3D;”+i);&#x2F;&#x2F;i&#x3D;20</span><br><span class="line">                System.out.println(“i2&#x3D;”+i2);&#x2F;&#x2F;i2&#x3D;19</span><br><span class="line">                i &#x3D; --i2;</span><br><span class="line">                System.out.print(“i&#x3D;”+i);&#x2F;&#x2F;i&#x3D;18</span><br><span class="line">                System.out.println(“i2&#x3D;”+i2);&#x2F;&#x2F;i2&#x3D;18 </span><br><span class="line">         &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-赋值运算符"><a class="header-anchor" href="#2-赋值运算符">¶</a>2.赋值运算符</h3>
+<p>符号：=<br>
+当“=”两侧数据类型不一致时，可以使用自动类型转换或使用强制类型转换原则进行处理。<br>
+支持连续赋值。</p>
+<p>扩展赋值运算符： +=, -=, *=, /=, %=</p>
+<p><strong>思考1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">short s &#x3D; 3; </span><br><span class="line">            s&#x3D;s+2;  &#x2F;&#x2F;①</span><br><span class="line">            s+&#x3D;2;   &#x2F;&#x2F;②</span><br></pre></td></tr></table></figure>
+<p>​                     <strong>①和②有什么区别？</strong></p>
+<p><strong>思考2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">boolean b1 &#x3D; false;</span><br><span class="line">        &#x2F;&#x2F;区分好&#x3D;&#x3D;和&#x3D;的区别。</span><br><span class="line">        if(b1&#x3D;true)</span><br><span class="line">	System.out.println(&quot;结果为真&quot;);</span><br><span class="line">        else</span><br><span class="line">	System.out.println(&quot;结果为假&quot;);</span><br></pre></td></tr></table></figure>
+<p><strong>思考3：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int i &#x3D; 1;</span><br><span class="line">i *&#x3D; 0.1;</span><br><span class="line">System.out.println(i);&#x2F;&#x2F;</span><br><span class="line">i++;</span><br><span class="line">System.out.println(i);&#x2F;&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="3-比较运算符"><a class="header-anchor" href="#3-比较运算符">¶</a>3.比较运算符</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>运算符</strong></th>
+<th style="text-align:center"><strong>运算</strong></th>
+<th style="text-align:center">范例</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>==</strong></td>
+<td style="text-align:center">相等于</td>
+<td style="text-align:center">4==3</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>!=</strong></td>
+<td style="text-align:center">不等于</td>
+<td style="text-align:center">4!=3</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&lt;</strong></td>
+<td style="text-align:center">小于</td>
+<td style="text-align:center">4&lt;3</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&gt;</strong></td>
+<td style="text-align:center">大于</td>
+<td style="text-align:center">4&gt;3</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&lt;=</strong></td>
+<td style="text-align:center">小于等于</td>
+<td style="text-align:center">4&lt;=3</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&gt;=</strong></td>
+<td style="text-align:center">大于等于</td>
+<td style="text-align:center">4&gt;=3</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>instanceof</strong></td>
+<td style="text-align:center">检查是否是类的对象</td>
+<td style="text-align:center">“Hello”  instanceof  String</td>
+<td style="text-align:center">true</td>
+</tr>
+</tbody>
+</table>
+<p>比较运算符的结果都是boolean型，也就是要么是true，要么是false。<br>
+<strong>比较运算符“==”不能误写成“=” 。</strong></p>
+<h3 id="4-逻辑运算符"><a class="header-anchor" href="#4-逻辑运算符">¶</a>4.逻辑运算符</h3>
+<p>&amp;—逻辑与            | —逻辑或       ！—逻辑非<br>
+&amp;&amp; —短路与      || —短路或        ^ —逻辑异或</p>
+<table>
+<thead>
+<tr>
+<th><strong>a</strong></th>
+<th><strong>b</strong></th>
+<th><strong>a&amp;b</strong></th>
+<th><strong>a|b</strong></th>
+<th><strong>!a</strong></th>
+<th><strong>a^b</strong></th>
+<th><strong>a&amp;&amp;b</strong></th>
+<th><strong>a||b</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>true</strong></td>
+<td><strong>false</strong></td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>false</strong></td>
+<td><strong>true</strong></td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>false</strong></td>
+<td><strong>false</strong></td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>逻辑运算符用于连接布尔型表达式，在Java中不可以写成3&lt;x&lt;6，应该写成x&gt;3 &amp; x&lt;6 。<br>
+“&amp;”和“&amp;&amp;”的区别：<br>
+单&amp;时，左边无论真假，右边都进行运算；<br>
+双&amp;时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。<br>
+“|”和“||”的区别同理，||表示：当左边为真，右边不参与运算。<br>
+在不需要逻辑运算两边都参与运算的时候，尽量使用&amp;&amp;和||<br>
+异或( ^ )与或( | )的不同之处是：当左右都为true时，结果为false。<br>
+<strong>理解：异或，追求的是“异”!</strong></p>
+<h3 id="练习2：请写出每题的输出结果"><a class="header-anchor" href="#练习2：请写出每题的输出结果">¶</a>练习2：请写出每题的输出结果</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int x &#x3D; 1;</span><br><span class="line">int y&#x3D;1;</span><br><span class="line"></span><br><span class="line">if(x++&#x3D;&#x3D;2 &amp; ++y&#x3D;&#x3D;2)&#123;</span><br><span class="line">	x &#x3D;7;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(&quot;x&#x3D;&quot;+x+&quot;,y&#x3D;&quot;+y);&#x2F;&#x2F;2 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int x &#x3D; 1,y &#x3D; 1;</span><br><span class="line"></span><br><span class="line">if(x++&#x3D;&#x3D;2 &amp;&amp; ++y&#x3D;&#x3D;2)&#123;</span><br><span class="line">	x &#x3D;7;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(&quot;x&#x3D;&quot;+x+&quot;,y&#x3D;&quot;+y);&#x2F;&#x2F;2 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int x &#x3D; 1,y &#x3D; 1;</span><br><span class="line"></span><br><span class="line">if(x++&#x3D;&#x3D;1 | ++y&#x3D;&#x3D;1)&#123;</span><br><span class="line">	x &#x3D;7;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(&quot;x&#x3D;&quot;+x+&quot;,y&#x3D;&quot;+y);&#x2F;&#x2F;7 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int x &#x3D; 1,y &#x3D; 1;</span><br><span class="line"></span><br><span class="line">if(x++&#x3D;&#x3D;1 || ++y&#x3D;&#x3D;1)&#123;</span><br><span class="line">	x &#x3D;7;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(&quot;x&#x3D;&quot;+x+&quot;,y&#x3D;&quot;+y);&#x2F;&#x2F;7 1</span><br></pre></td></tr></table></figure>
+<h3 id="5-位运算符"><a class="header-anchor" href="#5-位运算符">¶</a>5.位运算符</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>位运算符</strong></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">运算符</td>
+<td style="text-align:center">运算</td>
+<td style="text-align:center">范例</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt;</td>
+<td style="text-align:center">左移</td>
+<td style="text-align:center">3 &lt;&lt; 2 = 12 --&gt; 3<em>2</em>2=12，m &lt;&lt; n  m * 2n</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&gt;</td>
+<td style="text-align:center">右移</td>
+<td style="text-align:center">3 &gt;&gt; 1 = 1 --&gt; 3/2=1，m &gt;&gt; n  m * 2-n</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&gt;&gt;</td>
+<td style="text-align:center">无符号右移</td>
+<td style="text-align:center">3 &gt;&gt;&gt; 1 = 1 --&gt; 3/2=1，正数的&gt;&gt;&gt;与&gt;&gt;一致</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">与运算</td>
+<td style="text-align:center">6 &amp; 3 = 2</td>
+</tr>
+<tr>
+<td style="text-align:center">|</td>
+<td style="text-align:center">或运算</td>
+<td style="text-align:center">6 | 3 = 7</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">异或运算</td>
+<td style="text-align:center">6 ^ 3 = 5</td>
+</tr>
+<tr>
+<td style="text-align:center">~</td>
+<td style="text-align:center">反码</td>
+<td style="text-align:center">~6 = -7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：无&lt;&lt;&lt;</strong></p>
+<p>位运算是直接对二进制进行运算</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>位运算符的总结</strong></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;&lt;</td>
+<td style="text-align:center">空位补0，被移除的高位丢弃，空缺位补0。</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&gt;</td>
+<td style="text-align:center">被移位的二进制最高位是0，右移后，空缺位补0；<br> 最高位是1，空缺位补1。</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&gt;&gt;</td>
+<td style="text-align:center">被移位二进制最高位无论是0或者是1，空缺位都用0补。</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">二进制位进行&amp;运算，只有1&amp;1时结果是1，否则是0;</td>
+</tr>
+<tr>
+<td style="text-align:center">|</td>
+<td style="text-align:center">二进制位进行 | 运算，只有0 | 0时结果是0，否则是1;</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">相同二进制位进行 ^ 运算，结果是0；1^1=0 , 0^0=0 <br>不相同二进制位 ^ 运算结果是1。1^0=1 , 0^1=1</td>
+</tr>
+<tr>
+<td style="text-align:center">~</td>
+<td style="text-align:center">正数取反，各二进制码按补码各位取<br>反负数取反，各二进制码按补码各位取反</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-三元运算符"><a class="header-anchor" href="#6-三元运算符">¶</a>6.三元运算符</h3>
+<p>格式:<br>
+(条件表达式)? 表达式1：表达式2；</p>
+<p>​            为true ，运算后的结果是表达式1；<br>
+​            为false，运算后的结果是表达式2；</p>
+<p><strong>运算符的优先级</strong></p>
+<p>●运算符有不同的优先级，所谓优先级就是表达式运算中的运算顺序。如下表，上一行运算符总优先于下一行。<br>
+● 只有单目运算符、三元运算符、赋值运算符是从右向左运算的。</p>
+<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/5.png" alt></p>
+]]></content>
+      <categories>
+        <category>求知课堂</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>基础</tag>
+        <tag>b站视频</tag>
       </tags>
   </entry>
   <entry>
@@ -152,6 +987,74 @@
       <tags>
         <tag>编程</tag>
         <tag>美化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人静态博客 Hexo+Next （一）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍个人静态博客安装时，需要用到的软件及安装地址，注册Github账户，创建SSH密钥，Github Pages仓库</p>
+<a id="more"></a>
+<h1 id="一、Node-js安装"><a class="header-anchor" href="#一、Node-js安装">¶</a>一、Node.js安装</h1>
+<p>1.Hexo基于Node.js，搭建中还需要npm（Node.js自带）和git，因此我们需要首先安装Node.js和Git。</p>
+<p><strong>Node.js安装：</strong></p>
+<p><strong>Node.js官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></strong></p>
+<p>进入官网后下载Windows（x64）长期支持版。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt></p>
+<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
+<h1 id="二、Git安装"><a class="header-anchor" href="#二、Git安装">¶</a>二、Git安装</h1>
+<p>1.<strong>Git官网下载网址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></strong></p>
+<p>进入官网后选择Windows就会自动下载，或是选择电脑位数下载。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/node%E4%B8%8B%E8%BD%BD.png" alt="node下载"></p>
+<p>2.安装位置选择处C盘外其他位置，其它选项默认。点击下一步。完成软件安装。</p>
+<h1 id="三、验证是否完成安装"><a class="header-anchor" href="#三、验证是否完成安装">¶</a>三、验证是否完成安装</h1>
+<p>1.验证Node.js和Git是否安装成功，也就是本地环境是否搭建成功。Win+R打开运行。输入cmd，进入命令提示符。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/cmd.png" alt="cmd"></p>
+<p>2.依次输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>如果出现对应的版本号，那么表示本地环境搭建成功。</p>
+<h1 id="四、注册Github账户，密码"><a class="header-anchor" href="#四、注册Github账户，密码">¶</a>四、注册Github账户，密码</h1>
+<p>1.<strong>GitHub官网：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></strong></p>
+<p>2.点击 <strong>Sign up</strong> 进入注册界面</p>
+<p>3.输入信息，验证邮箱信息，即可完成注册</p>
+<h1 id="五、创建SSH密钥"><a class="header-anchor" href="#五、创建SSH密钥">¶</a>五、创建SSH密钥</h1>
+<p>1.在桌面，鼠标右键，点击【Git Bash Here】。</p>
+<p>2.依次输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;GitHub用户名&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>3.输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;GitHub邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>回车，创建SSH密钥。</p>
+<h1 id="六、添加密钥"><a class="header-anchor" href="#六、添加密钥">¶</a>六、添加密钥</h1>
+<p>1.在<strong>C：\用户\用户名\ .ssh</strong>下找到<strong>id_rsa.pub</strong>文件。复制文件中的内容。</p>
+<p>2.登陆GitHub，点击setting。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/setting.png" alt></p>
+<p>3.选择左边SSH and GPG Keys选项。进行添加密匙。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/SSH.png" alt></p>
+<p>4.点击New SSH Key进行添加。</p>
+<p>5.title随便取，把刚才复制的密匙粘贴到Key中，点击Add SSH Key添加完成。</p>
+<p>6.打开Git Bash，输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>出现Are you sure……的时候输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yes</span><br></pre></td></tr></table></figure>
+<p>回车。</p>
+<p>最后显示**You’ve successfully……**的时候表示连接成功。</p>
+<h1 id="七、新建GitHub-Pages仓库。"><a class="header-anchor" href="#七、新建GitHub-Pages仓库。">¶</a>七、新建GitHub Pages仓库。</h1>
+<p>1.点击右上角加号，点击New repository新建GitHub Pages仓库。</p>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%B8%80%EF%BC%89/%E5%8A%A0%E5%8F%B7.png" alt></p>
+<p>2.在Repository name中输入：<strong><a href="http://xn--eqr924avxo.github.io" target="_blank" rel="noopener">用户名.github.io</a></strong></p>
+<p><strong>勾选</strong>“Initialize this repository with a README”</p>
+<p>Description不填。</p>
+<p>填好后点击Create repository。创建后默认启用HTTPS。</p>
+<p><strong>博客的地址为:<a href="https://xn--eqr924avxo.github.io" target="_blank" rel="noopener">https://用户名.github.io</a></strong></p>
+]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
   <entry>
@@ -329,115 +1232,6 @@
       </tags>
   </entry>
   <entry>
-    <title>个人静态博客-Hexo-Next-（八）</title>
-    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AB%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍文章添加评论功能，评论输入打字特效，分类和标签页显示年份，增加字数统计功能，文章加密访问，3D动态标签云，开启打赏功能，设置背景图片，博客内容透明化，站点运行时间统计，站点访问量统计，实现头像旋转。</p>
-<a id="more"></a>
-<h1 id="一、文章添加评论功能"><a class="header-anchor" href="#一、文章添加评论功能">¶</a>一、文章添加评论功能</h1>
-<p>1.首先访问<strong>网站：<a href="https://valine.js.org/" target="_blank" rel="noopener">https://valine.js.org/</a></strong></p>
-<p>来进行注册登录。</p>
-<p>2.登录后按照官网的教程新建应用。之后进入设置，点击应用Keys。最主要的就是AppID和AppKey。用的时候分别复制。</p>
-<p>3.打开<strong>主题配置</strong>文件，找到valine。</p>
-<p>按照下面代码进行配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">    enable: true</span><br><span class="line">    appid: ***&lt;app_id&gt;***</span><br><span class="line">    appkey: ***&lt;app_key&gt;***</span><br><span class="line">    notify: false # 收到新评论是否邮件通知</span><br><span class="line">    verify: false # 是否开启验证码</span><br><span class="line">    placeholder: # 默认填充文字</span><br><span class="line">    avatar: mm # 设置默认评论列表</span><br><span class="line">    guest_info: nick,mail # 评论区头部表单</span><br><span class="line">    pageSize: 10 # 每页评论数</span><br></pre></td></tr></table></figure>
-<p>把刚才的AppID和AppKey复制到对应的位置，注意冒号后有一个空格。开启notify有评论会发送到你的邮箱。其余默认。</p>
-<h1 id="二、评论输入打字特效"><a class="header-anchor" href="#二、评论输入打字特效">¶</a>二、评论输入打字特效</h1>
-<p>在路径：<code>themes\next\source\js\src</code>中<strong>新建</strong><code>activate-power-mode.js</code>文件。</p>
-<p>打开<code>activate-power-mode.js</code>，粘贴以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(function webpackUniversalModuleDefinition(root,factory)&#123;if(typeof exports&#x3D;&#x3D;&#x3D;&#39;object&#39;&amp;&amp;typeof module&#x3D;&#x3D;&#x3D;&#39;object&#39;)module.exports&#x3D;factory();else if(typeof define&#x3D;&#x3D;&#x3D;&#39;function&#39;&amp;&amp;define.amd)define([],factory);else if(typeof exports&#x3D;&#x3D;&#x3D;&#39;object&#39;)exports[&quot;POWERMODE&quot;]&#x3D;factory();else root[&quot;POWERMODE&quot;]&#x3D;factory()&#125;)(this,function()&#123;return(function(modules)&#123;var installedModules&#x3D;&#123;&#125;;function __webpack_require__(moduleId)&#123;if(installedModules[moduleId])return installedModules[moduleId].exports;var module&#x3D;installedModules[moduleId]&#x3D;&#123;exports:&#123;&#125;,id:moduleId,loaded:false&#125;;modules[moduleId].call(module.exports,module,module.exports,__webpack_require__);module.loaded&#x3D;true;return module.exports&#125;__webpack_require__.m&#x3D;modules;__webpack_require__.c&#x3D;installedModules;__webpack_require__.p&#x3D;&quot;&quot;;return __webpack_require__(0)&#125;)([function(module,exports,__webpack_require__)&#123;&#39;use strict&#39;;var canvas&#x3D;document.createElement(&#39;canvas&#39;);canvas.width&#x3D;window.innerWidth;canvas.height&#x3D;window.innerHeight;canvas.style.cssText&#x3D;&#39;position:fixed;top:0;left:0;pointer-events:none;z-index:999999&#39;;window.addEventListener(&#39;resize&#39;,function()&#123;canvas.width&#x3D;window.innerWidth;canvas.height&#x3D;window.innerHeight&#125;);document.body.appendChild(canvas);var context&#x3D;canvas.getContext(&#39;2d&#39;);var particles&#x3D;[];var particlePointer&#x3D;0;POWERMODE.shake&#x3D;true;function getRandom(min,max)&#123;return Math.random()*(max-min)+min&#125;function getColor(el)&#123;if(POWERMODE.colorful)&#123;var u&#x3D;getRandom(0,360);return&#39;hsla(&#39;+getRandom(u-10,u+10)+&#39;, 100%, &#39;+getRandom(50,80)+&#39;%, &#39;+1+&#39;)&#39;&#125;else&#123;return window.getComputedStyle(el).color&#125;&#125;function getCaret()&#123;var el&#x3D;document.activeElement;var bcr;if(el.tagName&#x3D;&#x3D;&#x3D;&#39;TEXTAREA&#39;||(el.tagName&#x3D;&#x3D;&#x3D;&#39;INPUT&#39;&amp;&amp;el.getAttribute(&#39;type&#39;)&#x3D;&#x3D;&#x3D;&#39;text&#39;))&#123;var offset&#x3D;__webpack_require__(1)(el,el.selectionStart);bcr&#x3D;el.getBoundingClientRect();return&#123;x:offset.left+bcr.left,y:offset.top+bcr.top,color:getColor(el)&#125;&#125;var selection&#x3D;window.getSelection();if(selection.rangeCount)&#123;var range&#x3D;selection.getRangeAt(0);var startNode&#x3D;range.startContainer;if(startNode.nodeType&#x3D;&#x3D;&#x3D;document.TEXT_NODE)&#123;startNode&#x3D;startNode.parentNode&#125;bcr&#x3D;range.getBoundingClientRect();return&#123;x:bcr.left,y:bcr.top,color:getColor(startNode)&#125;&#125;return&#123;x:0,y:0,color:&#39;transparent&#39;&#125;&#125;function createParticle(x,y,color)&#123;return&#123;x:x,y:y,alpha:1,color:color,velocity:&#123;x:-1+Math.random()*2,y:-3.5+Math.random()*2&#125;&#125;&#125;function POWERMODE()&#123;&#123;var caret&#x3D;getCaret();var numParticles&#x3D;5+Math.round(Math.random()*10);while(numParticles--)&#123;particles[particlePointer]&#x3D;createParticle(caret.x,caret.y,caret.color);particlePointer&#x3D;(particlePointer+1)%500&#125;&#125;&#123;if(POWERMODE.shake)&#123;var intensity&#x3D;1+2*Math.random();var x&#x3D;intensity*(Math.random()&gt;0.5?-1:1);var y&#x3D;intensity*(Math.random()&gt;0.5?-1:1);document.body.style.marginLeft&#x3D;x+&#39;px&#39;;document.body.style.marginTop&#x3D;y+&#39;px&#39;;setTimeout(function()&#123;document.body.style.marginLeft&#x3D;&#39;&#39;;document.body.style.marginTop&#x3D;&#39;&#39;&#125;,75)&#125;&#125;&#125;;POWERMODE.colorful&#x3D;false;function loop()&#123;requestAnimationFrame(loop);context.clearRect(0,0,canvas.width,canvas.height);for(var i&#x3D;0;i&lt;particles.length;++i)&#123;var particle&#x3D;particles[i];if(particle.alpha&lt;&#x3D;0.1)continue;particle.velocity.y+&#x3D;0.075;particle.x+&#x3D;particle.velocity.x;particle.y+&#x3D;particle.velocity.y;particle.alpha*&#x3D;0.96;context.globalAlpha&#x3D;particle.alpha;context.fillStyle&#x3D;particle.color;context.fillRect(Math.round(particle.x-1.5),Math.round(particle.y-1.5),3,3)&#125;&#125;requestAnimationFrame(loop);module.exports&#x3D;POWERMODE&#125;,function(module,exports)&#123;(function()&#123;var properties&#x3D;[&#39;direction&#39;,&#39;boxSizing&#39;,&#39;width&#39;,&#39;height&#39;,&#39;overflowX&#39;,&#39;overflowY&#39;,&#39;borderTopWidth&#39;,&#39;borderRightWidth&#39;,&#39;borderBottomWidth&#39;,&#39;borderLeftWidth&#39;,&#39;borderStyle&#39;,&#39;paddingTop&#39;,&#39;paddingRight&#39;,&#39;paddingBottom&#39;,&#39;paddingLeft&#39;,&#39;fontStyle&#39;,&#39;fontVariant&#39;,&#39;fontWeight&#39;,&#39;fontStretch&#39;,&#39;fontSize&#39;,&#39;fontSizeAdjust&#39;,&#39;lineHeight&#39;,&#39;fontFamily&#39;,&#39;textAlign&#39;,&#39;textTransform&#39;,&#39;textIndent&#39;,&#39;textDecoration&#39;,&#39;letterSpacing&#39;,&#39;wordSpacing&#39;,&#39;tabSize&#39;,&#39;MozTabSize&#39;];var isFirefox&#x3D;window.mozInnerScreenX!&#x3D;null;function getCaretCoordinates(element,position,options)&#123;var debug&#x3D;options&amp;&amp;options.debug||false;if(debug)&#123;var el&#x3D;document.querySelector(&#39;#input-textarea-caret-position-mirror-div&#39;);if(el)&#123;el.parentNode.removeChild(el)&#125;&#125;var div&#x3D;document.createElement(&#39;div&#39;);div.id&#x3D;&#39;input-textarea-caret-position-mirror-div&#39;;document.body.appendChild(div);var style&#x3D;div.style;var computed&#x3D;window.getComputedStyle?getComputedStyle(element):element.currentStyle;style.whiteSpace&#x3D;&#39;pre-wrap&#39;;if(element.nodeName!&#x3D;&#x3D;&#39;INPUT&#39;)style.wordWrap&#x3D;&#39;break-word&#39;;style.position&#x3D;&#39;absolute&#39;;if(!debug)style.visibility&#x3D;&#39;hidden&#39;;properties.forEach(function(prop)&#123;style[prop]&#x3D;computed[prop]&#125;);if(isFirefox)&#123;if(element.scrollHeight&gt;parseInt(computed.height))style.overflowY&#x3D;&#39;scroll&#39;&#125;else&#123;style.overflow&#x3D;&#39;hidden&#39;&#125;div.textContent&#x3D;element.value.substring(0,position);if(element.nodeName&#x3D;&#x3D;&#x3D;&#39;INPUT&#39;)div.textContent&#x3D;div.textContent.replace(&#x2F;\s&#x2F;g,&quot;\u00a0&quot;);var span&#x3D;document.createElement(&#39;span&#39;);span.textContent&#x3D;element.value.substring(position)||&#39;.&#39;;div.appendChild(span);var coordinates&#x3D;&#123;top:span.offsetTop+parseInt(computed[&#39;borderTopWidth&#39;]),left:span.offsetLeft+parseInt(computed[&#39;borderLeftWidth&#39;])&#125;;if(debug)&#123;span.style.backgroundColor&#x3D;&#39;#aaa&#39;&#125;else&#123;document.body.removeChild(div)&#125;return coordinates&#125;if(typeof module!&#x3D;&quot;undefined&quot;&amp;&amp;typeof module.exports!&#x3D;&quot;undefined&quot;)&#123;module.exports&#x3D;getCaretCoordinates&#125;else&#123;window.getCaretCoordinates&#x3D;getCaretCoordinates&#125;&#125;())&#125;])&#125;);</span><br></pre></td></tr></table></figure>
-<p>打开文件，路径：<code>themes\next\layout\_custom\custom.swig</code>，如果不存在此文件，则新建。</p>
-<p>打开<code>custom.swig</code>文件，粘贴以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;# 打字特效 #&#125;</span><br><span class="line">&#123;% if theme.typing_effect %&#125;</span><br><span class="line">    &lt;script src&#x3D;&quot;&#x2F;js&#x2F;src&#x2F;activate-power-mode.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">          POWERMODE.colorful &#x3D; &#123;&#123; theme.typing_effect.colorful &#125;&#125;;</span><br><span class="line">           POWERMODE.shake &#x3D; &#123;&#123; theme.typing_effect.shake &#125;&#125;;</span><br><span class="line">           document.body.addEventListener(&#39;input&#39;, POWERMODE);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>如果刚新建了<code>custom.swig</code>文件，那么还要在<code>themes\next\layout\_layout.swig</code>引入，在后面添加下面代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% include &#39;_custom&#x2F;custom.swig&#39; %&#125;</span><br></pre></td></tr></table></figure>
-<p>打开<strong>主题配置</strong>文件，在末尾添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># typing effect</span><br><span class="line">typing_effect:</span><br><span class="line">    colorful: true # 礼花特效</span><br><span class="line">    shake: false # 震动特效</span><br></pre></td></tr></table></figure>
-<h1 id="三、分类和标签页显示年份"><a class="header-anchor" href="#三、分类和标签页显示年份">¶</a>三、分类和标签页显示年份</h1>
-<p>打开文件，路径：<code>\themes\next\layout\category.swig</code>查找：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% for post in page.posts %&#125;</span><br><span class="line">&#123;&#123; post_template.render(post) &#125;&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
-<p>改为下面代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% for post in page.posts %&#125;</span><br><span class="line">    &#123;# Show year #&#125;</span><br><span class="line">    &#123;% set year %&#125;</span><br><span class="line">    &#123;% set post.year &#x3D; date(post.date, &#39;YYYY&#39;) %&#125;</span><br><span class="line">    &#123;% if post.year !&#x3D;&#x3D; year %&#125;</span><br><span class="line">    &#123;% set year &#x3D; post.year %&#125;</span><br><span class="line">    &lt;div class&#x3D;&quot;collection-title&quot;&gt;</span><br><span class="line">       &lt;h2 class&#x3D;&quot;archive-year motion-element&quot; id&#x3D;&quot;archive-year-&#123;&#123; year &#125;&#125;&quot;&gt;&#123;&#123; year &#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &#123;# endshow #&#125;</span><br><span class="line">    &#123;&#123; post_template.render(post) &#125;&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
-<p>在末尾再添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% block script_extra %&#125;</span><br><span class="line">  &#123;% if theme.use_motion %&#125;</span><br><span class="line">  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; id&#x3D;&quot;motion.page.archive&quot;&gt;</span><br><span class="line">    $(&#39;.archive-year&#39;).velocity(&#39;transition.slideLeftIn&#39;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-<p>标签页的操作和分类页一模一样。代码都一样，只不过打开文件，路径：<code>\themes\next\layout\tag.swig</code>。</p>
-<h1 id="四、增加字数统计功能"><a class="header-anchor" href="#四、增加字数统计功能">¶</a>四、增加字数统计功能</h1>
-<p>NexT主题默认已经集成了文章【字数统计】、【阅读时长】统计功能，如果我们需要使用，只需要在主题配置文件<code>\themes\next_config.yml</code>中打开<code>wordcount</code> 统计功能即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;willin&#x2F;hexo-wordcount</span><br><span class="line">post_wordcount:</span><br><span class="line">  item_text: true</span><br><span class="line">  wordcount: true</span><br><span class="line">  min2read: true</span><br></pre></td></tr></table></figure>
-<p>如果仅仅只是打开开关，部署之后会发现文章的【字数统计】和【阅读时长】后面没有对应的xxx字，xx分钟等字样，只有光秃秃的数字在那里。</p>
-<p>找到<code>themes\next\layout\_macro\post.swig</code> 文件</p>
-<p>搜索到找到如下代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.wordcount&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">     &#123;&#123; wordcount(post.content) &#125;&#125;</span><br><span class="line">&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<p>修改后为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.wordcount&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">     &#123;&#123; wordcount(post.content) &#125;&#125; 字</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<p>找到如下代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.min2read&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">   &#123;&#123; min2read(post.content) &#125;&#125;</span><br><span class="line"> &lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<p>修改后为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.min2read&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">   &#123;&#123; min2read(post.content) &#125;&#125; 分钟</span><br><span class="line"> &lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="五、文章加密访问"><a class="header-anchor" href="#五、文章加密访问">¶</a>五、文章加密访问</h1>
-<p>打开文件，路径：<code>themes-&gt;next-&gt;layout-&gt;_partials-&gt;head-&gt;head-unique.swig</code>。</p>
-<p>在末尾加入下面代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    (function()&#123;</span><br><span class="line">        if(&#39;&#123;&#123; page.password &#125;&#125;&#39;)&#123;</span><br><span class="line">            if (prompt(&#39;请输入查看密码&#39;) !&#x3D;&#x3D; &#39;&#123;&#123; page.password &#125;&#125;&#39;)&#123;</span><br><span class="line">                alert(&#39;密码不正确&#39;);</span><br><span class="line">                history.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>最后在想加密的文章.md中添加password。注意password冒号后面有空格。</p>
-<h1 id="六、3D动态标签云"><a class="header-anchor" href="#六、3D动态标签云">¶</a>六、3D动态标签云</h1>
-<p>首先，安装标签云插件，命令：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-tag-cloud@^2.* --save</span><br></pre></td></tr></table></figure>
-<p>打开文件，路径：<code>next/layout/_macro/sidebar.swig</code>。在下面位置添加如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if site.tags.length &gt; 1 %&#125;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot; src&#x3D;&quot;&#x2F;js&#x2F;tagcloud.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot; src&#x3D;&quot;&#x2F;js&#x2F;tagcanvas.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;widget-wrap&quot;&gt;</span><br><span class="line">            &lt;div id&#x3D;&quot;myCanvasContainer&quot; class&#x3D;&quot;widget tagcloud&quot;&gt;</span><br><span class="line">                &lt;canvas width&#x3D;&quot;250&quot; height&#x3D;&quot;250&quot; id&#x3D;&quot;resCanvas&quot; style&#x3D;&quot;width&#x3D;100%&quot;&gt;</span><br><span class="line">                    &#123;&#123; list_tags() &#125;&#125;</span><br><span class="line">                &lt;&#x2F;canvas&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="七、开启打赏功能"><a class="header-anchor" href="#七、开启打赏功能">¶</a>七、开启打赏功能</h1>
-<p>把想要打赏的微信或者支付宝二维码放到路径：<code>themes/next/source/images</code>目录下。</p>
-<p>打开主题配置文件，搜索找到Reward。</p>
-<p>配置路径。注意图片格式。</p>
-<p>开启后发现打赏的时候字体闪动很频繁。解决如下：</p>
-<p>打开文件，路径：<code>themes/next/source/css/_common/components/post/post-reward.styl</code>。</p>
-<p>注释掉闪动部分代码。如下</p>
-<h1 id="八、设置背景图片"><a class="header-anchor" href="#八、设置背景图片">¶</a>八、设置背景图片</h1>
-<p>打开文件，路径：<code>themes/next/source/css/ _custom/custom.styl</code>。</p>
-<p>添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background:url(你的背景图片URL);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-size: cover;</span><br><span class="line">    background-position:50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background:url 为图片路径，也可以直接使用链接，本地路径，例如：&#x2F;images&#x2F;yourbackground.jpg</span><br><span class="line">background-repeat：如果背景图片不能全屏，那么是否平铺显示，充满屏幕</span><br><span class="line">background-attachment：背景是否随着网页上下滚动而滚动，fixed 为固</span><br></pre></td></tr></table></figure>
-<p>如果想要选择一个网站，随机选择图片作为背景。</p>
-<p><strong>unsplash</strong>网站提供大量高清图片，可随机选择。</p>
-<p>只要把背景URL换为下面就行。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;source.unsplash.com&#x2F;random&#x2F;1600x900</span><br></pre></td></tr></table></figure>
-<h1 id="九、博客内容透明化"><a class="header-anchor" href="#九、博客内容透明化">¶</a>九、博客内容透明化</h1>
-<p>有了博客背景，但是博客内容不透明，看起来不太好看，设置一下。</p>
-<p>打开文件，路径：<code>themes/next/source/css/_custom/custom.styl</code>。添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;博客内容透明化</span><br><span class="line">&#x2F;&#x2F;文章内容的透明度设置</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;侧边框的透明度设置</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;菜单栏的透明度设置</span><br><span class="line">.header-inner &#123;</span><br><span class="line">  background: rgba(255,255,255,0.9);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;搜索框（local-search）的透明度设置</span><br><span class="line">.popup &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="十、站点运行时间统计"><a class="header-anchor" href="#十、站点运行时间统计">¶</a>十、站点运行时间统计</h1>
-<p>打开文件，路径：<code>thems\next\layout_custom\custom.swig</code>。关于<code>custom.swig</code>如果没有，是要新建的，前面哪一期已经新建并配置过，在此不再赘述。添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;# 页脚站点运行时间统计 #&#125;</span><br><span class="line">&#123;% if theme.footer.ages.enable %&#125;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;moment@2.22.2&#x2F;moment.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;moment-precise-range-plugin@1.3.0&#x2F;moment-precise-range.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function timer() &#123;</span><br><span class="line">    var ages &#x3D; moment.preciseDiff(moment(),moment(&#123;&#123; theme.footer.ages.birthday &#125;&#125;,&quot;YYYYMMDD&quot;));</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;years?&#x2F;, &quot;年&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;months?&#x2F;, &quot;月&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;days?&#x2F;, &quot;天&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;hours?&#x2F;, &quot;小时&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;minutes?&#x2F;, &quot;分&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;seconds?&#x2F;, &quot;秒&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;\d+&#x2F;g, &#39;&lt;span style&#x3D;&quot;color:&#123;&#123; theme.footer.ages.color &#125;&#125;&quot;&gt;$&amp;&lt;&#x2F;span&gt;&#39;);</span><br><span class="line">    div.innerHTML &#x3D; &#96;&#123;&#123; __(&#39;footer.age&#39;)&#125;&#125; $&#123;ages&#125;&#96;;</span><br><span class="line">  &#125;</span><br><span class="line">  var div &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">  &#x2F;&#x2F;插入到copyright之后</span><br><span class="line">  var copyright &#x3D; document.querySelector(&quot;.copyright&quot;);</span><br><span class="line">  document.querySelector(&quot;.footer-inner&quot;).insertBefore(div, copyright.nextSibling);</span><br><span class="line">  timer();</span><br><span class="line">  setInterval(&quot;timer()&quot;,1000)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>打开<code>主题配置</code>文件，找到<code>footer</code>。在下面添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ages:</span><br><span class="line">     # site running time</span><br><span class="line">     enable: true</span><br><span class="line">     # birthday of your site</span><br><span class="line">     birthday: 20200610</span><br><span class="line">     # color of number</span><br><span class="line">     color: &quot;#1890ff&quot;</span><br></pre></td></tr></table></figure>
-<p><code>birthday</code>为你创建博客的日期，按照自己的来。</p>
-<p>打开文件，路径：<code>themes\next\languages\zh-CN.yml</code>。按照下图在<code>footer</code>下添加：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">age: 我已在此等候你</span><br></pre></td></tr></table></figure>
-<h1 id="十一、站点访问量统计"><a class="header-anchor" href="#十一、站点访问量统计">¶</a>十一、站点访问量统计</h1>
-<p>该功能由不蒜子提供，打开文件，路径：<code>themes\next\layout_partial\footer.swig</code>。在首行添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script</span><br><span class="line">  async</span><br><span class="line">  src&#x3D;&quot;https:&#x2F;&#x2F;dn-lbstatics.qbox.me&#x2F;busuanzi&#x2F;2.3&#x2F;busuanzi.pure.mini.js&quot;</span><br><span class="line">&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>打开主题配置文件，找到<code>busuanzi_count</code>。做如下修改：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true # 访客数</span><br><span class="line">  total_visitors_icon: user</span><br><span class="line">  total_views: true # 访问量</span><br><span class="line">  total_views_icon: eye</span><br><span class="line">  post_views: true</span><br><span class="line">  post_views_icon: eye</span><br></pre></td></tr></table></figure>
-<p>打开文件，路径：<code>themes\next\layout_third-party\analytics\busuanzi-counter.swig</code>。按照我的部分修改：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if theme.busuanzi_count.total_visitors %&#125;</span><br><span class="line">-   &lt;span class&#x3D;&quot;site-uv&quot; title&#x3D;&quot;&#123;&#123; __(&#39;footer.total_visitors&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">+   &lt;span class&#x3D;&quot;site-uv&quot;&gt;</span><br><span class="line">+     &#123;&#123; __(&#39;footer.total_visitors&#39;, &#39;&lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_uv&quot;&gt;&lt;&#x2F;span&gt;&#39;) &#125;&#125;</span><br><span class="line">-     &lt;i class&#x3D;&quot;fa fa-&#123;&#123; theme.busuanzi_count.total_visitors_icon &#125;&#125;&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">-     &lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_uv&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;% if theme.busuanzi_count.total_views %&#125;</span><br><span class="line">-   &lt;span class&#x3D;&quot;site-pv&quot; title&#x3D;&quot;&#123;&#123; __(&#39;footer.total_views&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">+   &lt;span class&#x3D;&quot;site-pv&quot;&gt;</span><br><span class="line">+     &#123;&#123; __(&#39;footer.total_views&#39;, &#39;&lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_pv&quot;&gt;&lt;&#x2F;span&gt;&#39;) &#125;&#125;</span><br><span class="line">-     &lt;i class&#x3D;&quot;fa fa-&#123;&#123; theme.busuanzi_count.total_views_icon &#125;&#125;&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">-     &lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_pv&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<p>-号表示删除这一行，+号表示增加这一行。增加后把+号删除。</p>
-<p>打开文件，路径：<code>themes/next/source/css/_custom/custom.styl</code>。添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;修改不蒜子数据颜色</span><br><span class="line">.busuanzi-value &#123;</span><br><span class="line">  color: #1890ff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>打开文件，路径：<code>themes\next\languages\zh-CN.yml</code>。修改以下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">footer:</span><br><span class="line">  total_views: &quot;历经 %s 次回眸才与你相遇&quot;</span><br><span class="line">  total_visitors: &quot;我的第 %s 位朋友，&quot;</span><br></pre></td></tr></table></figure>
-<h1 id="十二、实现头像旋转"><a class="header-anchor" href="#十二、实现头像旋转">¶</a>十二、实现头像旋转</h1>
-<p>打开文件，路径：<code>/themes/next/source/css/_common/components/sidebar/sidebar-author.styl</code>。</p>
-<p>在我图片的位置分别增加代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* 鼠标经过头像旋转360度 *&#x2F;</span><br><span class="line">  -webkit-transition: -webkit-transform 1.0s ease-out;</span><br><span class="line">  -moz-transition: -moz-transform 1.0s ease-out;</span><br><span class="line">  transition: transform 1.0s ease-out;</span><br></pre></td></tr></table></figure>
-<p>在代码末尾添加以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img:hover &#123;</span><br><span class="line">  &#x2F;* 鼠标经过停止头像旋转</span><br><span class="line">  -webkit-animation-play-state:paused;</span><br><span class="line">  animation-play-state:paused;*&#x2F;</span><br><span class="line">  &#x2F;* 鼠标经过头像旋转360度 *&#x2F;</span><br><span class="line">  -webkit-transform: rotateZ(360deg);</span><br><span class="line">  -moz-transform: rotateZ(360deg);</span><br><span class="line">  transform: rotateZ(360deg);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Z 轴旋转动画 *&#x2F;</span><br><span class="line">@-webkit-keyframes play &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    -webkit-transform: rotateZ(0deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    -webkit-transform: rotateZ(-360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes play &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    -moz-transform: rotateZ(0deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    -moz-transform: rotateZ(-360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes play &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform: rotateZ(0deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    transform: rotateZ(-360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>静态博客</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>进阶</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>个人静态博客-Hexo-Next-（五）</title>
     <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E4%BA%94%EF%BC%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍主题的一些配置，主要是语言、外观、菜单、头像、作者，站点描述，博客标题，字体大小的配置。</p>
@@ -603,6 +1397,115 @@
       </tags>
   </entry>
   <entry>
+    <title>个人静态博客-Hexo-Next-（八）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AB%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍文章添加评论功能，评论输入打字特效，分类和标签页显示年份，增加字数统计功能，文章加密访问，3D动态标签云，开启打赏功能，设置背景图片，博客内容透明化，站点运行时间统计，站点访问量统计，实现头像旋转。</p>
+<a id="more"></a>
+<h1 id="一、文章添加评论功能"><a class="header-anchor" href="#一、文章添加评论功能">¶</a>一、文章添加评论功能</h1>
+<p>1.首先访问<strong>网站：<a href="https://valine.js.org/" target="_blank" rel="noopener">https://valine.js.org/</a></strong></p>
+<p>来进行注册登录。</p>
+<p>2.登录后按照官网的教程新建应用。之后进入设置，点击应用Keys。最主要的就是AppID和AppKey。用的时候分别复制。</p>
+<p>3.打开<strong>主题配置</strong>文件，找到valine。</p>
+<p>按照下面代码进行配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">    enable: true</span><br><span class="line">    appid: ***&lt;app_id&gt;***</span><br><span class="line">    appkey: ***&lt;app_key&gt;***</span><br><span class="line">    notify: false # 收到新评论是否邮件通知</span><br><span class="line">    verify: false # 是否开启验证码</span><br><span class="line">    placeholder: # 默认填充文字</span><br><span class="line">    avatar: mm # 设置默认评论列表</span><br><span class="line">    guest_info: nick,mail # 评论区头部表单</span><br><span class="line">    pageSize: 10 # 每页评论数</span><br></pre></td></tr></table></figure>
+<p>把刚才的AppID和AppKey复制到对应的位置，注意冒号后有一个空格。开启notify有评论会发送到你的邮箱。其余默认。</p>
+<h1 id="二、评论输入打字特效"><a class="header-anchor" href="#二、评论输入打字特效">¶</a>二、评论输入打字特效</h1>
+<p>在路径：<code>themes\next\source\js\src</code>中<strong>新建</strong><code>activate-power-mode.js</code>文件。</p>
+<p>打开<code>activate-power-mode.js</code>，粘贴以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(function webpackUniversalModuleDefinition(root,factory)&#123;if(typeof exports&#x3D;&#x3D;&#x3D;&#39;object&#39;&amp;&amp;typeof module&#x3D;&#x3D;&#x3D;&#39;object&#39;)module.exports&#x3D;factory();else if(typeof define&#x3D;&#x3D;&#x3D;&#39;function&#39;&amp;&amp;define.amd)define([],factory);else if(typeof exports&#x3D;&#x3D;&#x3D;&#39;object&#39;)exports[&quot;POWERMODE&quot;]&#x3D;factory();else root[&quot;POWERMODE&quot;]&#x3D;factory()&#125;)(this,function()&#123;return(function(modules)&#123;var installedModules&#x3D;&#123;&#125;;function __webpack_require__(moduleId)&#123;if(installedModules[moduleId])return installedModules[moduleId].exports;var module&#x3D;installedModules[moduleId]&#x3D;&#123;exports:&#123;&#125;,id:moduleId,loaded:false&#125;;modules[moduleId].call(module.exports,module,module.exports,__webpack_require__);module.loaded&#x3D;true;return module.exports&#125;__webpack_require__.m&#x3D;modules;__webpack_require__.c&#x3D;installedModules;__webpack_require__.p&#x3D;&quot;&quot;;return __webpack_require__(0)&#125;)([function(module,exports,__webpack_require__)&#123;&#39;use strict&#39;;var canvas&#x3D;document.createElement(&#39;canvas&#39;);canvas.width&#x3D;window.innerWidth;canvas.height&#x3D;window.innerHeight;canvas.style.cssText&#x3D;&#39;position:fixed;top:0;left:0;pointer-events:none;z-index:999999&#39;;window.addEventListener(&#39;resize&#39;,function()&#123;canvas.width&#x3D;window.innerWidth;canvas.height&#x3D;window.innerHeight&#125;);document.body.appendChild(canvas);var context&#x3D;canvas.getContext(&#39;2d&#39;);var particles&#x3D;[];var particlePointer&#x3D;0;POWERMODE.shake&#x3D;true;function getRandom(min,max)&#123;return Math.random()*(max-min)+min&#125;function getColor(el)&#123;if(POWERMODE.colorful)&#123;var u&#x3D;getRandom(0,360);return&#39;hsla(&#39;+getRandom(u-10,u+10)+&#39;, 100%, &#39;+getRandom(50,80)+&#39;%, &#39;+1+&#39;)&#39;&#125;else&#123;return window.getComputedStyle(el).color&#125;&#125;function getCaret()&#123;var el&#x3D;document.activeElement;var bcr;if(el.tagName&#x3D;&#x3D;&#x3D;&#39;TEXTAREA&#39;||(el.tagName&#x3D;&#x3D;&#x3D;&#39;INPUT&#39;&amp;&amp;el.getAttribute(&#39;type&#39;)&#x3D;&#x3D;&#x3D;&#39;text&#39;))&#123;var offset&#x3D;__webpack_require__(1)(el,el.selectionStart);bcr&#x3D;el.getBoundingClientRect();return&#123;x:offset.left+bcr.left,y:offset.top+bcr.top,color:getColor(el)&#125;&#125;var selection&#x3D;window.getSelection();if(selection.rangeCount)&#123;var range&#x3D;selection.getRangeAt(0);var startNode&#x3D;range.startContainer;if(startNode.nodeType&#x3D;&#x3D;&#x3D;document.TEXT_NODE)&#123;startNode&#x3D;startNode.parentNode&#125;bcr&#x3D;range.getBoundingClientRect();return&#123;x:bcr.left,y:bcr.top,color:getColor(startNode)&#125;&#125;return&#123;x:0,y:0,color:&#39;transparent&#39;&#125;&#125;function createParticle(x,y,color)&#123;return&#123;x:x,y:y,alpha:1,color:color,velocity:&#123;x:-1+Math.random()*2,y:-3.5+Math.random()*2&#125;&#125;&#125;function POWERMODE()&#123;&#123;var caret&#x3D;getCaret();var numParticles&#x3D;5+Math.round(Math.random()*10);while(numParticles--)&#123;particles[particlePointer]&#x3D;createParticle(caret.x,caret.y,caret.color);particlePointer&#x3D;(particlePointer+1)%500&#125;&#125;&#123;if(POWERMODE.shake)&#123;var intensity&#x3D;1+2*Math.random();var x&#x3D;intensity*(Math.random()&gt;0.5?-1:1);var y&#x3D;intensity*(Math.random()&gt;0.5?-1:1);document.body.style.marginLeft&#x3D;x+&#39;px&#39;;document.body.style.marginTop&#x3D;y+&#39;px&#39;;setTimeout(function()&#123;document.body.style.marginLeft&#x3D;&#39;&#39;;document.body.style.marginTop&#x3D;&#39;&#39;&#125;,75)&#125;&#125;&#125;;POWERMODE.colorful&#x3D;false;function loop()&#123;requestAnimationFrame(loop);context.clearRect(0,0,canvas.width,canvas.height);for(var i&#x3D;0;i&lt;particles.length;++i)&#123;var particle&#x3D;particles[i];if(particle.alpha&lt;&#x3D;0.1)continue;particle.velocity.y+&#x3D;0.075;particle.x+&#x3D;particle.velocity.x;particle.y+&#x3D;particle.velocity.y;particle.alpha*&#x3D;0.96;context.globalAlpha&#x3D;particle.alpha;context.fillStyle&#x3D;particle.color;context.fillRect(Math.round(particle.x-1.5),Math.round(particle.y-1.5),3,3)&#125;&#125;requestAnimationFrame(loop);module.exports&#x3D;POWERMODE&#125;,function(module,exports)&#123;(function()&#123;var properties&#x3D;[&#39;direction&#39;,&#39;boxSizing&#39;,&#39;width&#39;,&#39;height&#39;,&#39;overflowX&#39;,&#39;overflowY&#39;,&#39;borderTopWidth&#39;,&#39;borderRightWidth&#39;,&#39;borderBottomWidth&#39;,&#39;borderLeftWidth&#39;,&#39;borderStyle&#39;,&#39;paddingTop&#39;,&#39;paddingRight&#39;,&#39;paddingBottom&#39;,&#39;paddingLeft&#39;,&#39;fontStyle&#39;,&#39;fontVariant&#39;,&#39;fontWeight&#39;,&#39;fontStretch&#39;,&#39;fontSize&#39;,&#39;fontSizeAdjust&#39;,&#39;lineHeight&#39;,&#39;fontFamily&#39;,&#39;textAlign&#39;,&#39;textTransform&#39;,&#39;textIndent&#39;,&#39;textDecoration&#39;,&#39;letterSpacing&#39;,&#39;wordSpacing&#39;,&#39;tabSize&#39;,&#39;MozTabSize&#39;];var isFirefox&#x3D;window.mozInnerScreenX!&#x3D;null;function getCaretCoordinates(element,position,options)&#123;var debug&#x3D;options&amp;&amp;options.debug||false;if(debug)&#123;var el&#x3D;document.querySelector(&#39;#input-textarea-caret-position-mirror-div&#39;);if(el)&#123;el.parentNode.removeChild(el)&#125;&#125;var div&#x3D;document.createElement(&#39;div&#39;);div.id&#x3D;&#39;input-textarea-caret-position-mirror-div&#39;;document.body.appendChild(div);var style&#x3D;div.style;var computed&#x3D;window.getComputedStyle?getComputedStyle(element):element.currentStyle;style.whiteSpace&#x3D;&#39;pre-wrap&#39;;if(element.nodeName!&#x3D;&#x3D;&#39;INPUT&#39;)style.wordWrap&#x3D;&#39;break-word&#39;;style.position&#x3D;&#39;absolute&#39;;if(!debug)style.visibility&#x3D;&#39;hidden&#39;;properties.forEach(function(prop)&#123;style[prop]&#x3D;computed[prop]&#125;);if(isFirefox)&#123;if(element.scrollHeight&gt;parseInt(computed.height))style.overflowY&#x3D;&#39;scroll&#39;&#125;else&#123;style.overflow&#x3D;&#39;hidden&#39;&#125;div.textContent&#x3D;element.value.substring(0,position);if(element.nodeName&#x3D;&#x3D;&#x3D;&#39;INPUT&#39;)div.textContent&#x3D;div.textContent.replace(&#x2F;\s&#x2F;g,&quot;\u00a0&quot;);var span&#x3D;document.createElement(&#39;span&#39;);span.textContent&#x3D;element.value.substring(position)||&#39;.&#39;;div.appendChild(span);var coordinates&#x3D;&#123;top:span.offsetTop+parseInt(computed[&#39;borderTopWidth&#39;]),left:span.offsetLeft+parseInt(computed[&#39;borderLeftWidth&#39;])&#125;;if(debug)&#123;span.style.backgroundColor&#x3D;&#39;#aaa&#39;&#125;else&#123;document.body.removeChild(div)&#125;return coordinates&#125;if(typeof module!&#x3D;&quot;undefined&quot;&amp;&amp;typeof module.exports!&#x3D;&quot;undefined&quot;)&#123;module.exports&#x3D;getCaretCoordinates&#125;else&#123;window.getCaretCoordinates&#x3D;getCaretCoordinates&#125;&#125;())&#125;])&#125;);</span><br></pre></td></tr></table></figure>
+<p>打开文件，路径：<code>themes\next\layout\_custom\custom.swig</code>，如果不存在此文件，则新建。</p>
+<p>打开<code>custom.swig</code>文件，粘贴以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;# 打字特效 #&#125;</span><br><span class="line">&#123;% if theme.typing_effect %&#125;</span><br><span class="line">    &lt;script src&#x3D;&quot;&#x2F;js&#x2F;src&#x2F;activate-power-mode.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">          POWERMODE.colorful &#x3D; &#123;&#123; theme.typing_effect.colorful &#125;&#125;;</span><br><span class="line">           POWERMODE.shake &#x3D; &#123;&#123; theme.typing_effect.shake &#125;&#125;;</span><br><span class="line">           document.body.addEventListener(&#39;input&#39;, POWERMODE);</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>如果刚新建了<code>custom.swig</code>文件，那么还要在<code>themes\next\layout\_layout.swig</code>引入，在后面添加下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% include &#39;_custom&#x2F;custom.swig&#39; %&#125;</span><br></pre></td></tr></table></figure>
+<p>打开<strong>主题配置</strong>文件，在末尾添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># typing effect</span><br><span class="line">typing_effect:</span><br><span class="line">    colorful: true # 礼花特效</span><br><span class="line">    shake: false # 震动特效</span><br></pre></td></tr></table></figure>
+<h1 id="三、分类和标签页显示年份"><a class="header-anchor" href="#三、分类和标签页显示年份">¶</a>三、分类和标签页显示年份</h1>
+<p>打开文件，路径：<code>\themes\next\layout\category.swig</code>查找：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% for post in page.posts %&#125;</span><br><span class="line">&#123;&#123; post_template.render(post) &#125;&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<p>改为下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% for post in page.posts %&#125;</span><br><span class="line">    &#123;# Show year #&#125;</span><br><span class="line">    &#123;% set year %&#125;</span><br><span class="line">    &#123;% set post.year &#x3D; date(post.date, &#39;YYYY&#39;) %&#125;</span><br><span class="line">    &#123;% if post.year !&#x3D;&#x3D; year %&#125;</span><br><span class="line">    &#123;% set year &#x3D; post.year %&#125;</span><br><span class="line">    &lt;div class&#x3D;&quot;collection-title&quot;&gt;</span><br><span class="line">       &lt;h2 class&#x3D;&quot;archive-year motion-element&quot; id&#x3D;&quot;archive-year-&#123;&#123; year &#125;&#125;&quot;&gt;&#123;&#123; year &#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">    &#123;# endshow #&#125;</span><br><span class="line">    &#123;&#123; post_template.render(post) &#125;&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<p>在末尾再添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% block script_extra %&#125;</span><br><span class="line">  &#123;% if theme.use_motion %&#125;</span><br><span class="line">  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; id&#x3D;&quot;motion.page.archive&quot;&gt;</span><br><span class="line">    $(&#39;.archive-year&#39;).velocity(&#39;transition.slideLeftIn&#39;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p>标签页的操作和分类页一模一样。代码都一样，只不过打开文件，路径：<code>\themes\next\layout\tag.swig</code>。</p>
+<h1 id="四、增加字数统计功能"><a class="header-anchor" href="#四、增加字数统计功能">¶</a>四、增加字数统计功能</h1>
+<p>NexT主题默认已经集成了文章【字数统计】、【阅读时长】统计功能，如果我们需要使用，只需要在主题配置文件<code>\themes\next_config.yml</code>中打开<code>wordcount</code> 统计功能即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;willin&#x2F;hexo-wordcount</span><br><span class="line">post_wordcount:</span><br><span class="line">  item_text: true</span><br><span class="line">  wordcount: true</span><br><span class="line">  min2read: true</span><br></pre></td></tr></table></figure>
+<p>如果仅仅只是打开开关，部署之后会发现文章的【字数统计】和【阅读时长】后面没有对应的xxx字，xx分钟等字样，只有光秃秃的数字在那里。</p>
+<p>找到<code>themes\next\layout\_macro\post.swig</code> 文件</p>
+<p>搜索到找到如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.wordcount&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">     &#123;&#123; wordcount(post.content) &#125;&#125;</span><br><span class="line">&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+<p>修改后为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.wordcount&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">     &#123;&#123; wordcount(post.content) &#125;&#125; 字</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+<p>找到如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.min2read&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">   &#123;&#123; min2read(post.content) &#125;&#125;</span><br><span class="line"> &lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+<p>修改后为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span title&#x3D;&quot;&#123;&#123; __(&#39;post.min2read&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">   &#123;&#123; min2read(post.content) &#125;&#125; 分钟</span><br><span class="line"> &lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="五、文章加密访问"><a class="header-anchor" href="#五、文章加密访问">¶</a>五、文章加密访问</h1>
+<p>打开文件，路径：<code>themes-&gt;next-&gt;layout-&gt;_partials-&gt;head-&gt;head-unique.swig</code>。</p>
+<p>在末尾加入下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    (function()&#123;</span><br><span class="line">        if(&#39;&#123;&#123; page.password &#125;&#125;&#39;)&#123;</span><br><span class="line">            if (prompt(&#39;请输入查看密码&#39;) !&#x3D;&#x3D; &#39;&#123;&#123; page.password &#125;&#125;&#39;)&#123;</span><br><span class="line">                alert(&#39;密码不正确&#39;);</span><br><span class="line">                history.back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>最后在想加密的文章.md中添加password。注意password冒号后面有空格。</p>
+<h1 id="六、3D动态标签云"><a class="header-anchor" href="#六、3D动态标签云">¶</a>六、3D动态标签云</h1>
+<p>首先，安装标签云插件，命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-tag-cloud@^2.* --save</span><br></pre></td></tr></table></figure>
+<p>打开文件，路径：<code>next/layout/_macro/sidebar.swig</code>。在下面位置添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if site.tags.length &gt; 1 %&#125;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot; src&#x3D;&quot;&#x2F;js&#x2F;tagcloud.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">        &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot; src&#x3D;&quot;&#x2F;js&#x2F;tagcanvas.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;widget-wrap&quot;&gt;</span><br><span class="line">            &lt;div id&#x3D;&quot;myCanvasContainer&quot; class&#x3D;&quot;widget tagcloud&quot;&gt;</span><br><span class="line">                &lt;canvas width&#x3D;&quot;250&quot; height&#x3D;&quot;250&quot; id&#x3D;&quot;resCanvas&quot; style&#x3D;&quot;width&#x3D;100%&quot;&gt;</span><br><span class="line">                    &#123;&#123; list_tags() &#125;&#125;</span><br><span class="line">                &lt;&#x2F;canvas&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">      &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="七、开启打赏功能"><a class="header-anchor" href="#七、开启打赏功能">¶</a>七、开启打赏功能</h1>
+<p>把想要打赏的微信或者支付宝二维码放到路径：<code>themes/next/source/images</code>目录下。</p>
+<p>打开主题配置文件，搜索找到Reward。</p>
+<p>配置路径。注意图片格式。</p>
+<p>开启后发现打赏的时候字体闪动很频繁。解决如下：</p>
+<p>打开文件，路径：<code>themes/next/source/css/_common/components/post/post-reward.styl</code>。</p>
+<p>注释掉闪动部分代码。如下</p>
+<h1 id="八、设置背景图片"><a class="header-anchor" href="#八、设置背景图片">¶</a>八、设置背景图片</h1>
+<p>打开文件，路径：<code>themes/next/source/css/ _custom/custom.styl</code>。</p>
+<p>添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background:url(你的背景图片URL);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-size: cover;</span><br><span class="line">    background-position:50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">background:url 为图片路径，也可以直接使用链接，本地路径，例如：&#x2F;images&#x2F;yourbackground.jpg</span><br><span class="line">background-repeat：如果背景图片不能全屏，那么是否平铺显示，充满屏幕</span><br><span class="line">background-attachment：背景是否随着网页上下滚动而滚动，fixed 为固</span><br></pre></td></tr></table></figure>
+<p>如果想要选择一个网站，随机选择图片作为背景。</p>
+<p><strong>unsplash</strong>网站提供大量高清图片，可随机选择。</p>
+<p>只要把背景URL换为下面就行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;source.unsplash.com&#x2F;random&#x2F;1600x900</span><br></pre></td></tr></table></figure>
+<h1 id="九、博客内容透明化"><a class="header-anchor" href="#九、博客内容透明化">¶</a>九、博客内容透明化</h1>
+<p>有了博客背景，但是博客内容不透明，看起来不太好看，设置一下。</p>
+<p>打开文件，路径：<code>themes/next/source/css/_custom/custom.styl</code>。添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;博客内容透明化</span><br><span class="line">&#x2F;&#x2F;文章内容的透明度设置</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;侧边框的透明度设置</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;菜单栏的透明度设置</span><br><span class="line">.header-inner &#123;</span><br><span class="line">  background: rgba(255,255,255,0.9);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;搜索框（local-search）的透明度设置</span><br><span class="line">.popup &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="十、站点运行时间统计"><a class="header-anchor" href="#十、站点运行时间统计">¶</a>十、站点运行时间统计</h1>
+<p>打开文件，路径：<code>thems\next\layout_custom\custom.swig</code>。关于<code>custom.swig</code>如果没有，是要新建的，前面哪一期已经新建并配置过，在此不再赘述。添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;# 页脚站点运行时间统计 #&#125;</span><br><span class="line">&#123;% if theme.footer.ages.enable %&#125;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;moment@2.22.2&#x2F;moment.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;moment-precise-range-plugin@1.3.0&#x2F;moment-precise-range.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  function timer() &#123;</span><br><span class="line">    var ages &#x3D; moment.preciseDiff(moment(),moment(&#123;&#123; theme.footer.ages.birthday &#125;&#125;,&quot;YYYYMMDD&quot;));</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;years?&#x2F;, &quot;年&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;months?&#x2F;, &quot;月&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;days?&#x2F;, &quot;天&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;hours?&#x2F;, &quot;小时&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;minutes?&#x2F;, &quot;分&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;seconds?&#x2F;, &quot;秒&quot;);</span><br><span class="line">    ages &#x3D; ages.replace(&#x2F;\d+&#x2F;g, &#39;&lt;span style&#x3D;&quot;color:&#123;&#123; theme.footer.ages.color &#125;&#125;&quot;&gt;$&amp;&lt;&#x2F;span&gt;&#39;);</span><br><span class="line">    div.innerHTML &#x3D; &#96;&#123;&#123; __(&#39;footer.age&#39;)&#125;&#125; $&#123;ages&#125;&#96;;</span><br><span class="line">  &#125;</span><br><span class="line">  var div &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">  &#x2F;&#x2F;插入到copyright之后</span><br><span class="line">  var copyright &#x3D; document.querySelector(&quot;.copyright&quot;);</span><br><span class="line">  document.querySelector(&quot;.footer-inner&quot;).insertBefore(div, copyright.nextSibling);</span><br><span class="line">  timer();</span><br><span class="line">  setInterval(&quot;timer()&quot;,1000)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>打开<code>主题配置</code>文件，找到<code>footer</code>。在下面添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ages:</span><br><span class="line">     # site running time</span><br><span class="line">     enable: true</span><br><span class="line">     # birthday of your site</span><br><span class="line">     birthday: 20200610</span><br><span class="line">     # color of number</span><br><span class="line">     color: &quot;#1890ff&quot;</span><br></pre></td></tr></table></figure>
+<p><code>birthday</code>为你创建博客的日期，按照自己的来。</p>
+<p>打开文件，路径：<code>themes\next\languages\zh-CN.yml</code>。按照下图在<code>footer</code>下添加：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">age: 我已在此等候你</span><br></pre></td></tr></table></figure>
+<h1 id="十一、站点访问量统计"><a class="header-anchor" href="#十一、站点访问量统计">¶</a>十一、站点访问量统计</h1>
+<p>该功能由不蒜子提供，打开文件，路径：<code>themes\next\layout_partial\footer.swig</code>。在首行添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script</span><br><span class="line">  async</span><br><span class="line">  src&#x3D;&quot;https:&#x2F;&#x2F;dn-lbstatics.qbox.me&#x2F;busuanzi&#x2F;2.3&#x2F;busuanzi.pure.mini.js&quot;</span><br><span class="line">&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>打开主题配置文件，找到<code>busuanzi_count</code>。做如下修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br><span class="line">  total_visitors: true # 访客数</span><br><span class="line">  total_visitors_icon: user</span><br><span class="line">  total_views: true # 访问量</span><br><span class="line">  total_views_icon: eye</span><br><span class="line">  post_views: true</span><br><span class="line">  post_views_icon: eye</span><br></pre></td></tr></table></figure>
+<p>打开文件，路径：<code>themes\next\layout_third-party\analytics\busuanzi-counter.swig</code>。按照我的部分修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if theme.busuanzi_count.total_visitors %&#125;</span><br><span class="line">-   &lt;span class&#x3D;&quot;site-uv&quot; title&#x3D;&quot;&#123;&#123; __(&#39;footer.total_visitors&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">+   &lt;span class&#x3D;&quot;site-uv&quot;&gt;</span><br><span class="line">+     &#123;&#123; __(&#39;footer.total_visitors&#39;, &#39;&lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_uv&quot;&gt;&lt;&#x2F;span&gt;&#39;) &#125;&#125;</span><br><span class="line">-     &lt;i class&#x3D;&quot;fa fa-&#123;&#123; theme.busuanzi_count.total_visitors_icon &#125;&#125;&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">-     &lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_uv&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">  &#123;% if theme.busuanzi_count.total_views %&#125;</span><br><span class="line">-   &lt;span class&#x3D;&quot;site-pv&quot; title&#x3D;&quot;&#123;&#123; __(&#39;footer.total_views&#39;) &#125;&#125;&quot;&gt;</span><br><span class="line">+   &lt;span class&#x3D;&quot;site-pv&quot;&gt;</span><br><span class="line">+     &#123;&#123; __(&#39;footer.total_views&#39;, &#39;&lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_pv&quot;&gt;&lt;&#x2F;span&gt;&#39;) &#125;&#125;</span><br><span class="line">-     &lt;i class&#x3D;&quot;fa fa-&#123;&#123; theme.busuanzi_count.total_views_icon &#125;&#125;&quot;&gt;&lt;&#x2F;i&gt;</span><br><span class="line">-     &lt;span class&#x3D;&quot;busuanzi-value&quot; id&#x3D;&quot;busuanzi_value_site_pv&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>-号表示删除这一行，+号表示增加这一行。增加后把+号删除。</p>
+<p>打开文件，路径：<code>themes/next/source/css/_custom/custom.styl</code>。添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;修改不蒜子数据颜色</span><br><span class="line">.busuanzi-value &#123;</span><br><span class="line">  color: #1890ff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打开文件，路径：<code>themes\next\languages\zh-CN.yml</code>。修改以下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">footer:</span><br><span class="line">  total_views: &quot;历经 %s 次回眸才与你相遇&quot;</span><br><span class="line">  total_visitors: &quot;我的第 %s 位朋友，&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="十二、实现头像旋转"><a class="header-anchor" href="#十二、实现头像旋转">¶</a>十二、实现头像旋转</h1>
+<p>打开文件，路径：<code>/themes/next/source/css/_common/components/sidebar/sidebar-author.styl</code>。</p>
+<p>在我图片的位置分别增加代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* 鼠标经过头像旋转360度 *&#x2F;</span><br><span class="line">  -webkit-transition: -webkit-transform 1.0s ease-out;</span><br><span class="line">  -moz-transition: -moz-transform 1.0s ease-out;</span><br><span class="line">  transition: transform 1.0s ease-out;</span><br></pre></td></tr></table></figure>
+<p>在代码末尾添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img:hover &#123;</span><br><span class="line">  &#x2F;* 鼠标经过停止头像旋转</span><br><span class="line">  -webkit-animation-play-state:paused;</span><br><span class="line">  animation-play-state:paused;*&#x2F;</span><br><span class="line">  &#x2F;* 鼠标经过头像旋转360度 *&#x2F;</span><br><span class="line">  -webkit-transform: rotateZ(360deg);</span><br><span class="line">  -moz-transform: rotateZ(360deg);</span><br><span class="line">  transform: rotateZ(360deg);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Z 轴旋转动画 *&#x2F;</span><br><span class="line">@-webkit-keyframes play &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    -webkit-transform: rotateZ(0deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    -webkit-transform: rotateZ(-360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes play &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    -moz-transform: rotateZ(0deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    -moz-transform: rotateZ(-360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes play &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform: rotateZ(0deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    transform: rotateZ(-360deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>进阶</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>个人静态博客-Hexo-Next-（六）</title>
     <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%85%AD%EF%BC%89/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍fork me on github，点击鼠标出现桃心效果，博文压缩，修改文章页面宽度，文章分块显示，增大首页文章与文章距离，主页文章添加阴影效果。</p>
@@ -683,6 +1586,35 @@
       <tags>
         <tag>编程</tag>
         <tag>拓展</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人静态博客-Hexo-Next-（四）</title>
+    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍更改Hexo主题以及博客不是全文显示的设置。</p>
+<a id="more"></a>
+<h1 id="一、主题更改"><a class="header-anchor" href="#一、主题更改">¶</a>一、主题更改</h1>
+<p>1.访问Hexo网站，<strong>网址：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></strong></p>
+<p>2.推荐下载NexT主题配置，<strong>网址：<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></strong></p>
+<p>打开Git，输入：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+<p>安装NexT主题。</p>
+<p>3.打开<strong>网站</strong>配置文件 _config.yml。找到theme。修改为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<h1 id="二、只显示部分摘要"><a class="header-anchor" href="#二、只显示部分摘要">¶</a>二、只显示部分摘要</h1>
+<p>要前面写一点摘要或者概述，之后加上</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/1.png" alt></p>
+<p>之后再书写全文。</p>
+<h1 id="三、推荐书写格式"><a class="header-anchor" href="#三、推荐书写格式">¶</a>三、推荐书写格式</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: Hello World # 标题</span><br><span class="line">date: 2019&#x2F;3&#x2F;26 hh:mm:ss # 时间</span><br><span class="line">categories: # 分类</span><br><span class="line">- Diary</span><br><span class="line">tags: # 标签</span><br><span class="line">- PS4</span><br><span class="line">- Games</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">摘要</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">正文</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>基础</tag>
       </tags>
   </entry>
   <entry>
@@ -789,32 +1721,259 @@
       </tags>
   </entry>
   <entry>
-    <title>个人静态博客-Hexo-Next-（四）</title>
-    <url>/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本文主要介绍更改Hexo主题以及博客不是全文显示的设置。</p>
+    <title>喜马听书笔记【附电子书】（二）</title>
+    <url>/2020/06/13/%E5%96%9C%E9%A9%AC%E5%90%AC%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%90%E9%99%84%E7%94%B5%E5%AD%90%E4%B9%A6%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本期包括《毕司沃斯先生的房子》、《救命饮食》、《态度》、《影响力大师》、《只需倾听》、《恐惧》、《血疫》共七本书。</p>
 <a id="more"></a>
-<h1 id="一、主题更改"><a class="header-anchor" href="#一、主题更改">¶</a>一、主题更改</h1>
-<p>1.访问Hexo网站，<strong>网址：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></strong></p>
-<p>2.推荐下载NexT主题配置，<strong>网址：<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html</a></strong></p>
-<p>打开Git，输入：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-<p>安装NexT主题。</p>
-<p>3.打开<strong>网站</strong>配置文件 _config.yml。找到theme。修改为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<h1 id="二、只显示部分摘要"><a class="header-anchor" href="#二、只显示部分摘要">¶</a>二、只显示部分摘要</h1>
-<p>要前面写一点摘要或者概述，之后加上</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/06/12/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%9B%9B%EF%BC%89/1.png" alt></p>
-<p>之后再书写全文。</p>
-<h1 id="三、推荐书写格式"><a class="header-anchor" href="#三、推荐书写格式">¶</a>三、推荐书写格式</h1>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: Hello World # 标题</span><br><span class="line">date: 2019&#x2F;3&#x2F;26 hh:mm:ss # 时间</span><br><span class="line">categories: # 分类</span><br><span class="line">- Diary</span><br><span class="line">tags: # 标签</span><br><span class="line">- PS4</span><br><span class="line">- Games</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">摘要</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">正文</span><br></pre></td></tr></table></figure>
+<p>电子书下载地址：<strong><a href="https://wws.lanzous.com/b01bhdefc" target="_blank" rel="noopener">https://wws.lanzous.com/b01bhdefc</a></strong><br>
+<strong>密码:gyni</strong></p>
+<h1 id="008文学丨《毕司沃斯先生的房子》：诺奖作家奈保尔代表作，殖民作家永远的身份追寻"><a class="header-anchor" href="#008文学丨《毕司沃斯先生的房子》：诺奖作家奈保尔代表作，殖民作家永远的身份追寻">¶</a>008文学丨《毕司沃斯先生的房子》：诺奖作家奈保尔代表作，殖民作家永远的身份追寻</h1>
+<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=247976794&type=red" frameborder="0" allowfullscreen></iframe>
+<p>2001年诺贝尔文学奖获得者奈保尔的代表作《毕司沃斯先生的房子》。出版于半个多世纪前的1961年，它的关键词——房子，今天依然能牵动我们的心。对于小说主人公毕司沃斯先生来说，房子不仅仅是一个遮风挡雨的住所，更是他拥有独立身份和尊严的至高无上的证明。</p>
+<p><strong>为什么说这部小说融入了奈保尔的自身经历？</strong></p>
+<p>1932年，奈保尔出生在特立尼达和多巴哥共和国一个印度婆罗门移民家庭。特立尼达是个位于加勒比海的落后、闭塞的岛国，面积不及上海的十分之一。它之前是西班牙殖民地，但是1797年，英国舰队挫败西班牙，占领了这个岛国，从此便不断地输送印度和非洲人口来此。奈保尔家族也就是在这时，以契约劳工的身份从印度来到特立尼达。奈保尔从小阅读大量英国文学作品，11岁就确立了当作家的梦想，以及去英国实现梦想的决心。后来奈保尔如愿考上了牛津大学，毕业后也成了一名作家，一生创作了三十多部作品，荣获布克奖、诺贝尔文学奖等各项荣誉，还被英国女王封为爵士。奈保尔似乎实现了作家梦；但是，无论在特立尼达、印度还是英国，他始终都觉得自己是一个异乡人，这种无所依傍的漂泊感一直持续到2018年去世。在英国，奈保尔曾饱受颠沛流离之苦，几乎一度被贫穷和歧视推入绝境。他曾经尝试过开煤气自杀，结果因煤气不够没有成功。在寻求身份的艰难岁月中，对房子的渴求也成为奈保尔难解的情结。奈保尔曾声称：“在我所有的作品中，《毕司沃斯先生的房子》是最贴近我的一部。”评论界也把这部小说视为奈保尔最成功的小说，将其归入英国20世界百佳小说的榜单。</p>
+<p><strong>为什么小说又被成为家庭传记和移民史诗？</strong></p>
+<p>小说将近五十万字，奈保尔以史诗般的规模描写了毕司沃斯先生平庸、忙碌、辛酸而悲伤的一生，具有鲜明的家庭传记色彩与移民史诗风格。</p>
+<p>主人公毕司沃斯先生，是特立尼达首府西班牙港《卫报》的新闻编辑，一生最大的梦想就是拥有自己的房子。为什么呢？与作者奈保尔一样，毕司沃斯先生是个印度移民，他虽然属于婆罗门种姓，是贵族阶层，但是他生于贫寒家庭，自结婚后一直住在属于妻子图尔斯家族的房子里。他曾经自己尝试建造木头房子，但是最终都以失败告终。在他生命的最后时光，他终于拥有了自己的房子，也为此背上了繁重的债务。</p>
+<p>小说开始从头叙述毕司沃斯先生为房子而奋斗的一生，为了便于讲述，我们以他结婚入赘图尔斯家族和进入《卫报》当记者为界，将主人公的生命历程分成三个阶段。</p>
+<p>第一阶段是毕司沃斯先生童年和青年成长的经历。在写童年阶段时，奈保尔的笔触带着拉丁美洲式的魔幻色彩。毕司沃斯先生出生于特立尼达一个有着浓厚印度生活习俗和宗教信仰的乡村社区，他的出生充满了不祥之兆：胎位不正，生在半夜时分，还长着六指。</p>
+<p>毕司沃斯先生违反禁令偷偷溜到水边玩耍，结果不小心让邻居家的牛犊淹死在水塘里，他吓得躲了起来；大家到处寻他不见，都以为他也掉到水塘里了，父亲便下塘寻找儿子，结果不幸淹死了。父亲的死，让毕司沃斯家从此失去了家庭支柱，他们频繁遭受村里人的欺侮，母亲最后不得已把房子和地都卖给了邻居，然后搬家到邻近的波各迪斯小镇，投靠姐姐塔拉生活。</p>
+<p>这次搬离是毕司沃斯先生人生的第一次转折，也是他第一次意识到“房子”的重要意义。而作为移民者，毕司沃斯先生家园的丧失，也展现出了更深层次的意蕴。小说写道：“毕司沃斯先生离开了这个他唯一有权力的房子。在以后的三十五年里，他像个流浪者一样到处辗转，却没有一处他可以称之为家。”</p>
+<p>由于毕司沃斯先生的婆罗门身份，在姨妈塔拉家特殊的宗教仪式中，他作为婆罗门时可以登堂人室，享受高种性的上等人应该享受的尊贵身份，姨妈还安排他到梵学家杰拉姆家里学习，希望他也能成为一个婆罗门学者。然而毕司沃斯先生对印度语和经文也毫无兴趣，最终因为不小心玷污了圣树，而被粗暴地逐出师门。</p>
+<p>这次被驱逐事件，可以视为毕司沃斯先生第二次人生转折，他的身份意识慢慢觉醒，他希望拥有自己的独立空间，拥有一套独立的房子。</p>
+<p>**之后，毕司沃斯先生进入了成年阶段，他迎来了生命的第二阶段——步入婚姻。**他在朋友的帮助下找到了一份画广告牌的工作，充分发挥了自己的印刷体书写优势。也正是这份工作，使他来到了堪称豪门的图尔斯家族，并遇见了后来的妻子莎玛。毕司沃斯先生得以入赘图尔斯家族，一方面在于他婆罗门种姓的印度移民身份。</p>
+<p>成了上门女婿后，毕司沃斯先生迷失在庞大的图尔斯家族中。他和妻子莎玛住在一个阳台隔成的长形小屋中，他因贫穷而被指责，人人都说，“你来到这个家时，你所拥有的东西还不够挂满一根一英寸的钉子”，人人都觉得他应该对图尔斯家族感恩戴德。毕司沃斯先生在家中没有任何权力，孩子的名字都是图尔斯家族的人取的，他甚至无法为自己的孩子买一件与众不同的玩具，因为姐妹们的嫉妒，妻子莎玛不得不把他为女儿买的昂贵的玩具房子砸烂。他的生活总是由图尔斯家族安排：先是安排他成为一家店铺的小店主，然后又安排他成为甘蔗种植园的工头。在拥挤、喧哗的大宅子中，司沃斯先生无足轻重，他既没有个人或小家庭的空间，更得不到身份的认同和尊重。</p>
+<p>为了抗拒无时不在的被吞没的感觉，毕司沃斯先生时常和家庭成员发生冲突，但是，每一次都以他的失败结束。他越来越强烈地想要出逃，想要摆脱这个大家庭的控制，寻求自己的立身之处。于是，建立一处自己的房子，成了他的人生目标。为此，他带着一家人经历了一次又一次的迁居，无数次做着拥有自己的房子的美梦。</p>
+<p>毕司沃斯先生为房子奋斗的一生进入第三阶段——他来到西班牙港，之后他将在锡金街度过生命的最后十五年。毕司沃斯先生凭借画广告牌的手艺和阅读的积累，进入《特立尼达卫报》做记者，这自然是一份再理想不过的工作。他很快把妻子玛莎、四个孩于一家六口接到西班牙港，不过依然没有自己的房子，住的是图尔斯家在西班牙港的房产。由于记者事业的成功起步，毕司沃斯先生找回了一些自信，他怀着对新生活的热忱对住所进行了改造：砌花园，种玫瑰，挖水塘种莲花，还买了一些家具。后来他自己找了一块地皮，建了一所和绿谷差不多的房子，不幸是的，房子毁于一场大火。毕司沃斯先生又随全家搬到了西班牙港的房子里，他和家族矛盾丛生，特别是当他冲撞了图尔斯太太的小儿子奥华德，冲突变得更加激烈。</p>
+<p>伴随着房子梦想的一次次破灭，毕司沃斯在工作上也渐渐失势。他觉得再也不能在图尔斯家住下去，他拼命四处寻找房子，准备贷款买房子。此时，一位法务官文书自愿将自己的一幢房子低价出让给他。毕司沃斯求房心切，他毫不犹豫地花光一生的积蓄、加上贷款3000美元将房子买厂来。但是当他带着一家六口搬进新居时，才发现房子质量低劣。</p>
+<p>虽然这座住宅不甚完美，但是不管怎样，最后他终于拥有了自己的房子了，哪怕是在这最后的岁月里。小说写道，“在被疾病和绝望折磨的数月里，他一次又一次地觉得，住在自己的房子里，拥有自己的房子，是多么不可思议的事情。从小，他就从一个陌生人的屋子迁移到另一个陌生人的家，从小他就不断遭到指责。而现在，每天晚上关上门窗，除了自己家里的声音，他听不见任何喧嚣；他自由自在地穿梭在自己的房间和庭院之间。”</p>
+<p>就这样，毕司沃斯先生终于有了自己的房子，只是背下了繁重的贷款。为了偿还贷款，毕司沃斯先生不得不超负荷加班加点工作，终因心脏病突发而猝死在这座还没付完贷款的房子里。小说以毕司沃斯先生的葬礼结尾，之后，“莎玛和孩子们回到空空的房子里”。</p>
+<p><strong>毕司沃斯先生的故事是一个移民者追求尊严与身份的悲喜剧？</strong></p>
+<p>就像书中写的，当他们搬到新房子里时，妻子莎玛离开她的母亲和姐妹们，对毕司沃斯先生和孩子萌生了一种新的忠诚，这简直是和拥有自己的房子一样是天大的胜利。锡金街的住宅，让他真正属于自己的空间，但是很不幸，他并没有时间享受这种自由和安定的喜悦，就英年早逝了。</p>
+<p>但是，与其他文学作品中的边缘人不同的是，在卑微和漂泊的命运中，毕司沃斯先生始终怀有一个坚定的梦想：拥有独立的房屋，建构自己的身份和尊严。这种信念和追求伴随着他的整个一生。毕司沃斯的人生史，就是他为了拥有自己的房子的奋斗史。</p>
+<p><strong>为什么说小说展现出奈保尔对于印度社群归属的担忧？</strong></p>
+<p>小说中，图尔斯家族从特立尼达搬到西班牙港，已经展现出印度移民群体性的衰落。在特立尼达，印度移民社会是分裂的，按宗教、民族、种姓划分的各移民集团之间缺乏认同，同当地的其他民族更是很难归化。这种现象在印度移民人数占多数比重的地方，如特立尼达，特别突出。20世纪上半叶，特立尼阿达印度移民在异国他乡的奋斗，是充满着困惑和无奈的。西印度群岛契约劳工及其后代，毕司沃斯的奋斗和遭遇，他们希望建造一所属于自己的、自由支配的、有主人翁感觉的房子的追求，正是这一艰难旅程的侧影。作为毕司沃斯对立面的图尔斯家族，其实与毕司沃斯先生同样面临着身份归属的危机。哈努曼大宅的名称，正是来源于《罗摩衍那》中令印度人民无限尊崇的英雄。</p>
+<p><strong>奈保尔如何分析印度社会衰落的原因？</strong></p>
+<p>首先，奈保尔将批判的笔触指向殖民者。奈保尔本人出身于印度婆罗门贵族，但却生活在落后、闭塞的殖民地特立尼达；而在印度，他又被认为是特立尼达人，无法找到自己的民族之根；在英国伦敦，他是遭受歧视、艰难求生的印度人。在这三地不同历史文化的撕扯当中，奈保尔也陷入寻求身份的长久的苦闷和艰难之中。而这一切，都是建立于殖民历史背景之中。特立尼达和印度都曾经是英国的殖民地，当殖民地在上世纪获得独立身份，却仍然摆脱不了殖民国家对他们的评判，摆脱不了作为第三世界国家被裁判和审视的地位，更摆脱不了文明延续被摧毁的残酷现状。</p>
+<p>奈保尔不仅批判殖民主义，对于第三世界国家，奈保尔展开的批判更加毫不留情。在被奈保尔称为“半吊子社会”的国家中，比如特立尼达，印度移民常常会谈论要不要回到印度家乡，但是谁也没有真正动身，大家都懒于改变现状，懒于去开创和行动。他在《印度三部曲》中写道，印度是个早已被挫败的国家，这个国家唯一的希望在于更迅速的衰败。对于特立尼达，他同样认为，这是个价值观彻底错乱、人人活得卑微的小地方。</p>
+<p>从某种意义上来说，奈保尔虽然被归为后殖民作家，但是他并没有因外界对于一个殖民地作家的期待而改变自己的立场。他的批判锋芒不仅仅针对殖民主义，甚至更强烈地落在殖民地人民的身上。在他的早期作品中，奈保尔书写了特立尼达的混乱、丑陋，后来他在其《印度三部曲》中大谈印度的贫穷、喧嚣和盲目，在批判的同时，奈保尔亦不乏深度的探索和思考，他说，20世纪后期的印度，其独立的含义远不止是英国人的离开，更需要印度政府和人民做到真正的独立。</p>
+<p>作为双重的文化移民，奈保尔既不属于殖民地印度、特立尼达，也不属于宗主国英国，他在这个印度-特立尼达-英国的文化三角中的身份寻求，正应了德国哲学家阿多诺的话，即，对于一个没有故乡的人来说，写作成为居住之地。</p>
+<p>在2001年的诺贝尔文学奖颁奖仪式上，瑞典文学院曾这样评价奈保尔说：“他将极具洞察力的叙述与不为世俗左右的探索融为一体，让我们从被扭曲的历史中探寻真相。”其实从某种意义上来说，阅读奈保尔，不仅是走进殖民地人民的思想和感情世界，也是对现代人的文化困境的审视。毕司沃斯先生的家园寻求，也正是奈保尔自己的身份追问，对于他们来说，移民的遭遇让他们更迫切地想抓住一砖一瓦，以安放自己、保护自己、证明自己。</p>
+<p>这也是我们每个人都会面临的生存困境。即使我们不是被殖民者，但是移民、无家可归的境遇依然困扰着我们。我们依然在寻求认同和尊严的漫漫长路上跋涉前行，我们依然不惜押上自己的一切，去获得这种空间占有和身份证明的笃定感。毋庸置疑，人类始终在经历人生的某种一致性：殖民地人民并不是来自另一个世界的异类，他们的痛苦离我们并不遥远；而像奈保尔这样的后殖民作家，与和平世界的我们一样，在背井离乡、在陌生城市打拼，在不被接受、无法得到认同时，这种生命和尊严的寻求，将是人们面临的永恒的身份追问。</p>
+<p>作者：（英）V.S.奈保尔</p>
+<h1 id="009科普丨《救命饮食》：为你揭示饮食和疾病的真相"><a class="header-anchor" href="#009科普丨《救命饮食》：为你揭示饮食和疾病的真相">¶</a>009科普丨《救命饮食》：为你揭示饮食和疾病的真相</h1>
+<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=247358998&type=red" frameborder="0" allowfullscreen></iframe>
+<p>精华笔记</p>
+<p>本书的作者柯林·坎贝尔是康奈尔大学的终身教授。从业40余年来一直从事营养和慢性病关系的研究。</p>
+<p>20世纪80年代初，在坎贝尔的推动下，其所在的美国康奈尔大学联合英国牛津大学、中国疾病预防与控制中心，以及中国医学科学院等多家权威机构，在中国开展了三次关于膳食、生活方式和疾病死亡率的流行病学研究，也就是本书副标题中说到的中国健康调查。这项中国研究被誉为流行病学的巅峰之作。</p>
+<p>在本书中，作者整合了这项中国研究中的一些重要的发现，对饮食和慢性病的关系提出了独到的见解。在此基础上，他还给出了一套理想的膳食方案，能让你保持健康，远离疾病。</p>
+<p>我将分两部分内容为你解读本书：</p>
+<p><strong>第一、 什么是救命饮食？</strong></p>
+<p>结论是：如果你平常吃肉蛋奶等动物性食品较多，就比较容易得癌症等慢性病；而如果你吃的天然素食较多，就能预防或者延缓疾病的发生。因此，所谓能救命的饮食，简单来说，就是要少吃荤，多吃素。</p>
+<p>这个结论是怎么得到的呢？</p>
+<p><strong>1</strong>**、一个重要的动物实验**</p>
+<p>坎贝尔和同事在动物实验中发现，对于接触黄曲霉毒素的大鼠来说，蛋白质含量为20%的高蛋白饮食会促进肝癌的发展，而5%的低蛋白饮食对于肝癌有很好的抵抗作用。这里的蛋白质是牛奶蛋白质的主要成分，酪蛋白。</p>
+<p>但来自植物的大豆蛋白和小麦蛋白，即便都达到了20%的高剂量，也不会产生促癌的效果。</p>
+<p><strong>这让坎贝尔意识到，通常被认为优质的动物蛋白质，比如牛奶，可能会带来潜在的疾病风险，而来源于植物的营养成分可能更加健康。</strong></p>
+<p>不过，动物实验的结论不能直接照搬到人类身上。想要获得饮食和疾病关系更直接的证据，还需要依靠流行病学研究。中国健康调查就是一项大型流行病学研究。</p>
+<p><strong>2</strong>**、中国健康调查**</p>
+<p>这项研究发现饮食和疾病之间存在着三个统计学上的显著相关：</p>
+<p><strong>第一个相关性是，动物性食物吃得越多，癌症发病率就越高；植物性食物吃得多呢，癌症发病率就低。</strong></p>
+<p>研究人员发现，血液中的胆固醇高，多种癌症的发病率就高，反之，癌症发病率就低。而血液中的胆固醇只来源于动物性食物。</p>
+<p><strong>第二个相关性是，动物性食品吃得多，乳腺癌发病率就高；吃得少，就不怎么容易得乳腺癌。</strong></p>
+<p>研究人员发现，如果饮食中脂肪的含量大幅下降，乳腺癌的发病率就会显著降低。而当时中国农村，饮食中的脂肪都来自于动物食品。</p>
+<p><strong>第三个相关性是，植物性食物吃得越多，消化道癌症的发病率就越低；吃得少，就比较容易得病。</strong></p>
+<p>吃进的膳食纤维多，多种消化道癌症发病率就低。膳食纤维都来自于植物性食物。体内维生素C和胡萝卜素含量越高，癌症越不容易发生。它们同样是植物来源的营养素。</p>
+<p>不过，在科学领域，这些显著相关仍不能直接说明饮食和疾病的因果关系。因此坎贝尔又分析了大量权威的科学研究结论。这些结论更有针对性地指出，饮食方式会对疾病带来关键性的影响。</p>
+<p><strong>3</strong>**、其他针对特定疾病的研究**</p>
+<p>**心脏病：**全素食饮食介入可缓解疾病</p>
+<p>**糖尿病：**全素食饮食介入可缓解疾病</p>
+<p>**前列腺癌：**肉类、奶类摄入过多会增加一种叫做胰岛素样生长因子的荷尔蒙，它会促进前列腺癌的病发和转移</p>
+<p>**痴呆症：**饱和脂肪摄入增加，患血管性痴呆症的风险增加。饱和脂肪主要来自于动物食品。</p>
+<p>第二、 <strong>作者的研究和观点对人们有哪些启发呢？</strong></p>
+<p><strong>第一个启示，基因对疾病并不起决定作用，饮食对疾病也会有比较大的影响。</strong></p>
+<p>对于很多疾病，比如癌症、心脏病、糖尿病和阿尔茨海默病等来说，基因只提供了子弹，但是扣下扳机的还有很多其他可控的因素，比如起关键作用的饮食。</p>
+<p><strong>第二个启示，是要重视天然素食在饮食中的作用。</strong></p>
+<p><strong>一是要吃真正的纯天然素食。</strong></p>
+<p>纯天然素食，指的是粗加工的谷类、豆类、新鲜果蔬等，精制加工后的食物不包括在内。因为它们在加工时失去了天然素食最宝贵的部分。</p>
+<p>除了天然素食以外，还要尽可能多样化。素食在脂肪和蛋白质的含量上稍有欠缺，因此需要多样化的种类，来保证营养和能量需求。</p>
+<p>不推荐用植物营养补充剂来代替天然素食。单个营养补充剂无法达到食物营养的综合效果，还有可能会给人体带来危害。</p>
+<p>除了吃天然素食，吃的方面**，坎贝尔建议不要走极端。**</p>
+<p><strong>一种极端是严格全素食。</strong></p>
+<p>首先，全素食并不像想象的那么容易。全素食要付出很多努力，一不小心就可能会营养不良。</p>
+<p>其次，对于大多数中国人来说，全素食也没有必要。因为中国人的动物性食品摄入量相对偏低，而且，对于儿童和青少年来说，动物性食品促进生长发育的效率也更高。</p>
+<p>因此，没必要做到100%严格素食。</p>
+<p><strong>另一种极端是，将素食等同于药物。</strong></p>
+<p>天然素食能够预防甚至扭转疾病的进程，但是这并不是说一旦确诊了疾病，就可以不用吃药就医，而靠吃素来治疗。这是因为营养的作用机制比较缓慢温和，而且素食治疗疾病的证据也还不够明确和充分。</p>
+<p>综上，坎贝尔推荐的健康饮食模式就是：在你现有的饮食中增加多样化天然素食，同时减少一部分的动物性食品就可以了。</p>
+<p><strong>第三个启示是，除了饮食和营养，也不要忽视其他健康因素。</strong></p>
+<p>健康是一个系统工程，营养只是其中的一个方面。比如运动和情绪，都在其中充当了很重要的角色。这些因素共同作用才能有综合的健康效果。同时，这些因素之间也会互相影响，健康就要尽可能地去保持生活各方面的平衡。</p>
+<p>作者：[美]柯林·坎贝尔 托马斯·坎贝尔</p>
+<h1 id="010成长丨《态度》：吴军教你把简单的事情做得出人意料地精彩"><a class="header-anchor" href="#010成长丨《态度》：吴军教你把简单的事情做得出人意料地精彩">¶</a>010成长丨《态度》：吴军教你把简单的事情做得出人意料地精彩</h1>
+<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=246838961&type=red" frameborder="0" allowfullscreen></iframe>
+<p>听书笔记</p>
+<p>本书作者吴军，本科和硕士毕业于清华大学，博士毕业于美国约翰·霍普金斯大学，是知名的人工智能、语音识别和互联网搜索专家。他先后在谷歌、腾讯任职，还创立了自己的投资公司。同时他还是一名作家，著有《浪潮之巅》《智能时代》《文明之光》等多部畅销书。</p>
+<p>在吴军的人生经历中，他发现一些起点差不多的人会不断分化，进而拉开人生的差距，而其中起到决定性作用的就是一个人为人处世的态度。因此，吴军想要将“态度决定命运”这个道理告诉他的两个女儿。</p>
+<p>下面我将吴军的40封家书总结为以下五个态度</p>
+<p><strong>第一个态度——做人的态度。</strong></p>
+<p>关于做人的态度，吴军给出了三个建议，就是要乐观，要做个好人，还要学会抵制诱惑。</p>
+<p>我们先来讲乐观的做人态度。吴军认为，一个乐观的人生态度比什么都重要。一个人积极乐观，他就不容易被怨恨、嫉妒这些不良情绪影响，会更达观地看待身边的人事物，也更容易获得快乐和幸福。</p>
+<p>吴军认为做人的<strong>第二个态度是要做一个好人</strong>。一个人的品行比能力更加重要。那怎样才算是一个好人呢？吴军认为有三条标准：有教养、对他人友善、对世界有爱心。</p>
+<p>吴军教给年轻人做人的第<strong>三个态度是要抵制诱惑。</strong></p>
+<p>人在成长的过程中经常会面临很多诱惑。那如何才能抵制诱惑呢？可以从两方面着手：</p>
+<p>首先，要有一个长远的目标，并积极地为实现目标而努力。</p>
+<p>其次，是多做一些有成就感、有回报的事情。就是那些能够真正提升你的能力，让你变得更加强大的事情。</p>
+<p>第二个态度**——**学习的态度。吴军自己就是一个学霸，关于学习的态度，他有很多经验可以传授给年轻人，总结起来主要是四个方面：</p>
+<p>首先是要脚踏实地。在学习所有学科时，按部就班的笨办法才是好办法。这样才能打好学习的基础。而那些一味想着走捷径的人，在学习过程中反而容易有遗漏和缺失。</p>
+<p>第二个学习态度，是要注重培养自己的逻辑思维能力。比如，学好数学，或者是多阅读经典的非虚构类名著。</p>
+<p>学习中要注意的第三个态度是要有独立思考能力。吴军的建议是做一个理性的怀疑者，并学会证伪。 除此之外，要想做一个理性的怀疑者，即使是面对科学也要持怀疑的态度。</p>
+<p>学习的第四个态度，是要努力开拓眼界。就是不要把目光局限在自己所学的专业上。</p>
+<p><strong>第三个态度——做事的态度。</strong></p>
+<p>当我们决定要不要做一件事情时，最关键的就是要记住八个字：<strong>“<strong>格局要大，境界要高</strong>”</strong>。</p>
+<p>格局要大，就是在决定要做什么，不做什么时，不要只想着如何为自己创造利益，而要想着用自己的能力为更多的人创造利益。</p>
+<p>境界要高呢，就是看事情要看得长远，不要只考虑眼前的一点蝇头小利。人一旦习惯获得短期利益，那境界就高不起来了。</p>
+<p>另外，做事前不要过分计算成功的概率，自己想做的事情就去做，也不要一味追求做到最好，而裹足不前。最好的方法是先开始做，然后再逐步优化。</p>
+<p>想好了要开始做，但是在做的过程中还会面临很多困难。吴军认为要把事情做好还要有三个态度：</p>
+<p>第一，要设定好优先级。现实生活中，往往是旧的工作还没有完成，新的任务就来了。这时候找到优先级就很关键了。</p>
+<p>第二，要主动做事。主动做事不仅仅是指你不拖延，积极地完成手中的工作，它还有更深层次的意义，就是要求你去主动沟通、主动优化。</p>
+<p>第三，要努力将事情做到极致。人们常说失败是成功之母，但吴军认为成功才是成功之母。正是因为人们有了成功的经验，才会更加有信心。所以我们在做事情的时候，要全力以赴，将事情做到极致。</p>
+<p>当一件事情做完以后，我们还要学会正确地看待挫折和运气。</p>
+<p>很多人在遭遇挫折之后将失败归结于运气太差，命运不济，然后就一蹶不振，选择逃避。吴军认为，世界上当然有运气这回事，像那些买彩票中大奖的人，他们的好运气自然不必说。但更多的运气背后藏着人们付出的努力。</p>
+<p><strong>第四个态度——人际交往的态度。</strong></p>
+<p>第一点，不要怕吃亏。吴军认为，与人交往最重要的是真诚，不要怕吃亏，毕竟人无完人，不要一味地苛求他人。</p>
+<p>第二点，学会识人。生活中我们应该怎样识人呢？</p>
+<p>第一，要看一个人和你交往的动机如何。</p>
+<p>第二，想防范小人，首先你自己就要戒除贪欲。</p>
+<p>第三，还要观察这个人的生活圈子。</p>
+<p>第三点，学会拒绝他人。人际交往是一个复杂的事情，当别人请你帮忙时，对方和你的关系，以及请求事情的难易程度，都会让你有不同的考量。但最重要的是要有一个真诚的态度，不要夸大自己的能力，也不要违背自己的本心。</p>
+<p>**第五个态度——对待钱的态度。**吴军对待钱的态度可以总结为两句话：第一，不要乱花钱，也不要乱省钱；第二，让钱生钱，还要让钱发挥更大的作用。</p>
+<p>年轻人一定要坚持先赚钱再花钱，这个顺序绝对不能颠倒过来。吴军还希望年轻人能够从大处着眼，从自身的需求出发，该花的钱大胆花。</p>
+<p>有了钱以后，要学会用钱生钱，也就是要学会投资。吴军认为各种投资方法，年轻人都可以去尝试。但是一定要注意不要过于冒险，也不要去盲目进行自己不懂的投资。</p>
+<p>吴军还建议年轻人可以拿三分之一的钱去投资指数基金，这个方法也是巴菲特给普通投资者的建议。</p>
+<p>最后，当你真的有一天赚到了大钱，实现了财务自由，要学会让钱发挥更大的作用。吴军认为人不能过于守财。他希望年轻人在有钱以后能够回馈社会，利用财富做一点其他人没有做或者做不到的事。</p>
+<p>作者：吴军</p>
+<h1 id="011成长-《影响力大师》：影响力培训经典教材，6大策略360度影响他人和组织"><a class="header-anchor" href="#011成长-《影响力大师》：影响力培训经典教材，6大策略360度影响他人和组织">¶</a>011成长 《影响力大师》：影响力培训经典教材，6大策略360度影响他人和组织</h1>
+<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=246083687&type=red" frameborder="0" allowfullscreen></iframe>
+<p><strong>听书笔记</strong></p>
+<p>本书的作者约瑟夫•格雷尼采访了很多影响力大师，发现大师们的做法其实是有共通之处，他从中总结出了一套通用的方法。今天，我将分两个部分为你解读这套方法。</p>
+<p>先说**第一部分，**影响力的目标。</p>
+<p>所谓影响力，就是让人做出改变的能力。而要让人改变，你首先要知道，你希望他达成什么样的结果，创造什么样的价值。也就是说，你的影响力<strong>目标</strong>是什么？你要在自己的头脑中把这一点想清楚。不仅要自己想清楚，你还需要能把它传达给你的影响对象，也就是当事人。只有当事人完全领会和认可你的意图，他才能更好地参与起来。所以，你的目标必须制定得足够清晰，让人一听就懂。</p>
+<p>仅仅制定有了一个目标还不够。你还需要分析，达成目标所需要的<strong>关键行为</strong>是什么。所谓关键行为，就是一两个最需要改变的地方，一旦改变了，目标就能实现。为什么要强调“关键”两个字呢？因为一旦人们发现需要改变的地方太多，他们会感到巨大的压力，导致他们要么一直拖着不做，延误了时机，要么浅尝辄止，就此放弃。</p>
+<p>那怎么去发现关键行为呢？有两个技巧。<strong>第一个技巧是关注那些重要的小事</strong>。这类小事，往往是大家都知道它重要、应该做，但由于它太小、太不起眼了，所以根本没有得到真正的落实。</p>
+<p>**第二个技巧是找出频繁犯错的时刻。**接下来的问题是，你需要找到合适的策略，引导人们在关键行为上做出改变。人们会不会做出改变，要看两个要素。一个是动力，他是不是愿意改变。另一个是能力，如果他愿意改变，是不是能做到。这两个要素缺一不可。所以，影响力策略的目的，就是要让他同时具备这两个要素。</p>
+<p>**第二部分，**从六个角度来设计影响力策略。</p>
+<p>先说第一个角度**，个人动力。**</p>
+<p>当事人内心当中有抵触，不想改变，怎么办呢？这种情况其实是很常见的，改变往往会让人付出一些代价。所以，你要引导当事人看待问题的角度。如果他现在琢磨的是眼下付出了什么，你可以引导他关注未来能得到什么。如果他理性上觉得不划算，那就从情感上触动他，让他感到哪怕有点损失也是值得的。</p>
+<p>第二个角度是<strong>社会动力。</strong></p>
+<p>人是高度社会性的动物，其他人的看法也极大地影响他做事情的动力。比如说，你想在公司干点事，老板是不是认可你的点子，他是不是舍得花时间、花钱，是不是投入了大量的关注。其他人都会看在眼里，进而决定是否支持。这很好理解。</p>
+<p>因为老板在这个群体拥有最大的权力，他属于群体中的正式领袖。除了正式领袖，还有一类人，他们可能没有什么头衔，但也会发挥领袖的作用。这类人我们称之为“意见领袖”。意见领袖和正式领袖一样，极大地影响着当事人的动力。</p>
+<p>第三个角度是<strong>系统动力。</strong></p>
+<p>简单说，系统动力就是奖惩机制。如果当事人发现，做出改变会受到奖励，不做就会受到惩罚，那么他改变的动力相对就更加充足。运用奖惩机制来增强当事人的动力，需要注意它只适合用来锦上添花。什么意思呢？就是说，你要优先从个人角度和社会角度来设计动力策略，奖惩机制放在最后，起到一个巩固的作用。</p>
+<p>所以，千万不要过度依赖奖惩机制。正确的做法是，仅仅把奖惩机制作为一个有益的补充。</p>
+<p>第四个角度是<strong>个人能力。</strong></p>
+<p>如果当事人存在能力短板，改变对他来说难度太大，他自然不会行动。这时候你需要设计一些针对性的训练。当他经过训练补齐了能力短板，做出改变的可能性就大多了。</p>
+<p>第五个角度是<strong>社会能力。</strong></p>
+<p>也就是说，让其他人伸出援助之手，帮助当事人改变。影响力大师们不会指望当事人单纯靠自己的力量战胜困难。单打独斗经常是无法解决问题的。这时候，你就需要想办法，让当事人能够从其他人那里得到必要的帮助。</p>
+<p>第六个角度是**，系统能力。**</p>
+<p>所谓系统能力，指的是优化环境中的某些因素可以提升当事人的能力。这些因素中最重要的是信息、工具和空间。比如，军队去打仗，首先需要知道作战的指令，需要知道前进的方向，这就是信息。其次，士兵和敌人战斗，他需要有趁手的武器，有防护的盔甲，这就是工具。最后，整个队伍还需要保持严密的队形，什么兵种站在什么位置，那都是有讲究的。再有，和敌人对阵的时候，要争取占据有利的地势。这些就属于空间因素。所以，如果你发现当事人能力不足，你可以考虑从信息、工具和空间这几个方面进行优化。</p>
+<p>作者：约瑟夫•格雷尼</p>
+<h1 id><a class="header-anchor" href="#">¶</a></h1>
+<h1 id="012心理-《只需倾听》：学会倾听，是你能和所有人沟通的秘密"><a class="header-anchor" href="#012心理-《只需倾听》：学会倾听，是你能和所有人沟通的秘密">¶</a>012心理 《只需倾听》：学会倾听，是你能和所有人沟通的秘密</h1>
+<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=245335835&type=red" frameborder="0" allowfullscreen></iframe>
+<p><strong>精华笔记</strong></p>
+<p>眼下，你急需与一个人沟通，可你完全不知道该拿他怎么办——</p>
+<p>这个人可能是你青春期叛逆的孩子，他摆出与世隔绝的态度，屏蔽了你所有的话；这个人可能是你固执的老板，他把项目失败完全归因于你，根本不想听你解释；这个人还可能是你新开发的客户，他冷淡地回应着你的热情，压根不信任你。</p>
+<p>你试过了一切办法，可是统统无效。你心如乱麻，充满了挫败感，心想：这可如何是好？</p>
+<p>面对生活中这么多棘手的问题，到底有没有一套可以与所有人沟通的方法呢？</p>
+<p>本书的作者马克·郭士敦把他30余年精神科医生的临床经验，与工作和生活中的沟通问题结合起来，总结出一种可以和任何人沟通的办法，就是——<strong>倾听</strong>。凭借这种独特的沟通方法，他成为美国警方和FBI的培训教员，服务过高盛、IBM、联邦快递、德意志银行等大型知名企业，还受邀担任《华尔街日报》、《财富》、路透社、美国国家公共电台、“奥普拉秀”的特约嘉宾等。他撰写本书，就是想为你揭开倾听的奥秘，并希望你能善用它。本书将从下面两部分来讲解：</p>
+<p><strong>第一，  倾听为什么那么重要？</strong></p>
+<p>脑科学认为，在特定的情绪下，人的大脑会对沟通产生“生理性防御”，而<strong>倾听是帮大脑卸下“生理性防御”最重要的手段。</strong></p>
+<p>影响沟通的“大脑生理性防御”主要有两种。第一种是“杏仁核劫持”——就是大脑中掌管理智思考的额叶等高级脑区，被掌管本能反应的杏仁核遏制，让人在情绪激动时只能凭本能作出反应。而正确的倾听能帮人快速疏导情绪，让紧张的杏仁核放松，从而让大脑额叶等高级脑区从“杏仁核劫持”状态解脱，理智将重回大脑。</p>
+<p>第二种大脑的“生理性防御”是“镜像神经元接收匮乏”。“镜像神经元”就是一种“当别人在经历某件事，会让自己感同身受”的神经元，而“镜像神经元接受匮乏”可以理解为人们认为“他人对自己缺乏同理心”。假如你试着去倾听这个人，就满足了他渴望别人对他有同理心的需求。唯有让他感受到你理解他，沟通才能继续。</p>
+<p>除此之外，对于每个人来说，出于自我保护、保全面子或者一些别的原因，人们都有可能在心里筑起一道厚厚的大门，通常这道大门对所有人都是紧闭的。作者根据多年的经验总结出，<strong>倾听也是让人们主动打开心门的唯一办法</strong>。</p>
+<p><strong>第二，我们应该如何倾听？</strong></p>
+<p>首先，我们要调整好自己的情绪，摘下对他人有色眼镜、放下偏见，做好倾听前的准备。</p>
+<p>其次，我们要培养自己的“同理心”，要学会站在别人的角度看待问题，在这里作者建议我们掌握倾听的三大原则——“让别人感到被理解”“让别人感到我们对他感兴趣”“让别人感到自己有价值”；</p>
+<p>最后，我们还要学会倾听的四大技巧：第一是“替别人说‘不’”，第二是“主动示弱、自我揭短”，第三是要学会“在聊天的氛围里提问”，第四是要“善用简单的言语帮别人平复心情”。</p>
+<p>作者：[美]马克·郭士敦</p>
+<h1 id="013社科丨《恐惧》：深度剖析当今社会的恐惧文化，是什么让我们越来越没有安全感？"><a class="header-anchor" href="#013社科丨《恐惧》：深度剖析当今社会的恐惧文化，是什么让我们越来越没有安全感？">¶</a>013社科丨《恐惧》：深度剖析当今社会的恐惧文化，是什么让我们越来越没有安全感？</h1>
+<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=272086258&type=red" frameborder="0" allowfullscreen></iframe>
+<p><strong>精华笔记</strong></p>
+<p>恐惧是一种常见的情绪和心理。然而，历史上从来没有一个时候像今天这样，有这么多人、这么频繁地感到恐惧。</p>
+<p>本书作者弗兰克·菲雷迪是英国社会学家，肯特大学社会学荣休教授，被《伦敦书评》评价为“英国、欧洲乃至世界上最为领先的知识分子之一”。他曾写过《恐惧文化》、《恐惧政治》、《知识分子都到那里去了？》、《偏执狂父母》等著作。</p>
+<p><strong>一、恐惧文化的历史演变和它在当代的主要特点：</strong></p>
+<p>恐惧首先是一种生理本能。然而人类还有一种从文化中传承而来的恐惧习性。</p>
+<p><strong>传统的恐惧包括死亡恐惧和宗教恐惧。</strong></p>
+<p>而今天，人类社会的恐惧和过去的恐惧有很大的差异，表现出新的特征——</p>
+<ol>
+<li>
+<p>心理学和精神分析学的崛起，让恐惧从一种道德问题变成为医学问题；</p>
+</li>
+<li>
+<p>恐惧变得普遍化。原先，人们的恐惧多半有关生死存亡这样的大事，而现在，人们在日常生活的细枝末节中，都能发现潜在的风险，并为此惶惶不可终日；</p>
+</li>
+<li>
+<p>恐惧呈现出“个人化”的特征。原先，人们的恐惧往往是群体化的。而今天，人们的恐惧多半集中在对个人及家人的担忧中。</p>
+</li>
+</ol>
+<p><strong>二、谁在为恐惧文化推波助澜？</strong></p>
+<ol>
+<li>
+<p>媒体是传播恐惧信息的主力军。媒体通过连篇累牍的报道，描绘出一个危机丛生的世界，并通过恐惧修辞，唤起人们大难临头的感觉。</p>
+</li>
+<li>
+<p>政客通过恐惧诉求操纵民意、鼓动选民。他们珍视所有可以表现焦虑或恐惧的机会，一有机会就进行恐惧表演，以此唤起选民心中的不安全感，为自己赢得选票。</p>
+</li>
+<li>
+<p>科学家也沾染上了恐惧文化的习气。越来越多的科学家爱用耸人听闻的语气进行科普，将有关全球大灾难的预言劈头盖脸向大众砸去。</p>
+</li>
+</ol>
+<p>媒体、政客和科学家不谋而合，用铺天盖地、耸人听闻的言论，让整个人类社会在恐惧文化中越陷越深。</p>
+<p><strong>三、恐惧文化有什么样的害处，又该如何应对？</strong></p>
+<p><strong>危害：</strong></p>
+<ol>
+<li>
+<p>恐惧文化削弱了道德的力量。今天的人们只愿意对风险进行各种评估，却不愿意拿出勇气去做正确的事。</p>
+</li>
+<li>
+<p>它影响年轻人的成长与成熟。今天的年轻人是脆弱而幼稚的“巨婴”，不愿承担公共责任，更不愿意去冒险。</p>
+</li>
+<li>
+<p>恐惧文化让人们消极地看待未来。当代社会弥漫着一种悲观主义的未来观。对于未来的恐惧，甚至已经动摇到了人类对自己的信念。</p>
+</li>
+</ol>
+<p>对此，我们绝不能听之任之。除了一味的恐惧和焦虑，<strong>人类其实还有其他的选择。</strong></p>
+<p>比如，我们应该注重培养孩子们思想和行为的独立性，给他们更多试错和冒险的机会，让他们更有经验地去应对各种风险和挑战。</p>
+<p>更重要的，是<strong>唤醒人们渐渐疏远的道德意识</strong>，尤其是勇敢和审慎这两种美德。</p>
+<p>书      名：恐惧</p>
+<p>作      者：[英]弗兰克·菲雷迪</p>
+<h1 id="014纪实-《血疫》"><a class="header-anchor" href="#014纪实-《血疫》">¶</a>014纪实  《血疫》</h1>
+<iframe height="233" width="260" src="https://www.ximalaya.com/thirdparty/player/album/player.html?id=29900175&type=red" frameborder="0" allowfullscreen></iframe>
+<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=167648082&type=red" frameborder="0" allowfullscreen></iframe>
+<p><strong>听书笔记</strong></p>
+<p>《血疫：埃博拉的故事》一书的主角是来自非洲、致死率为流感4000倍的埃博拉病毒。它1970年代末最早出现在人类社会时，表现出了怎样残忍的属性？而面对它，因为无知，人类产生了莫大的恐惧，人们又是如何面对这种恐惧的？</p>
+<p>作者<strong>理查德·普雷斯顿</strong>是唯一以非医师身份获得美国“防疫斗士奖”的人，这本书曾连续15个月登上《纽约时报》畅销书榜。</p>
+<p><strong>第一，埃博拉有多恐怖？它从哪里来？</strong></p>
+<p>作者详实记录一位名叫夏尔·莫内的人如何在非洲的埃尔贡山感染了病毒，而后一周内全身淤斑、面目呆滞、最终血崩而死的。</p>
+<p>他感染的是“马尔堡病毒”。马尔堡病毒、苏丹埃博拉病毒、扎伊尔埃博拉病毒被叫做“埃博拉三姐妹”，她们是病毒中最致命的。它们生存在非洲热带雨林地区，1976年突然同时出现在人类社会。</p>
+<p>作者认为这是因为近年来，人类活动不断侵蚀热带雨林，它们的出现是大自然的反扑。另一方面，人类的粗心和贪婪又助长了它们在文明社会的传播。</p>
+<p><strong>第二，面对大自然“头号杀手”，人类如何抗争？</strong></p>
+<p>在埃博拉刚刚爆发的1970年代末，有美国科研人员飞到非洲的疫情村庄，在关着病人的茅屋里采集血样，只是穿着纸质的外科手术服和鞋套，最终险些被传染。</p>
+<p>在实验室里也同样存在危险。在美国陆军传染病研究所里，埃博拉属于最危险的等级，有研究者差点因为手套被刺破而感染，研究埃博拉的负责人也多年来都做着被感染的噩梦。</p>
+<p>勇气之外，还需要运气。他们研究多年，可能都在原地打转、徒劳无功，无法确定埃博拉的传播途径、摸不清埃博拉的源头、更别提治疗了。</p>
+<p><strong>第三，埃博拉不是非洲故事，它还曾出现在了美国首都附近，还去了两次。</strong></p>
+<p>在华盛顿特区旁边一个叫做“雷斯顿”的地方有一处实验用的猴舍，1989年他们从菲律宾运来的一批猴子离奇死亡，被证明感染了埃博拉。</p>
+<p>面对可能威胁全美的最大一场生物灾难，官方的应对显得混乱，他们出现了机构扯皮、向媒体隐瞒，最终派了一支兽医队伍去给埃博拉猴子安乐死。他们杀死了所有猴子，但不久之后来了同样一批病猴，他们选择让猴子自生自灭。</p>
+<p>其实在这次危机中，人类之所以能逃生，原因在于埃博拉出现了新的特征。比如，选择不攻击人类。在两次病毒来袭后，都没有人员出现之前被感染致死的情况，哪怕是体内发现了病毒也没事。</p>
+<p>但同时，此次埃博拉被证明可以通过空气传播。研究者恐惧的是，一旦埃博拉选择攻击人类、又可以通过空气传播，它对人类来说将堪比核威胁。</p>
+<p>作者认为埃博拉一定会卷土重来。就在2014年人类确实爆发了更大规模的埃博拉疫情。同时在2016年研制出了第一种埃博拉疫苗。但这只是在黑暗中与猛兽斗争时捡起的第一个盾牌，离战胜它还很远。</p>
 ]]></content>
       <categories>
-        <category>静态博客</category>
+        <category>听书笔记</category>
       </categories>
       <tags>
-        <tag>编程</tag>
-        <tag>基础</tag>
+        <tag>喜马拉雅</tag>
+        <tag>读书推荐</tag>
       </tags>
   </entry>
   <entry>
@@ -1128,488 +2287,6 @@
 <p>在开篇，我们提到门罗出生于1931年的加拿大。那个时候的加拿大，整体社会的高等教育程度并不高，大多数女孩在读完高中后，就选择嫁人，成为全职家庭主妇。而门罗成绩非常优秀，她凭借 11 门课程中 9 门第一的优秀成绩拿到了西安大略大学新闻系的奖学金。本来，以她的成绩和努力，完全可以完成大学学业的。但是她的家庭不允许，大学只读了两年，门罗就被迫辍学，选择了结婚生子这条老路，成了三个孩子的妈妈。每天，她都要忙于照顾孩子和做各种家务，写作的时间少得可怜，只能利用一丁点休息的时间，在餐桌边、在洗衣房的小桌前写。</p>
 <p>在作家这个领域，门罗也感受到了来自于男性社会的不公正对待。20世纪50 年代，加拿大艺术委员会拒绝了门罗向他们递交的写作项目经费资助申请，原因就是她在申请书上填写了想利用部分经费来雇佣保姆，这样她就可以有更多的时间从事写作。这在委员会的那帮人眼中看来简直是不可思议。那个年代，门罗这样的女性，首要的角色是妻子和母亲，然后才是她的职业。他们不会允许一个女人雇人来帮她完成家务。</p>
 <p>门罗一生写了很多女性的小说，她非常关注女性在这个社会上所遭受到的明面上和暗地里的那些伤害。她以自己切身的经历，深切地体会到一个社会的女性期待对女性的生存影响有多大。所以，门罗能够关注到索菲娅，为她单独写一篇小说，并作为一本小说集的压轴作品，是顺理成章的事情。可以说，索菲娅也好，门罗也好，他们都是各自时代最优秀的人才，在那样一个对女性充满歧视和压迫的时代，她们依旧能够绽放出自己最耀眼的光芒。这一点，非常值得我们学习。</p>
-]]></content>
-      <categories>
-        <category>听书笔记</category>
-      </categories>
-      <tags>
-        <tag>喜马拉雅</tag>
-        <tag>读书推荐</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java学习笔记【求知课堂】（一）</title>
-    <url>/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>网址：<a href="https://www.bilibili.com/video/av76235341" target="_blank" rel="noopener">https://www.bilibili.com/video/av76235341</a></strong></p>
-<a id="more"></a>
-<h1 id="零、入门"><a class="header-anchor" href="#零、入门">¶</a>零、入门</h1>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/1.png" alt></p>
-<h1 id="一、Java语言概述"><a class="header-anchor" href="#一、Java语言概述">¶</a>一、Java语言概述</h1>
-<h2 id="1-1基础常识"><a class="header-anchor" href="#1-1基础常识">¶</a>1.1基础常识</h2>
-<h3 id="软件开发"><a class="header-anchor" href="#软件开发">¶</a>软件开发</h3>
-<p>​        软件，即一系列按照特定顺序组织的计算机数据和指令的集合。有<strong>系统软件</strong>和<strong>应用软件</strong>之分。</p>
-<h3 id="人机交互方式"><a class="header-anchor" href="#人机交互方式">¶</a>人机交互方式</h3>
-<p>​        图形化界面(Graphical User Interface GUI)这种方式简单直观，使用者易于接受，容易上手操作。<br>
-​        命令行方式(Command Line Interface CLI)：需要有一个控制台，输入特定的指令，让计算机完成一些操作。较为麻烦，需要记录住一些命令。</p>
-<h3 id="常用的DOS命令"><a class="header-anchor" href="#常用的DOS命令">¶</a>常用的DOS命令</h3>
-<p><strong>打开DOS界面：按win+R，输入cmd，回车即可进入</strong></p>
-<p>注意:在输入dos命令时，要使用英文输入，所有标点都有是英文<br>
-d:<br>
-这冒号是英文</p>
-<p><code>dir</code> :    列出当前目录下的文件以及文件夹<br>
-<code>md</code> :   创建目录<br>
-<code>rd</code> :     删除目录<br>
-<code>cd</code> :    进入指定目录<br>
-<code>cd..</code> :  退回到上一级目录<br>
-<code>cd\</code>:    退回到根目录<br>
-<code>del</code> :    删除文件<br>
-<code>exit</code> :   退出 dos 命令行</p>
-<h2 id="1-2-Java语言概述"><a class="header-anchor" href="#1-2-Java语言概述">¶</a>1.2 Java语言概述</h2>
-<h3 id="什么是计算机语言"><a class="header-anchor" href="#什么是计算机语言">¶</a>什么是计算机语言</h3>
-<p>​        语言：是人与人之间用于沟通的一种方式。例如：中国人与中国人用普通话沟通。而中国人要和英国人交流，英国人要学习中文。<br>
-<strong>计算机语言：人与计算机交流的方式。</strong><br>
-​     如果人要与计算机交流，那么就要学习计算机语言。<br>
-​     计算机语言有很多种，如：C，C++，Java，python，PHP等。</p>
-<p><strong>第一代语言</strong><br>
-打孔机——纯机器语言<br>
-<strong>第二代语言</strong><br>
-汇编<br>
-<strong>第三代语言</strong><br>
-C、Pascal、Fortran面向过程的语言<br>
-C++面向过程/面向对象<br>
-Java跨平台的纯面向对象的语言<br>
-.NET跨语言的平台</p>
-<h3 id="Java技术体系平台"><a class="header-anchor" href="#Java技术体系平台">¶</a>Java技术体系平台</h3>
-<table>
-<thead>
-<tr>
-<th><strong>Java</strong> <strong>SE</strong>(Java Standard Edition)标准版</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>支持面向桌面级应用（如Windows下的应用程序）的Java平台，提供了完整的Java核心API，此版本以前称为<strong>J2SE</strong></td>
-</tr>
-<tr>
-<td><strong>Java</strong> <strong>EE(Java Enterprise Edition)企业版</strong></td>
-</tr>
-<tr>
-<td>是为开发企业环境下的应用程序提供的一套解决方案。该技术体系中包含的技术如:Servlet 、Jsp等，主要针对于Web应用程序开发。版本以前称为<strong>J2EE</strong></td>
-</tr>
-<tr>
-<td><strong>Java</strong> <strong>ME(Java Micro Edition)小型版</strong></td>
-</tr>
-<tr>
-<td>支持Java程序运行在移动终端（手机、PDA）上的平台，对Java API有所精简，并加入了针对移动终端的支持，此版本以前称为<strong>J2ME</strong></td>
-</tr>
-<tr>
-<td><strong>Java Card</strong></td>
-</tr>
-<tr>
-<td>支持一些Java小程序（Applets）运行在小内存设备（如智能卡）上的平台</td>
-</tr>
-</tbody>
-</table>
-<h2 id="1-3-Java语言运行机制及运行过程"><a class="header-anchor" href="#1-3-Java语言运行机制及运行过程">¶</a>1.3  Java语言运行机制及运行过程</h2>
-<h3 id="Java语言的特点"><a class="header-anchor" href="#Java语言的特点">¶</a>Java语言的特点</h3>
-<p>特点一：面向对象   女朋友才叫对象<br>
-两个基本概念：类、对象<br>
-三大特性：封装、继承、多态</p>
-<p>面向过程，例如张三打篮球，还有再做一个李四踢足球的程序？</p>
-<p>面向对象，人的对象，人的运动的动作，运动的器械这三个对象，<br>
-实例化一个张三的对象，对象有一个打篮球的动作，器械是篮球<br>
-实例化一个李四的对象，对象有一个踢足球的动作，器械是足球</p>
-<p>面向对象能够更好的在抽象的层面来分析问题，在程序实现跨越极大的赋予之前的代码<br>
-这些是面向过程编程很难实现的</p>
-<p>特点二：健壮性 完善性<br>
-吸收了C/C++语言的优点，但去掉了其影响程序健壮性的部分（如指针、内存的申请与释放等），提供了一个相对安全的内存管理和访问机制</p>
-<p>特点三：跨平台性  jvm<br>
-跨平台性：通过Java语言编写的应用程序在不同的系统平台上都可以运行。“Write 	once , Run Anywhere”，一次编写，处处运行<br>
-原理：只要在需要运行 java 应用程序的操作系统上，先安装一个Java虚拟机 (JVM Java Virtual Machine) 即可。由JVM来负责Java程序在该系统中的运行。</p>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E8%B7%A8%E5%B9%B3%E5%8F%B0.png" alt></p>
-<h3 id="Java两种核心机制"><a class="header-anchor" href="#Java两种核心机制">¶</a>Java两种核心机制</h3>
-<p>Java虚拟机（Java Virtal Machine），JVM</p>
-<p>​		JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器。<br>
-​		对于不同的平台，有不同的虚拟机。<br>
-​		Java虚拟机机制屏蔽了底层运行平台的差别，实现了“一次编译，到处运行”</p>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/2.png" alt></p>
-<p><strong>垃圾收集机制（Garbage Collection），GC</strong></p>
-<p>​        不再使用的内存空间应回收—— 垃圾回收。<br>
-​		在C/C++等语言中，由程序员负责回收无用内存。<br>
-​		Java 语言消除了程序员回收无用内存空间的责任：它提供一种系统级线程跟踪存储空间的分配情况。并在JVM空闲时，检查并释放那些可被释放的存储空间。<br>
-​		垃圾回收在Java程序运行过程中自动进行，程序员无法精确控制和干预。</p>
-<p>c，c++，由程序员回收，手动编写代码回收（优点：能够在内存不使用时快速回收，准确高效；缺点：容易失误出现bug，例如忘记编写回收内存的代码？内存一直不回收）</p>
-<p>java，垃圾回收是自动，开了一个习题集线程自动去检测哪些内存不用了然后回收掉（优点：自动的，意味着不会出现忘记回收；缺点：回收不及时）</p>
-<p>一般的观点是，宁可回收不及时但是一定要回收，使用自动的垃圾回收更合适</p>
-<h2 id="1-4-Java语言的环境搭建"><a class="header-anchor" href="#1-4-Java语言的环境搭建">¶</a>1.4 Java语言的环境搭建</h2>
-<h3 id="下载-JDK、安装-JDK"><a class="header-anchor" href="#下载-JDK、安装-JDK">¶</a>下载 JDK、安装 JDK</h3>
-<p><strong>官方网址：</strong><br>
-<strong><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a></strong><br>
-安装JDK<br>
-傻瓜式安装，下一步即可。<br>
-建议：安装路径不要有中文或者特殊符号如空格等。<br>
-当提示安装 JRE 时，可以选择不安装。</p>
-<p><strong>推荐下载</strong>绿色压缩版JDK，解压使用<br>
-<strong>链接：<a href="https://pan.baidu.com/s/1-gzYKrnW7IvUhGOBDl7J0g" target="_blank" rel="noopener">https://pan.baidu.com/s/1-gzYKrnW7IvUhGOBDl7J0g</a></strong><br>
-提取码：1bm4<br>
-这个jdk是32位</p>
-<p>​		正规的开发工作中，你之前的工作要求统一1.6.0.102，之后换了一个项目组，这个项目组要求使用1.8.0.1_103<br>
-可以先卸载掉前面的jdk，根据需要安装新的jdk</p>
-<p>​		你做技术核心同时支持3个项目，这3个项目分别使用不同版本的jdk</p>
-<p>​		正确的打开方式是？就是使用压缩版的jdk，根据情况解压不同版本来使用</p>
-<h3 id="配置环境变量"><a class="header-anchor" href="#配置环境变量">¶</a>配置环境变量</h3>
-<p><strong>设置JAVA_HOME</strong><br>
-解压jdk的目录</p>
-<p><strong>设置CLASSPATH</strong><br>
-.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</p>
-<p><strong>在path中加入两个新的配置</strong><br>
-%JAVA_HOME%\bin<br>
-%JAVA_HOME%\jre\bin</p>
-<h3 id="验证是否成功：java-version"><a class="header-anchor" href="#验证是否成功：java-version">¶</a>验证是否成功：java -version</h3>
-<h3 id="什么是JDK，JRE"><a class="header-anchor" href="#什么是JDK，JRE">¶</a>什么是JDK，JRE</h3>
-<table>
-<thead>
-<tr>
-<th><strong>JDK(Java Development Kit  Java开发工具包)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JDK是提供给Java开发人员使用的，其中包含了java的开发工具，也包括了JRE。所以安装了JDK，就不用在单独安装JRE了。 其中的开发工具：编译工具(javac.exe) 打包工具(jar.exe)等</td>
-</tr>
-<tr>
-<td><strong>JRE(Java Runtime Environment  Java运行环境)</strong></td>
-</tr>
-<tr>
-<td>包括Java虚拟机(JVM Java Virtual Machine)和Java程序所需的核心类库等，如果想要<strong>运行</strong>一个开发好的Java程序，计算机中只需要安装JRE即可。</td>
-</tr>
-</tbody>
-</table>
-<p>简单而言，使用JDK的开发工具完成的java程序，交给JRE去运行。</p>
-<h3 id="JVM、JRE、JDK-关系"><a class="header-anchor" href="#JVM、JRE、JDK-关系">¶</a>JVM、JRE、JDK 关系</h3>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%871.png" alt></p>
-<h2 id="1-5-开发体验-—-HelloWorld"><a class="header-anchor" href="#1-5-开发体验-—-HelloWorld">¶</a>1.5 开发体验 — HelloWorld</h2>
-<p><strong>步骤：</strong><br>
-将 Java 代码编写到扩展名为 .java 的文件中。<br>
-通过 javac 命令对该 java 文件进行编译。<br>
-通过 java 命令对生成的 class 文件进行运行。</p>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%872.png" alt></p>
-<p>Test.java文件代码如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*文档注释</span><br><span class="line">*这是一个打印hello world的类</span><br><span class="line">*@author lby</span><br><span class="line">*@version 1.0.0</span><br><span class="line">*&#x2F;</span><br><span class="line">public class Test&#123;</span><br><span class="line">        public static void main(String[] args)&#123;</span><br><span class="line">	&#x2F;&#x2F;单行注释，打印helloworld</span><br><span class="line">                System.out.print(&quot;hello world\n&quot;);</span><br><span class="line">	System.out.print(&quot;abc&quot;);</span><br><span class="line">	&#x2F;*</span><br><span class="line">	多行注释</span><br><span class="line">	下面准备写一个打印abc的程序</span><br><span class="line">	*&#x2F;</span><br><span class="line">	&#x2F;&#x2F;System.out.print(&quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">	&#x2F;*System.out.print(&quot;abc&quot;);</span><br><span class="line">	System.out.print(&quot;abc&quot;);</span><br><span class="line">	System.out.print(&quot;abc&quot;);*&#x2F;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在DOS中输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">javac Test.java</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java Test</span><br></pre></td></tr></table></figure>
-<h2 id="1-6-小结第一个程序"><a class="header-anchor" href="#1-6-小结第一个程序">¶</a>1.6 小结第一个程序</h2>
-<p>​		Java源文件以“java”为扩展名。源文件的基本组成部分是类（class），如本类中的Test类。<br>
-​		Java应用程序的执行入口是main()方法。它有固定的书写格式：<code>public static void main(String[] args)  {...}</code><br>
-​		Java语言严格区分大小写。<br>
-​		Java方法由一条条语句构成，每个语句以“;”结束。<br>
-​		括号都是成对出现的，缺一不可。</p>
-<h2 id="1-7-常见问题及解决方法"><a class="header-anchor" href="#1-7-常见问题及解决方法">¶</a>1.7 常见问题及解决方法</h2>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%873.png" alt></p>
-<p>源文件名不存在或者写错，或者当前路径错误。</p>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%874.png" alt></p>
-<p>类文件名写错，或者类文件不在当前路径下，或者不在classpath指定路径下。</p>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%875.png" alt></p>
-<p>声明为public的主类应与文件名一致，否则编译失败</p>
-<p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9B%BE%E7%89%876.png" alt></p>
-<p>编译失败，注意错误出现的行数，再到源代码中指定位置改错</p>
-<h2 id="1-8-注-释"><a class="header-anchor" href="#1-8-注-释">¶</a>1.8 注  释</h2>
-<p>​		用于注解说明解释程序的文字就是注释。<br>
-​		提高了代码的阅读性；调试程序的重要方法。<br>
-​		Java中的注释类型：<br>
-​				单行注释   //<br>
-​				多行注释/* */<br>
-​				文档注释（java特有）<br>
-​		注释是一个程序员必须要具有的良好编程习惯。<br>
-​		将自己的思想通过注释先整理出来，再用代码去体现</p>
-<p><strong>注：</strong><br>
-对于单行和多行注释，被注释的文字，不会被JVM（java虚拟机）解释执行。<br>
-多行注释里面不允许有多行注释嵌套。</p>
-<p>文档注释（java特有）<br>
-格式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">*@author  指定java程序的作者</span><br><span class="line">*@version  指定源文件的版本</span><br><span class="line">*@param   方法的参数说明信息</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-<p>注释内容可以被JDK提供的工具 <code>javadoc</code> 所解析，生成一套以网页文件形式体现的该程序的说明文档。</p>
-<h2 id="知识回顾"><a class="header-anchor" href="#知识回顾">¶</a>知识回顾</h2>
-<p>●  JDK,JRE,JVM的关系。</p>
-<p>●  环境变量path配置及其作用。</p>
-<p>●  Java程序的编写、编译、运行步骤。</p>
-<p>●  Java程序编写的规则。</p>
-<p>●  在配置环境、编译、运行各个步骤中常见的错误以及解决方法。</p>
-<p>●  注释</p>
-]]></content>
-      <categories>
-        <category>求知课堂</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>基础</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java学习笔记【求知课堂】（二）</title>
-    <url>/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>网址：<a href="https://www.bilibili.com/video/av76235341" target="_blank" rel="noopener">https://www.bilibili.com/video/av76235341</a></strong></p>
-<a id="more"></a>
-<h1 id="二、Java基本语法1"><a class="header-anchor" href="#二、Java基本语法1">¶</a>二、Java基本语法1</h1>
-]]></content>
-      <categories>
-        <category>求知课堂</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-        <tag>基础</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>喜马听书笔记【附电子书】（二）</title>
-    <url>/2020/06/13/%E5%96%9C%E9%A9%AC%E5%90%AC%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%90%E9%99%84%E7%94%B5%E5%AD%90%E4%B9%A6%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本期包括《毕司沃斯先生的房子》、《救命饮食》、《态度》、《影响力大师》、《只需倾听》、《恐惧》、《血疫》共七本书。</p>
-<a id="more"></a>
-<p>电子书下载地址：<strong><a href="https://wws.lanzous.com/b01bhdefc" target="_blank" rel="noopener">https://wws.lanzous.com/b01bhdefc</a></strong><br>
-<strong>密码:gyni</strong></p>
-<h1 id="008文学丨《毕司沃斯先生的房子》：诺奖作家奈保尔代表作，殖民作家永远的身份追寻"><a class="header-anchor" href="#008文学丨《毕司沃斯先生的房子》：诺奖作家奈保尔代表作，殖民作家永远的身份追寻">¶</a>008文学丨《毕司沃斯先生的房子》：诺奖作家奈保尔代表作，殖民作家永远的身份追寻</h1>
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=247976794&type=red" frameborder="0" allowfullscreen></iframe>
-<p>2001年诺贝尔文学奖获得者奈保尔的代表作《毕司沃斯先生的房子》。出版于半个多世纪前的1961年，它的关键词——房子，今天依然能牵动我们的心。对于小说主人公毕司沃斯先生来说，房子不仅仅是一个遮风挡雨的住所，更是他拥有独立身份和尊严的至高无上的证明。</p>
-<p><strong>为什么说这部小说融入了奈保尔的自身经历？</strong></p>
-<p>1932年，奈保尔出生在特立尼达和多巴哥共和国一个印度婆罗门移民家庭。特立尼达是个位于加勒比海的落后、闭塞的岛国，面积不及上海的十分之一。它之前是西班牙殖民地，但是1797年，英国舰队挫败西班牙，占领了这个岛国，从此便不断地输送印度和非洲人口来此。奈保尔家族也就是在这时，以契约劳工的身份从印度来到特立尼达。奈保尔从小阅读大量英国文学作品，11岁就确立了当作家的梦想，以及去英国实现梦想的决心。后来奈保尔如愿考上了牛津大学，毕业后也成了一名作家，一生创作了三十多部作品，荣获布克奖、诺贝尔文学奖等各项荣誉，还被英国女王封为爵士。奈保尔似乎实现了作家梦；但是，无论在特立尼达、印度还是英国，他始终都觉得自己是一个异乡人，这种无所依傍的漂泊感一直持续到2018年去世。在英国，奈保尔曾饱受颠沛流离之苦，几乎一度被贫穷和歧视推入绝境。他曾经尝试过开煤气自杀，结果因煤气不够没有成功。在寻求身份的艰难岁月中，对房子的渴求也成为奈保尔难解的情结。奈保尔曾声称：“在我所有的作品中，《毕司沃斯先生的房子》是最贴近我的一部。”评论界也把这部小说视为奈保尔最成功的小说，将其归入英国20世界百佳小说的榜单。</p>
-<p><strong>为什么小说又被成为家庭传记和移民史诗？</strong></p>
-<p>小说将近五十万字，奈保尔以史诗般的规模描写了毕司沃斯先生平庸、忙碌、辛酸而悲伤的一生，具有鲜明的家庭传记色彩与移民史诗风格。</p>
-<p>主人公毕司沃斯先生，是特立尼达首府西班牙港《卫报》的新闻编辑，一生最大的梦想就是拥有自己的房子。为什么呢？与作者奈保尔一样，毕司沃斯先生是个印度移民，他虽然属于婆罗门种姓，是贵族阶层，但是他生于贫寒家庭，自结婚后一直住在属于妻子图尔斯家族的房子里。他曾经自己尝试建造木头房子，但是最终都以失败告终。在他生命的最后时光，他终于拥有了自己的房子，也为此背上了繁重的债务。</p>
-<p>小说开始从头叙述毕司沃斯先生为房子而奋斗的一生，为了便于讲述，我们以他结婚入赘图尔斯家族和进入《卫报》当记者为界，将主人公的生命历程分成三个阶段。</p>
-<p>第一阶段是毕司沃斯先生童年和青年成长的经历。在写童年阶段时，奈保尔的笔触带着拉丁美洲式的魔幻色彩。毕司沃斯先生出生于特立尼达一个有着浓厚印度生活习俗和宗教信仰的乡村社区，他的出生充满了不祥之兆：胎位不正，生在半夜时分，还长着六指。</p>
-<p>毕司沃斯先生违反禁令偷偷溜到水边玩耍，结果不小心让邻居家的牛犊淹死在水塘里，他吓得躲了起来；大家到处寻他不见，都以为他也掉到水塘里了，父亲便下塘寻找儿子，结果不幸淹死了。父亲的死，让毕司沃斯家从此失去了家庭支柱，他们频繁遭受村里人的欺侮，母亲最后不得已把房子和地都卖给了邻居，然后搬家到邻近的波各迪斯小镇，投靠姐姐塔拉生活。</p>
-<p>这次搬离是毕司沃斯先生人生的第一次转折，也是他第一次意识到“房子”的重要意义。而作为移民者，毕司沃斯先生家园的丧失，也展现出了更深层次的意蕴。小说写道：“毕司沃斯先生离开了这个他唯一有权力的房子。在以后的三十五年里，他像个流浪者一样到处辗转，却没有一处他可以称之为家。”</p>
-<p>由于毕司沃斯先生的婆罗门身份，在姨妈塔拉家特殊的宗教仪式中，他作为婆罗门时可以登堂人室，享受高种性的上等人应该享受的尊贵身份，姨妈还安排他到梵学家杰拉姆家里学习，希望他也能成为一个婆罗门学者。然而毕司沃斯先生对印度语和经文也毫无兴趣，最终因为不小心玷污了圣树，而被粗暴地逐出师门。</p>
-<p>这次被驱逐事件，可以视为毕司沃斯先生第二次人生转折，他的身份意识慢慢觉醒，他希望拥有自己的独立空间，拥有一套独立的房子。</p>
-<p>**之后，毕司沃斯先生进入了成年阶段，他迎来了生命的第二阶段——步入婚姻。**他在朋友的帮助下找到了一份画广告牌的工作，充分发挥了自己的印刷体书写优势。也正是这份工作，使他来到了堪称豪门的图尔斯家族，并遇见了后来的妻子莎玛。毕司沃斯先生得以入赘图尔斯家族，一方面在于他婆罗门种姓的印度移民身份。</p>
-<p>成了上门女婿后，毕司沃斯先生迷失在庞大的图尔斯家族中。他和妻子莎玛住在一个阳台隔成的长形小屋中，他因贫穷而被指责，人人都说，“你来到这个家时，你所拥有的东西还不够挂满一根一英寸的钉子”，人人都觉得他应该对图尔斯家族感恩戴德。毕司沃斯先生在家中没有任何权力，孩子的名字都是图尔斯家族的人取的，他甚至无法为自己的孩子买一件与众不同的玩具，因为姐妹们的嫉妒，妻子莎玛不得不把他为女儿买的昂贵的玩具房子砸烂。他的生活总是由图尔斯家族安排：先是安排他成为一家店铺的小店主，然后又安排他成为甘蔗种植园的工头。在拥挤、喧哗的大宅子中，司沃斯先生无足轻重，他既没有个人或小家庭的空间，更得不到身份的认同和尊重。</p>
-<p>为了抗拒无时不在的被吞没的感觉，毕司沃斯先生时常和家庭成员发生冲突，但是，每一次都以他的失败结束。他越来越强烈地想要出逃，想要摆脱这个大家庭的控制，寻求自己的立身之处。于是，建立一处自己的房子，成了他的人生目标。为此，他带着一家人经历了一次又一次的迁居，无数次做着拥有自己的房子的美梦。</p>
-<p>毕司沃斯先生为房子奋斗的一生进入第三阶段——他来到西班牙港，之后他将在锡金街度过生命的最后十五年。毕司沃斯先生凭借画广告牌的手艺和阅读的积累，进入《特立尼达卫报》做记者，这自然是一份再理想不过的工作。他很快把妻子玛莎、四个孩于一家六口接到西班牙港，不过依然没有自己的房子，住的是图尔斯家在西班牙港的房产。由于记者事业的成功起步，毕司沃斯先生找回了一些自信，他怀着对新生活的热忱对住所进行了改造：砌花园，种玫瑰，挖水塘种莲花，还买了一些家具。后来他自己找了一块地皮，建了一所和绿谷差不多的房子，不幸是的，房子毁于一场大火。毕司沃斯先生又随全家搬到了西班牙港的房子里，他和家族矛盾丛生，特别是当他冲撞了图尔斯太太的小儿子奥华德，冲突变得更加激烈。</p>
-<p>伴随着房子梦想的一次次破灭，毕司沃斯在工作上也渐渐失势。他觉得再也不能在图尔斯家住下去，他拼命四处寻找房子，准备贷款买房子。此时，一位法务官文书自愿将自己的一幢房子低价出让给他。毕司沃斯求房心切，他毫不犹豫地花光一生的积蓄、加上贷款3000美元将房子买厂来。但是当他带着一家六口搬进新居时，才发现房子质量低劣。</p>
-<p>虽然这座住宅不甚完美，但是不管怎样，最后他终于拥有了自己的房子了，哪怕是在这最后的岁月里。小说写道，“在被疾病和绝望折磨的数月里，他一次又一次地觉得，住在自己的房子里，拥有自己的房子，是多么不可思议的事情。从小，他就从一个陌生人的屋子迁移到另一个陌生人的家，从小他就不断遭到指责。而现在，每天晚上关上门窗，除了自己家里的声音，他听不见任何喧嚣；他自由自在地穿梭在自己的房间和庭院之间。”</p>
-<p>就这样，毕司沃斯先生终于有了自己的房子，只是背下了繁重的贷款。为了偿还贷款，毕司沃斯先生不得不超负荷加班加点工作，终因心脏病突发而猝死在这座还没付完贷款的房子里。小说以毕司沃斯先生的葬礼结尾，之后，“莎玛和孩子们回到空空的房子里”。</p>
-<p><strong>毕司沃斯先生的故事是一个移民者追求尊严与身份的悲喜剧？</strong></p>
-<p>就像书中写的，当他们搬到新房子里时，妻子莎玛离开她的母亲和姐妹们，对毕司沃斯先生和孩子萌生了一种新的忠诚，这简直是和拥有自己的房子一样是天大的胜利。锡金街的住宅，让他真正属于自己的空间，但是很不幸，他并没有时间享受这种自由和安定的喜悦，就英年早逝了。</p>
-<p>但是，与其他文学作品中的边缘人不同的是，在卑微和漂泊的命运中，毕司沃斯先生始终怀有一个坚定的梦想：拥有独立的房屋，建构自己的身份和尊严。这种信念和追求伴随着他的整个一生。毕司沃斯的人生史，就是他为了拥有自己的房子的奋斗史。</p>
-<p><strong>为什么说小说展现出奈保尔对于印度社群归属的担忧？</strong></p>
-<p>小说中，图尔斯家族从特立尼达搬到西班牙港，已经展现出印度移民群体性的衰落。在特立尼达，印度移民社会是分裂的，按宗教、民族、种姓划分的各移民集团之间缺乏认同，同当地的其他民族更是很难归化。这种现象在印度移民人数占多数比重的地方，如特立尼达，特别突出。20世纪上半叶，特立尼阿达印度移民在异国他乡的奋斗，是充满着困惑和无奈的。西印度群岛契约劳工及其后代，毕司沃斯的奋斗和遭遇，他们希望建造一所属于自己的、自由支配的、有主人翁感觉的房子的追求，正是这一艰难旅程的侧影。作为毕司沃斯对立面的图尔斯家族，其实与毕司沃斯先生同样面临着身份归属的危机。哈努曼大宅的名称，正是来源于《罗摩衍那》中令印度人民无限尊崇的英雄。</p>
-<p><strong>奈保尔如何分析印度社会衰落的原因？</strong></p>
-<p>首先，奈保尔将批判的笔触指向殖民者。奈保尔本人出身于印度婆罗门贵族，但却生活在落后、闭塞的殖民地特立尼达；而在印度，他又被认为是特立尼达人，无法找到自己的民族之根；在英国伦敦，他是遭受歧视、艰难求生的印度人。在这三地不同历史文化的撕扯当中，奈保尔也陷入寻求身份的长久的苦闷和艰难之中。而这一切，都是建立于殖民历史背景之中。特立尼达和印度都曾经是英国的殖民地，当殖民地在上世纪获得独立身份，却仍然摆脱不了殖民国家对他们的评判，摆脱不了作为第三世界国家被裁判和审视的地位，更摆脱不了文明延续被摧毁的残酷现状。</p>
-<p>奈保尔不仅批判殖民主义，对于第三世界国家，奈保尔展开的批判更加毫不留情。在被奈保尔称为“半吊子社会”的国家中，比如特立尼达，印度移民常常会谈论要不要回到印度家乡，但是谁也没有真正动身，大家都懒于改变现状，懒于去开创和行动。他在《印度三部曲》中写道，印度是个早已被挫败的国家，这个国家唯一的希望在于更迅速的衰败。对于特立尼达，他同样认为，这是个价值观彻底错乱、人人活得卑微的小地方。</p>
-<p>从某种意义上来说，奈保尔虽然被归为后殖民作家，但是他并没有因外界对于一个殖民地作家的期待而改变自己的立场。他的批判锋芒不仅仅针对殖民主义，甚至更强烈地落在殖民地人民的身上。在他的早期作品中，奈保尔书写了特立尼达的混乱、丑陋，后来他在其《印度三部曲》中大谈印度的贫穷、喧嚣和盲目，在批判的同时，奈保尔亦不乏深度的探索和思考，他说，20世纪后期的印度，其独立的含义远不止是英国人的离开，更需要印度政府和人民做到真正的独立。</p>
-<p>作为双重的文化移民，奈保尔既不属于殖民地印度、特立尼达，也不属于宗主国英国，他在这个印度-特立尼达-英国的文化三角中的身份寻求，正应了德国哲学家阿多诺的话，即，对于一个没有故乡的人来说，写作成为居住之地。</p>
-<p>在2001年的诺贝尔文学奖颁奖仪式上，瑞典文学院曾这样评价奈保尔说：“他将极具洞察力的叙述与不为世俗左右的探索融为一体，让我们从被扭曲的历史中探寻真相。”其实从某种意义上来说，阅读奈保尔，不仅是走进殖民地人民的思想和感情世界，也是对现代人的文化困境的审视。毕司沃斯先生的家园寻求，也正是奈保尔自己的身份追问，对于他们来说，移民的遭遇让他们更迫切地想抓住一砖一瓦，以安放自己、保护自己、证明自己。</p>
-<p>这也是我们每个人都会面临的生存困境。即使我们不是被殖民者，但是移民、无家可归的境遇依然困扰着我们。我们依然在寻求认同和尊严的漫漫长路上跋涉前行，我们依然不惜押上自己的一切，去获得这种空间占有和身份证明的笃定感。毋庸置疑，人类始终在经历人生的某种一致性：殖民地人民并不是来自另一个世界的异类，他们的痛苦离我们并不遥远；而像奈保尔这样的后殖民作家，与和平世界的我们一样，在背井离乡、在陌生城市打拼，在不被接受、无法得到认同时，这种生命和尊严的寻求，将是人们面临的永恒的身份追问。</p>
-<p>作者：（英）V.S.奈保尔</p>
-<h1 id="009科普丨《救命饮食》：为你揭示饮食和疾病的真相"><a class="header-anchor" href="#009科普丨《救命饮食》：为你揭示饮食和疾病的真相">¶</a>009科普丨《救命饮食》：为你揭示饮食和疾病的真相</h1>
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=247358998&type=red" frameborder="0" allowfullscreen></iframe>
-<p>精华笔记</p>
-<p>本书的作者柯林·坎贝尔是康奈尔大学的终身教授。从业40余年来一直从事营养和慢性病关系的研究。</p>
-<p>20世纪80年代初，在坎贝尔的推动下，其所在的美国康奈尔大学联合英国牛津大学、中国疾病预防与控制中心，以及中国医学科学院等多家权威机构，在中国开展了三次关于膳食、生活方式和疾病死亡率的流行病学研究，也就是本书副标题中说到的中国健康调查。这项中国研究被誉为流行病学的巅峰之作。</p>
-<p>在本书中，作者整合了这项中国研究中的一些重要的发现，对饮食和慢性病的关系提出了独到的见解。在此基础上，他还给出了一套理想的膳食方案，能让你保持健康，远离疾病。</p>
-<p>我将分两部分内容为你解读本书：</p>
-<p><strong>第一、 什么是救命饮食？</strong></p>
-<p>结论是：如果你平常吃肉蛋奶等动物性食品较多，就比较容易得癌症等慢性病；而如果你吃的天然素食较多，就能预防或者延缓疾病的发生。因此，所谓能救命的饮食，简单来说，就是要少吃荤，多吃素。</p>
-<p>这个结论是怎么得到的呢？</p>
-<p><strong>1</strong>**、一个重要的动物实验**</p>
-<p>坎贝尔和同事在动物实验中发现，对于接触黄曲霉毒素的大鼠来说，蛋白质含量为20%的高蛋白饮食会促进肝癌的发展，而5%的低蛋白饮食对于肝癌有很好的抵抗作用。这里的蛋白质是牛奶蛋白质的主要成分，酪蛋白。</p>
-<p>但来自植物的大豆蛋白和小麦蛋白，即便都达到了20%的高剂量，也不会产生促癌的效果。</p>
-<p><strong>这让坎贝尔意识到，通常被认为优质的动物蛋白质，比如牛奶，可能会带来潜在的疾病风险，而来源于植物的营养成分可能更加健康。</strong></p>
-<p>不过，动物实验的结论不能直接照搬到人类身上。想要获得饮食和疾病关系更直接的证据，还需要依靠流行病学研究。中国健康调查就是一项大型流行病学研究。</p>
-<p><strong>2</strong>**、中国健康调查**</p>
-<p>这项研究发现饮食和疾病之间存在着三个统计学上的显著相关：</p>
-<p><strong>第一个相关性是，动物性食物吃得越多，癌症发病率就越高；植物性食物吃得多呢，癌症发病率就低。</strong></p>
-<p>研究人员发现，血液中的胆固醇高，多种癌症的发病率就高，反之，癌症发病率就低。而血液中的胆固醇只来源于动物性食物。</p>
-<p><strong>第二个相关性是，动物性食品吃得多，乳腺癌发病率就高；吃得少，就不怎么容易得乳腺癌。</strong></p>
-<p>研究人员发现，如果饮食中脂肪的含量大幅下降，乳腺癌的发病率就会显著降低。而当时中国农村，饮食中的脂肪都来自于动物食品。</p>
-<p><strong>第三个相关性是，植物性食物吃得越多，消化道癌症的发病率就越低；吃得少，就比较容易得病。</strong></p>
-<p>吃进的膳食纤维多，多种消化道癌症发病率就低。膳食纤维都来自于植物性食物。体内维生素C和胡萝卜素含量越高，癌症越不容易发生。它们同样是植物来源的营养素。</p>
-<p>不过，在科学领域，这些显著相关仍不能直接说明饮食和疾病的因果关系。因此坎贝尔又分析了大量权威的科学研究结论。这些结论更有针对性地指出，饮食方式会对疾病带来关键性的影响。</p>
-<p><strong>3</strong>**、其他针对特定疾病的研究**</p>
-<p>**心脏病：**全素食饮食介入可缓解疾病</p>
-<p>**糖尿病：**全素食饮食介入可缓解疾病</p>
-<p>**前列腺癌：**肉类、奶类摄入过多会增加一种叫做胰岛素样生长因子的荷尔蒙，它会促进前列腺癌的病发和转移</p>
-<p>**痴呆症：**饱和脂肪摄入增加，患血管性痴呆症的风险增加。饱和脂肪主要来自于动物食品。</p>
-<p>第二、 <strong>作者的研究和观点对人们有哪些启发呢？</strong></p>
-<p><strong>第一个启示，基因对疾病并不起决定作用，饮食对疾病也会有比较大的影响。</strong></p>
-<p>对于很多疾病，比如癌症、心脏病、糖尿病和阿尔茨海默病等来说，基因只提供了子弹，但是扣下扳机的还有很多其他可控的因素，比如起关键作用的饮食。</p>
-<p><strong>第二个启示，是要重视天然素食在饮食中的作用。</strong></p>
-<p><strong>一是要吃真正的纯天然素食。</strong></p>
-<p>纯天然素食，指的是粗加工的谷类、豆类、新鲜果蔬等，精制加工后的食物不包括在内。因为它们在加工时失去了天然素食最宝贵的部分。</p>
-<p>除了天然素食以外，还要尽可能多样化。素食在脂肪和蛋白质的含量上稍有欠缺，因此需要多样化的种类，来保证营养和能量需求。</p>
-<p>不推荐用植物营养补充剂来代替天然素食。单个营养补充剂无法达到食物营养的综合效果，还有可能会给人体带来危害。</p>
-<p>除了吃天然素食，吃的方面**，坎贝尔建议不要走极端。**</p>
-<p><strong>一种极端是严格全素食。</strong></p>
-<p>首先，全素食并不像想象的那么容易。全素食要付出很多努力，一不小心就可能会营养不良。</p>
-<p>其次，对于大多数中国人来说，全素食也没有必要。因为中国人的动物性食品摄入量相对偏低，而且，对于儿童和青少年来说，动物性食品促进生长发育的效率也更高。</p>
-<p>因此，没必要做到100%严格素食。</p>
-<p><strong>另一种极端是，将素食等同于药物。</strong></p>
-<p>天然素食能够预防甚至扭转疾病的进程，但是这并不是说一旦确诊了疾病，就可以不用吃药就医，而靠吃素来治疗。这是因为营养的作用机制比较缓慢温和，而且素食治疗疾病的证据也还不够明确和充分。</p>
-<p>综上，坎贝尔推荐的健康饮食模式就是：在你现有的饮食中增加多样化天然素食，同时减少一部分的动物性食品就可以了。</p>
-<p><strong>第三个启示是，除了饮食和营养，也不要忽视其他健康因素。</strong></p>
-<p>健康是一个系统工程，营养只是其中的一个方面。比如运动和情绪，都在其中充当了很重要的角色。这些因素共同作用才能有综合的健康效果。同时，这些因素之间也会互相影响，健康就要尽可能地去保持生活各方面的平衡。</p>
-<p>作者：[美]柯林·坎贝尔 托马斯·坎贝尔</p>
-<h1 id="010成长丨《态度》：吴军教你把简单的事情做得出人意料地精彩"><a class="header-anchor" href="#010成长丨《态度》：吴军教你把简单的事情做得出人意料地精彩">¶</a>010成长丨《态度》：吴军教你把简单的事情做得出人意料地精彩</h1>
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=246838961&type=red" frameborder="0" allowfullscreen></iframe>
-<p>听书笔记</p>
-<p>本书作者吴军，本科和硕士毕业于清华大学，博士毕业于美国约翰·霍普金斯大学，是知名的人工智能、语音识别和互联网搜索专家。他先后在谷歌、腾讯任职，还创立了自己的投资公司。同时他还是一名作家，著有《浪潮之巅》《智能时代》《文明之光》等多部畅销书。</p>
-<p>在吴军的人生经历中，他发现一些起点差不多的人会不断分化，进而拉开人生的差距，而其中起到决定性作用的就是一个人为人处世的态度。因此，吴军想要将“态度决定命运”这个道理告诉他的两个女儿。</p>
-<p>下面我将吴军的40封家书总结为以下五个态度</p>
-<p><strong>第一个态度——做人的态度。</strong></p>
-<p>关于做人的态度，吴军给出了三个建议，就是要乐观，要做个好人，还要学会抵制诱惑。</p>
-<p>我们先来讲乐观的做人态度。吴军认为，一个乐观的人生态度比什么都重要。一个人积极乐观，他就不容易被怨恨、嫉妒这些不良情绪影响，会更达观地看待身边的人事物，也更容易获得快乐和幸福。</p>
-<p>吴军认为做人的<strong>第二个态度是要做一个好人</strong>。一个人的品行比能力更加重要。那怎样才算是一个好人呢？吴军认为有三条标准：有教养、对他人友善、对世界有爱心。</p>
-<p>吴军教给年轻人做人的第<strong>三个态度是要抵制诱惑。</strong></p>
-<p>人在成长的过程中经常会面临很多诱惑。那如何才能抵制诱惑呢？可以从两方面着手：</p>
-<p>首先，要有一个长远的目标，并积极地为实现目标而努力。</p>
-<p>其次，是多做一些有成就感、有回报的事情。就是那些能够真正提升你的能力，让你变得更加强大的事情。</p>
-<p>第二个态度**——**学习的态度。吴军自己就是一个学霸，关于学习的态度，他有很多经验可以传授给年轻人，总结起来主要是四个方面：</p>
-<p>首先是要脚踏实地。在学习所有学科时，按部就班的笨办法才是好办法。这样才能打好学习的基础。而那些一味想着走捷径的人，在学习过程中反而容易有遗漏和缺失。</p>
-<p>第二个学习态度，是要注重培养自己的逻辑思维能力。比如，学好数学，或者是多阅读经典的非虚构类名著。</p>
-<p>学习中要注意的第三个态度是要有独立思考能力。吴军的建议是做一个理性的怀疑者，并学会证伪。 除此之外，要想做一个理性的怀疑者，即使是面对科学也要持怀疑的态度。</p>
-<p>学习的第四个态度，是要努力开拓眼界。就是不要把目光局限在自己所学的专业上。</p>
-<p><strong>第三个态度——做事的态度。</strong></p>
-<p>当我们决定要不要做一件事情时，最关键的就是要记住八个字：<strong>“<strong>格局要大，境界要高</strong>”</strong>。</p>
-<p>格局要大，就是在决定要做什么，不做什么时，不要只想着如何为自己创造利益，而要想着用自己的能力为更多的人创造利益。</p>
-<p>境界要高呢，就是看事情要看得长远，不要只考虑眼前的一点蝇头小利。人一旦习惯获得短期利益，那境界就高不起来了。</p>
-<p>另外，做事前不要过分计算成功的概率，自己想做的事情就去做，也不要一味追求做到最好，而裹足不前。最好的方法是先开始做，然后再逐步优化。</p>
-<p>想好了要开始做，但是在做的过程中还会面临很多困难。吴军认为要把事情做好还要有三个态度：</p>
-<p>第一，要设定好优先级。现实生活中，往往是旧的工作还没有完成，新的任务就来了。这时候找到优先级就很关键了。</p>
-<p>第二，要主动做事。主动做事不仅仅是指你不拖延，积极地完成手中的工作，它还有更深层次的意义，就是要求你去主动沟通、主动优化。</p>
-<p>第三，要努力将事情做到极致。人们常说失败是成功之母，但吴军认为成功才是成功之母。正是因为人们有了成功的经验，才会更加有信心。所以我们在做事情的时候，要全力以赴，将事情做到极致。</p>
-<p>当一件事情做完以后，我们还要学会正确地看待挫折和运气。</p>
-<p>很多人在遭遇挫折之后将失败归结于运气太差，命运不济，然后就一蹶不振，选择逃避。吴军认为，世界上当然有运气这回事，像那些买彩票中大奖的人，他们的好运气自然不必说。但更多的运气背后藏着人们付出的努力。</p>
-<p><strong>第四个态度——人际交往的态度。</strong></p>
-<p>第一点，不要怕吃亏。吴军认为，与人交往最重要的是真诚，不要怕吃亏，毕竟人无完人，不要一味地苛求他人。</p>
-<p>第二点，学会识人。生活中我们应该怎样识人呢？</p>
-<p>第一，要看一个人和你交往的动机如何。</p>
-<p>第二，想防范小人，首先你自己就要戒除贪欲。</p>
-<p>第三，还要观察这个人的生活圈子。</p>
-<p>第三点，学会拒绝他人。人际交往是一个复杂的事情，当别人请你帮忙时，对方和你的关系，以及请求事情的难易程度，都会让你有不同的考量。但最重要的是要有一个真诚的态度，不要夸大自己的能力，也不要违背自己的本心。</p>
-<p>**第五个态度——对待钱的态度。**吴军对待钱的态度可以总结为两句话：第一，不要乱花钱，也不要乱省钱；第二，让钱生钱，还要让钱发挥更大的作用。</p>
-<p>年轻人一定要坚持先赚钱再花钱，这个顺序绝对不能颠倒过来。吴军还希望年轻人能够从大处着眼，从自身的需求出发，该花的钱大胆花。</p>
-<p>有了钱以后，要学会用钱生钱，也就是要学会投资。吴军认为各种投资方法，年轻人都可以去尝试。但是一定要注意不要过于冒险，也不要去盲目进行自己不懂的投资。</p>
-<p>吴军还建议年轻人可以拿三分之一的钱去投资指数基金，这个方法也是巴菲特给普通投资者的建议。</p>
-<p>最后，当你真的有一天赚到了大钱，实现了财务自由，要学会让钱发挥更大的作用。吴军认为人不能过于守财。他希望年轻人在有钱以后能够回馈社会，利用财富做一点其他人没有做或者做不到的事。</p>
-<p>作者：吴军</p>
-<h1 id="011成长-《影响力大师》：影响力培训经典教材，6大策略360度影响他人和组织"><a class="header-anchor" href="#011成长-《影响力大师》：影响力培训经典教材，6大策略360度影响他人和组织">¶</a>011成长 《影响力大师》：影响力培训经典教材，6大策略360度影响他人和组织</h1>
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=246083687&type=red" frameborder="0" allowfullscreen></iframe>
-<p><strong>听书笔记</strong></p>
-<p>本书的作者约瑟夫•格雷尼采访了很多影响力大师，发现大师们的做法其实是有共通之处，他从中总结出了一套通用的方法。今天，我将分两个部分为你解读这套方法。</p>
-<p>先说**第一部分，**影响力的目标。</p>
-<p>所谓影响力，就是让人做出改变的能力。而要让人改变，你首先要知道，你希望他达成什么样的结果，创造什么样的价值。也就是说，你的影响力<strong>目标</strong>是什么？你要在自己的头脑中把这一点想清楚。不仅要自己想清楚，你还需要能把它传达给你的影响对象，也就是当事人。只有当事人完全领会和认可你的意图，他才能更好地参与起来。所以，你的目标必须制定得足够清晰，让人一听就懂。</p>
-<p>仅仅制定有了一个目标还不够。你还需要分析，达成目标所需要的<strong>关键行为</strong>是什么。所谓关键行为，就是一两个最需要改变的地方，一旦改变了，目标就能实现。为什么要强调“关键”两个字呢？因为一旦人们发现需要改变的地方太多，他们会感到巨大的压力，导致他们要么一直拖着不做，延误了时机，要么浅尝辄止，就此放弃。</p>
-<p>那怎么去发现关键行为呢？有两个技巧。<strong>第一个技巧是关注那些重要的小事</strong>。这类小事，往往是大家都知道它重要、应该做，但由于它太小、太不起眼了，所以根本没有得到真正的落实。</p>
-<p>**第二个技巧是找出频繁犯错的时刻。**接下来的问题是，你需要找到合适的策略，引导人们在关键行为上做出改变。人们会不会做出改变，要看两个要素。一个是动力，他是不是愿意改变。另一个是能力，如果他愿意改变，是不是能做到。这两个要素缺一不可。所以，影响力策略的目的，就是要让他同时具备这两个要素。</p>
-<p>**第二部分，**从六个角度来设计影响力策略。</p>
-<p>先说第一个角度**，个人动力。**</p>
-<p>当事人内心当中有抵触，不想改变，怎么办呢？这种情况其实是很常见的，改变往往会让人付出一些代价。所以，你要引导当事人看待问题的角度。如果他现在琢磨的是眼下付出了什么，你可以引导他关注未来能得到什么。如果他理性上觉得不划算，那就从情感上触动他，让他感到哪怕有点损失也是值得的。</p>
-<p>第二个角度是<strong>社会动力。</strong></p>
-<p>人是高度社会性的动物，其他人的看法也极大地影响他做事情的动力。比如说，你想在公司干点事，老板是不是认可你的点子，他是不是舍得花时间、花钱，是不是投入了大量的关注。其他人都会看在眼里，进而决定是否支持。这很好理解。</p>
-<p>因为老板在这个群体拥有最大的权力，他属于群体中的正式领袖。除了正式领袖，还有一类人，他们可能没有什么头衔，但也会发挥领袖的作用。这类人我们称之为“意见领袖”。意见领袖和正式领袖一样，极大地影响着当事人的动力。</p>
-<p>第三个角度是<strong>系统动力。</strong></p>
-<p>简单说，系统动力就是奖惩机制。如果当事人发现，做出改变会受到奖励，不做就会受到惩罚，那么他改变的动力相对就更加充足。运用奖惩机制来增强当事人的动力，需要注意它只适合用来锦上添花。什么意思呢？就是说，你要优先从个人角度和社会角度来设计动力策略，奖惩机制放在最后，起到一个巩固的作用。</p>
-<p>所以，千万不要过度依赖奖惩机制。正确的做法是，仅仅把奖惩机制作为一个有益的补充。</p>
-<p>第四个角度是<strong>个人能力。</strong></p>
-<p>如果当事人存在能力短板，改变对他来说难度太大，他自然不会行动。这时候你需要设计一些针对性的训练。当他经过训练补齐了能力短板，做出改变的可能性就大多了。</p>
-<p>第五个角度是<strong>社会能力。</strong></p>
-<p>也就是说，让其他人伸出援助之手，帮助当事人改变。影响力大师们不会指望当事人单纯靠自己的力量战胜困难。单打独斗经常是无法解决问题的。这时候，你就需要想办法，让当事人能够从其他人那里得到必要的帮助。</p>
-<p>第六个角度是**，系统能力。**</p>
-<p>所谓系统能力，指的是优化环境中的某些因素可以提升当事人的能力。这些因素中最重要的是信息、工具和空间。比如，军队去打仗，首先需要知道作战的指令，需要知道前进的方向，这就是信息。其次，士兵和敌人战斗，他需要有趁手的武器，有防护的盔甲，这就是工具。最后，整个队伍还需要保持严密的队形，什么兵种站在什么位置，那都是有讲究的。再有，和敌人对阵的时候，要争取占据有利的地势。这些就属于空间因素。所以，如果你发现当事人能力不足，你可以考虑从信息、工具和空间这几个方面进行优化。</p>
-<p>作者：约瑟夫•格雷尼</p>
-<h1 id><a class="header-anchor" href="#">¶</a></h1>
-<h1 id="012心理-《只需倾听》：学会倾听，是你能和所有人沟通的秘密"><a class="header-anchor" href="#012心理-《只需倾听》：学会倾听，是你能和所有人沟通的秘密">¶</a>012心理 《只需倾听》：学会倾听，是你能和所有人沟通的秘密</h1>
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=245335835&type=red" frameborder="0" allowfullscreen></iframe>
-<p><strong>精华笔记</strong></p>
-<p>眼下，你急需与一个人沟通，可你完全不知道该拿他怎么办——</p>
-<p>这个人可能是你青春期叛逆的孩子，他摆出与世隔绝的态度，屏蔽了你所有的话；这个人可能是你固执的老板，他把项目失败完全归因于你，根本不想听你解释；这个人还可能是你新开发的客户，他冷淡地回应着你的热情，压根不信任你。</p>
-<p>你试过了一切办法，可是统统无效。你心如乱麻，充满了挫败感，心想：这可如何是好？</p>
-<p>面对生活中这么多棘手的问题，到底有没有一套可以与所有人沟通的方法呢？</p>
-<p>本书的作者马克·郭士敦把他30余年精神科医生的临床经验，与工作和生活中的沟通问题结合起来，总结出一种可以和任何人沟通的办法，就是——<strong>倾听</strong>。凭借这种独特的沟通方法，他成为美国警方和FBI的培训教员，服务过高盛、IBM、联邦快递、德意志银行等大型知名企业，还受邀担任《华尔街日报》、《财富》、路透社、美国国家公共电台、“奥普拉秀”的特约嘉宾等。他撰写本书，就是想为你揭开倾听的奥秘，并希望你能善用它。本书将从下面两部分来讲解：</p>
-<p><strong>第一，  倾听为什么那么重要？</strong></p>
-<p>脑科学认为，在特定的情绪下，人的大脑会对沟通产生“生理性防御”，而<strong>倾听是帮大脑卸下“生理性防御”最重要的手段。</strong></p>
-<p>影响沟通的“大脑生理性防御”主要有两种。第一种是“杏仁核劫持”——就是大脑中掌管理智思考的额叶等高级脑区，被掌管本能反应的杏仁核遏制，让人在情绪激动时只能凭本能作出反应。而正确的倾听能帮人快速疏导情绪，让紧张的杏仁核放松，从而让大脑额叶等高级脑区从“杏仁核劫持”状态解脱，理智将重回大脑。</p>
-<p>第二种大脑的“生理性防御”是“镜像神经元接收匮乏”。“镜像神经元”就是一种“当别人在经历某件事，会让自己感同身受”的神经元，而“镜像神经元接受匮乏”可以理解为人们认为“他人对自己缺乏同理心”。假如你试着去倾听这个人，就满足了他渴望别人对他有同理心的需求。唯有让他感受到你理解他，沟通才能继续。</p>
-<p>除此之外，对于每个人来说，出于自我保护、保全面子或者一些别的原因，人们都有可能在心里筑起一道厚厚的大门，通常这道大门对所有人都是紧闭的。作者根据多年的经验总结出，<strong>倾听也是让人们主动打开心门的唯一办法</strong>。</p>
-<p><strong>第二，我们应该如何倾听？</strong></p>
-<p>首先，我们要调整好自己的情绪，摘下对他人有色眼镜、放下偏见，做好倾听前的准备。</p>
-<p>其次，我们要培养自己的“同理心”，要学会站在别人的角度看待问题，在这里作者建议我们掌握倾听的三大原则——“让别人感到被理解”“让别人感到我们对他感兴趣”“让别人感到自己有价值”；</p>
-<p>最后，我们还要学会倾听的四大技巧：第一是“替别人说‘不’”，第二是“主动示弱、自我揭短”，第三是要学会“在聊天的氛围里提问”，第四是要“善用简单的言语帮别人平复心情”。</p>
-<p>作者：[美]马克·郭士敦</p>
-<h1 id="013社科丨《恐惧》：深度剖析当今社会的恐惧文化，是什么让我们越来越没有安全感？"><a class="header-anchor" href="#013社科丨《恐惧》：深度剖析当今社会的恐惧文化，是什么让我们越来越没有安全感？">¶</a>013社科丨《恐惧》：深度剖析当今社会的恐惧文化，是什么让我们越来越没有安全感？</h1>
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=272086258&type=red" frameborder="0" allowfullscreen></iframe>
-<p><strong>精华笔记</strong></p>
-<p>恐惧是一种常见的情绪和心理。然而，历史上从来没有一个时候像今天这样，有这么多人、这么频繁地感到恐惧。</p>
-<p>本书作者弗兰克·菲雷迪是英国社会学家，肯特大学社会学荣休教授，被《伦敦书评》评价为“英国、欧洲乃至世界上最为领先的知识分子之一”。他曾写过《恐惧文化》、《恐惧政治》、《知识分子都到那里去了？》、《偏执狂父母》等著作。</p>
-<p><strong>一、恐惧文化的历史演变和它在当代的主要特点：</strong></p>
-<p>恐惧首先是一种生理本能。然而人类还有一种从文化中传承而来的恐惧习性。</p>
-<p><strong>传统的恐惧包括死亡恐惧和宗教恐惧。</strong></p>
-<p>而今天，人类社会的恐惧和过去的恐惧有很大的差异，表现出新的特征——</p>
-<ol>
-<li>
-<p>心理学和精神分析学的崛起，让恐惧从一种道德问题变成为医学问题；</p>
-</li>
-<li>
-<p>恐惧变得普遍化。原先，人们的恐惧多半有关生死存亡这样的大事，而现在，人们在日常生活的细枝末节中，都能发现潜在的风险，并为此惶惶不可终日；</p>
-</li>
-<li>
-<p>恐惧呈现出“个人化”的特征。原先，人们的恐惧往往是群体化的。而今天，人们的恐惧多半集中在对个人及家人的担忧中。</p>
-</li>
-</ol>
-<p><strong>二、谁在为恐惧文化推波助澜？</strong></p>
-<ol>
-<li>
-<p>媒体是传播恐惧信息的主力军。媒体通过连篇累牍的报道，描绘出一个危机丛生的世界，并通过恐惧修辞，唤起人们大难临头的感觉。</p>
-</li>
-<li>
-<p>政客通过恐惧诉求操纵民意、鼓动选民。他们珍视所有可以表现焦虑或恐惧的机会，一有机会就进行恐惧表演，以此唤起选民心中的不安全感，为自己赢得选票。</p>
-</li>
-<li>
-<p>科学家也沾染上了恐惧文化的习气。越来越多的科学家爱用耸人听闻的语气进行科普，将有关全球大灾难的预言劈头盖脸向大众砸去。</p>
-</li>
-</ol>
-<p>媒体、政客和科学家不谋而合，用铺天盖地、耸人听闻的言论，让整个人类社会在恐惧文化中越陷越深。</p>
-<p><strong>三、恐惧文化有什么样的害处，又该如何应对？</strong></p>
-<p><strong>危害：</strong></p>
-<ol>
-<li>
-<p>恐惧文化削弱了道德的力量。今天的人们只愿意对风险进行各种评估，却不愿意拿出勇气去做正确的事。</p>
-</li>
-<li>
-<p>它影响年轻人的成长与成熟。今天的年轻人是脆弱而幼稚的“巨婴”，不愿承担公共责任，更不愿意去冒险。</p>
-</li>
-<li>
-<p>恐惧文化让人们消极地看待未来。当代社会弥漫着一种悲观主义的未来观。对于未来的恐惧，甚至已经动摇到了人类对自己的信念。</p>
-</li>
-</ol>
-<p>对此，我们绝不能听之任之。除了一味的恐惧和焦虑，<strong>人类其实还有其他的选择。</strong></p>
-<p>比如，我们应该注重培养孩子们思想和行为的独立性，给他们更多试错和冒险的机会，让他们更有经验地去应对各种风险和挑战。</p>
-<p>更重要的，是<strong>唤醒人们渐渐疏远的道德意识</strong>，尤其是勇敢和审慎这两种美德。</p>
-<p>书      名：恐惧</p>
-<p>作      者：[英]弗兰克·菲雷迪</p>
-<h1 id="014纪实-《血疫》"><a class="header-anchor" href="#014纪实-《血疫》">¶</a>014纪实  《血疫》</h1>
-<iframe height="233" width="260" src="https://www.ximalaya.com/thirdparty/player/album/player.html?id=29900175&type=red" frameborder="0" allowfullscreen></iframe>
-<iframe height="36" width="260" src="https://www.ximalaya.com/thirdparty/player/sound/player.html?id=167648082&type=red" frameborder="0" allowfullscreen></iframe>
-<p><strong>听书笔记</strong></p>
-<p>《血疫：埃博拉的故事》一书的主角是来自非洲、致死率为流感4000倍的埃博拉病毒。它1970年代末最早出现在人类社会时，表现出了怎样残忍的属性？而面对它，因为无知，人类产生了莫大的恐惧，人们又是如何面对这种恐惧的？</p>
-<p>作者<strong>理查德·普雷斯顿</strong>是唯一以非医师身份获得美国“防疫斗士奖”的人，这本书曾连续15个月登上《纽约时报》畅销书榜。</p>
-<p><strong>第一，埃博拉有多恐怖？它从哪里来？</strong></p>
-<p>作者详实记录一位名叫夏尔·莫内的人如何在非洲的埃尔贡山感染了病毒，而后一周内全身淤斑、面目呆滞、最终血崩而死的。</p>
-<p>他感染的是“马尔堡病毒”。马尔堡病毒、苏丹埃博拉病毒、扎伊尔埃博拉病毒被叫做“埃博拉三姐妹”，她们是病毒中最致命的。它们生存在非洲热带雨林地区，1976年突然同时出现在人类社会。</p>
-<p>作者认为这是因为近年来，人类活动不断侵蚀热带雨林，它们的出现是大自然的反扑。另一方面，人类的粗心和贪婪又助长了它们在文明社会的传播。</p>
-<p><strong>第二，面对大自然“头号杀手”，人类如何抗争？</strong></p>
-<p>在埃博拉刚刚爆发的1970年代末，有美国科研人员飞到非洲的疫情村庄，在关着病人的茅屋里采集血样，只是穿着纸质的外科手术服和鞋套，最终险些被传染。</p>
-<p>在实验室里也同样存在危险。在美国陆军传染病研究所里，埃博拉属于最危险的等级，有研究者差点因为手套被刺破而感染，研究埃博拉的负责人也多年来都做着被感染的噩梦。</p>
-<p>勇气之外，还需要运气。他们研究多年，可能都在原地打转、徒劳无功，无法确定埃博拉的传播途径、摸不清埃博拉的源头、更别提治疗了。</p>
-<p><strong>第三，埃博拉不是非洲故事，它还曾出现在了美国首都附近，还去了两次。</strong></p>
-<p>在华盛顿特区旁边一个叫做“雷斯顿”的地方有一处实验用的猴舍，1989年他们从菲律宾运来的一批猴子离奇死亡，被证明感染了埃博拉。</p>
-<p>面对可能威胁全美的最大一场生物灾难，官方的应对显得混乱，他们出现了机构扯皮、向媒体隐瞒，最终派了一支兽医队伍去给埃博拉猴子安乐死。他们杀死了所有猴子，但不久之后来了同样一批病猴，他们选择让猴子自生自灭。</p>
-<p>其实在这次危机中，人类之所以能逃生，原因在于埃博拉出现了新的特征。比如，选择不攻击人类。在两次病毒来袭后，都没有人员出现之前被感染致死的情况，哪怕是体内发现了病毒也没事。</p>
-<p>但同时，此次埃博拉被证明可以通过空气传播。研究者恐惧的是，一旦埃博拉选择攻击人类、又可以通过空气传播，它对人类来说将堪比核威胁。</p>
-<p>作者认为埃博拉一定会卷土重来。就在2014年人类确实爆发了更大规模的埃博拉疫情。同时在2016年研制出了第一种埃博拉疫苗。但这只是在黑暗中与猛兽斗争时捡起的第一个盾牌，离战胜它还很远。</p>
 ]]></content>
       <categories>
         <category>听书笔记</category>

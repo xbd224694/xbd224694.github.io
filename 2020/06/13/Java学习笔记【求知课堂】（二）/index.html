@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="编程,Java,基础,b站视频," />
+  <meta name="keywords" content="b站视频,编程,Java,基础," />
 
 
 
@@ -99,12 +99,12 @@
 <meta property="og:image" content="http://yoursite.com/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/5.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/6.png">
 <meta property="article:published_time" content="2020-06-13T11:48:50.000Z">
-<meta property="article:modified_time" content="2020-06-15T03:26:37.051Z">
+<meta property="article:modified_time" content="2020-06-16T22:22:16.359Z">
 <meta property="article:author" content="潇 卟 甸">
+<meta property="article:tag" content="b站视频">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="基础">
-<meta property="article:tag" content="b站视频">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/1.png">
 
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7k 字
+                  7.5k 字
                 </span>
               
 
@@ -448,7 +448,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  29 分钟
+                  31 分钟
                 </span>
               
             </div>
@@ -477,6 +477,7 @@
 <p><strong>关键字的定义和特点</strong><br>
 定义：被Java语言赋予了特殊含义，用做专门用途的字符串（单词）<br>
 特点：关键字中所有字母都为小写</p>
+<p>关键字：就是在java语言编程的时候，在关键的地方使用的单词，体现关键的地方的含义，这些单词都是特有的事先定义好的</p>
 <table>
 <thead>
 <tr>
@@ -659,6 +660,7 @@
 </table>
 <h3 id="保留字"><a class="header-anchor" href="#保留字">¶</a>保留字</h3>
 <p>Java保留字：现有Java版本尚未使用，但以后版本可能会作为关键字使用。自己命名标记符时要避免使用这些保留字：<code>byValue</code>、<code>cast</code>、<code>future</code>、 <code>generic</code>、 <code>inner</code>、 <code>operator</code>、 <code>outer</code>、 <code>rest</code>、 <code>var</code> 、 <code>goto</code> 、<code>const</code>。</p>
+<p>保留字：可能在以后被用来作为关键字的单词，java已经把这些单词预定了，这些单词尽量就不要在编程中去随意使用</p>
 <h3 id="文本编辑器"><a class="header-anchor" href="#文本编辑器">¶</a>文本编辑器</h3>
 <p>Windows： Notepad++、UltraEdit 、EditPlus</p>
 <p>Mac： Sublime Text、BBEdit</p>
@@ -671,15 +673,25 @@ Java 对各种变量、方法和类等要素命名时使用的字符序列称为
 数字不可以开头。<br>
 不可以使用关键字和保留字，但能包含关键字和保留字。<br>
 Java中严格区分大小写，长度无限制。<br>
-标识符不能包含空格。<br>
-<strong>注意：在起名字时，为了提高阅读性，要尽量有意义，“见名知意”。</strong></p>
+标识符不能包含空格。</p>
+<p><em>abc_1$</em></p>
+<p><em>标识符可以是Test1,不能是1Test</em></p>
+<p><em>比如，类名不能直接使用class,可以是class1</em></p>
+<p><strong>注意：在起名字时，为了提高阅读性，要尽量有意义，“见名知意”。</strong></p>
 <h3 id="Java中的名称命名规范"><a class="header-anchor" href="#Java中的名称命名规范">¶</a>Java中的名称命名规范</h3>
 <p>Java中的名称命名规范：<br>
 包名：多单词组成时所有字母都小写：xxxyyyzzz<br>
 类名、接口名：多单词组成时，所有单词的首字母大写：XxxYyyZzz<br>
 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词首字母大写：xxxYyyZzz<br>
 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ</p>
+<p><em>命名规范，是一套约定俗成的规则</em></p>
 <h2 id="2-3-变量"><a class="header-anchor" href="#2-3-变量">¶</a>2.3  变量</h2>
+<p><em>代数，未知数的概念</em><br>
+<em>设x=1，x+1=?</em></p>
+<p><em>java中变量的定义：数据类型 变量名 = 变量的值，例如：int i = 1</em></p>
+<p><em>int i = 1</em><br>
+<em>i = 2</em></p>
+<p><em>注意：声明变量过程中的这个=，不是数学意义上的=，在java编程中代表赋值（赋予变量值）</em></p>
 <p><strong>变量的概念：</strong><br>
 内存中的一个存储区域<br>
 该区域有自己的名称（变量名）和类型（数据类型）<br>
@@ -694,6 +706,8 @@ Java中每个变量必须先声明，后使用<br>
 <p>对于每一种数据都定义了明确的具体数据类型，在内存中分配了不同大小的内存空间。</p>
 <p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/1.png" alt></p>
 <p>补充：变量的分类-按声明的位置的不同</p>
+<p><em>变量的类型：声明的变量的数据类型就是变量的类型</em></p>
+<p><em>在java中，数据类型分为基本数据类型和引用数据类型，其中基本数据类型有8中，除了这8中之外其他所有的数据类型都是引用数据类型</em></p>
 <p>​		<strong>在方法体外，类体内声明的变量称为成员变量。</strong><br>
 ​		<strong>在方法体内部声明的变量称为局部变量。</strong></p>
 <p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/2.png" alt></p>
@@ -719,20 +733,29 @@ Java中每个变量必须先声明，后使用<br>
 <tr>
 <td style="text-align:center">short</td>
 <td style="text-align:center">2字节</td>
-<td style="text-align:center">-215 ~215-1</td>
+<td style="text-align:center">-2^15 ~2^15-1</td>
 </tr>
 <tr>
 <td style="text-align:center">int</td>
 <td style="text-align:center">4字节</td>
-<td style="text-align:center">-231 ~ 231-1</td>
+<td style="text-align:center">-2^31 ~ 2^31-1</td>
 </tr>
 <tr>
 <td style="text-align:center">long</td>
 <td style="text-align:center">8字节</td>
-<td style="text-align:center">-263 ~ 263-1</td>
+<td style="text-align:center">-2^63 ~ 2^63-1</td>
 </tr>
 </tbody>
 </table>
+<p><em>byte的范围-128到127之间，声明byte类型变量的时候赋值不能超过这个范围，给byte类型变量赋值时不能超过这个范围</em></p>
+<p><em>byte b = 130，这个就是超出范围了是错误的</em></p>
+<p><em>byte b = 126</em></p>
+<p>bit是什么单位？</p>
+<p><em>0100110，这个就7bit</em></p>
+<p><em>byte b = 126</em><br>
+<em>int i = 1</em><br>
+<em>short s = 1</em><br>
+<em>long l = 3l,这个long类型变量赋值时要在值的后面跟上一个字母l</em></p>
 <h3 id="浮点类型：float、double"><a class="header-anchor" href="#浮点类型：float、double">¶</a>浮点类型：float、double</h3>
 <p>与整数类型类似，Java 浮点类型也有固定的表数范围和字段长度，不受具体OS的影响。<br>
 <strong>Java 的浮点型常量默认为double型，声明float型常量，须后加‘f’或‘F’。</strong><br>
@@ -760,6 +783,8 @@ Java中每个变量必须先声明，后使用<br>
 </tr>
 </tbody>
 </table>
+<p><em>double d = 1.22</em><br>
+<em>float f = 1.22f,float类型变量赋值时值后面跟上字母f</em></p>
 <h3 id="字符类型：char"><a class="header-anchor" href="#字符类型：char">¶</a>字符类型：char</h3>
 <p>char 型数据用来表示通常意义上“字符”(2字节)<br>
 字符型常量的三种表现形式：<br>
@@ -768,6 +793,12 @@ Java中还允许使用转义字符‘\’来将其后的字符转变为特殊字
 直接使用 Unicode 值来表示字符型常量：<code>‘\uXXXX’</code>。其中，XXXX代表一个十六进制整数。如：<code>\u000a</code> 表示 <code>\n</code>。<br>
 char类型是可以进行运算的。因为它都对应有Unicode码。</p>
 <p><img src="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%BA%8C%EF%BC%89/3.png" alt></p>
+<p><em>字符：用英文的单引号括起来的单个的字母、数字、符号</em></p>
+<p><em>比如：</em><br>
+<em>char c1 = ‘a’</em><br>
+<em>char c2 = ‘1’</em><br>
+<em>char c3 = ‘%’</em></p>
+<p><em>char c4 = ‘\n’</em></p>
 <h3 id="布尔类型：boolean"><a class="header-anchor" href="#布尔类型：boolean">¶</a>布尔类型：boolean</h3>
 <p><code>boolean</code> 类型适于逻辑运算，一般用于程序流程控制：<br>
 if条件控制语句；<br>
@@ -776,6 +807,9 @@ do-while循环控制语句；<br>
 for循环控制语句；<br>
 <code>boolean</code>类型数据只允许取值true和false，无null。<br>
 不可以0或非 0 的整数替代false和true，这点和C语言不同。</p>
+<p><em>boolean b1 = true</em></p>
+<p><em>boolean b2 = false</em></p>
+<p>byte short int long float double char boolean,8种基本数据类型</p>
 <h3 id="字符串：-String类"><a class="header-anchor" href="#字符串：-String类">¶</a>字符串： String类</h3>
 <p>​		值null可以赋值给任何引用类型（类、接口、数组）的变量，用以表示这个引用类型变量中保存的地址为空。<br>
 ​		String类属于引用类型，可用null赋值。<br>
@@ -1470,7 +1504,7 @@ f)    x = y; //no， x是一维数组，y是一个二维数组<br>
 <!-- 修改时间 -->
 <li>
   <strong>修改时间： </strong>
-  2020年06月15日 - 11时06分
+  2020年06月17日 - 06时06分
 </li>
 
 <!-- 引用链接 -->
@@ -1521,13 +1555,13 @@ clipboard.on("success", function(target) {
       
         <div class="post-tags">
           
+            <a href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag"><i class="fa fa-tag"></i> b站视频</a>
+          
             <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
           
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
             <a href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
-          
-            <a href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag"><i class="fa fa-tag"></i> b站视频</a>
           
         </div>
       
@@ -1653,7 +1687,7 @@ clipboard.on("success", function(target) {
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1664,7 +1698,7 @@ clipboard.on("success", function(target) {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1675,7 +1709,7 @@ clipboard.on("success", function(target) {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1687,7 +1721,7 @@ clipboard.on("success", function(target) {
 				<div class="widget-wrap">
 					<div id="myCanvasContainer" class="widget tagcloud">
 						<canvas width="250" height="250" id="resCanvas" style="width=100%">
-							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%93%E5%B1%95/" rel="tag">拓展</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">3</span></li></ul>
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%93%E5%B1%95/" rel="tag">拓展</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">3</span></li></ul>
 						</canvas>
 					</div>
 				</div>
@@ -1711,6 +1745,10 @@ clipboard.on("success", function(target) {
 				
 				
 					<li>
+					<a href="/2020/06/15/10%E5%88%86%E9%92%9F%E9%80%9F%E6%88%90%E8%AF%BE%EF%BC%9A%E5%AD%A6%E4%B9%A0%E6%8A%80%E8%83%BD/" title="10分钟速成课：学习技能" target="_blank">10分钟速成课：学习技能</a>
+					</li>
+				
+					<li>
 					<a href="/2020/06/15/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%89%EF%BC%89/" title="Java学习笔记【求知课堂】（三）" target="_blank">Java学习笔记【求知课堂】（三）</a>
 					</li>
 				
@@ -1724,10 +1762,6 @@ clipboard.on("success", function(target) {
 				
 					<li>
 					<a href="/2020/06/13/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90%E6%B1%82%E7%9F%A5%E8%AF%BE%E5%A0%82%E3%80%91%EF%BC%88%E4%B8%80%EF%BC%89/" title="Java学习笔记【求知课堂】（一）" target="_blank">Java学习笔记【求知课堂】（一）</a>
-					</li>
-				
-					<li>
-					<a href="/2020/06/13/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2-Hexo-Next-%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/" title="个人静态博客-Hexo-Next-（十一）" target="_blank">个人静态博客-Hexo-Next-（十一）</a>
 					</li>
 				
 				</ul>

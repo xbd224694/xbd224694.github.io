@@ -3527,4 +3527,915 @@ f)    x = y; //no， x是一维数组，y是一个二维数组<br>
         <tag>电子书</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Java基础【HOW2J】</title>
+    <url>/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>地址：<a href="https://how2j.cn?p=154642" target="_blank" rel="noopener">https://how2j.cn?p=154642</a></strong></p>
+<a id="more"></a>
+<h1 id="一、HelloWord"><a class="header-anchor" href="#一、HelloWord">¶</a>一、HelloWord</h1>
+<h2 id="1、手把手教你做JDK环境变量配置"><a class="header-anchor" href="#1、手把手教你做JDK环境变量配置">¶</a>1、手把手教你做JDK环境变量配置</h2>
+<h3 id="步骤-1-首先看配置成功后的效果"><a class="header-anchor" href="#步骤-1-首先看配置成功后的效果">¶</a>步骤 <strong>1</strong> : 首先看配置成功后的效果</h3>
+<p>点WIN键-&gt;运行（或者使用win+r)<br>
+输入cmd命令<br>
+输入java -version</p>
+<p><strong>注： -version是小写，不能使用大写，java后面有一个空格</strong></p>
+<p>配置成功后，会出现版本信息</p>
+<p><strong>java version &quot;1.8.0_231&quot;</strong></p>
+<p><strong>注: 这是配置完成后的效果，在配置完成之前是看不到这个效果的</strong></p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/1.png" alt></p>
+<h3 id="步骤-2-下载，并解压到E-JDK"><a class="header-anchor" href="#步骤-2-下载，并解压到E-JDK">¶</a>步骤 <strong>2</strong> : 下载，并解压到E:\JDK</h3>
+<p>首先下载右上角的jdk.rar, 然后解压。<br>
+正确的目录是E:\JDK<br>
+<strong>不要复制到e:\jdk\jdk</strong> 这个目录去了<br>
+注意目录结构</p>
+<h3 id="步骤-3-环境变量配置"><a class="header-anchor" href="#步骤-3-环境变量配置">¶</a>步骤 <strong>3</strong> : 环境变量配置</h3>
+<p>右键我的电脑-&gt;属性-&gt;高级-&gt;环境变量-&gt;系统变量<br>
+注意：是下面的<strong>系统变量</strong>，不是上面的用户变量<br>
+新建变量名 JAVA_HOME，变量值 <strong>E:\JDK</strong><br>
+修改变量 Path ，在最前面加上 <strong>%JAVA_HOME%\bin;</strong><br>
+注意：&quot;Path&quot;是<strong>首字母大写</strong>，<strong>不要改成&quot;PATH&quot;</strong> bin后面要有<strong>分号</strong>;<br>
+注意：系统变量上面的用户变量里，不要有这两个，如果有应该去掉，以避免被干扰。<br>
+注意：Win10 下PATH的配置有所不同，按照下个步骤配置即可：<a href="https://how2j.cn/k/helloworld/helloworld-jdk/141.html#step6560" target="_blank" rel="noopener">Win10 下环境变量Path的配置</a></p>
+<h3 id="步骤-4-Win10-下环境变量Path的配置"><a class="header-anchor" href="#步骤-4-Win10-下环境变量Path的配置">¶</a>步骤 <strong>4</strong> : Win10 下环境变量Path的配置</h3>
+<p>新增一个，放在最上面即可</p>
+<h3 id="步骤-5-验证是否配置成功"><a class="header-anchor" href="#步骤-5-验证是否配置成功">¶</a>步骤 <strong>5</strong> : 验证是否配置成功</h3>
+<p>点击确认关闭刚才的配置页面，这一步一定要做，否则刚才的配置不能生效</p>
+<p>点WIN键-&gt;运行（或者使用win+r)<br>
+输入cmd命令<br>
+输入java -version<br>
+如果出现版本信息，表明配置成功<br>
+如果失败了，调整前面的配置，然后要<strong>重新启动cmd命令</strong>，而不是在原有的cmd里面输入 java -version</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/1.png" alt></p>
+<h3 id="步骤-6-练习-环境变量配置"><a class="header-anchor" href="#步骤-6-练习-环境变量配置">¶</a>步骤 <strong>6</strong> : 练习-环境变量配置</h3>
+<p>假设JDK的所在目录是：<strong>C:\Program Files\Java\jdk1.8.0_65</strong>，应该怎么调整配置？</p>
+<p>答：新建变量名 JAVA_HOME，变量值<strong>C:\Program Files\Java\jdk1.8.0_65</strong></p>
+<p>只需要修改JAVA_HOME的配置即可，其他都不需要发生变化<br>
+PATH也不需要发生变化，因为它引用的就是JAVA_HOME的路径</p>
+<h2 id="2、用命令行中编写第一个-JAVA-程序"><a class="header-anchor" href="#2、用命令行中编写第一个-JAVA-程序">¶</a>2、用命令行中编写第一个 JAVA 程序</h2>
+<h3 id="步骤-1-先看运行效果"><a class="header-anchor" href="#步骤-1-先看运行效果">¶</a>步骤 <strong>1</strong> : 先看运行效果</h3>
+<p>在控制台下运行第一个Java程序，可以看到输出了字符串<br>
+<strong>hello world</strong></p>
+<h3 id="步骤-2-准备项目目录"><a class="header-anchor" href="#步骤-2-准备项目目录">¶</a>步骤 <strong>2</strong> : 准备项目目录</h3>
+<p>通常都会在e: 创建一个project目录<br>
+在这个例子里，我们用的是e:/project/j2se目录作为项目目录<br>
+所有的java代码都会放在这个项目目录下<br>
+并创建一个目录 src用于存放java源代码 .java　文件</p>
+<h3 id="步骤-3-创建第一个java-源文件"><a class="header-anchor" href="#步骤-3-创建第一个java-源文件">¶</a>步骤 <strong>3</strong> : 创建第一个java 源文件</h3>
+<p>创建第一个java 源文件<br>
+在屏幕空白位置，点击鼠标右键-&gt;新建-&gt;文本文件 得到一个文件”新建 文本文档.txt“<br>
+右键该文件-&gt;重命名为 HelloWorld.java<br>
+在该文件中敲入如下代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">    System.out.println(&quot;hello world&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为java 是<strong>面向对象</strong>的编程语言，所以我们实际上是在<strong>创建一个个的类</strong><br>
+class HelloWorld 表示这个<strong>类的名字是</strong>HelloWorld<br>
+public static void main(String[] args) 这是<strong>主方法</strong>，所有代码的入口<br>
+如果你学过c语言 ，相当于 _main 程序入口<br>
+System.out.println(“hello world”); 表示在控制台（黑屏幕）<strong>输出一个字符串</strong>“hello world”</p>
+<h3 id="步骤-4-显示扩展名"><a class="header-anchor" href="#步骤-4-显示扩展名">¶</a>步骤 <strong>4</strong> : 显示扩展名</h3>
+<p>有时候系统会默认把扩展名隐藏掉，可以通过如下方式显示扩展名，以便于把.txt修改为.java<br>
+打开我的电脑-&gt; F10显示菜单栏-&gt;工具-&gt;文件夹选项-&gt;查看-&gt; 去掉 <strong>隐藏已知文件类型的扩展名</strong> 上的勾选</p>
+<h3 id="步骤-5-编译"><a class="header-anchor" href="#步骤-5-编译">¶</a>步骤 <strong>5</strong> : 编译</h3>
+<p>.java 文件是java的源文件，但是<strong>不能直接运行</strong>，必须先被编译成为.class文件 才能够执行<br>
+java 使用 javac命令进行编译<br>
+语法：</p>
+<p>javac filename.java</p>
+<p>注：必须跟上.java 后缀名<br>
+如图 执行如下命令：<br>
+运行 win+r,输入 cmd 进入控制台界面<br>
+e: 切换盘符为e盘<br>
+cd e:\project\j2se\src 切换目录到源文件目录<br>
+javac HelloWorld.java 编译命令 javac 文件名大小写必须一致<br>
+<strong>如果得到一行空白，就表示成功了</strong>，并且得到一个class文件： HelloWorld.class<br>
+<strong>注：</strong> 第一行切换盘符的**e:**不要忘记了</p>
+<h3 id="步骤-6-运行"><a class="header-anchor" href="#步骤-6-运行">¶</a>步骤 <strong>6</strong> : 运行</h3>
+<p>java的运行命令是</p>
+<p>java classname</p>
+<p>如图 执行如下命令：<br>
+运行 win+r,输入 cmd 进入<strong>控制台界面<br>
+e: 切换盘符为e盘<br>
+cd e:\project\j2se\src 切换目录到源文件目录<br>
+java HelloWorld</strong><br>
+注意大小写需要一致，并且<strong>没有后缀名.class</strong><br>
+运行成功后会看到字符串 “hello world”</p>
+<h3 id="步骤-7-关于类"><a class="header-anchor" href="#步骤-7-关于类">¶</a>步骤 <strong>7</strong> : 关于类</h3>
+<p>java所有的代码都是运行在类里面的</p>
+<p>public class HelloWorld</p>
+<p><strong>public</strong> 表示这是一个可以公开访问的类<br>
+<strong>class</strong> 表示这是一个类<br>
+<strong>HelloWorld</strong> 表示类的名字，每个单词的首字母大写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-8-主方法"><a class="header-anchor" href="#步骤-8-主方法">¶</a>步骤 <strong>8</strong> : 主方法</h3>
+<p>public static void main(String[] args)<br>
+你会写很多代码，总有第一行执行的代码，这就是主方法<br>
+args 表示运行参数，在本例中没有使用到。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">  System.out.println(&quot;hello world&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-9-控制台输出"><a class="header-anchor" href="#步骤-9-控制台输出">¶</a>步骤 <strong>9</strong> : 控制台输出</h3>
+<p>System.out.println(“hello world”);</p>
+<p>会在控制台输出字符串<br>
+println 表示打印数据到控制台，并且换行</p>
+<h2 id="3、下载-ECLIPSE"><a class="header-anchor" href="#3、下载-ECLIPSE">¶</a>3、下载 ECLIPSE</h2>
+<h2 id="4、使用ECIPSE创建第一个-JAVA-PROJECT"><a class="header-anchor" href="#4、使用ECIPSE创建第一个-JAVA-PROJECT">¶</a>4、使用ECIPSE创建第一个 JAVA PROJECT</h2>
+<h3 id="步骤-1-打开-eclipse"><a class="header-anchor" href="#步骤-1-打开-eclipse">¶</a>步骤 <strong>1</strong> : 打开 eclipse</h3>
+<h3 id="步骤-2-选择工作区"><a class="header-anchor" href="#步骤-2-选择工作区">¶</a>步骤 <strong>2</strong> : 选择工作区</h3>
+<p>使用在命令行Hello World中的项目目录e:\project</p>
+<p>除了第一次启动eclipse的时候能够选择工作区之外，还可以在启动之后，通过如下命令进行工作区的选择：<br>
+File -&gt; Switch Workspace 选择e:\project作为工作区</p>
+<h3 id="步骤-3-创建java项目"><a class="header-anchor" href="#步骤-3-创建java项目">¶</a>步骤 <strong>3</strong> :创建java项目</h3>
+<p>如果是第一次创建Java项目</p>
+<p>File-&gt;New-&gt;Other-&gt;Java-&gt;java Project</p>
+<p>以后再创建java项目，就只需要</p>
+<p>File-&gt;New-&gt;java project</p>
+<h3 id="步骤-4-项目名称输入j2se"><a class="header-anchor" href="#步骤-4-项目名称输入j2se">¶</a>步骤 <strong>4</strong> : 项目名称输入j2se</h3>
+<p>项目名称输入j2se<br>
+点击finish即可</p>
+<h3 id="步骤-5-创建成功后看到的界面"><a class="header-anchor" href="#步骤-5-创建成功后看到的界面">¶</a>步骤 <strong>5</strong> : 创建成功后看到的界面</h3>
+<h2 id="5、在ECLIPSE中运行第一个-JAVA-程序"><a class="header-anchor" href="#5、在ECLIPSE中运行第一个-JAVA-程序">¶</a>5、在ECLIPSE中运行第一个 JAVA 程序</h2>
+<h3 id="步骤-1-打开java文件"><a class="header-anchor" href="#步骤-1-打开java文件">¶</a>步骤 <strong>1</strong> : 打开java文件</h3>
+<p>直接打开在 命令行Hello World中创建的java 文件<br>
+HelloWorld.java</p>
+<h3 id="步骤-2-运行"><a class="header-anchor" href="#步骤-2-运行">¶</a>步骤 <strong>2</strong> : 运行</h3>
+<p>点击绿色运行按钮，直接运行<br>
+在eclipse中，编译过程<strong>自动执行了</strong></p>
+<h3 id="步骤-3-观察运行结果"><a class="header-anchor" href="#步骤-3-观察运行结果">¶</a>步骤 <strong>3</strong> : 观察运行结果</h3>
+<p>一旦运行成功，会在下方出现控制台console界面<br>
+如果找不到控制台console窗口，使用如下步骤[打开控制台窗口]</p>
+<h3 id="步骤-4-打开控制台窗口"><a class="header-anchor" href="#步骤-4-打开控制台窗口">¶</a>步骤 <strong>4</strong> :打开控制台窗口</h3>
+<p>在默认情况下，console窗口是打开的，倘若无意关闭了，那么可以通过如下方式打开：<br>
+菜单-&gt; Window -&gt; Show View -&gt; Console</p>
+<h2 id="6、ECLIPSE常见的使用技巧"><a class="header-anchor" href="#6、ECLIPSE常见的使用技巧">¶</a>6、ECLIPSE常见的使用技巧</h2>
+<h3 id="示例-1-批量修改"><a class="header-anchor" href="#示例-1-批量修改">¶</a>示例 <strong>1</strong> : 批量修改</h3>
+<p>ALT+SHIFT+R</p>
+<h3 id="示例-2-快速输入主方法"><a class="header-anchor" href="#示例-2-快速输入主方法">¶</a>示例 <strong>2</strong> : 快速输入主方法</h3>
+<ol>
+<li>敲入main</li>
+<li>alt+/</li>
+</ol>
+<h3 id="示例-3-快速输入System-out-println"><a class="header-anchor" href="#示例-3-快速输入System-out-println">¶</a>示例 <strong>3</strong> : 快速输入System.out.println</h3>
+<ol>
+<li>
+<p>敲入syso</p>
+</li>
+<li>
+<p>alt+/</p>
+</li>
+</ol>
+<h3 id="示例-4-快速输入for"><a class="header-anchor" href="#示例-4-快速输入for">¶</a>示例 <strong>4</strong> : 快速输入for</h3>
+<ol>
+<li>
+<p>敲入for</p>
+</li>
+<li>
+<p>alt+/</p>
+</li>
+</ol>
+<h3 id="示例-5-查看java源代码"><a class="header-anchor" href="#示例-5-查看java源代码">¶</a>示例 <strong>5</strong> : 查看java源代码</h3>
+<p>JDK里提供的类，比如String,Integer,System都是开源的，免费提供其源代码可以很简便的通过eclipse就查看源码</p>
+<ol>
+<li>
+<p>先选中想要查看的方法，比如System.out.println()的 println</p>
+</li>
+<li>
+<p>敲键F3</p>
+</li>
+</ol>
+<h3 id="示例-6-代码格式化"><a class="header-anchor" href="#示例-6-代码格式化">¶</a>示例 <strong>6</strong> : 代码格式化</h3>
+<p>ctrl+shift+f<br>
+格式化代码<br>
+注意： 这个快捷键和搜狗输入法的切换简繁冲突。 所以最好把搜狗的切换简繁取消掉。</p>
+<h3 id="示例-7-快速助手"><a class="header-anchor" href="#示例-7-快速助手">¶</a>示例 <strong>7</strong> : 快速助手</h3>
+<p>ctrl+shift+o<br>
+import 类<br>
+去掉未使用的类 等等都可以使用</p>
+<h3 id="示例-8-快速注释"><a class="header-anchor" href="#示例-8-快速注释">¶</a>示例 <strong>8</strong> : 快速注释</h3>
+<p>选中一行或者多行代码 ctrl+shift+c</p>
+<p>或ctrl+/</p>
+<h3 id="示例-9-大小写转换"><a class="header-anchor" href="#示例-9-大小写转换">¶</a>示例 <strong>9</strong> : 大小写转换</h3>
+<p>ctrl+shift+x 选中的转换为大写<br>
+ctrl+shift+y 选中的转换为小写</p>
+<h3 id="示例-10-快速解决办法提示"><a class="header-anchor" href="#示例-10-快速解决办法提示">¶</a>示例 <strong>10</strong> : 快速解决办法提示</h3>
+<p>在出错误的行，使用ctrl+1。 比如忘记导入类了，就可以用这个解决</p>
+<h3 id="示例-11-toString-getter-setter-构造方法的快速生成"><a class="header-anchor" href="#示例-11-toString-getter-setter-构造方法的快速生成">¶</a>示例 <strong>11</strong> : toString getter setter 构造方法的快速生成</h3>
+<ol>
+<li>
+<p>通过菜单-&gt; Source 就可以看到快速生成的选项</p>
+</li>
+<li>
+<p>直接使用快捷键 shift+alt+s也可以弹出这个选项</p>
+</li>
+</ol>
+<h2 id="7、找不到类"><a class="header-anchor" href="#7、找不到类">¶</a>7、找不到类</h2>
+<h3 id="步骤-1-现象"><a class="header-anchor" href="#步骤-1-现象">¶</a>步骤 <strong>1</strong> : 现象</h3>
+<p>有时候会碰到如图所示的问题，分明有Hello这个类，并且也有主方法，可是运行就会出现找不到或者无法加载类Hello,或者Class Not Found 异常。</p>
+<p>出现这个状况，有多种原因造成，请按照如下方式一一排查</p>
+<h4 id="原因1-是否自动勾选"><a class="header-anchor" href="#原因1-是否自动勾选">¶</a>原因1-是否自动勾选</h4>
+<p>Eclipse是保存后自动编译，但是建立在一个设置的前提上：<br>
+菜单-Project-&gt;勾选Build Automatically，如果这里没有勾选，那么是不会自动把Hello.java编译成Hello.class的</p>
+<h4 id="原因2-problems"><a class="header-anchor" href="#原因2-problems">¶</a>原因2-problems</h4>
+<p>菜单-&gt;Window-&gt;Show View-&gt;Problems 显示Problems页面<br>
+这里会显示当前项目的错误，倘若有错误，那么项目也不会对.java文件进行自动编译。</p>
+<p>如图所示的错误是项目所导入的包不存在,导入包的做法请参考：[为项目导入mysql-jdbc的jar包]</p>
+<h1 id="二、面向对象"><a class="header-anchor" href="#二、面向对象">¶</a>二、面向对象</h1>
+<h2 id="1、JAVA中的类和对象"><a class="header-anchor" href="#1、JAVA中的类和对象">¶</a>1、JAVA中的类和对象</h2>
+<h3 id="步骤-1-设计英雄这个类"><a class="header-anchor" href="#步骤-1-设计英雄这个类">¶</a>步骤 <strong>1</strong> : 设计英雄这个类</h3>
+<p>LOL有很多英雄，比如盲僧，团战可以输，提莫必须死，盖伦，琴女<br>
+所有这些英雄，<strong>都有一些共同的状态</strong><br>
+比如，他们都有名字，hp，护甲，移动速度等等<br>
+这样我们就可以设计一种东西，<strong>叫做类，代表英雄</strong>这样一种事物<br>
+类： 英雄(Hero)<br>
+状态： 名字, 血量，护甲，移动速度</p>
+<p><strong>注:</strong> 本例用到了3种数据类型 分别是 String(字符串)，float(浮点数), int(整数)，本章只做简单的使用 ，就不展开了，关于[变量]知识的详细讲解，将在[下个章节]展开.<br>
+<strong>注:</strong> 这个类没有主方法，不要试图运行它。 并不是所有的类都是有主方法的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Hero &#123;</span><br><span class="line">     </span><br><span class="line">    String name; &#x2F;&#x2F;姓名</span><br><span class="line">     </span><br><span class="line">    float hp; &#x2F;&#x2F;血量</span><br><span class="line">     </span><br><span class="line">    float armor; &#x2F;&#x2F;护甲</span><br><span class="line">     </span><br><span class="line">    int moveSpeed; &#x2F;&#x2F;移动速度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-2-创建具体的英雄"><a class="header-anchor" href="#步骤-2-创建具体的英雄">¶</a>步骤 <strong>2</strong> : 创建具体的英雄</h3>
+<p><strong>类就像一个模板</strong>，根据这样一个模板，可以创建一个个的具体的英雄<br>
+一个个具体的英雄，就叫一个个的<strong>对象</strong><br>
+<strong>new Hero()</strong> 就是java中创建一个英雄对象的意思</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Hero &#123;</span><br><span class="line">     </span><br><span class="line">    String name; &#x2F;&#x2F;姓名</span><br><span class="line">     </span><br><span class="line">    float hp; &#x2F;&#x2F;血量</span><br><span class="line">     </span><br><span class="line">    float armor; &#x2F;&#x2F;护甲</span><br><span class="line">     </span><br><span class="line">    int moveSpeed; &#x2F;&#x2F;移动速度</span><br><span class="line">     </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Hero garen &#x3D;  new Hero();</span><br><span class="line">        garen.name &#x3D; &quot;盖伦&quot;;</span><br><span class="line">        garen.hp &#x3D; 616.28f;</span><br><span class="line">        garen.armor &#x3D; 27.536f;</span><br><span class="line">        garen.moveSpeed &#x3D; 350;</span><br><span class="line">         </span><br><span class="line">        Hero teemo &#x3D;  new Hero();</span><br><span class="line">        teemo.name &#x3D; &quot;提莫&quot;;</span><br><span class="line">        teemo.hp &#x3D; 383f;</span><br><span class="line">        teemo.armor &#x3D; 14f;</span><br><span class="line">        teemo.moveSpeed &#x3D; 330;</span><br><span class="line">    &#125;  </span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-3-类的第一个字母大写"><a class="header-anchor" href="#步骤-3-类的第一个字母大写">¶</a>步骤 <strong>3</strong> : 类的第一个字母大写</h3>
+<p>好的编程习惯会让代码看上去更清爽，易读，容易维护<br>
+比如<strong>类的第一个字母大写</strong><br>
+<strong>H</strong>ero</p>
+<h3 id="步骤-4-练习-Item"><a class="header-anchor" href="#步骤-4-练习-Item">¶</a>步骤 <strong>4</strong> : 练习-Item</h3>
+<p>设计出物品这种类<br>
+类名：<strong>Item</strong><br>
+物品有如下属性:<br>
+名字 <strong>name</strong> 类型是字符串String<br>
+价格 <strong>price</strong> 类型是整型 int</p>
+<p>创建(实例化)3件具体物品<br>
+名称 价格<br>
+血瓶 50<br>
+草鞋 300<br>
+长剑 350</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">设计出物品这种类</span><br><span class="line">类名：Item</span><br><span class="line">物品有如下属性:</span><br><span class="line">名字 name 类型是字符串String</span><br><span class="line">价格 price 类型是整型 int</span><br><span class="line"> </span><br><span class="line">创建(实例化)3件具体物品</span><br><span class="line">名称 价格</span><br><span class="line">血瓶 50</span><br><span class="line">草鞋 300</span><br><span class="line">长剑 350</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class Item &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println(&quot;名称&quot; + &quot; &quot; + &quot;价格&quot;);</span><br><span class="line">        Iteam i1 &#x3D; new Iteam();</span><br><span class="line">        i1.setName(&quot;血瓶&quot;);</span><br><span class="line">        i1.setPrice(50);</span><br><span class="line">        System.out.println(i1.getName() + &quot; &quot; + i1.getPrice());</span><br><span class="line"> </span><br><span class="line">        Iteam i2 &#x3D; new Iteam();</span><br><span class="line">        i2.setName(&quot;草鞋&quot;);</span><br><span class="line">        i2.setPrice(300);</span><br><span class="line">        System.out.println(i2.getName() + &quot; &quot; + i2.getPrice());</span><br><span class="line"> </span><br><span class="line">        Iteam i3 &#x3D; new Iteam();</span><br><span class="line">        i3.setName(&quot;长剑&quot;);</span><br><span class="line">        i3.setPrice(350);</span><br><span class="line">        System.out.println(i3.getName() + &quot; &quot; + i3.getPrice());</span><br><span class="line">    &#125;</span><br><span class="line">    static class Iteam&#123;</span><br><span class="line"> </span><br><span class="line">        String name;</span><br><span class="line">        int price;</span><br><span class="line"> </span><br><span class="line">        public Iteam() &#123;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        public Iteam(String name, int price) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.price &#x3D; price;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        public void setName(String name) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        public void setPrice(int price) &#123;</span><br><span class="line">            this.price &#x3D; price;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        public String getName() &#123;</span><br><span class="line">            return name;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        public int getPrice() &#123;</span><br><span class="line">            return price;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2、JAVA类的属性"><a class="header-anchor" href="#2、JAVA类的属性">¶</a>2、JAVA类的属性</h2>
+<h3 id="步骤-1-属性的类型"><a class="header-anchor" href="#步骤-1-属性的类型">¶</a>步骤 <strong>1</strong> : 属性的类型</h3>
+<p>属性的类型可以是[基本类型]，比如int整数，float 浮点数<br>
+也可以是类类型，比如String 字符串</p>
+<p>其他类型请参考[基本类型章节]</p>
+<h3 id="步骤-2-属性名称"><a class="header-anchor" href="#步骤-2-属性名称">¶</a>步骤 <strong>2</strong> : 属性名称</h3>
+<p>属性名称一般来说，都是小写<br>
+比如name<br>
+如果有多个单词组成，后面的单词的第一个字母大写<br>
+比如 moveSpeed<br>
+属性也是变量，所以需要满足 [变量的命名规则]</p>
+<h3 id="步骤-3-练习-属性"><a class="header-anchor" href="#步骤-3-练习-属性">¶</a>步骤 <strong>3</strong> : 练习-属性</h3>
+<p>一个英雄可以有名称，血量，护甲，移动速度，还有 其他你想到的，作为新的属性，加入到英雄上面</p>
+<p>比如<br>
+送了多少次<br>
+杀人次数<br>
+助攻次数<br>
+金钱<br>
+补刀数<br>
+攻击速度<br>
+杀人后说的话<br>
+被杀后说的话<br>
+。。。</p>
+<p>如果没玩过LOL，可以考虑身边的东西，比如你现在看着的手机，笔记本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test01&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">         </span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Hero&#123;</span><br><span class="line">     </span><br><span class="line">    String name;        &#x2F;&#x2F;名称</span><br><span class="line">    int hp;             &#x2F;&#x2F;血量</span><br><span class="line">    int armor;          &#x2F;&#x2F;护甲</span><br><span class="line">    int moveSpeed;      &#x2F;&#x2F;移动速度</span><br><span class="line">    int beKill          &#x2F;&#x2F;被击杀次数</span><br><span class="line">    int kill            &#x2F;&#x2F;击杀次数</span><br><span class="line">    int assists         &#x2F;&#x2F;助攻次数</span><br><span class="line">    int money           &#x2F;&#x2F;金钱</span><br><span class="line">    int last            &#x2F;&#x2F;补刀数</span><br><span class="line">    int attackSpeed     &#x2F;&#x2F;攻击速度</span><br><span class="line">    String killSaid     &#x2F;&#x2F;杀人后说的话</span><br><span class="line">    String beKillSaid   &#x2F;&#x2F;被杀后说的话</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、JAVA类的方法"><a class="header-anchor" href="#3、JAVA类的方法">¶</a>3、JAVA类的方法</h2>
+<h3 id="示例-1-什么是方法"><a class="header-anchor" href="#示例-1-什么是方法">¶</a>示例 <strong>1</strong> : 什么是方法</h3>
+<p>比如队友残血正在逃跑，你过去把路给别人挡住了，导致他被杀掉。 这就是坑队友<br>
+每个英雄。。。。都可以<strong>坑</strong><br>
+所以为Hero这个类，设计一个方法: keng</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Hero &#123;</span><br><span class="line">    String name; &#x2F;&#x2F;姓名</span><br><span class="line">      </span><br><span class="line">    float hp; &#x2F;&#x2F;血量</span><br><span class="line">      </span><br><span class="line">    float armor; &#x2F;&#x2F;护甲</span><br><span class="line">      </span><br><span class="line">    int moveSpeed; &#x2F;&#x2F;移动速度</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F;坑队友</span><br><span class="line">    void keng()&#123;</span><br><span class="line">        System.out.println(&quot;坑队友！&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-方法返回类型"><a class="header-anchor" href="#示例-2-方法返回类型">¶</a>示例 <strong>2</strong> : 方法返回类型</h3>
+<p>有的方法是有返回类型的<br>
+比如方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">float getArmor()&#123;</span><br><span class="line"></span><br><span class="line">  return armor;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法是用来获取一个英雄有多少护甲的，返回类型是float<br>
+有的方法不需要返回值，这个时候就<strong>把返回类型设置为void</strong>,表示该方法不返回任何值<br>
+比如方法 “坑队友”</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void keng()&#123;</span><br><span class="line"></span><br><span class="line">  System.out.println(&quot;坑队友！&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-方法的参数"><a class="header-anchor" href="#示例-3-方法的参数">¶</a>示例 <strong>3</strong> : 方法的参数</h3>
+<p>英雄在一些特定情况下，可以增加移动速度<br>
+这样我们就通过<strong>addSpeed</strong>这个方法增加移动速度</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void addSpeed(int speed)&#123;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;在原来的基础上增加移动速度</span><br><span class="line"></span><br><span class="line">  moveSpeed &#x3D; moveSpeed + speed;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>int speed 叫做<strong>方法的参数</strong><br>
+给盖伦增加100的移动速度：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hero garen &#x3D;  new Hero();</span><br><span class="line"></span><br><span class="line">garen.name &#x3D; &quot;盖伦&quot;;</span><br><span class="line"></span><br><span class="line">garen.moveSpeed &#x3D; 350;</span><br><span class="line"></span><br><span class="line">garen.addSpeed(100);</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-方法的命名"><a class="header-anchor" href="#示例-4-方法的命名">¶</a>示例 <strong>4</strong> : 方法的命名</h3>
+<p>方法是一个类的动作行为，所以一般都是<strong>以动词开头</strong>的，比如 <strong>keng …</strong><br>
+如果有多个单词，后面的每个单词的第一个字母使用大写<br>
+比如 addSpeed</p>
+<h3 id="示例-5-练习-方法"><a class="header-anchor" href="#示例-5-练习-方法">¶</a>示例 <strong>5</strong> : 练习-方法</h3>
+<p>为英雄类Hero设计几个新的方法：</p>
+<ol>
+<li>
+<p>超神 <strong>legendary()</strong>,无参数，无返回类型</p>
+</li>
+<li>
+<p>获取当前的血量 <strong>getHp()</strong>, 无参数，有float类型的返回值</p>
+</li>
+<li>
+<p>回血 <strong>recovery(float blood)</strong>， 有参数 float类型参数 blood表示本次恢复的血量，无返回类型</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package basic;</span><br><span class="line"> </span><br><span class="line">public class Property &#123;</span><br><span class="line">    String name;</span><br><span class="line">    float hp;</span><br><span class="line">    float agility;</span><br><span class="line">    int blood;</span><br><span class="line">    int blue;</span><br><span class="line">    int violet;</span><br><span class="line">    int lucky;</span><br><span class="line"> </span><br><span class="line">    public void ace()</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(&quot;哦，你是全程MVP&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public float getHp()</span><br><span class="line">    &#123;</span><br><span class="line">        return hp;</span><br><span class="line">    &#125;</span><br><span class="line">    public void recovery(float blood)</span><br><span class="line">    &#123;</span><br><span class="line">        hp&#x3D;hp+blood;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Hero turtle &#x3D; new Hero();</span><br><span class="line">        turtle.name&#x3D;&quot;龙龟&quot;;</span><br><span class="line">        turtle.hp&#x3D;5000;</span><br><span class="line">        turtle.recovery(1000);</span><br><span class="line">        System.out.println(turtle.hp);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="三、变量"><a class="header-anchor" href="#三、变量">¶</a>三、变量</h1>
+<h2 id="1、什么是变量"><a class="header-anchor" href="#1、什么是变量">¶</a>1、什么是变量</h2>
+<h3 id="步骤-1-什么是变量"><a class="header-anchor" href="#步骤-1-什么是变量">¶</a>步骤 <strong>1</strong> : 什么是变量</h3>
+<p>变量的定义是： 用来命名一个数据的标识符<br>
+1949 这是一个数字，代表某年</p>
+<p>如果要命名这个数字，在java里就会写成：</p>
+<p>int year = 1949;</p>
+<p><strong>int</strong> 是数据类型，表示是整数<br>
+<strong>year</strong> 是一个标识符<br>
+<strong>=</strong> 是赋值操作符<br>
+<strong>1949</strong> 是一个数字类型的值<br>
+<strong>;</strong> 表示该行结束</p>
+<p>year 这个标识符就是一个变量，它代表1949这个值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int year &#x3D; 1949;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2、JAVA中有八种基本变量类型"><a class="header-anchor" href="#2、JAVA中有八种基本变量类型">¶</a>2、JAVA中有八种基本变量类型</h2>
+<h3 id="示例-1-整型"><a class="header-anchor" href="#示例-1-整型">¶</a>示例 <strong>1</strong> : 整型</h3>
+<p>整型变量用于存放整数<br>
+byte<br>
+short<br>
+int<br>
+long<br>
+区别在于不同类型的整型，最大值，最小值不一样<br>
+如果试图给byte类型的变量赋予超出其范围的值，就会产生编译错误，这个时候就需要进行[类型转换]，在后面的章节会讲解</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line">    </span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">      byte b &#x3D; 1;</span><br><span class="line">      short s &#x3D; 200;</span><br><span class="line">      int i &#x3D; 300;</span><br><span class="line">      long l &#x3D; 400;</span><br><span class="line"> </span><br><span class="line">      &#x2F;*如果试图给byte类型的变量赋予超出其范围的值，就会产生编译错误*&#x2F;</span><br><span class="line">      byte b2 &#x3D; 200;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-字符型"><a class="header-anchor" href="#示例-2-字符型">¶</a>示例 <strong>2</strong> : 字符型</h3>
+<p>char类型用于存放一个字符，值用单引号’表示 (双引号表示字符串)<br>
+其长度和short一样，也是16位的<br>
+<strong>只能存放一个字符</strong>，超过一个字符就会产生编译错误</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line">    </span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">      char c &#x3D; &#39;中&#39;;</span><br><span class="line">      &#x2F;&#x2F;char 只能存放一个字符，超过一个字符就会产生编译错误</span><br><span class="line">      char c2 &#x3D; &#39;中国&#39;; &#x2F;&#x2F;报错</span><br><span class="line">      char c3 &#x3D; &#39;ab&#39;; &#x2F;&#x2F;报错</span><br><span class="line"> </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-浮点型"><a class="header-anchor" href="#示例-3-浮点型">¶</a>示例 <strong>3</strong> : 浮点型</h3>
+<p>浮点数类型有两种<br>
+float 长度为32位<br>
+double 长度为64位<br>
+<strong>注意： 默认的小数值是double类型的</strong><br>
+所以 float f = 54.321会出现编译错误，因为54.321的默认类型是 double，其类型 长度为64，超过了float的长度32<br>
+在数字后面<strong>加一个字母f</strong>，直接把该数字声明成float类型<br>
+float f2 = 54.321<strong>f</strong>,<br>
+这样就不会出错了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line">     </span><br><span class="line">  public static void main(String[] args)&#123;</span><br><span class="line">      double d &#x3D; 123.45;</span><br><span class="line">        </span><br><span class="line">      &#x2F;&#x2F;该行会出现编译错误，因为54.321是double型的</span><br><span class="line">      float f &#x3D; 54.321;</span><br><span class="line">        </span><br><span class="line">      float f2 &#x3D; 54.321f;</span><br><span class="line">        </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-布尔型"><a class="header-anchor" href="#示例-4-布尔型">¶</a>示例 <strong>4</strong> : 布尔型</h3>
+<p>布尔型用于表示真假<br>
+其长度为1</p>
+<p>boolean b1 = true;</p>
+<p>boolean b2 = false;</p>
+<p>分别代表真假<br>
+虽然布尔型真正存放的数据是0(false) 1(true)<br>
+但是，不能直接使用0 1 进行赋值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        boolean b1 &#x3D; true;</span><br><span class="line">        boolean b2 &#x3D; false;</span><br><span class="line"> </span><br><span class="line">        &#x2F;&#x2F; 虽然布尔型真正存放的数据是0(false) 1(true)</span><br><span class="line">        &#x2F;&#x2F; 但是，不能直接使用0 1 进行赋值</span><br><span class="line">        boolean b3 &#x3D; 1;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-5-String类型"><a class="header-anchor" href="#示例-5-String类型">¶</a>示例 <strong>5</strong> : String类型</h3>
+<p>String类型其实<strong>并不是基本类型</strong>，但是它是如此广泛的被使用，常常被误以为是一种基本类型。<br>
+String类型是Immutable的，一旦创建就不能够被改变，更多的关于String的学习，[请参考String]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String str &#x3D; &quot;Hello Java&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-6-练习-变量"><a class="header-anchor" href="#示例-6-练习-变量">¶</a>示例 <strong>6</strong> : 练习-变量</h3>
+<p>分别为如下值，找到合适的类型来定义<br>
+3.14<br>
+2.769343<br>
+365<br>
+12<br>
+‘吃’<br>
+false<br>
+“不可描述”</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">double a &#x3D; 3.14;</span><br><span class="line">double b &#x3D; 2.769343</span><br><span class="line">int c &#x3D; 365;</span><br><span class="line">int d &#x3D; 12;</span><br><span class="line">char e &#x3D; &#39;吃&#39;;</span><br><span class="line">boolean f &#x3D; false;</span><br><span class="line">String g &#x3D; &quot;不可描述&quot;;</span><br></pre></td></tr></table></figure>
+<h2 id="3、什么是JAVA的字面值"><a class="header-anchor" href="#3、什么是JAVA的字面值">¶</a>3、什么是JAVA的字面值</h2>
+<h3 id="示例-1-整数字面值"><a class="header-anchor" href="#示例-1-整数字面值">¶</a>示例 <strong>1</strong> : 整数字面值</h3>
+<p>当以l或者L结尾的时候，一个整数字面值是long类型，否则就是int类型。 建议使用<strong>大写的L</strong>而非小写的l，因为容易和1混淆。<br>
+byte,short,int和long的值都可以通过int类型的字面值来创建。整数的字面值可以用如下四种进制来表示：<br>
+十进制: 基 10, 包含从0-9的数字，<strong>平常用的就是这种</strong><br>
+十六进制: 基 16, 包含从0-9的数字，和从A-F的字母。<br>
+八进制: 基 8, 包含从0-7的数字<br>
+二进制: 基 2, 包含0和1。（从 JAVA7开始就可以创建 二进制的字面值了）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        long val &#x3D; 26L; &#x2F;&#x2F;以L结尾的字面值表示long型</span><br><span class="line">        int decVal &#x3D; 26; &#x2F;&#x2F;默认就是int型</span><br><span class="line">        int hexVal &#x3D; 0x1a; &#x2F;&#x2F;16进制</span><br><span class="line">        int oxVal &#x3D; 032; &#x2F;&#x2F;8进制</span><br><span class="line">        int binVal &#x3D; 0b11010; &#x2F;&#x2F;2进制</span><br><span class="line">        System.out.println(oxVal);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-浮点数字面值"><a class="header-anchor" href="#示例-2-浮点数字面值">¶</a>示例 <strong>2</strong> : 浮点数字面值</h3>
+<p>当以f或者F结尾的时候，就表示一个float类型的浮点数，否则就是double类型（以d或者D结尾，写不写都可以）。<br>
+浮点数还可以用E或者e表示（科学计数法）<br>
+e2表示10的二次方，即100<br>
+1.234e2 = 1.234x100</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        float f1 &#x3D; 123.4F;&#x2F;&#x2F; 以F结尾的字面值表示float类型</span><br><span class="line">        double d1 &#x3D; 123.4;&#x2F;&#x2F; 默认就是double类型</span><br><span class="line">        double d2 &#x3D; 1.234e2;&#x2F;&#x2F; 科学计数法表示double</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-字符和字符串字面值"><a class="header-anchor" href="#示例-3-字符和字符串字面值">¶</a>示例 <strong>3</strong> : 字符和字符串字面值</h3>
+<p>字符的字面值放在单引号中</p>
+<p><strong>字符串</strong>的字面值放在双引号中</p>
+<p>需要注意的是，\表示转义，比如需要表示制表符，回车换行，双引号等就需要用 \t \r \n &quot; 的方式进行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String name &#x3D; &quot;盖伦&quot;;</span><br><span class="line">        char a&#x3D; &#39;c&#39;;</span><br><span class="line"> </span><br><span class="line">        &#x2F;&#x2F;以下是转义字符</span><br><span class="line">        char tab &#x3D; &#39;\t&#39;; &#x2F;&#x2F;制表符</span><br><span class="line">        char carriageReturn &#x3D; &#39;\r&#39;; &#x2F;&#x2F;回车</span><br><span class="line">        char newLine &#x3D; &#39;\n&#39;; &#x2F;&#x2F;换行</span><br><span class="line">        char doubleQuote &#x3D; &#39;\&quot;&#39;; &#x2F;&#x2F;双引号</span><br><span class="line">        char singleQuote &#x3D; &#39;\&#39;&#39;; &#x2F;&#x2F;单引号</span><br><span class="line">        char backslash &#x3D; &#39;\\&#39;; &#x2F;&#x2F;反斜杠</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、在JAVA中进行基本类型的类型转换"><a class="header-anchor" href="#4、在JAVA中进行基本类型的类型转换">¶</a>4、在JAVA中进行基本类型的类型转换</h2>
+<h3 id="步骤-1-转换规则"><a class="header-anchor" href="#步骤-1-转换规则">¶</a>步骤 <strong>1</strong> : 转换规则</h3>
+<p>转换规则如图所示<br>
+<strong>精度高</strong>的数据类型就像<strong>容量大</strong>的杯子，可以<strong>放更大</strong>的数据<br>
+<strong>精度低</strong>的数据类型就像<strong>容量小</strong>的杯子，只能<strong>放更小</strong>的数据<br>
+小杯子往大杯子里倒东西，大杯子<strong>怎么都放得下</strong><br>
+大杯子往小杯子里倒东西，<strong>有的时候放的下</strong>，<strong>有的时候就会有溢出</strong><br>
+需要注意的一点是<br>
+虽然short和char都是16位的，长度是一样的<br>
+但是彼此之间，依然需要进行强制转换</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        char c &#x3D; &#39;A&#39;;</span><br><span class="line">        short s &#x3D; 80;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;虽然short和char都是16位的，长度是一样的</span><br><span class="line">        &#x2F;&#x2F;但是彼此之间，依然需要进行强制转换</span><br><span class="line">        c &#x3D; (char) s;</span><br><span class="line">        &#x2F;&#x2F;直接进行转换，会出现编译错误</span><br><span class="line">        s &#x3D; c;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-2-低精度向高精度转换"><a class="header-anchor" href="#步骤-2-低精度向高精度转换">¶</a>步骤 <strong>2</strong> : 低精度向高精度转换</h3>
+<p>long l = 50;</p>
+<p>int i = 50;<br>
+l 是long类型的，其类型长度是64位<br>
+i 是int类型的，其类型长度是32位<br>
+所以l的精度，比i的精度要高<br>
+l = i;<br>
+<strong>把i的值赋给l</strong>， 首先l和i彼此的类型是不一样的，那么能否转换就取决于彼此的精度<br>
+这个例子，是低精度向高精度转换 是可以正常转换的<br>
+换句话说，int比较小，要放进比较大的long,随便怎么样，都放的进去</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">  </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">  </span><br><span class="line">        long l &#x3D; 50;</span><br><span class="line">        int i &#x3D; 50;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;int比较小，要放进比较大的long,随便怎么样，都放的进去</span><br><span class="line">        l &#x3D; i;</span><br><span class="line">          </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-3-高精度向低精度转换"><a class="header-anchor" href="#步骤-3-高精度向低精度转换">¶</a>步骤 <strong>3</strong> : 高精度向低精度转换</h3>
+<p>byte b = 5;</p>
+<p>int i1 = 10;</p>
+<p>int i2 = 300;</p>
+<p>b = i1;</p>
+<p>b=i2;</p>
+<p>b的类型是byte,其长度是8，<strong>最大只能放127</strong><br>
+i1 的类型是int, 其长度是32,最大，反正就是很大了，超过127<br>
+所以， 把int类型的数据转成为byte类型的数据，<strong>是有风险的</strong><br>
+<strong>有的时候是可以转换的</strong>，比如 b = i1 (i1=10);<br>
+<strong>有的时候不可以转换</strong> 比如 b= i2 (i2=300) 因为放不下了<br>
+编译器就会提示错误<br>
+这个时候就只能采用<strong>强制转换</strong>，强制转换的意思就是，转是可以转的，但是不对转换之后的值负责。 风险自担，后果自负</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">  </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">  </span><br><span class="line">        byte b &#x3D; 5;</span><br><span class="line">        int i1 &#x3D; 10;</span><br><span class="line">        int i2 &#x3D; 300;</span><br><span class="line">          </span><br><span class="line">        b &#x3D; (byte) i1;</span><br><span class="line">        &#x2F;&#x2F;因为i1的值是在byte范围之内，所以即便进行强制转换</span><br><span class="line">        &#x2F;&#x2F;最后得到的值，也是10</span><br><span class="line">        System.out.println(b);</span><br><span class="line">          </span><br><span class="line">        &#x2F;&#x2F;因为i2的值是在byte范围之外，所以就会按照byte的长度进行截取</span><br><span class="line">        &#x2F;&#x2F;i2的值是300，其对应的二进制数是 100101100</span><br><span class="line">        &#x2F;&#x2F;按照byte的长度8位进行截取后，其值为 00101100 即44</span><br><span class="line">        b &#x3D;(byte) i2;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;查看一个整数对应的二进制的方法：</span><br><span class="line">        System.out.println(Integer.toBinaryString(i2));</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5、JAVA的命名规则"><a class="header-anchor" href="#5、JAVA的命名规则">¶</a>5、JAVA的命名规则</h2>
+<h3 id="示例-1-命名规则"><a class="header-anchor" href="#示例-1-命名规则">¶</a>示例 <strong>1</strong> : 命名规则</h3>
+<p>变量命名只能使用<strong>字母 数字 $ _</strong><br>
+变量第一个字符 只能使用 字母 $ _<br>
+变量第一个字符 不能使用数字<br>
+注：_ 是下划线，不是-减号或者—— 破折号</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int a&#x3D; 5;</span><br><span class="line">int a_12&#x3D; 5;</span><br><span class="line">int $a43&#x3D; 5;</span><br><span class="line"> </span><br><span class="line">int a434&#x3D; 5;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;第一个是数字，是不行的</span><br><span class="line">int 34a&#x3D; 5;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-使用完整的单词命名，而非缩写"><a class="header-anchor" href="#示例-2-使用完整的单词命名，而非缩写">¶</a>示例 <strong>2</strong> : 使用完整的单词命名，而非缩写</h3>
+<p>在命名的时候，尽量使用完整的单词进行命名，比如name,moveSpeed，而不是使用缩写 n,m。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Hero &#123;</span><br><span class="line">     &#x2F;&#x2F;使用完整单词命名，易于理解</span><br><span class="line">    String name;</span><br><span class="line">      </span><br><span class="line">    float hp;</span><br><span class="line">      </span><br><span class="line">    float armor;</span><br><span class="line">      </span><br><span class="line">    int moveSpeed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Hero &#123;</span><br><span class="line">     &#x2F;&#x2F;使用完整单词命名，易于理解</span><br><span class="line">    String name;</span><br><span class="line">      </span><br><span class="line">    float hp;</span><br><span class="line">      </span><br><span class="line">    float armor;</span><br><span class="line">      </span><br><span class="line">    int moveSpeed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-不能只使用关键字，但是可以包含关键字"><a class="header-anchor" href="#示例-3-不能只使用关键字，但是可以包含关键字">¶</a>示例 <strong>3</strong> : 不能只使用关键字，但是可以包含关键字</h3>
+<p>什么是关键字<br>
+比如int, short, class 这些单词已经被java 赋予了特殊的含义，这些就是关键字。不能直接用来作为变量名<br>
+比如class<br>
+int class = 5;<br>
+class 是关键字<br>
+但是可以包含数字<br>
+比如<br>
+int class5 = 5;</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">  </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">  </span><br><span class="line">        int class5 &#x3D; 5;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-关键字列表1"><a class="header-anchor" href="#示例-4-关键字列表1">¶</a>示例 <strong>4</strong> : 关键字列表1</h3>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/523.png" alt></p>
+<h3 id="示例-5-关键字列表2"><a class="header-anchor" href="#示例-5-关键字列表2">¶</a>示例 <strong>5</strong> : 关键字列表2</h3>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/522.png" alt></p>
+<h3 id="示例-6-中文也是可以用来命名变量的"><a class="header-anchor" href="#示例-6-中文也是可以用来命名变量的">¶</a>示例 <strong>6</strong> : 中文也是可以用来命名变量的</h3>
+<p>中文也是可以用来命名变量的<br>
+但是在实际工作中。。。<strong>别这么干。。。</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class 苍老师 &#123;</span><br><span class="line">    public void 开展教学工作()&#123;</span><br><span class="line">        System.out.println(&quot;雅蠛蝶&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        苍老师 苍 &#x3D; new 苍老师();</span><br><span class="line">        苍.开展教学工作();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-7-练习-命名"><a class="header-anchor" href="#示例-7-练习-命名">¶</a>示例 <strong>7</strong> : 练习-命名</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. int a_;合法</span><br><span class="line">2. int a@;不合法</span><br><span class="line">3. int a3;合法</span><br><span class="line">4. int 8@;不合法</span><br><span class="line">5. int 9_;不合法</span><br><span class="line">6. int X$_;合法</span><br><span class="line">7. int y;合法</span><br><span class="line">8. int _$_;合法</span><br><span class="line">9. int $_$;合法</span><br><span class="line">10. int $*$;不合法</span><br><span class="line">11. int $1$;合法</span><br><span class="line">12. int _1_;合法</span><br><span class="line">13. int _@_;不合法</span><br><span class="line">14. int a#;不合法</span><br><span class="line">15. int a&quot;;不合法</span><br><span class="line">16. int 123a&quot;;不合法</span><br><span class="line">17. int 123a_;不合法</span><br><span class="line">18. int $123b_;合法</span><br></pre></td></tr></table></figure>
+<h2 id="6、什么是JAVA的作用域"><a class="header-anchor" href="#6、什么是JAVA的作用域">¶</a>6、什么是JAVA的作用域</h2>
+<h3 id="示例-1-字段，属性，Field"><a class="header-anchor" href="#示例-1-字段，属性，Field">¶</a>示例 <strong>1</strong> : 字段，属性，Field</h3>
+<p>当一个变量被声明在类下面<br>
+变量就叫做<strong>字段</strong> 或者<strong>属性</strong>、<strong>成员变量</strong>、<strong>Field</strong><br>
+比如变量i,就是一个属性。<br>
+那么从第2行这个变量声明的位置开始，整个类都可以访问得到<br>
+所以其作用域就是从其声明的位置开始的整个类</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    int i &#x3D; 1;</span><br><span class="line">    int j &#x3D; i;  &#x2F;&#x2F;其他的属性可以访问i</span><br><span class="line">    public void method1()&#123;</span><br><span class="line">        System.out.println(i); &#x2F;&#x2F;方法1里可以访问i</span><br><span class="line">    &#125;</span><br><span class="line">    public void method2()&#123;</span><br><span class="line">        System.out.println(i); &#x2F;&#x2F;方法2里可以访问i</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-参数"><a class="header-anchor" href="#示例-2-参数">¶</a>示例 <strong>2</strong> : 参数</h3>
+<p>如果一个变量，是声明在一个方法上的，就叫做<strong>参数</strong><br>
+参数的作用域即为该方法内的所有代码<br>
+其他方法不能访问该参数<br>
+类里面也不能访问该参数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public void method1(int i)&#123; &#x2F;&#x2F;参数i的作用域即方法method1</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">    public void method2()&#123;</span><br><span class="line"> </span><br><span class="line">        System.out.println(i); &#x2F;&#x2F;method2 不能访问参数i</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    int j &#x3D; i;  &#x2F;&#x2F;类里面也不能访问参数i</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-局部变量"><a class="header-anchor" href="#示例-3-局部变量">¶</a>示例 <strong>3</strong> :局部变量</h3>
+<p>声明在方法内的变量，叫做局部变量<br>
+其作用域在声明开始的位置，到其所处于的块结束位置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public void method1() &#123;</span><br><span class="line">        int i  &#x3D; 5;  &#x2F;&#x2F;其作用范围是从声明的第4行，到其所处于的块结束12行位置</span><br><span class="line">        System.out.println(i);</span><br><span class="line">        &#123;            &#x2F;&#x2F;子块</span><br><span class="line">            System.out.println(i); &#x2F;&#x2F;可以访问i</span><br><span class="line">            int j &#x3D; 6;</span><br><span class="line">            System.out.println(j); &#x2F;&#x2F;可以访问j</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(j); &#x2F;&#x2F;不能访问j,因为其作用域到第10行就结束了</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-练习-作用域"><a class="header-anchor" href="#示例-4-练习-作用域">¶</a>示例 <strong>4</strong> : 练习-作用域</h3>
+<p>属性的作用域在方法中，参数的作用域也在方法中，如果属性和参数命名相同了的话？ 那么到底取哪个值？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    int i &#x3D; 1; &#x2F;&#x2F;属性名是i</span><br><span class="line">    public void method1(int i)&#123; &#x2F;&#x2F;参数也是i</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new HelloWorld().method1(5);</span><br><span class="line">        &#x2F;&#x2F;结果打印出来是 1还是5?</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果输出：5</p>
+<h2 id="7、JAVA-中FINAL修饰变量"><a class="header-anchor" href="#7、JAVA-中FINAL修饰变量">¶</a>7、JAVA 中FINAL修饰变量</h2>
+<h3 id="示例-1-在声明的时候赋值"><a class="header-anchor" href="#示例-1-在声明的时候赋值">¶</a>示例 <strong>1</strong> : 在声明的时候赋值</h3>
+<p>i在第4行已经被赋值过了，所以这里会出现编译错误</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public void method1() &#123;</span><br><span class="line">        final int i &#x3D; 5;</span><br><span class="line">         </span><br><span class="line">        i &#x3D; 10; &#x2F;&#x2F;i在第4行已经被赋值过了，所以这里会出现编译错误</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-在声明的时候没有赋值"><a class="header-anchor" href="#示例-2-在声明的时候没有赋值">¶</a>示例 <strong>2</strong> : 在声明的时候没有赋值</h3>
+<p>如果在声明的时候未赋值，那么可以在后面代码进行唯一的一次赋值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public void method1() &#123;</span><br><span class="line">        final int i;</span><br><span class="line">         </span><br><span class="line">        i &#x3D; 10; &#x2F;&#x2F;i在第4行，只是被声明，但是没有被赋值，所以在这里可以进行第一次赋值</span><br><span class="line">         </span><br><span class="line">        i &#x3D; 11; &#x2F;&#x2F;i在第6行已经被赋值过了，所以这里会出现编译错误</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-final-修饰其他"><a class="header-anchor" href="#示例-3-final-修饰其他">¶</a>示例 <strong>3</strong> : final 修饰其他</h3>
+<p>final 除了修饰变量，还可以[修饰类]，[修饰方法]，这些都在后续的章节展开</p>
+<h3 id="示例-4-练习-final"><a class="header-anchor" href="#示例-4-练习-final">¶</a>示例 <strong>4</strong> : 练习-final</h3>
+<p>如果final修饰的是<strong>参数</strong>，能否在方法里给这个参数赋值？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line"> </span><br><span class="line">    public void method1(final int j) &#123;</span><br><span class="line">        j &#x3D; 5; &#x2F;&#x2F;这个能否执行？</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不能运行 根据对应的final这个修饰词的功能来看，对这个方法进行调用的时候，把参数放入方法的栈中，已经对这个参数进行了一个赋值操作，无法对其进行二次赋值</p>
+<h2 id="8、什么是JAVA的表达式"><a class="header-anchor" href="#8、什么是JAVA的表达式">¶</a>8、什么是JAVA的表达式</h2>
+<h3 id="步骤-1-以-结尾的一段代码，即为一个表达式"><a class="header-anchor" href="#步骤-1-以-结尾的一段代码，即为一个表达式">¶</a>步骤 <strong>1</strong> : 以;结尾的一段代码，即为一个表达式</h3>
+<p>表达式是由变量、操作符以及方法调用所构成的结构。如下所示：</p>
+<p>int i = 5;</p>
+<p>System.out.println(5);</p>
+<p>都是表达式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F;每一句话都是一个表达式</span><br><span class="line">        int i &#x3D; 5; </span><br><span class="line">        System.out.println(5);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="步骤-2"><a class="header-anchor" href="#步骤-2">¶</a>步骤 <strong>2</strong> : ;</h2>
+<p>; 也是一个完整的表达式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F;一个空;也是一个表达式</span><br><span class="line">        ;</span><br><span class="line">        ;</span><br><span class="line">        ;      </span><br><span class="line">        ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9、什么是JAVA的块"><a class="header-anchor" href="#9、什么是JAVA的块">¶</a>9、什么是JAVA的块</h2>
+<h3 id="步骤-1-块"><a class="header-anchor" href="#步骤-1-块">¶</a>步骤 <strong>1</strong> :块</h3>
+<p>从**{** 开始 到对应的**}** 结束，即一个块</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123; &#x2F;&#x2F;类对应的块</span><br><span class="line">    public static void main(String[] args) &#123; &#x2F;&#x2F;主方法对应的块</span><br><span class="line">        System.out.println(&quot;abc&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="四、操作符"><a class="header-anchor" href="#四、操作符">¶</a>四、操作符</h1>
+<h2 id="1、JAVA的算数操作符"><a class="header-anchor" href="#1、JAVA的算数操作符">¶</a>1、JAVA的算数操作符</h2>
+<h3 id="示例-1-基本算数操作符"><a class="header-anchor" href="#示例-1-基本算数操作符">¶</a>示例 <strong>1</strong> : 基本算数操作符</h3>
+<p>+ - * /<br>
+基本的加 减 乘 除</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int i &#x3D; 10;</span><br><span class="line">		int j &#x3D; 5;</span><br><span class="line">		int a &#x3D; i+j;</span><br><span class="line">		int b &#x3D; i - j;</span><br><span class="line">		int c &#x3D; i*j;</span><br><span class="line">		int d &#x3D; i &#x2F;j;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-练习-求和"><a class="header-anchor" href="#示例-2-练习-求和">¶</a>示例 <strong>2</strong> : 练习-求和</h3>
+<p>使用[Scanner]从控制台获取两个数字，然后计算这两个数字的和</p>
+<p>如果不会使用Scanner，请参考 [如何使用Scanner读取整数]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class FinalTest&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">         </span><br><span class="line">        java.util.Scanner s &#x3D; new java.util.Scanner(System.in);</span><br><span class="line">        System.out.print(&quot;请输入第一个整数：&quot;);</span><br><span class="line">        int i &#x3D; s.nextInt();</span><br><span class="line">         </span><br><span class="line">        System.out.print(&quot;请输入第二个整数：&quot;);</span><br><span class="line">        int j &#x3D; s.nextInt();</span><br><span class="line">         </span><br><span class="line">        System.out.print(&quot;两个整数的和是：&quot; + (i + j));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-任意运算单元的长度超过int"><a class="header-anchor" href="#示例-3-任意运算单元的长度超过int">¶</a>示例 3 : 任意运算单元的长度超过int</h3>
+<p>如果有任何运算单元的长度超过int,那么运算结果就按照最长的长度计算<br>
+比如<br>
+int a = 5;<br>
+long b = 6;<br>
+a+b -&gt; 结果类型是long</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        int a &#x3D; 5;</span><br><span class="line">        long b &#x3D; 6;</span><br><span class="line">        int c &#x3D; (int) (a+b); &#x2F;&#x2F;a+b的运算结果是long型，所以要进行强制转换</span><br><span class="line">        long d &#x3D; a+b;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-任意运算单元的长度小于int"><a class="header-anchor" href="#示例-4-任意运算单元的长度小于int">¶</a>示例 <strong>4</strong> : 任意运算单元的长度小于int</h3>
+<p>如果任何运算单元的长度都不超过int,那么运算结果就按照int来计算<br>
+byte a = 1;<br>
+byte b= 2;<br>
+a+b -&gt; int 类型</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        byte a &#x3D; 1;</span><br><span class="line">        byte b&#x3D; 2;</span><br><span class="line">        byte c &#x3D; (byte) (a+b); &#x2F;&#x2F;虽然a b都是byte类型，但是运算结果是int类型，需要进行强制转换</span><br><span class="line">        int d &#x3D; a+b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-5-取模"><a class="header-anchor" href="#示例-5-取模">¶</a>示例 5 : %取模</h3>
+<p>% 取余数，又叫取模<br>
+5除以2，余1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        int i &#x3D; 5;</span><br><span class="line">        int j &#x3D; 2;</span><br><span class="line">        System.out.println(i%j); &#x2F;&#x2F;输出为1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-6-自增-自减"><a class="header-anchor" href="#示例-6-自增-自减">¶</a>示例 <strong>6</strong> :自增 自减</h3>
+<p>++<br>
+–<br>
+在原来的基础上增加1或者减少1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        int i &#x3D; 5;</span><br><span class="line">        i++;</span><br><span class="line">        System.out.println(i);&#x2F;&#x2F;输出为6</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-7-自增-自减操作符置前以及置后的区别"><a class="header-anchor" href="#示例-7-自增-自减操作符置前以及置后的区别">¶</a>示例 7 : 自增 自减操作符置前以及置后的区别</h3>
+<p>以<ins>为例<br>
+int i = 5;<br>
+i</ins>; <strong>先取值，再运算</strong><br>
+++i; <strong>先运算，再取值</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int i &#x3D; 5;</span><br><span class="line">        System.out.println(i++); &#x2F;&#x2F;输出5</span><br><span class="line">        System.out.println(i);   &#x2F;&#x2F;输出6</span><br><span class="line">         </span><br><span class="line">        int j &#x3D; 5;</span><br><span class="line">        System.out.println(++j); &#x2F;&#x2F;输出6</span><br><span class="line">        System.out.println(j);   &#x2F;&#x2F;输出6</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-8-练习-自增"><a class="header-anchor" href="#示例-8-练习-自增">¶</a>示例 8 : 练习-自增</h3>
+<p>int i = 1;</p>
+<p>int j = <ins>i + i</ins> + ++i + <ins>i + i</ins>;</p>
+<p>问 j的结果是多少?<br>
+<strong>注:</strong> 先不要放在eclipse中，根据++置前 置后的理解自己先算一遍，然后再看答案</p>
+<p>2+2+4+5+5=18</p>
+<h3 id="示例-9-练习-BMI"><a class="header-anchor" href="#示例-9-练习-BMI">¶</a>示例 9 : 练习-BMI</h3>
+<p>使用[Scanner]收集你的身高体重，并计算出你的BMI值是多少</p>
+<p>BMI的计算公式是 体重(kg) / (身高*身高)</p>
+<p>比如邱阳波的体重是72kg, 身高是1.69，那么这位同学的BMI就是<br>
+72 / (1.69*1.69) = ?</p>
+<p>参考: [使用Scanner读取浮点数的办法]</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/2155.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">         Scanner S &#x3D; new Scanner(System.in);</span><br><span class="line">         System.out.println(&quot;请输入身高(m)&quot;);</span><br><span class="line">         float a&#x3D;S.nextFloat();</span><br><span class="line">         System.out.println(&quot;请输入体重(kg)&quot;);</span><br><span class="line">         float b&#x3D;S.nextFloat();</span><br><span class="line">         float c;</span><br><span class="line">         c&#x3D;(b&#x2F;(a*a));</span><br><span class="line">         System.out.println(&quot;当前的BMI是:&quot;+ c);</span><br><span class="line">         if (c&lt;18.5)</span><br><span class="line">         &#123;</span><br><span class="line">             System.out.println(&quot;体重过轻&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">         else if(18.5&lt;&#x3D;c&amp;&amp;c&lt;24)</span><br><span class="line">         &#123;</span><br><span class="line">             System.out.println(&quot;正常范围&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">         else if(24&lt;&#x3D;c&amp;&amp;c&lt;27)</span><br><span class="line">         &#123;</span><br><span class="line">             System.out.println(&quot;体重过重&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">         else if(27&lt;&#x3D;c&amp;&amp;c&lt;30)</span><br><span class="line">         &#123;</span><br><span class="line">             System.out.println(&quot;轻度肥胖&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">         else if(30&lt;&#x3D;c&amp;&amp;c&lt;35)</span><br><span class="line">         &#123;</span><br><span class="line">             System.out.println(&quot;中度肥胖&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">         else if(c&gt;&#x3D;35)</span><br><span class="line">         &#123;</span><br><span class="line">             System.out.println(&quot;重度肥胖&quot;);</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2、JAVA的关系操作符"><a class="header-anchor" href="#2、JAVA的关系操作符">¶</a>2、JAVA的关系操作符</h2>
+<h3 id="示例-1-关系操作符"><a class="header-anchor" href="#示例-1-关系操作符">¶</a>示例 <strong>1</strong> : 关系操作符</h3>
+<p>&gt; 大于<br>
+&gt;= 大于或等于<br>
+&lt; 小于<br>
+&lt;= 小于或等于<br>
+== 是否相等<br>
+!= 是否不等</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">       int a &#x3D; 5;</span><br><span class="line">       int b &#x3D; 6;</span><br><span class="line">       int c &#x3D; 5;</span><br><span class="line">        </span><br><span class="line">       System.out.println(a&gt;b);  &#x2F;&#x2F;返回 false</span><br><span class="line">       System.out.println(a&gt;&#x3D;c);  &#x2F;&#x2F;返回 true</span><br><span class="line">        </span><br><span class="line">       System.out.println(a&#x3D;&#x3D;b); &#x2F;&#x2F;返回false</span><br><span class="line">       System.out.println(a!&#x3D;b);&#x2F;&#x2F;返回true</span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-练习-关系操作符"><a class="header-anchor" href="#示例-2-练习-关系操作符">¶</a>示例 <strong>2</strong> : 练习-关系操作符</h3>
+<p>借助[Scanner]获取控制台输入的两个任意数字，然后使用<br>
+&gt; 大于<br>
+&gt;= 大于或等于<br>
+&lt; 小于<br>
+&lt;= 小于或等于<br>
+== 是否相等<br>
+!= 是否不等</p>
+<p>判断两个值之间的关系</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/2147.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[]args) &#123;</span><br><span class="line">		</span><br><span class="line">		java.util.Scanner S &#x3D; new java.util.Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		System.out.print(&quot;请输入第一个数字：&quot;);		</span><br><span class="line">		int num1 &#x3D; S.nextInt();</span><br><span class="line"></span><br><span class="line">		System.out.print(&quot;请输入第二个数字：&quot;);</span><br><span class="line">		int num2 &#x3D; S.nextInt();</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;比较&quot; + num1 + &quot;&gt;&quot; + num2 + &quot;:&quot; + (num1 &gt; num2));</span><br><span class="line">		System.out.println(&quot;比较&quot; + num1 + &quot;&gt;&#x3D;&quot; + num2 + &quot;:&quot; + (num1 &gt;&#x3D; num2));</span><br><span class="line">		System.out.println(&quot;比较&quot; + num1 + &quot;&lt;&quot; + num2 + &quot;:&quot; + (num1 &lt; num2));</span><br><span class="line">		System.out.println(&quot;比较&quot; + num1 + &quot;&lt;&#x3D;&quot; + num2 + &quot;:&quot; + (num1 &lt;&#x3D; num2));</span><br><span class="line">		System.out.println(&quot;比较&quot; + num1 + &quot;&#x3D;&#x3D;&quot; + num2 + &quot;:&quot; + (num1 &#x3D;&#x3D; num2));</span><br><span class="line">		System.out.println(&quot;比较&quot; + num1 + &quot;!&#x3D;&quot; + num2 + &quot;:&quot; + (num1 !&#x3D; num2));</span><br><span class="line">			&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、JAVA的逻辑运算符"><a class="header-anchor" href="#3、JAVA的逻辑运算符">¶</a>3、JAVA的逻辑运算符</h2>
+<h3 id="示例-1-长路与-和-短路与"><a class="header-anchor" href="#示例-1-长路与-和-短路与">¶</a>示例 <strong>1</strong> : 长路与 和 短路与</h3>
+<p>无论长路与还是短路与<br>
+两边的运算单元都是布尔值<br>
+都为真时，才为真<br>
+任意为假，就为假<br>
+区别<br>
+长路与 两侧，都会被运算<br>
+短路与 只要第一个是false，第二个就不进行运算了</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/537.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F;长路与  无论第一个表达式的值是true或者false,第二个的值，都会被运算</span><br><span class="line">        int i &#x3D; 2;</span><br><span class="line">        System.out.println( i&#x3D;&#x3D; 1 &amp; i++ &#x3D;&#x3D;2  ); &#x2F;&#x2F;无论如何i++都会被执行，所以i的值变成了3</span><br><span class="line">        System.out.println(i);</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;短路与 只要第一个表达式的值是false的，第二个表达式的值，就不需要进行运算了</span><br><span class="line">        int j &#x3D; 2;</span><br><span class="line">        System.out.println( j&#x3D;&#x3D; 1 &amp;&amp; j++ &#x3D;&#x3D;2  );  &#x2F;&#x2F;因为j&#x3D;&#x3D;1返回false,所以右边的j++就没有执行了，所以j的值，还是2</span><br><span class="line">        System.out.println(j);     </span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-长路或-和-短路或"><a class="header-anchor" href="#示例-2-长路或-和-短路或">¶</a>示例 <strong>2</strong> : 长路或 和 短路或</h3>
+<p>无论长路或还是短路或<br>
+两边的运算单元都是布尔值<br>
+都为假时，才为假<br>
+任意为真，就为真<br>
+区别<br>
+长路或 两侧都会被运算<br>
+短路或 只要第一个是true的，第二个就不进行运算了</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/538.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F;长路或  无论第一个表达式的值是true或者false,第二个的值，都会被运算</span><br><span class="line">        int i &#x3D; 2;</span><br><span class="line">        System.out.println( i&#x3D;&#x3D; 1 | i++ &#x3D;&#x3D;2  ); &#x2F;&#x2F;无论如何i++都会被执行，所以i的值变成了3</span><br><span class="line">        System.out.println(i);</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;短路或 只要第一个表达式的值是true的，第二个表达式的值，就不需要进行运算了</span><br><span class="line">        int j &#x3D; 2;</span><br><span class="line">        System.out.println( j&#x3D;&#x3D; 2 || j++ &#x3D;&#x3D;2  );  &#x2F;&#x2F;因为j&#x3D;&#x3D;2返回true,所以右边的j++就没有执行了，所以j的值，还是2</span><br><span class="line">        System.out.println(j);     </span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-取反"><a class="header-anchor" href="#示例-3-取反">¶</a>示例 <strong>3</strong> : 取反</h3>
+<p>取反!<br>
+真变为假<br>
+假变为真</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        boolean b &#x3D; true;</span><br><span class="line">         </span><br><span class="line">        System.out.println(b); &#x2F;&#x2F;输出true</span><br><span class="line">        System.out.println(!b);&#x2F;&#x2F;输出false</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-异或"><a class="header-anchor" href="#示例-4-异或">¶</a>示例 <strong>4</strong> : 异或^</h3>
+<p>异或^<br>
+不同，返回真<br>
+相同，返回假</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/540.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        boolean a &#x3D; true;</span><br><span class="line">        boolean b &#x3D; false;</span><br><span class="line">         </span><br><span class="line">        System.out.println(a^b); &#x2F;&#x2F;不同返回真</span><br><span class="line">        System.out.println(a^!b); &#x2F;&#x2F;相同返回假</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-5-练习-逻辑操作符"><a class="header-anchor" href="#示例-5-练习-逻辑操作符">¶</a>示例 <strong>5</strong> : 练习-逻辑操作符</h3>
+<p>int i = 1;</p>
+<p>boolean b = !(i++ == 3) ^ (i++ ==2) &amp;&amp; (i++==3);</p>
+<p>System.out.println(b);</p>
+<p>System.out.println(i);</p>
+<p>输出结果是？</p>
+<p>心算！ 不要丢到ecilpse里面去看结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">正确结果是false 3</span><br><span class="line">解析：</span><br><span class="line">i++&#x3D;&#x3D;3 false</span><br><span class="line">!(i++&#x3D;&#x3D;3) true</span><br><span class="line">此时i&#x3D;2</span><br><span class="line">(i++&#x3D;&#x3D;2) true</span><br><span class="line">此时i&#x3D;3</span><br><span class="line">!(i++&#x3D;&#x3D;3)^(i++&#x3D;&#x3D;2) true^true为 false</span><br><span class="line">因为&amp;&amp;是短路与</span><br><span class="line">所以整个结果为false </span><br><span class="line">i++&#x3D;&#x3D;3不用参与运算</span><br><span class="line">!(i++ &#x3D;&#x3D; 3) ^ (i++ &#x3D;&#x3D;2) &amp;&amp; (i++&#x3D;&#x3D;3) 结果为：false</span><br></pre></td></tr></table></figure>
+<h2 id="4、JAVA的位操作符"><a class="header-anchor" href="#4、JAVA的位操作符">¶</a>4、JAVA的位操作符</h2>
+<h3 id="示例-1-一个整数的二进制表达"><a class="header-anchor" href="#示例-1-一个整数的二进制表达">¶</a>示例 <strong>1</strong> : 一个整数的二进制表达</h3>
+<p>位操作都是对二进制而言的，但是我们平常使用的都是十进制比如5。<br>
+而5的二进制是101。<br>
+所以在开始学习之前，需要掌握一个整数的二进制表达是多少。<br>
+通过Integer.toBinaryString() 方法，将一个十进制整数转换为一个二进制字符串</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int i &#x3D; 5;</span><br><span class="line">        String b &#x3D; (Integer.toBinaryString(i)); &#x2F;&#x2F; 5的二进制的表达101</span><br><span class="line">        System.out.println(i+&quot; 的二进制表达是: &quot;+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-位或"><a class="header-anchor" href="#示例-2-位或">¶</a>示例 <strong>2</strong> : 位或</h3>
+<p>5的二进制是101<br>
+6的二进制是110<br>
+所以 5|6 对每一位进行或运算，得到 111-&gt;7</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        int i  &#x3D;5;</span><br><span class="line">        int j &#x3D; 6;</span><br><span class="line">         </span><br><span class="line">        System.out.println(Integer.toBinaryString(i)); &#x2F;&#x2F;5的二进制是101</span><br><span class="line">         </span><br><span class="line">        System.out.println(Integer.toBinaryString(j)); &#x2F;&#x2F;6的二进制是110</span><br><span class="line">         </span><br><span class="line">        System.out.println(i|j); &#x2F;&#x2F;所以 5|6 对每一位进行或运算，得到 111-&gt;7</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-位与"><a class="header-anchor" href="#示例-3-位与">¶</a>示例 <strong>3</strong> : 位与</h3>
+<p>5的二进制是101<br>
+6的二进制是110<br>
+所以 5&amp;6 对每一位进行与运算，得到 100-&gt;4</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        int i  &#x3D;5;</span><br><span class="line">        int j &#x3D; 6;</span><br><span class="line">         </span><br><span class="line">        System.out.println(Integer.toBinaryString(i)); &#x2F;&#x2F;5的二进制是101</span><br><span class="line">         </span><br><span class="line">        System.out.println(Integer.toBinaryString(j)); &#x2F;&#x2F;6的二进制是110</span><br><span class="line">         </span><br><span class="line">        System.out.println(i&amp;j); &#x2F;&#x2F;所以 5&amp;6 对每一位进行与运算，得到 100-&gt;4</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-异或-v2"><a class="header-anchor" href="#示例-4-异或-v2">¶</a>示例 <strong>4</strong> : 异或</h3>
+<p>5的二进制是101<br>
+6的二进制是110<br>
+所以 5^6 对每一位进行异或运算，得到 011-&gt;3</p>
+<p>一些特别情况：<br>
+任何数和自己进行异或 都等于 0<br>
+任何数和0 进行异或 都等于自己</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int i  &#x3D;5;</span><br><span class="line">        int j &#x3D; 6;</span><br><span class="line">        System.out.println(Integer.toBinaryString(i)); &#x2F;&#x2F;5的二进制是 101</span><br><span class="line">        System.out.println(Integer.toBinaryString(j)); &#x2F;&#x2F;6的二进制是110</span><br><span class="line">        System.out.println(i^j); &#x2F;&#x2F;所以 5^6 对每一位进行或运算，得到 011-&gt;3</span><br><span class="line">         </span><br><span class="line">        System.out.println(i^0);</span><br><span class="line">        System.out.println(i^i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-5-取非"><a class="header-anchor" href="#示例-5-取非">¶</a>示例 <strong>5</strong> :取非</h3>
+<p>5 的二进制是 00000101<br>
+所以取反即为 11111010<br>
+这个二进制换算成十进制即为-6</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        byte i  &#x3D;5;</span><br><span class="line">         </span><br><span class="line">        System.out.println(Integer.toBinaryString(i)); &#x2F;&#x2F;5的二进制是00000101,所以取非即为11111010,即为-6</span><br><span class="line">         </span><br><span class="line">        System.out.println(~i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-6-左移-右移"><a class="header-anchor" href="#示例-6-左移-右移">¶</a>示例 <strong>6</strong> : 左移 右移</h3>
+<p>左移：根据一个整数的二进制表达，将其每一位都向左移动，最右边一位补0<br>
+右移：根据一个整数的二进制表达，将其每一位都向右移动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        byte i  &#x3D;6;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;6的二进制是110</span><br><span class="line">        System.out.println(Integer.toBinaryString(i));</span><br><span class="line">        &#x2F;&#x2F;6向左移1位后，变成1100，对应的10进制是12</span><br><span class="line">        System.out.println(i&lt;&lt;1);</span><br><span class="line">        &#x2F;&#x2F;6向右移1位后，变成11，对应的10进制是3</span><br><span class="line">        System.out.println(i&gt;&gt;1);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-7-练习-快速计算2x16"><a class="header-anchor" href="#示例-7-练习-快速计算2x16">¶</a>示例 <strong>7</strong> : 练习-快速计算2x16</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int i&#x3D;2;</span><br><span class="line">        System.out.println(i&lt;&lt;4);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-8-带符号右移与无符号右移"><a class="header-anchor" href="#示例-8-带符号右移与无符号右移">¶</a>示例 8 : 带符号右移与无符号右移</h3>
+<p><strong>带符号右移 &gt;&gt;</strong><br>
+对于正数， 带符号右移 &gt;&gt; 会把所有的位右移，并在最前面补0<br>
+对于负数， 带符号右移 &gt;&gt; 会把所有的位右移，并在最前面补1<br>
+<strong>无符号右移&gt;&gt;&gt;</strong><br>
+如果是一个负数，那么对应的二进制的第一位是1<br>
+无符号右移&gt;&gt;&gt;会把第一位的1也向右移动，导致移动后，第一位变成0<br>
+这样就会使得负数在无符号右移后，得到一个正数</p>
+<p><strong>简单的说：</strong><br>
+<strong>带符号右移 &gt;&gt;</strong> 移动后正的还是正的，负的还是负的,<strong>符号不变</strong><br>
+**无符号右移&gt;&gt;&gt;**移动后，<strong>变正的了</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int i  &#x3D;-10;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;-10的二进制是11111111111111111111111111110110</span><br><span class="line">        &#x2F;&#x2F;第一位是1，即符号位，代表这是一个负数</span><br><span class="line">        System.out.println(Integer.toBinaryString(i));</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;对于正数， 带符号右移 &gt;&gt; 会把所有的位右移，并在最前面补0</span><br><span class="line">        &#x2F;&#x2F;对于负数， 带符号右移 &gt;&gt; 会把所有的位右移，并在最前面补1</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;-10带符号右移1位，移动后前面补齐1</span><br><span class="line">        &#x2F;&#x2F;得到11111111111111111111111111111011</span><br><span class="line">        &#x2F;&#x2F;因为第一位是1，所以依然是一个负数，对应的十进制是-5</span><br><span class="line">        int j &#x3D; i&gt;&gt;1;</span><br><span class="line">        System.out.println(Integer.toBinaryString(j));</span><br><span class="line">        System.out.println(j);</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;-10无符号向右移1位，符号位也会向右移，第一位就变成了0</span><br><span class="line">        &#x2F;&#x2F;得到01111111111111111111111111111011，对应的十进制是2147483643</span><br><span class="line">        int k &#x3D; i&gt;&gt;&gt;1;</span><br><span class="line">        System.out.println(Integer.toBinaryString(k));     </span><br><span class="line">         </span><br><span class="line">        System.out.println(k);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-9-练习-位操作符"><a class="header-anchor" href="#示例-9-练习-位操作符">¶</a>示例 9 : 练习-位操作符</h3>
+<p>int i = 3; // 二进制是11</p>
+<p>int j = 2; // 二进制是10</p>
+<p>int c = ((i | j) ^ (i &amp; j)) &lt;&lt; 2 &gt;&gt;&gt; 1;</p>
+<p>心算答案，不要一来就放在eclipse中计算结果</p>
+<p>11^10 ==&gt; 01 ==&gt; 100 ==&gt; 10 ==&gt; 2</p>
+<h2 id="5、JAVA的赋值操作符"><a class="header-anchor" href="#5、JAVA的赋值操作符">¶</a>5、JAVA的赋值操作符</h2>
+<h3 id="示例-1-赋值操作"><a class="header-anchor" href="#示例-1-赋值操作">¶</a>示例 <strong>1</strong> : 赋值操作</h3>
+<p>赋值操作的操作顺序是从右到左<br>
+int i = 5+5;<br>
+首先进行5+5的运算，得到结果10，然后把10这个值，赋给i</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int i &#x3D; 5+5;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-对本身进行运算，并赋值"><a class="header-anchor" href="#示例-2-对本身进行运算，并赋值">¶</a>示例 <strong>2</strong> : 对本身进行运算，并赋值</h3>
+<p>+=即自加<br>
+i+=2;<br>
+等同于<br>
+i=i+2;<br>
+其他的 -= , *= , /= , %= , &amp;= , |= , ^= , &gt;&gt;= , &gt;&gt;&gt;= 都是类似，不做赘述</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int i &#x3D;3;</span><br><span class="line">        i+&#x3D;2;</span><br><span class="line">        System.out.println(i);</span><br><span class="line">         </span><br><span class="line">        int j&#x3D;3;</span><br><span class="line">        j&#x3D;j+2;</span><br><span class="line">        System.out.println(j);     </span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-练习-赋值操作符"><a class="header-anchor" href="#示例-3-练习-赋值操作符">¶</a>示例 <strong>3</strong> : 练习-赋值操作符</h3>
+<p>int i = 1;</p>
+<p>i+=++i;</p>
+<p>心算i的值是？</p>
+<p>i初始值为1 对表达式 i+=++1; 进行展开 展开为 i = i + ++i =&gt; i = 1 + 2 ==&gt; i =3;</p>
+<h2 id="6、JAVA的三元操作符"><a class="header-anchor" href="#6、JAVA的三元操作符">¶</a>6、JAVA的三元操作符</h2>
+<h3 id="示例-1-三元操作符"><a class="header-anchor" href="#示例-1-三元操作符">¶</a>示例 <strong>1</strong> : 三元操作符</h3>
+<p>表达式?值1:值2<br>
+如果表达式为真 返回值1<br>
+如果表达式为假 返回值2</p>
+<p>关于[if语句]的详解讲解在[后面章节]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        int i &#x3D; 5;</span><br><span class="line">        int j &#x3D; 6;</span><br><span class="line"> </span><br><span class="line">        int k &#x3D; i &lt; j ? 99 : 88;</span><br><span class="line"> </span><br><span class="line">        &#x2F;&#x2F; 相当于</span><br><span class="line">        if (i &lt; j) &#123;</span><br><span class="line">            k &#x3D; 99;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            k &#x3D; 88;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        System.out.println(k);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-练习-判断是否是工作日"><a class="header-anchor" href="#示例-2-练习-判断是否是工作日">¶</a>示例 <strong>2</strong> : 练习-判断是否是工作日</h3>
+<p>通过[Scanner]输入一个<strong>1-7</strong>之间的整数，使用三元操作符判断是工作日还是周末？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">        Scanner input &#x3D; new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入一个整数（1 - 7）&quot;);</span><br><span class="line">        int a &#x3D; input.nextInt();</span><br><span class="line">        String b &#x3D; a &gt;&#x3D; 1 &amp;&amp; a &lt;&#x3D; 7 ? a &lt;&#x3D; 5 ? &quot;工作日&quot; : &quot;周末&quot;: &quot;输入错误&quot;;</span><br><span class="line">        System.out.println(b);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7、使用SCANNER读取整数"><a class="header-anchor" href="#7、使用SCANNER读取整数">¶</a>7、使用SCANNER读取整数</h2>
+<h3 id="步骤-1-使用Scanner读取整数"><a class="header-anchor" href="#步骤-1-使用Scanner读取整数">¶</a>步骤 <strong>1</strong> : 使用Scanner读取整数</h3>
+<p>注意： 使用Scanner类，需要在最前面加上</p>
+<p>import java.util.Scanner;</p>
+<p>表示导入这个类，才能够正常使用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s &#x3D; new Scanner(System.in);</span><br><span class="line">        int a &#x3D; s.nextInt();</span><br><span class="line">        System.out.println(&quot;第一个整数：&quot;+a);</span><br><span class="line">        int b &#x3D; s.nextInt();</span><br><span class="line">        System.out.println(&quot;第二个整数：&quot;+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-2-使用Scanner读取浮点数"><a class="header-anchor" href="#步骤-2-使用Scanner读取浮点数">¶</a>步骤 <strong>2</strong> :使用Scanner读取浮点数</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">  </span><br><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s &#x3D; new Scanner(System.in);</span><br><span class="line">        float a &#x3D; s.nextFloat();</span><br><span class="line">        System.out.println(&quot;读取的浮点数的值是：&quot;+a);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-3-使用Scanner读取字符串"><a class="header-anchor" href="#步骤-3-使用Scanner读取字符串">¶</a>步骤 <strong>3</strong> : 使用Scanner读取字符串</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">  </span><br><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s &#x3D; new Scanner(System.in);</span><br><span class="line">        String a &#x3D; s.nextLine();</span><br><span class="line">        System.out.println(&quot;读取的字符串是：&quot;+a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-4-读取了整数后，接着读取字符串"><a class="header-anchor" href="#步骤-4-读取了整数后，接着读取字符串">¶</a>步骤 <strong>4</strong> : 读取了整数后，接着读取字符串</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">   </span><br><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Scanner s &#x3D; new Scanner(System.in);</span><br><span class="line">        int i &#x3D; s.nextInt();</span><br><span class="line">        System.out.println(&quot;读取的整数是&quot;+ i);</span><br><span class="line">        String rn &#x3D; s.nextLine();</span><br><span class="line">        String a &#x3D; s.nextLine();</span><br><span class="line">        System.out.println(&quot;读取的字符串是：&quot;+a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>next在输入有效字符之前输入的空格，换行，tab都是无效的，在输入有效字符之后输入的空格，换行，tab都是它的结束符 nextLint的开始结束都只有换行，中间输入的空格，tab都会照常输出。</p>
+<p>此处Scanner用法有一点瑕疵，scanner用完之后要关闭，不然会浪费系统资源 s.close();即可。</p>
+<h1 id="五、控制流程"><a class="header-anchor" href="#五、控制流程">¶</a>五、控制流程</h1>
+<h2 id="1、JAVA的IF-条件语句"><a class="header-anchor" href="#1、JAVA的IF-条件语句">¶</a>1、JAVA的IF 条件语句</h2>
+<h3 id="示例-1-if"><a class="header-anchor" href="#示例-1-if">¶</a>示例 <strong>1</strong> : if</h3>
+<p>if(表达式1){</p>
+<p>表达式2；</p>
+<p>}<br>
+如果表达式1的值是true,<br>
+就执行表达式2</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/551.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        boolean b &#x3D; true;</span><br><span class="line">        &#x2F;&#x2F;如果成立就打印yes</span><br><span class="line">        if(b)&#123;</span><br><span class="line">            System.out.println(&quot;yes&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-多表达式与一个表达式"><a class="header-anchor" href="#示例-2-多表达式与一个表达式">¶</a>示例 <strong>2</strong> : 多表达式与一个表达式</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        boolean b &#x3D; false;</span><br><span class="line">        &#x2F;&#x2F;如果有多个表达式，必须用大括弧包括起来</span><br><span class="line">        if(b)&#123;</span><br><span class="line">            System.out.println(&quot;yes1&quot;);</span><br><span class="line">            System.out.println(&quot;yes2&quot;);</span><br><span class="line">            System.out.println(&quot;yes3&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;否则表达式2 3 无论b是否为true都会执行</span><br><span class="line">         </span><br><span class="line">        if(b)</span><br><span class="line">            System.out.println(&quot;yes1&quot;);</span><br><span class="line">            System.out.println(&quot;yes2&quot;);</span><br><span class="line">            System.out.println(&quot;yes3&quot;);</span><br><span class="line">             </span><br><span class="line">        &#x2F;&#x2F;如果只有一个表达式可以不用写括弧，看上去会简约一些</span><br><span class="line">        if(b)&#123;</span><br><span class="line">            System.out.println(&quot;yes1&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">        if(b)</span><br><span class="line">            System.out.println(&quot;yes1&quot;);</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-if-使用过程中可能遇到的坑"><a class="header-anchor" href="#示例-3-if-使用过程中可能遇到的坑">¶</a>示例 <strong>3</strong> : if 使用过程中可能遇到的坑</h3>
+<p>在第6行，if后面有一个分号; 而[分号也是一个完整的表达式]<br>
+如果b为true，会执行这个分号，然后打印yes<br>
+如果b为false，不会执行这个分号，然后打印yes<br>
+这样，看上去无论如何都会打印yes</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        boolean b &#x3D; false;</span><br><span class="line"> </span><br><span class="line">        if (b);</span><br><span class="line">            System.out.println(&quot;yes&quot;);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-4-if-else"><a class="header-anchor" href="#示例-4-if-else">¶</a>示例 <strong>4</strong> : if else</h3>
+<p>else 代表不成立的情况</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/552.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        boolean b &#x3D; false;</span><br><span class="line"> </span><br><span class="line">        if (b)</span><br><span class="line">            System.out.println(&quot;yes&quot;);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;no&quot;);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-5-else-if"><a class="header-anchor" href="#示例-5-else-if">¶</a>示例 <strong>5</strong> : else if</h3>
+<p>else if 是多条件判断</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"> </span><br><span class="line">        &#x2F;&#x2F;如果只使用 if,会执行4次判断</span><br><span class="line">        int i &#x3D; 2;</span><br><span class="line">        if (i&#x3D;&#x3D;1)</span><br><span class="line">            System.out.println(1);</span><br><span class="line">        if (i&#x3D;&#x3D;2)</span><br><span class="line">            System.out.println(2);</span><br><span class="line">        if (i&#x3D;&#x3D;3)</span><br><span class="line">            System.out.println(3);</span><br><span class="line">        if (i&#x3D;&#x3D;4)</span><br><span class="line">            System.out.println(4);</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;如果使用else if, 一旦在18行，判断成立， 20行和22行的判断就不会执行了，节约了运算资源</span><br><span class="line">        if (i&#x3D;&#x3D;1)</span><br><span class="line">            System.out.println(1);</span><br><span class="line">        else if (i&#x3D;&#x3D;2)</span><br><span class="line">            System.out.println(2);</span><br><span class="line">        else if (i&#x3D;&#x3D;3)</span><br><span class="line">            System.out.println(3);</span><br><span class="line">        else if (i&#x3D;&#x3D;4)</span><br><span class="line">            System.out.println(4);     </span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-6-练习-BMI"><a class="header-anchor" href="#示例-6-练习-BMI">¶</a>示例 <strong>6</strong> : 练习-BMI</h3>
+<p>基于前面的[操作符练习-BMI]，做基于判断的改进：</p>
+<p>使用[Scanner]收集你的身高体重，并计算出你的BMI值是多少</p>
+<p>BMI的计算公式是 体重(kg) / (身高*身高)</p>
+<p>比如邱阳波的体重是72kg, 身高是1.69，那么这位同学的BMI就是<br>
+72 / (1.69*1.69) = ?</p>
+<p>然后通过条件判断BMI的范围，打印出是超重还是正常</p>
+<p>参考: [使用Scanner读取浮点数的办法]</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/2161.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.print(&quot;请输入您的身高（m）：&quot;);</span><br><span class="line">        Scanner s &#x3D; new Scanner(System.in);</span><br><span class="line">        float a &#x3D; s.nextFloat();</span><br><span class="line">        System.out.print(&quot;请输入您的体重（kg）：&quot;);</span><br><span class="line">        float b &#x3D; s.nextFloat();</span><br><span class="line">        final float BMI &#x3D; b &#x2F; (a * a);</span><br><span class="line">        if (BMI &lt; 18.5)&#123;</span><br><span class="line">            System.out.println(String.format(&quot;当前BMI指数为: %.2f\n身体状况： 体重过轻&quot;, BMI));</span><br><span class="line">        &#125;</span><br><span class="line">        else if (BMI &gt;&#x3D; 18.5 &amp;&amp; BMI &lt; 24)&#123;</span><br><span class="line">            System.out.println(String.format(&quot;当前BMI指数为: %.2f\n身体状况： 体重正常&quot;, BMI));</span><br><span class="line">        &#125;</span><br><span class="line">        else if (BMI &gt;&#x3D; 24 &amp;&amp; BMI &lt; 27)&#123;</span><br><span class="line">            System.out.println(String.format(&quot;当前BMI指数为: %.2f\n身体状况： 体重过重&quot;, BMI));</span><br><span class="line">        &#125;</span><br><span class="line">        else if (BMI &gt;&#x3D; 27 &amp;&amp; BMI &lt; 30)&#123;</span><br><span class="line">            System.out.println(String.format(&quot;当前BMI指数为: %.2f\n身体状况： 轻度肥胖&quot;, BMI));</span><br><span class="line">        &#125;</span><br><span class="line">        else if (BMI &gt;&#x3D; 30 &amp;&amp; BMI &lt; 35)&#123;</span><br><span class="line">            System.out.println(String.format(&quot;当前BMI指数为: %.2f\n身体状况： 中度肥胖&quot;, BMI));</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            System.out.println(String.format(&quot;当前BMI指数为: %.2f\n身体状况： 重度肥胖&quot;, BMI));</span><br><span class="line">        &#125;</span><br><span class="line">        s.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-7-练习-闰年"><a class="header-anchor" href="#示例-7-练习-闰年">¶</a>示例 7 : 练习-闰年</h3>
+<p>判断某一年是否为闰年<br>
+通过[Scanner] 输入一个年份，然后判断该年是否是闰年</p>
+<p>闰年判断标准(满足任何一个)</p>
+<ol>
+<li>
+<p>如果能够被4整除，但是不能被100整除</p>
+</li>
+<li>
+<p>能够被400整除</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner scanner &#x3D; new Scanner(System.in);</span><br><span class="line">		System.out.println(&quot;请输入年份：&quot;);</span><br><span class="line">		int year &#x3D; scanner.nextInt();</span><br><span class="line">		if (year % 4 &#x3D;&#x3D; 0 &amp; year % 100 !&#x3D; 0 | year % 400 &#x3D;&#x3D; 0) &#123;</span><br><span class="line">				System.out.println(year + &quot;是闰年&quot;);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			System.out.println(year + &quot;不是闰年&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2、JAVA的SWITCH语句"><a class="header-anchor" href="#2、JAVA的SWITCH语句">¶</a>2、JAVA的SWITCH语句</h2>
+<h3 id="示例-1-switch"><a class="header-anchor" href="#示例-1-switch">¶</a>示例 <strong>1</strong> : switch</h3>
+<p>switch可以使用byte,short,int,char,String,enum</p>
+<p><strong>注:</strong> 每个表达式结束，都应该有一个break;<br>
+<strong>注:</strong> String在Java1.7之前是不支持的, Java从1.7开始支持switch用String的，编译后是把String转化为hash值，其实还是整数<br>
+<strong>注:</strong> enum是枚举类型，在[枚举]章节有详细讲解</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;如果使用if else</span><br><span class="line">        int day &#x3D; 5;</span><br><span class="line">        if (day&#x3D;&#x3D;1)</span><br><span class="line">            System.out.println(&quot;星期一&quot;);</span><br><span class="line">              </span><br><span class="line">        else if (day&#x3D;&#x3D;2)</span><br><span class="line">            System.out.println(&quot;星期二&quot;);</span><br><span class="line">        else if (day&#x3D;&#x3D;3)</span><br><span class="line">            System.out.println(&quot;星期三&quot;);</span><br><span class="line">        else if (day&#x3D;&#x3D;4)</span><br><span class="line">            System.out.println(&quot;星期四&quot;);</span><br><span class="line">        else if (day&#x3D;&#x3D;5)</span><br><span class="line">            System.out.println(&quot;星期五&quot;);</span><br><span class="line">        else if (day&#x3D;&#x3D;6)</span><br><span class="line">            System.out.println(&quot;星期六&quot;);</span><br><span class="line">        else if (day&#x3D;&#x3D;7)</span><br><span class="line">            System.out.println(&quot;星期天&quot;);</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;这个是什么鬼？&quot;);</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;如果使用switch</span><br><span class="line">        switch(day)&#123;</span><br><span class="line">            case 1:</span><br><span class="line">                System.out.println(&quot;星期一&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 2:</span><br><span class="line">                System.out.println(&quot;星期二&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 3:</span><br><span class="line">                System.out.println(&quot;星期三&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 4:</span><br><span class="line">                System.out.println(&quot;星期四&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 5:</span><br><span class="line">                System.out.println(&quot;星期五&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 6:</span><br><span class="line">                System.out.println(&quot;星期六&quot;);</span><br><span class="line">                break;</span><br><span class="line">            case 7:</span><br><span class="line">                System.out.println(&quot;星期天&quot;);</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                System.out.println(&quot;这个是什么鬼？&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-练习-季节"><a class="header-anchor" href="#示例-2-练习-季节">¶</a>示例 <strong>2</strong> : 练习-季节</h3>
+<p>通过[Scanner] 输入月份，然后使用switch 判断季节</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class Test &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner sc &#x3D; new Scanner(System.in);</span><br><span class="line">		System.out.println(&quot;请输入月份:&quot;);</span><br><span class="line">		int mon &#x3D; sc.nextInt();</span><br><span class="line">		switch (mon) &#123;</span><br><span class="line">		case 1:</span><br><span class="line">		case 2:</span><br><span class="line">		case 3:</span><br><span class="line">			System.out.println(&quot;春天来了&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 4:</span><br><span class="line">		case 5:</span><br><span class="line">		case 6:</span><br><span class="line">			System.out.println(&quot;夏天来了&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 7:</span><br><span class="line">		case 8:</span><br><span class="line">		case 9:</span><br><span class="line">			System.out.println(&quot;秋天来了&quot;);</span><br><span class="line">			break;</span><br><span class="line">		case 10:</span><br><span class="line">		case 11:</span><br><span class="line">		case 12:</span><br><span class="line">			System.out.println(&quot;冬天来了&quot;);</span><br><span class="line">			break;</span><br><span class="line">		default:</span><br><span class="line">			System.out.println(&quot;这是什么鬼？？？&quot;);</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、JAVA的WHILE语句"><a class="header-anchor" href="#3、JAVA的WHILE语句">¶</a>3、JAVA的WHILE语句</h2>
+<h3 id="示例-1-条件为true时-重复执行"><a class="header-anchor" href="#示例-1-条件为true时-重复执行">¶</a>示例 <strong>1</strong> : 条件为true时 重复执行</h3>
+<p>只要while中的表达式成立，就会不断地循环执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;打印0到4    </span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        while(i&lt;5)&#123;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-条件为true时-重复执行，至少会执行一次"><a class="header-anchor" href="#示例-2-条件为true时-重复执行，至少会执行一次">¶</a>示例 <strong>2</strong> : 条件为true时 重复执行，至少会执行一次</h3>
+<p>do{</p>
+<p>} while 循环</p>
+<p>与while的区别是，无论是否成立，先执行一次，再进行判断</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">         </span><br><span class="line">        &#x2F;&#x2F;打印0到4</span><br><span class="line">        &#x2F;&#x2F;与while的区别是，无论是否成立，先执行一次，再进行判断</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        do&#123;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">            i++;           </span><br><span class="line">        &#125; while(i&lt;5);</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-练习-阶乘"><a class="header-anchor" href="#示例-3-练习-阶乘">¶</a>示例 <strong>3</strong> : 练习-阶乘</h3>
+<p>通过[Scanner] 获取一个整数，然后使用while计算这个整数的阶乘</p>
+<p>N的阶乘等于 N* (N-1) * (N-2) * … * 1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner scanner &#x3D; new Scanner(System.in);</span><br><span class="line">		System.out.println(&quot;请输入一个整数：&quot;);</span><br><span class="line">		int a &#x3D; scanner.nextInt();</span><br><span class="line">		if (a &#x3D;&#x3D; 1 | a &#x3D;&#x3D; 0) &#123;</span><br><span class="line">			System.out.println(&quot;阶乘是：1&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		long sum&#x3D;1;</span><br><span class="line">		while (a &gt; 1) &#123;</span><br><span class="line">			sum *&#x3D; (a--);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;阶乘是：&quot;+sum);</span><br><span class="line">		scanner.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、JAVA的FOR循环"><a class="header-anchor" href="#4、JAVA的FOR循环">¶</a>4、JAVA的FOR循环</h2>
+<h3 id="示例-1-for"><a class="header-anchor" href="#示例-1-for">¶</a>示例 <strong>1</strong> : for</h3>
+<p>比较for和while</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">           </span><br><span class="line">        &#x2F;&#x2F;使用while打印0到4    </span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        while(i&lt;5)&#123;</span><br><span class="line">            System.out.println(&quot;while循环输出的&quot;+i);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">          </span><br><span class="line">        &#x2F;&#x2F;使用for打印0到4    </span><br><span class="line">        for (int j &#x3D; 0; j &lt; 5; j++) &#123;</span><br><span class="line">            System.out.println(&quot;for  循环输出的&quot;+j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-练习-乞丐"><a class="header-anchor" href="#示例-2-练习-乞丐">¶</a>示例 <strong>2</strong> : 练习-乞丐</h3>
+<p>天朝有一个乞丐姓洪，去天桥要钱<br>
+第一天要了1块钱<br>
+第二天要了2块钱<br>
+第三天要了4块钱<br>
+第四天要了8块钱<br>
+以此类推</p>
+<p>问题： 洪乞丐干10天，收入是多少？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for (int i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">			System.out.println(&quot;第&quot;+(i+1)+&quot;天;收入了&quot;+(1 &lt;&lt; i)+&quot;元&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5、JAVA-的-CONTINUE语句"><a class="header-anchor" href="#5、JAVA-的-CONTINUE语句">¶</a>5、JAVA 的 CONTINUE语句</h2>
+<h3 id="示例-1-continue"><a class="header-anchor" href="#示例-1-continue">¶</a>示例 <strong>1</strong> : continue</h3>
+<p>如果是双数，后面的代码不执行，直接进行下一次循环</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">          </span><br><span class="line">        &#x2F;&#x2F;打印单数    </span><br><span class="line">        for (int j &#x3D; 0; j &lt; 10; j++) &#123;</span><br><span class="line">            if(0&#x3D;&#x3D;j%2) </span><br><span class="line">                continue; &#x2F;&#x2F;如果是双数，后面的代码不执行，直接进行下一次循环</span><br><span class="line">             </span><br><span class="line">            System.out.println(j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-练习-忽略倍数"><a class="header-anchor" href="#示例-2-练习-忽略倍数">¶</a>示例 <strong>2</strong> : 练习-忽略倍数</h3>
+<p>打印 1-100 之间的数，如果这个数，要么是3，要么5的倍数，就忽略掉</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for(int i &#x3D;1;i&lt;101;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(i%3&#x3D;&#x3D;0||i%5&#x3D;&#x3D;0)</span><br><span class="line">				continue;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6、JAVA的BREAK语句"><a class="header-anchor" href="#6、JAVA的BREAK语句">¶</a>6、JAVA的BREAK语句</h2>
+<h3 id="示例-1-break"><a class="header-anchor" href="#示例-1-break">¶</a>示例 <strong>1</strong> : break;</h3>
+<p>直接结束当前for循环</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">          </span><br><span class="line">        &#x2F;&#x2F;打印单数    </span><br><span class="line">        for (int j &#x3D; 0; j &lt; 10; j++) &#123;</span><br><span class="line">            if(0&#x3D;&#x3D;j%2) </span><br><span class="line">                break; &#x2F;&#x2F;如果是双数，直接结束循环</span><br><span class="line">             </span><br><span class="line">            System.out.println(j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-练习-百万富翁"><a class="header-anchor" href="#示例-2-练习-百万富翁">¶</a>示例 <strong>2</strong> : 练习-百万富翁</h3>
+<p>假设你月收入是3000，除开平时花销，每个月留下1000块钱进行投资。</p>
+<p>然后你认真的钻研了 《股票和基金 21天从入门到精通》，达到了每年20%的投资回报率。</p>
+<p>那么问题来了，以每个月投资1000块钱的节奏，持续投资多少年，总收入达到100万<br>
+（复利计算按照每年12000投入计算，不按照每月计息）</p>
+<p>复利公式：<br>
+F = p* ( (1+r)^n );<br>
+<strong>F</strong> 最终收入<br>
+<strong>p</strong> 本金<br>
+<strong>r</strong> 年利率<br>
+<strong>n</strong> 存了多少年</p>
+<p>假设情景一：<br>
+p = 10000<br>
+r = 0.05<br>
+n = 1</p>
+<p>解读：<br>
+本金是10000<br>
+年利率是5%<br>
+存了一年 1次<br>
+复利收入 10000*( (1+0.05)^1 ) = 10500</p>
+<p>假设情景二：<br>
+p = 10000<br>
+r = 0.05<br>
+n = 2</p>
+<p>解读：<br>
+本金是10000<br>
+年利率是5%<br>
+存了两年<br>
+复利收入 10000*( (1+0.05)^2 ) = 11025</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		double income&#x3D;0;</span><br><span class="line">		int principal&#x3D;12000;</span><br><span class="line">		float rate&#x3D;0.2f;</span><br><span class="line">		int target&#x3D;1000000;</span><br><span class="line">		int targetYear&#x3D;0;</span><br><span class="line">		for(int i &#x3D; 1 ; i &lt; 10000 ; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			income+&#x3D;principal*(Math.pow((1+rate),i));</span><br><span class="line">			System.out.printf(&quot;第%d年的收入为%.0f%n&quot;,i,income);</span><br><span class="line">			if(income&gt;&#x3D;target)</span><br><span class="line">			&#123;</span><br><span class="line">				targetYear&#x3D;i;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.printf(&quot;以10000块做投资，需要投资%d年，才能获得收入超过百万的值为：%.0f&quot;,targetYear,income);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7、JAVA-如何结束外部FOR循环"><a class="header-anchor" href="#7、JAVA-如何结束外部FOR循环">¶</a>7、JAVA 如何结束外部FOR循环</h2>
+<h3 id="示例-1-结束当前循环"><a class="header-anchor" href="#示例-1-结束当前循环">¶</a>示例 <strong>1</strong> : 结束当前循环</h3>
+<p>break; 只能结束当前循环</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">          </span><br><span class="line">        &#x2F;&#x2F;打印单数    </span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">             </span><br><span class="line">            for (int j &#x3D; 0; j &lt; 10; j++) &#123;</span><br><span class="line">                System.out.println(i+&quot;:&quot;+j);</span><br><span class="line">                if(0&#x3D;&#x3D;j%2) </span><br><span class="line">                    break; &#x2F;&#x2F;如果是双数，结束当前循环</span><br><span class="line">            &#125;</span><br><span class="line">             </span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-2-使用boolean变量结束外部循环"><a class="header-anchor" href="#示例-2-使用boolean变量结束外部循环">¶</a>示例 <strong>2</strong> : 使用boolean变量结束外部循环</h3>
+<p>借助boolean变量结束外部循环<br>
+需要在内部循环中修改这个变量值<br>
+每次内部循环结束后，都要在外部循环中判断，这个变量的值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        boolean breakout &#x3D; false; &#x2F;&#x2F;是否终止外部循环的标记</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line"> </span><br><span class="line">            for (int j &#x3D; 0; j &lt; 10; j++) &#123;</span><br><span class="line">                System.out.println(i + &quot;:&quot; + j);</span><br><span class="line">                if (0 &#x3D;&#x3D; j % 2) &#123;</span><br><span class="line">                    breakout &#x3D; true; &#x2F;&#x2F;终止外部循环的标记设置为true</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if (breakout) &#x2F;&#x2F;判断是否终止外部循环</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例-3-使用标签结束外部循环"><a class="header-anchor" href="#示例-3-使用标签结束外部循环">¶</a>示例 <strong>3</strong> : 使用标签结束外部循环</h3>
+<p>在外部循环的前一行，加上标签<br>
+在break的时候使用该标签<br>
+即能达到结束外部循环的效果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">          </span><br><span class="line">        &#x2F;&#x2F;打印单数    </span><br><span class="line">        outloop: &#x2F;&#x2F;outloop这个标示是可以自定义的比如outloop1,ol2,out5</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">             </span><br><span class="line">            for (int j &#x3D; 0; j &lt; 10; j++) &#123;</span><br><span class="line">                System.out.println(i+&quot;:&quot;+j);</span><br><span class="line">                if(0&#x3D;&#x3D;j%2) </span><br><span class="line">                    break outloop; &#x2F;&#x2F;如果是双数，结束外部循环</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8、综合练习"><a class="header-anchor" href="#8、综合练习">¶</a>8、综合练习</h2>
+<h3 id="步骤-1-练习-黄金分割点"><a class="header-anchor" href="#步骤-1-练习-黄金分割点">¶</a>步骤 <strong>1</strong> : 练习-黄金分割点</h3>
+<p>寻找某两个数相除，其结果 离黄金分割点 0.618最近</p>
+<p>分母和分子不能同时为偶数<br>
+分母和分子 取值范围在[1-20]</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        double pmin&#x3D;1.0;</span><br><span class="line">        float a1&#x3D;1f;</span><br><span class="line">        float b1&#x3D;1f;</span><br><span class="line">        for(float a &#x3D; 1.0f; a&lt;&#x3D;20; a++)&#123;</span><br><span class="line">            for(float b &#x3D; 1.0f; b&lt;&#x3D;20; b++)&#123;</span><br><span class="line">                double s &#x3D; a&#x2F;b;</span><br><span class="line">                double p &#x3D; s-0.618;</span><br><span class="line">                p&#x3D;p &lt; 0? 0-p : p;   </span><br><span class="line">                if(p &lt; pmin)&#123;</span><br><span class="line">                    pmin &#x3D; p;</span><br><span class="line">                    a1 &#x3D; a;</span><br><span class="line">                    b1 &#x3D; b;</span><br><span class="line">                &#125;      </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;离黄金分割点0.618最近的两个整数相除是：&quot;+a1+&quot;&#x2F;&quot;+b1+&quot;&#x3D;&quot;+(a1&#x2F;b1));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-2-练习-水仙花数"><a class="header-anchor" href="#步骤-2-练习-水仙花数">¶</a>步骤 2 : 练习-水仙花数</h3>
+<p>水仙花数定义：</p>
+<ol>
+<li>
+<p>一定是3位数</p>
+</li>
+<li>
+<p>每一位的立方，加起来恰好是这个数本身，比如153=1*1*1+5*5*5+3*3*3</p>
+</li>
+</ol>
+<p>寻找所有的水仙花数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int n &#x3D; 0;</span><br><span class="line">        int a &#x3D; 0;</span><br><span class="line">        int b &#x3D; 0;</span><br><span class="line">        int c &#x3D; 0;</span><br><span class="line">        int answer &#x3D; 0;</span><br><span class="line">        for (n &#x3D; 100; n &lt; 1000; n++) &#123;</span><br><span class="line">            a &#x3D; (n % 100) % 10;</span><br><span class="line">            b &#x3D; (n % 100) &#x2F; 10;</span><br><span class="line">            c &#x3D; n &#x2F; 100;</span><br><span class="line">            if (n &#x3D;&#x3D; a * a * a + b * b * b + c * c * c) &#123;</span><br><span class="line">                answer &#x3D; n;</span><br><span class="line">                System.out.println(answer + &quot;是水仙花数&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="步骤-3-练习-小学算术题"><a class="header-anchor" href="#步骤-3-练习-小学算术题">¶</a>步骤 3 : 练习-小学算术题</h3>
+<p>提示使用多层循环嵌套解决</p>
+<p><img src="/2020/06/27/Java%E5%9F%BA%E7%A1%80%E3%80%90HOW2J%E3%80%91/3434.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int a;</span><br><span class="line">        int b;</span><br><span class="line">        int c;</span><br><span class="line">        int d;</span><br><span class="line">        for(a &#x3D;0 ;a&lt;20;a++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(b&#x3D;0;b&lt;20;b++)&#123;</span><br><span class="line">                for(c&#x3D;0;c&lt;20;c++)&#123;</span><br><span class="line">                    for(d&#x3D;0;d&lt;20;d++)&#123;</span><br><span class="line">                        if(a+b&#x3D;&#x3D;8&amp;a+c&#x3D;&#x3D;14&amp;b+d&#x3D;&#x3D;10&amp;c-d&#x3D;&#x3D;6)</span><br><span class="line">                        &#123;</span><br><span class="line">                            System.out.printf(&quot;计算得出的a，b,c,d值为:%d,%d,%d,%d&quot;,a,b,c,d);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="六、数组"><a class="header-anchor" href="#六、数组">¶</a>六、数组</h1>
+<h1 id="七、类和对象"><a class="header-anchor" href="#七、类和对象">¶</a>七、类和对象</h1>
+<h1 id="八、接口与继承"><a class="header-anchor" href="#八、接口与继承">¶</a>八、接口与继承</h1>
+<h1 id="九、数字与字符串"><a class="header-anchor" href="#九、数字与字符串">¶</a>九、数字与字符串</h1>
+<h1 id="十、日期"><a class="header-anchor" href="#十、日期">¶</a>十、日期</h1>
+<h1 id="十一、Java书籍"><a class="header-anchor" href="#十一、Java书籍">¶</a>十一、Java书籍</h1>
+<h3 id="步骤1：两本书籍"><a class="header-anchor" href="#步骤1：两本书籍">¶</a>步骤1：两本书籍</h3>
+<p>本站的学习是基于实践和练习为主，在理论知识的讲解方面有欠缺。 所以辅以相应的书籍学习，会双管齐下，两条腿走路，取得更好的效果。<br>
+关于辅助书籍，</p>
+<p><strong>只推荐两本</strong></p>
+<p>Core Java</p>
+<p><strong>字典</strong></p>
+<p>地址：</p>
+<p>比如学习完了IO的知识，觉得意犹未尽，那么就通过这本字典一样的Java书籍，把IO的知识更丰满的刷一遍，因为已经通过本站做了很多实践操作了，所以这个时候，看这些知识就会触类旁通，比较好消化了。</p>
+<p>Effective Java</p>
+<p><strong>零食，提升代码质量</strong></p>
+<p><strong>地址：<a href="https://pan.baidu.com/s/1dDK6cE1#list/path=%2Fsharelink2805246133-1097964938384009%2FEffective%20Java&amp;parentPath=%2Fsharelink2805246133-1097964938384009" target="_blank" rel="noopener">https://pan.baidu.com/s/1dDK6cE1#list/path=%2Fsharelink2805246133-1097964938384009%2FEffective Java&amp;parentPath=%2Fsharelink2805246133-1097964938384009</a></strong></p>
+<p>作为初学者，首要任务不是提升质量，而是掌握完成功能的基本手法。这本书就像零食一样，只要主食吃了，你不吃零食也没关系，但是吃点零食会觉得生活质量得到了提升。 本书可以帮你写出更优质的代码，空隙时间可以拿出来看看，不用通看，碰到什么，看什么，一次也不应该看太多，当做有益的课外补充。</p>
+<h3 id="步骤2：关于其他书籍的评论"><a class="header-anchor" href="#步骤2：关于其他书籍的评论">¶</a>步骤2：关于其他书籍的评论</h3>
+<p>Thinking in Java</p>
+<p><strong>提升功力</strong><br>
+太早看不合适，里面有些概念需要相当的基础才能理解，否则消化不好。 1年左右看，可以提高不少功力，相当于一个十人副本，在你有了一些基本装备之后，去一趟。为以后去25人团队副本添砖加瓦。</p>
+<p>Head First Java</p>
+<p><strong>这是给幼儿园小朋友看的</strong><br>
+适合完全外行的人看看，页面很多，包含的知识量较少，学习效率较低。</p>
+<p>官方出的 Java Tutorial</p>
+<p><strong>BEST OF THE BEST</strong><br>
+曾经心中的最好的Java入门教程，没有之一，当然，现在被本站代替了，哇哈哈哈。 本站的建设从这个教程里得到很多启发，比如基于代码的学习方式，有兴趣的可以过一过，前提是你的英语还不错。 缺点是，有些概念翻来覆去地讲，我曾经翻译过Java Tutorial，但是一部分翻来覆去倒腾的理论讲解，让我的胃翻腾了很久。</p>
+<h3 id="步骤3：关于书籍下载"><a class="header-anchor" href="#步骤3：关于书籍下载">¶</a>步骤3：关于书籍下载</h3>
+<p>以上书籍随便百度一下就有pdf下载，本站不提供pdf下载，建议经济压力小的同学购买实体书籍。</p>
+]]></content>
+      <categories>
+        <category>How2j</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+        <tag>Java</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
 </search>

@@ -3042,7 +3042,9 @@ f)    x = y; //no， x是一维数组，y是一个二维数组<br>
   <entry>
     <title>数据库【HOW2J】</title>
     <url>/2020/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%90HOW2J%E3%80%91/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="第一章-oracle"><a class="header-anchor" href="#第一章-oracle">¶</a>第一章 oracle</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>仅针对应用在Java程序上的数据库资料。</p>
+<a id="more"></a>
+<h1 id="第一章-oracle"><a class="header-anchor" href="#第一章-oracle">¶</a>第一章 oracle</h1>
 <h1 id="第二章-mysql"><a class="header-anchor" href="#第二章-mysql">¶</a>第二章 mysql</h1>
 <h2 id="1、安装MYSQL-SERVER"><a class="header-anchor" href="#1、安装MYSQL-SERVER">¶</a>1、安装MYSQL-SERVER</h2>
 <h3 id="步骤-1-关于MySQL"><a class="header-anchor" href="#步骤-1-关于MySQL">¶</a>步骤 1 : 关于MySQL</h3>

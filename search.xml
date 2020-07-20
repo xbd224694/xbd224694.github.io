@@ -10626,7 +10626,9 @@ response 表示回应的信息</p>
   <entry>
     <title>Typora（13种）颜色</title>
     <url>/2020/07/20/Typora13%E7%A7%8D%E9%A2%9C%E8%89%B2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Typora	可设置的13种颜色</p>
+<a id="more"></a>
+<hr>
 <table>
 <thead>
 <tr>
@@ -10668,7 +10670,7 @@ response 表示回应的信息</p>
 <td style="text-align:center">yellow</td>
 </tr>
 <tr>
-<td style="text-align:center">==<font color="white">白色</font>==</td>
+<td style="text-align:center"><font color="white">白色</font></td>
 <td style="text-align:center">white</td>
 </tr>
 <tr>

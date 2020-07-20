@@ -10624,9 +10624,10 @@ response 表示回应的信息</p>
       </tags>
   </entry>
   <entry>
-    <title>Typora13种颜色</title>
+    <title>Typora（13种）颜色</title>
     <url>/2020/07/20/Typora13%E7%A7%8D%E9%A2%9C%E8%89%B2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><table>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<table>
 <thead>
 <tr>
 <th style="text-align:center">颜色</th>
@@ -10692,6 +10693,13 @@ response 表示回应的信息</p>
 </tr>
 </tbody>
 </table>
+<hr>
 ]]></content>
+      <categories>
+        <category>静态博客</category>
+      </categories>
+      <tags>
+        <tag>美化</tag>
+      </tags>
   </entry>
 </search>

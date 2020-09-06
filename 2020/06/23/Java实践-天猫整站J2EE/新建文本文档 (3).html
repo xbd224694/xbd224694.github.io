@@ -1,0 +1,3813 @@
+<h1 id="十四、前台-无需登录"><a class="header-anchor" href="#十四、前台-无需登录">¶</a>十四、前台-无需登录</h1>
+<h2 id="1、概述"><a class="header-anchor" href="#1、概述">¶</a>1、概述</h2>
+<p>通过[前台-首页]的学习，就把前台的思路都理顺了，包括[Filter配合Servlet的设计模式]，jsp页面的包含关系等。在此基础上，学习其他前台页面就更加容易理解了。<br>
+根据模仿天猫的前台功能特点，我们把前台功能分为两部分</p>
+<ol>
+<li>
+<p>无需登录<br>
+有一些功能，无需登录也可以使用的，比如登录，注册本身，分类页面，查询，产品页面等</p>
+</li>
+<li>
+<p>需要登录<br>
+有一些功能，必须建立在已经登录的基础之上，比如购买，加入购物车，查看购物车，结算页面，订单页面等等。</p>
+</li>
+</ol>
+<p>接下来先讲解无需登录的功能，然后再是需要登录的前台功能。</p>
+<h2 id="2、注册"><a class="header-anchor" href="#2、注册">¶</a>2、注册</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错"><a class="header-anchor" href="#步骤-2-模仿和排错">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-界面效果"><a class="header-anchor" href="#步骤-3-界面效果">¶</a>步骤 3 : 界面效果</h3>
+<p><img src="3912.png" alt=""></p>
+<h3 id="步骤-4-register-jsp"><a class="header-anchor" href="#步骤-4-register-jsp">¶</a>步骤 4 : register.jsp</h3>
+<p>与首页的[home.jsp]相仿，register.jsp也包含了[header.jsp],[top.jsp],[footer.jsp]等公共页面。<br>
+不同的是，没有使用首页的[search.jsp],而是用的简单一点的 [simpleSearch.jsp]</p>
+<p>中间是注册业务页面[registerPage.jsp]</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+     
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/top.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/simpleSearch.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/registerPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<h3 id="步骤-5-simpleSearch-jsp"><a class="header-anchor" href="#步骤-5-simpleSearch-jsp">¶</a>步骤 5 : simpleSearch.jsp</h3>
+<p>与[首页的search.jsp]不太一样的是，这个搜索栏要更简单一些，并且左右分开。</p>
+<p><strong>注：</strong> 这里${cs} 中用到的数据，是在[代码讲解 - ForeServletFilter]的48-52行代码</p>
+<pre><code class="language-jsp">        List&lt;Category&gt; cs=(List&lt;Category&gt;) request.getAttribute(&quot;cs&quot;);
+        if(null==cs){
+            cs=new CategoryDAO().list();
+            request.setAttribute(&quot;cs&quot;, cs);         
+        }
+</code></pre>
+<p>中取来的</p>
+<p><img src="3915.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;div &gt;
+    &lt;a href=&quot;${contextPath}&quot;&gt;
+        &lt;img id=&quot;simpleLogo&quot; class=&quot;simpleLogo&quot; src=&quot;img/site/simpleLogo.png&quot;&gt;   
+    &lt;/a&gt;
+     
+    &lt;form action=&quot;foresearch&quot; method=&quot;post&quot; &gt;
+    &lt;div class=&quot;simpleSearchDiv pull-right&quot;&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;平衡车 原汁机&quot; name=&quot;keyword&quot;&gt;
+        &lt;button class=&quot;searchButton&quot; type=&quot;submit&quot;&gt;搜天猫&lt;/button&gt;
+        &lt;div class=&quot;searchBelow&quot;&gt;
+            &lt;c:forEach items=&quot;${cs}&quot; var=&quot;c&quot; varStatus=&quot;st&quot;&gt;
+                &lt;c:if test=&quot;${st.count&gt;=8 and st.count&lt;=11}&quot;&gt;
+                    &lt;span&gt;
+                        &lt;a href=&quot;forecategory?cid=${c.id}&quot;&gt;
+                            ${c.name}
+                        &lt;/a&gt;
+                        &lt;c:if test=&quot;${st.count!=11}&quot;&gt;            
+                            &lt;span&gt;|&lt;/span&gt;             
+                        &lt;/c:if&gt;
+                    &lt;/span&gt;          
+                &lt;/c:if&gt;
+            &lt;/c:forEach&gt;         
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-6-registerPage-jsp"><a class="header-anchor" href="#步骤-6-registerPage-jsp">¶</a>步骤 6 : registerPage.jsp</h3>
+<p>注册页面的主体功能，用于提交账号密码。 在提交之前会进行为空验证，以及密码是否一致验证。</p>
+<p>这段代码用于当账号提交到服务端，服务端判断当前账号已经存在的情况下，显示返回的错误提示 <strong>&quot;用户名已经被使用,不能使用&quot;</strong></p>
+<pre><code class="language-jsp">	&lt;c:if test=&quot;${!empty msg}&quot;&gt;
+	$(&quot;span.errorMessage&quot;).html(&quot;${msg}&quot;);
+	$(&quot;div.registerErrorMessageDiv&quot;).css(&quot;visibility&quot;,&quot;visible&quot;);		
+	&lt;/c:if&gt;
+</code></pre>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;script&gt;
+$(function(){
+     
+    &lt;c:if test=&quot;${!empty msg}&quot;&gt;
+    $(&quot;span.errorMessage&quot;).html(&quot;${msg}&quot;);
+    $(&quot;div.registerErrorMessageDiv&quot;).css(&quot;visibility&quot;,&quot;visible&quot;);      
+    &lt;/c:if&gt;
+     
+    $(&quot;.registerForm&quot;).submit(function(){
+        if(0==$(&quot;#name&quot;).val().length){
+            $(&quot;span.errorMessage&quot;).html(&quot;请输入用户名&quot;);
+            $(&quot;div.registerErrorMessageDiv&quot;).css(&quot;visibility&quot;,&quot;visible&quot;);          
+            return false;
+        }      
+        if(0==$(&quot;#password&quot;).val().length){
+            $(&quot;span.errorMessage&quot;).html(&quot;请输入密码&quot;);
+            $(&quot;div.registerErrorMessageDiv&quot;).css(&quot;visibility&quot;,&quot;visible&quot;);          
+            return false;
+        }      
+        if(0==$(&quot;#repeatpassword&quot;).val().length){
+            $(&quot;span.errorMessage&quot;).html(&quot;请输入重复密码&quot;);
+            $(&quot;div.registerErrorMessageDiv&quot;).css(&quot;visibility&quot;,&quot;visible&quot;);          
+            return false;
+        }      
+        if($(&quot;#password&quot;).val() !=$(&quot;#repeatpassword&quot;).val()){
+            $(&quot;span.errorMessage&quot;).html(&quot;重复密码不一致&quot;);
+            $(&quot;div.registerErrorMessageDiv&quot;).css(&quot;visibility&quot;,&quot;visible&quot;);          
+            return false;
+        }      
+ 
+        return true;
+    });
+})
+&lt;/script&gt;
+ 
+&lt;form method=&quot;post&quot; action=&quot;foreregister&quot; class=&quot;registerForm&quot;&gt;
+ 
+&lt;div class=&quot;registerDiv&quot;&gt;
+    &lt;div class=&quot;registerErrorMessageDiv&quot;&gt;
+        &lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+            &lt;span class=&quot;errorMessage&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;       
+    &lt;/div&gt;
+ 
+    &lt;table class=&quot;registerTable&quot; align=&quot;center&quot;&gt;
+        &lt;tr&gt;
+            &lt;td  class=&quot;registerTip registerTableLeftTD&quot;&gt;设置会员名&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;registerTableLeftTD&quot;&gt;登陆名&lt;/td&gt;
+            &lt;td  class=&quot;registerTableRightTD&quot;&gt;&lt;input id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;会员名一旦设置成功，无法修改&quot; &gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td  class=&quot;registerTip registerTableLeftTD&quot;&gt;设置登陆密码&lt;/td&gt;
+            &lt;td  class=&quot;registerTableRightTD&quot;&gt;登陆时验证，保护账号信息&lt;/td&gt;
+        &lt;/tr&gt;    
+        &lt;tr&gt;
+            &lt;td class=&quot;registerTableLeftTD&quot;&gt;登陆密码&lt;/td&gt;
+            &lt;td class=&quot;registerTableRightTD&quot;&gt;&lt;input id=&quot;password&quot; name=&quot;password&quot; type=&quot;password&quot;  placeholder=&quot;设置你的登陆密码&quot; &gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;registerTableLeftTD&quot;&gt;密码确认&lt;/td&gt;
+            &lt;td class=&quot;registerTableRightTD&quot;&gt;&lt;input id=&quot;repeatpassword&quot; type=&quot;password&quot;   placeholder=&quot;请再次输入你的密码&quot; &gt; &lt;/td&gt;
+        &lt;/tr&gt;
+                 
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot; class=&quot;registerButtonTD&quot;&gt;
+                &lt;a href=&quot;registerSuccess.jsp&quot;&gt;&lt;button&gt;提   交&lt;/button&gt;&lt;/a&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;            
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="步骤-7-ForeServlet-register"><a class="header-anchor" href="#步骤-7-ForeServlet-register">¶</a>步骤 7 : ForeServlet.register()</h3>
+<p>[registerPage.jsp] 的form提交数据到路径 foreregister,导致ForeServlet.register()方法被调用</p>
+<ol>
+<li>
+<p>获取账号密码</p>
+</li>
+<li>
+<p>通过HtmlUtils.htmlEscape(name);把账号里的特殊符号进行转义</p>
+</li>
+<li>
+<p>判断用户名是否存在<br>
+3.1 如果已经存在，就服务端跳转到reigster.jsp，并且带材错误提示信息<br>
+3.2 如果不存在，则加入到数据库中，并服务端跳转到registerSuccess.jsp页面</p>
+</li>
+</ol>
+<p><strong>注</strong>为什么要用 HtmlUtils.htmlEscape？ 因为有些同学在恶意注册的时候，会使用诸如 &lt;script&gt;alert(‘papapa’)&lt;/script&gt; 这样的名称，会导致网页打开就弹出一个对话框。 那么在转义之后，就没有这个问题了。</p>
+<pre><code class="language-java">public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.User;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+}
+</code></pre>
+<h3 id="步骤-8-registerSuccess-jsp"><a class="header-anchor" href="#步骤-8-registerSuccess-jsp">¶</a>步骤 8 : registerSuccess.jsp</h3>
+<p>也是各种包含，不再赘述。<br>
+内容页面在[registerSuccessPage.jsp]</p>
+<p><img src="3918.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/top.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/simpleSearch.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/registerSuccessPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<h3 id="步骤-9-registerSuccessPage-jsp"><a class="header-anchor" href="#步骤-9-registerSuccessPage-jsp">¶</a>步骤 9 : registerSuccessPage.jsp</h3>
+<p>很简单，就不说了~</p>
+<p><img src="3919.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;div class=&quot;registerSuccessDiv&quot;&gt;
+     
+        &lt;img src=&quot;img/site/registerSuccess.png&quot;&gt;
+            恭喜注册成功
+&lt;/div&gt;
+</code></pre>
+<h2 id="3、登录"><a class="header-anchor" href="#3、登录">¶</a>3、登录</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v2"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v2">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v2"><a class="header-anchor" href="#步骤-2-模仿和排错-v2">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-界面效果-v2"><a class="header-anchor" href="#步骤-3-界面效果-v2">¶</a>步骤 3 : 界面效果</h3>
+<p><img src="3847.png" alt=""></p>
+<h3 id="步骤-4-login-jsp"><a class="header-anchor" href="#步骤-4-login-jsp">¶</a>步骤 4 : login.jsp</h3>
+<p>与[register.jsp]相仿，login.jsp也包含了[header.jsp],[footer.jsp]等公共页面。<br>
+中间是登录业务页面[loginPage.jsp]</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/loginPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<h3 id="步骤-5-loginPage-jsp"><a class="header-anchor" href="#步骤-5-loginPage-jsp">¶</a>步骤 5 : loginPage.jsp</h3>
+<p>注册业务页面，用于向服务器提交账号和密码</p>
+<ol>
+<li>与[registerPage.jsp]类似的，用于显示登录密码错误</li>
+</ol>
+<pre><code class="language-jsp">	&lt;c:if test=&quot;${!empty msg}&quot;&gt;
+	$(&quot;span.errorMessage&quot;).html(&quot;${msg}&quot;);
+	$(&quot;div.loginErrorMessageDiv&quot;).show();		
+	&lt;/c:if&gt;
+</code></pre>
+<ol start="2">
+<li>其他js函数是用于为空验证</li>
+</ol>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;script&gt;
+$(function(){
+     
+    &lt;c:if test=&quot;${!empty msg}&quot;&gt;
+    $(&quot;span.errorMessage&quot;).html(&quot;${msg}&quot;);
+    $(&quot;div.loginErrorMessageDiv&quot;).show();      
+    &lt;/c:if&gt;
+     
+    $(&quot;form.loginForm&quot;).submit(function(){
+        if(0==$(&quot;#name&quot;).val().length||0==$(&quot;#password&quot;).val().length){
+            $(&quot;span.errorMessage&quot;).html(&quot;请输入账号密码&quot;);
+            $(&quot;div.loginErrorMessageDiv&quot;).show();          
+            return false;
+        }
+        return true;
+    });
+     
+    $(&quot;form.loginForm input&quot;).keyup(function(){
+        $(&quot;div.loginErrorMessageDiv&quot;).hide();  
+    });
+     
+    var left = window.innerWidth/2+162;
+    $(&quot;div.loginSmallDiv&quot;).css(&quot;left&quot;,left);
+})
+&lt;/script&gt;
+ 
+&lt;div id=&quot;loginDiv&quot; style=&quot;position: relative&quot;&gt;
+ 
+    &lt;div class=&quot;simpleLogo&quot;&gt;
+        &lt;a href=&quot;https://how2j.cn/tmall&quot;&gt;&lt;img src=&quot;img/site/simpleLogo.png&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+ 
+    &lt;img id=&quot;loginBackgroundImg&quot; class=&quot;loginBackgroundImg&quot; src=&quot;img/site/loginBackground.png&quot;&gt;
+     
+    &lt;form class=&quot;loginForm&quot; action=&quot;forelogin&quot; method=&quot;post&quot;&gt;
+        &lt;div id=&quot;loginSmallDiv&quot; class=&quot;loginSmallDiv&quot;&gt;
+            &lt;div class=&quot;loginErrorMessageDiv&quot;&gt;
+                &lt;div class=&quot;alert alert-danger&quot; &gt;
+                  &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+                    &lt;span class=&quot;errorMessage&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+                 
+            &lt;div class=&quot;login_acount_text&quot;&gt;账户登录&lt;/div&gt;
+            &lt;div class=&quot;loginInput &quot; &gt;
+                &lt;span class=&quot;loginInputIcon &quot;&gt;
+                    &lt;span class=&quot; glyphicon glyphicon-user&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;input id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;手机/会员名/邮箱&quot; type=&quot;text&quot;&gt;        
+            &lt;/div&gt;
+             
+            &lt;div class=&quot;loginInput &quot; &gt;
+                &lt;span class=&quot;loginInputIcon &quot;&gt;
+                    &lt;span class=&quot; glyphicon glyphicon-lock&quot;&gt;&lt;/span&gt;
+                &lt;/span&gt;
+                &lt;input id=&quot;password&quot; name=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;密码&quot; type=&quot;text&quot;&gt;
+            &lt;/div&gt;
+            &lt;span class=&quot;text-danger&quot;&gt;不要输入真实的天猫账号密码&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+             
+            &lt;div&gt;
+                &lt;a class=&quot;notImplementLink&quot; href=&quot;#nowhere&quot;&gt;忘记登录密码&lt;/a&gt;
+                &lt;a href=&quot;register.jsp&quot; class=&quot;pull-right&quot;&gt;免费注册&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;margin-top:20px&quot;&gt;
+                &lt;button class=&quot;btn btn-block redButton&quot; type=&quot;submit&quot;&gt;登录&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;   
+    &lt;/form&gt;
+ 
+&lt;/div&gt;   
+</code></pre>
+<h3 id="步骤-6-ForeServlet-login"><a class="header-anchor" href="#步骤-6-ForeServlet-login">¶</a>步骤 6 : ForeServlet.login()</h3>
+<p>[loginPage.jsp]的form提交数据到路径 forelogin,导致ForeServlet.login()方法被调用</p>
+<ol>
+<li>
+<p>获取账号密码</p>
+</li>
+<li>
+<p>把账号通过HtmlUtils.htmlEscape进行转义</p>
+</li>
+<li>
+<p>根据账号和密码获取User对象<br>
+3.1 如果对象为空，则服务端跳转回login.jsp，也带上错误信息，并且使用[login.jsp] 中的办法显示错误信息<br>
+3.2 如果对象存在，则把对象保存在session中，并客户端跳转到首页&quot;@forehome&quot;<br>
+<strong>注</strong> 为什么要用 HtmlUtils.htmlEscape？ 因为注册的时候，[ForeServlet.register()]，就进行了转义，所以这里也需要转义。有些同学在恶意注册的时候，会使用诸如 &lt;script&gt;alert(‘papapa’)&lt;/script&gt; 这样的名称，会导致网页打开就弹出一个对话框。 那么在转义之后，就没有这个问题了。</p>
+</li>
+</ol>
+<pre><code class="language-java">public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+    String name = request.getParameter(&quot;name&quot;);
+    name = HtmlUtils.htmlEscape(name);
+    String password = request.getParameter(&quot;password&quot;);    
+     
+    User user = userDAO.get(name,password);
+      
+    if(null==user){
+        request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+        return &quot;login.jsp&quot;;
+    }
+    request.getSession().setAttribute(&quot;user&quot;, user);
+    return &quot;@forehome&quot;;
+}  
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.User;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+}
+</code></pre>
+<h2 id="4、退出"><a class="header-anchor" href="#4、退出">¶</a>4、退出</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v3"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v3">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v3"><a class="header-anchor" href="#步骤-2-模仿和排错-v3">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-关于退出"><a class="header-anchor" href="#步骤-3-关于退出">¶</a>步骤 3 : 关于退出</h3>
+<p>关于退出功能，这个功能本来是在登录之后才讲的，但是后面有一个[产品页的模态登录]，需要建立在未登录状态，所以这里先把这个功能讲了。</p>
+<h3 id="步骤-4-可运行项目下载"><a class="header-anchor" href="#步骤-4-可运行项目下载">¶</a>步骤 4 : 可运行项目下载</h3>
+<p>下载右侧的tmall.rar，解压到e:\project\tmall，并重启tomcat<br>
+在登录成功后，点击置顶导航的退出</p>
+<pre><code class="language-http">http://127.0.0.1:8080/tmall/forelogout
+</code></pre>
+<p>注意：这个tmall.rar压缩包是不包含产品图片的(否则会有200m大小)<br>
+需要1777张产品图片，请到[图片资源]下载<br>
+这1777张产品图片对应的sql语句，请到[首页数据所需SQL语句]下载</p>
+<p><img src="3929.png" alt=""></p>
+<h3 id="步骤-5-ForeServlet-logout"><a class="header-anchor" href="#步骤-5-ForeServlet-logout">¶</a>步骤 5 : ForeServlet.logout()</h3>
+<p>通过访问退出路径：</p>
+<pre><code class="language-http">http://127.0.0.1:8080/tmall/forelogout
+</code></pre>
+<p>导致ForeServlet.logout()方法被调用</p>
+<ol>
+<li>在session中去掉&quot;user&quot;</li>
+</ol>
+<pre><code class="language-java">request.getSession().removeAttribute(&quot;user&quot;);
+</code></pre>
+<ol start="2">
+<li>客户端跳转到首页:</li>
+</ol>
+<pre><code class="language-java">return &quot;@forehome&quot;;	
+</code></pre>
+<pre><code class="language-java">public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+    request.getSession().removeAttribute(&quot;user&quot;);
+    return &quot;@forehome&quot;;
+}  
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }
+    public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+        request.getSession().removeAttribute(&quot;user&quot;);
+        return &quot;@forehome&quot;;
+    }  
+}
+</code></pre>
+<h2 id="5、产品页"><a class="header-anchor" href="#5、产品页">¶</a>5、产品页</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v4"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v4">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v4"><a class="header-anchor" href="#步骤-2-模仿和排错-v4">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-界面效果-v3"><a class="header-anchor" href="#步骤-3-界面效果-v3">¶</a>步骤 3 : 界面效果</h3>
+<p><img src="3889.png" alt=""></p>
+<h3 id="步骤-4-ForeServlet-product"><a class="header-anchor" href="#步骤-4-ForeServlet-product">¶</a>步骤 4 : ForeServlet.product()</h3>
+<p>通过访问地址</p>
+<pre><code class="language-http">http://127.0.0.1:8080/tmall/foreproduct?pid=844
+</code></pre>
+<p>导致ForeServlet.product() 方法被调用</p>
+<ol>
+<li>获取参数pid</li>
+<li>根据pid获取Product 对象p</li>
+<li>根据对象p，获取这个产品对应的单个图片集合</li>
+<li>根据对象p，获取这个产品对应的详情图片集合</li>
+<li>获取产品的所有属性值</li>
+<li>获取产品对应的所有的评价</li>
+<li>设置产品的销量和评价数量</li>
+<li>把上述取值放在request属性上</li>
+<li>服务端跳转到 “product.jsp” 页面</li>
+</ol>
+<pre><code class="language-java">public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+    int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+    Product p = productDAO.get(pid);
+     
+    List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+    List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+    p.setProductSingleImages(productSingleImages);
+    p.setProductDetailImages(productDetailImages);
+     
+    List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+ 
+    List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+     
+    productDAO.setSaleAndReviewNumber(p);
+ 
+    request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+    request.setAttribute(&quot;p&quot;, p);
+    request.setAttribute(&quot;pvs&quot;, pvs);
+    return &quot;product.jsp&quot;;      
+}  
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }  
+}
+</code></pre>
+<h3 id="步骤-5-product-jsp"><a class="header-anchor" href="#步骤-5-product-jsp">¶</a>步骤 5 : product.jsp</h3>
+<p>与 [register.jsp] 相仿，product.jsp也包含了[header.jsp], [top.jsp], [simpleSearch.jsp]， [footer.jsp] 等公共页面。<br>
+中间是产品业务页面 [productPage.jsp]</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/top.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/simpleSearch.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/product/productPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<h3 id="步骤-6-productPage-jsp"><a class="header-anchor" href="#步骤-6-productPage-jsp">¶</a>步骤 6 : productPage.jsp</h3>
+<p>productPage.jsp 又由3个页面组成</p>
+<ol>
+<li>
+<p>[imgAndInfo.jsp]<br>
+单个图片和基本信息</p>
+</li>
+<li>
+<p>[productReview.jsp]<br>
+评价信息</p>
+</li>
+<li>
+<p>[productDetail.jsp]<br>
+详情图片</p>
+</li>
+</ol>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;title&gt;模仿天猫官网 ${p.name}&lt;/title&gt;
+&lt;div class=&quot;categoryPictureInProductPageDiv&quot;&gt;
+    &lt;img class=&quot;categoryPictureInProductPage&quot; src=&quot;img/category/${p.category.id}.jpg&quot;&gt;
+&lt;/div&gt;
+ 
+&lt;div class=&quot;productPageDiv&quot;&gt;
+ 
+    &lt;%@include file=&quot;imgAndInfo.jsp&quot; %&gt;
+     
+    &lt;%@include file=&quot;productReview.jsp&quot; %&gt;
+     
+    &lt;%@include file=&quot;productDetail.jsp&quot; %&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-7-imgAndInfo-jsp"><a class="header-anchor" href="#步骤-7-imgAndInfo-jsp">¶</a>步骤 7 : imgAndInfo.jsp</h3>
+<ol>
+<li>左侧显示5张单个图片<br>
+1.1 默认显示第一张图片</li>
+</ol>
+<pre><code class="language-jsp">&lt;img src=&quot;img/productSingle/${p.firstProductImage.id}.jpg&quot; class=&quot;bigImg&quot;&gt;
+</code></pre>
+<p>​			1.2 5张小图片</p>
+<pre><code class="language-jsp">&lt;c:forEach items=&quot;${p.productSingleImages}&quot; var=&quot;pi&quot;&gt;
+	&lt;img src=&quot;img/productSingle_small/${pi.id}.jpg&quot; bigImageURL=&quot;img/productSingle/${pi.id}.jpg&quot; class=&quot;smallImage&quot;&gt;
+&lt;/c:forEach&gt;
+</code></pre>
+<ol start="2">
+<li>右边显示基本信息<br>
+2.1 标题和小标题</li>
+</ol>
+<pre><code class="language-jsp">&lt;div class=&quot;productTitle&quot;&gt;
+	${p.name}
+&lt;/div&gt;
+&lt;div class=&quot;productSubTitle&quot;&gt;
+	${p.subTitle} 
+&lt;/div&gt;
+</code></pre>
+<p>​		2.2 原始价格和促销价</p>
+<pre><code class="language-jsp">&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.orignalPrice}&quot; minFractionDigits=&quot;2&quot;/&gt;
+&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.promotePrice}&quot; minFractionDigits=&quot;2&quot;/&gt;
+</code></pre>
+<p>​		2.3 销量和累计评价</p>
+<pre><code class="language-jsp">&lt;div&gt;销量 &lt;span class=&quot;redColor boldWord&quot;&gt; ${p.saleCount }&lt;/span&gt;&lt;/div&gt;	
+&lt;div&gt;累计评价 &lt;span class=&quot;redColor boldWord&quot;&gt; ${p.reviewCount}&lt;/span&gt;&lt;/div&gt;
+</code></pre>
+<p>​		2.4 库存</p>
+<pre><code class="language-jsp">&lt;span&gt;库存${p.stock}件&lt;/span&gt;
+</code></pre>
+<p><img src="3924.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;script&gt;
+ 
+$(function(){
+    var stock = ${p.stock};
+    $(&quot;.productNumberSetting&quot;).keyup(function(){
+        var num= $(&quot;.productNumberSetting&quot;).val();
+        num = parseInt(num);
+        if(isNaN(num))
+            num= 1;
+        if(num&lt;=0)
+            num = 1;
+        if(num&gt;stock)
+            num = stock;
+        $(&quot;.productNumberSetting&quot;).val(num);
+    });
+     
+    $(&quot;.increaseNumber&quot;).click(function(){
+        var num= $(&quot;.productNumberSetting&quot;).val();
+        num++;
+        if(num&gt;stock)
+            num = stock;
+        $(&quot;.productNumberSetting&quot;).val(num);
+    });
+    $(&quot;.decreaseNumber&quot;).click(function(){
+        var num= $(&quot;.productNumberSetting&quot;).val();
+        --num;
+        if(num&lt;=0)
+            num=1;
+        $(&quot;.productNumberSetting&quot;).val(num);
+    });
+     
+    $(&quot;.addCartLink&quot;).click(function(){
+        var page = &quot;forecheckLogin&quot;;
+        $.get(
+                page,
+                function(result){
+                    if(&quot;success&quot;==result){
+                        var pid = ${p.id};
+                        var num= $(&quot;.productNumberSetting&quot;).val();
+                        var addCartpage = &quot;foreaddCart&quot;;
+                        $.get(
+                                addCartpage,
+                                {&quot;pid&quot;:pid,&quot;num&quot;:num},
+                                function(result){
+                                    if(&quot;success&quot;==result){
+                                        $(&quot;.addCartButton&quot;).html(&quot;已加入购物车&quot;);
+                                        $(&quot;.addCartButton&quot;).attr(&quot;disabled&quot;,&quot;disabled&quot;);
+                                        $(&quot;.addCartButton&quot;).css(&quot;background-color&quot;,&quot;lightgray&quot;)
+                                        $(&quot;.addCartButton&quot;).css(&quot;border-color&quot;,&quot;lightgray&quot;)
+                                        $(&quot;.addCartButton&quot;).css(&quot;color&quot;,&quot;black&quot;)
+                                         
+                                    }
+                                    else{
+                                         
+                                    }
+                                }
+                        );                         
+                    }
+                    else{
+                        $(&quot;#loginModal&quot;).modal('show');                    
+                    }
+                }
+        );     
+        return false;
+    });
+    $(&quot;.buyLink&quot;).click(function(){
+        var page = &quot;forecheckLogin&quot;;
+        $.get(
+                page,
+                function(result){
+                    if(&quot;success&quot;==result){
+                        var num = $(&quot;.productNumberSetting&quot;).val();
+                        location.href= $(&quot;.buyLink&quot;).attr(&quot;href&quot;)+&quot;&amp;num=&quot;+num;
+                    }
+                    else{
+                        $(&quot;#loginModal&quot;).modal('show');                    
+                    }
+                }
+        );     
+        return false;
+    });
+     
+    $(&quot;button.loginSubmitButton&quot;).click(function(){
+        var name = $(&quot;#name&quot;).val();
+        var password = $(&quot;#password&quot;).val();
+         
+        if(0==name.length||0==password.length){
+            $(&quot;span.errorMessage&quot;).html(&quot;请输入账号密码&quot;);
+            $(&quot;div.loginErrorMessageDiv&quot;).show();          
+            return false;
+        }
+         
+        var page = &quot;foreloginAjax&quot;;
+        $.get(
+                page,
+                {&quot;name&quot;:name,&quot;password&quot;:password},
+                function(result){
+                    if(&quot;success&quot;==result){
+                        location.reload();
+                    }
+                    else{
+                        $(&quot;span.errorMessage&quot;).html(&quot;账号密码错误&quot;);
+                        $(&quot;div.loginErrorMessageDiv&quot;).show();                      
+                    }
+                }
+        );         
+         
+        return true;
+    });
+     
+    $(&quot;img.smallImage&quot;).mouseenter(function(){
+        var bigImageURL = $(this).attr(&quot;bigImageURL&quot;);
+        $(&quot;img.bigImg&quot;).attr(&quot;src&quot;,bigImageURL);
+    });
+     
+    $(&quot;img.bigImg&quot;).load(
+        function(){
+            $(&quot;img.smallImage&quot;).each(function(){
+                var bigImageURL = $(this).attr(&quot;bigImageURL&quot;);
+                img = new Image();
+                img.src = bigImageURL;
+                 
+                img.onload = function(){
+                    console.log(bigImageURL);  
+                    $(&quot;div.img4load&quot;).append($(img));
+                };
+            });    
+        }
+    );
+});
+ 
+&lt;/script&gt;
+ 
+&lt;div class=&quot;imgAndInfo&quot;&gt;
+ 
+    &lt;div class=&quot;imgInimgAndInfo&quot;&gt;
+        &lt;img src=&quot;img/productSingle/${p.firstProductImage.id}.jpg&quot; class=&quot;bigImg&quot;&gt;
+        &lt;div class=&quot;smallImageDiv&quot;&gt;
+            &lt;c:forEach items=&quot;${p.productSingleImages}&quot; var=&quot;pi&quot;&gt;
+                &lt;img src=&quot;img/productSingle_small/${pi.id}.jpg&quot; bigImageURL=&quot;img/productSingle/${pi.id}.jpg&quot; class=&quot;smallImage&quot;&gt;
+            &lt;/c:forEach&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;img4load hidden&quot; &gt;&lt;/div&gt;
+    &lt;/div&gt;
+     
+    &lt;div class=&quot;infoInimgAndInfo&quot;&gt;
+         
+        &lt;div class=&quot;productTitle&quot;&gt;
+            ${p.name}
+        &lt;/div&gt;
+        &lt;div class=&quot;productSubTitle&quot;&gt;
+            ${p.subTitle}
+        &lt;/div&gt;
+         
+        &lt;div class=&quot;productPrice&quot;&gt;
+            &lt;div class=&quot;juhuasuan&quot;&gt;
+                &lt;span class=&quot;juhuasuanBig&quot; &gt;聚划算&lt;/span&gt;
+                &lt;span&gt;此商品即将参加聚划算，&lt;span class=&quot;juhuasuanTime&quot;&gt;1天19小时&lt;/span&gt;后开始，&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;productPriceDiv&quot;&gt;
+                &lt;div class=&quot;gouwujuanDiv&quot;&gt;&lt;img height=&quot;16px&quot; src=&quot;img/site/gouwujuan.png&quot;&gt;
+                &lt;span&gt; 全天猫实物商品通用&lt;/span&gt;
+                 
+                &lt;/div&gt;
+                &lt;div class=&quot;originalDiv&quot;&gt;
+                    &lt;span class=&quot;originalPriceDesc&quot;&gt;价格&lt;/span&gt;
+                    &lt;span class=&quot;originalPriceYuan&quot;&gt;¥&lt;/span&gt;
+                    &lt;span class=&quot;originalPrice&quot;&gt;
+                     
+                        &lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.orignalPrice}&quot; minFractionDigits=&quot;2&quot;/&gt;                
+                    &lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promotionDiv&quot;&gt;
+                    &lt;span class=&quot;promotionPriceDesc&quot;&gt;促销价 &lt;/span&gt;
+                    &lt;span class=&quot;promotionPriceYuan&quot;&gt;¥&lt;/span&gt;
+                    &lt;span class=&quot;promotionPrice&quot;&gt;
+                        &lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.promotePrice}&quot; minFractionDigits=&quot;2&quot;/&gt;
+                    &lt;/span&gt;              
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;productSaleAndReviewNumber&quot;&gt;
+            &lt;div&gt;销量 &lt;span class=&quot;redColor boldWord&quot;&gt; ${p.saleCount }&lt;/span&gt;&lt;/div&gt;  
+            &lt;div&gt;累计评价 &lt;span class=&quot;redColor boldWord&quot;&gt; ${p.reviewCount}&lt;/span&gt;&lt;/div&gt;   
+        &lt;/div&gt;
+        &lt;div class=&quot;productNumber&quot;&gt;
+            &lt;span&gt;数量&lt;/span&gt;
+            &lt;span&gt;
+                &lt;span class=&quot;productNumberSettingSpan&quot;&gt;
+                &lt;input class=&quot;productNumberSetting&quot; type=&quot;text&quot; value=&quot;1&quot;&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;arrow&quot;&gt;
+                    &lt;a href=&quot;#nowhere&quot; class=&quot;increaseNumber&quot;&gt;
+                    &lt;span class=&quot;updown&quot;&gt;
+                            &lt;img src=&quot;img/site/increase.png&quot;&gt;
+                    &lt;/span&gt;
+                    &lt;/a&gt;
+                     
+                    &lt;span class=&quot;updownMiddle&quot;&gt; &lt;/span&gt;
+                    &lt;a href=&quot;#nowhere&quot;  class=&quot;decreaseNumber&quot;&gt;
+                    &lt;span class=&quot;updown&quot;&gt;
+                            &lt;img src=&quot;img/site/decrease.png&quot;&gt;
+                    &lt;/span&gt;
+                    &lt;/a&gt;
+                     
+                &lt;/span&gt;
+                     
+            件&lt;/span&gt;
+            &lt;span&gt;库存${p.stock}件&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;serviceCommitment&quot;&gt;
+            &lt;span class=&quot;serviceCommitmentDesc&quot;&gt;服务承诺&lt;/span&gt;
+            &lt;span class=&quot;serviceCommitmentLink&quot;&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;正品保证&lt;/a&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;极速退款&lt;/a&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;赠运费险&lt;/a&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;七天无理由退换&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;   
+         
+        &lt;div class=&quot;buyDiv&quot;&gt;
+            &lt;a class=&quot;buyLink&quot; href=&quot;forebuyone?pid=${p.id}&quot;&gt;&lt;button class=&quot;buyButton&quot;&gt;立即购买&lt;/button&gt;&lt;/a&gt;
+            &lt;a href=&quot;#nowhere&quot; class=&quot;addCartLink&quot;&gt;&lt;button class=&quot;addCartButton&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-shopping-cart&quot;&gt;&lt;/span&gt;加入购物车&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+     
+    &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+     
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-8-productReview-jsp"><a class="header-anchor" href="#步骤-8-productReview-jsp">¶</a>步骤 8 : productReview.jsp</h3>
+<p>暂时没有数据，所以看不到截图。 有数据的截图，请参考：[评价信息]<br>
+借助c:forEach遍历request中的reviews</p>
+<p><img src="3925.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;div class=&quot;productReviewDiv&quot; &gt;
+    &lt;div class=&quot;productReviewTopPart&quot;&gt;
+        &lt;a  href=&quot;#nowhere&quot; class=&quot;productReviewTopPartSelectedLink&quot;&gt;商品详情&lt;/a&gt;
+        &lt;a  href=&quot;#nowhere&quot; class=&quot;selected&quot;&gt;累计评价 &lt;span class=&quot;productReviewTopReviewLinkNumber&quot;&gt;${p.reviewCount}&lt;/span&gt; &lt;/a&gt;
+    &lt;/div&gt;
+     
+    &lt;div class=&quot;productReviewContentPart&quot;&gt;
+        &lt;c:forEach items=&quot;${reviews}&quot; var=&quot;r&quot;&gt;
+        &lt;div class=&quot;productReviewItem&quot;&gt;
+         
+            &lt;div class=&quot;productReviewItemDesc&quot;&gt;
+                &lt;div class=&quot;productReviewItemContent&quot;&gt;
+                    ${r.content }
+                &lt;/div&gt;
+                &lt;div class=&quot;productReviewItemDate&quot;&gt;&lt;fmt:formatDate value=&quot;${r.createDate}&quot; pattern=&quot;yyyy-MM-dd&quot;/&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;productReviewItemUserInfo&quot;&gt;
+             
+                ${r.user.anonymousName}&lt;span class=&quot;userInfoGrayPart&quot;&gt;（匿名）&lt;/span&gt;
+            &lt;/div&gt;
+             
+            &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+         
+        &lt;/div&gt;
+        &lt;/c:forEach&gt;
+    &lt;/div&gt;
+ 
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-9-productDetail-jsp"><a class="header-anchor" href="#步骤-9-productDetail-jsp">¶</a>步骤 9 : productDetail.jsp</h3>
+<p>如图所示，productDetail.jsp做了两件事</p>
+<ol>
+<li>显示属性值</li>
+</ol>
+<pre><code class="language-jsp">&lt;c:forEach items=&quot;${pvs}&quot; var=&quot;pv&quot;&gt;
+	&lt;span&gt;${pv.property.name}:  ${fn:substring(pv.value, 0, 10)} &lt;/span&gt;
+&lt;/c:forEach&gt;
+</code></pre>
+<ol start="2">
+<li>显示详情图片</li>
+</ol>
+<pre><code class="language-jsp">&lt;c:forEach items=&quot;${p.productDetailImages}&quot; var=&quot;pi&quot;&gt;
+	&lt;img src=&quot;img/productDetail/${pi.id}.jpg&quot;&gt;
+&lt;/c:forEach&gt;
+</code></pre>
+<p><img src="3926.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;div class=&quot;productDetailDiv&quot; &gt;
+    &lt;div class=&quot;productDetailTopPart&quot;&gt;
+        &lt;a href=&quot;#nowhere&quot; class=&quot;productDetailTopPartSelectedLink selected&quot;&gt;商品详情&lt;/a&gt;
+        &lt;a href=&quot;#nowhere&quot; class=&quot;productDetailTopReviewLink&quot;&gt;累计评价 &lt;span class=&quot;productDetailTopReviewLinkNumber&quot;&gt;${p.reviewCount}&lt;/span&gt; &lt;/a&gt;
+    &lt;/div&gt;
+     
+    &lt;div class=&quot;productParamterPart&quot;&gt;
+        &lt;div class=&quot;productParamter&quot;&gt;产品参数：&lt;/div&gt;
+         
+        &lt;div class=&quot;productParamterList&quot;&gt;
+            &lt;c:forEach items=&quot;${pvs}&quot; var=&quot;pv&quot;&gt;
+                &lt;span&gt;${pv.property.name}:  ${fn:substring(pv.value, 0, 10)} &lt;/span&gt;
+            &lt;/c:forEach&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+     
+    &lt;div class=&quot;productDetailImagesPart&quot;&gt;
+            &lt;c:forEach items=&quot;${p.productDetailImages}&quot; var=&quot;pi&quot;&gt;
+                &lt;img src=&quot;img/productDetail/${pi.id}.jpg&quot;&gt;
+            &lt;/c:forEach&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="6、模态登录"><a class="header-anchor" href="#6、模态登录">¶</a>6、模态登录</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v5"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v5">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v5"><a class="header-anchor" href="#步骤-2-模仿和排错-v5">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-页面效果"><a class="header-anchor" href="#步骤-3-页面效果">¶</a>步骤 3 : 页面效果</h3>
+<p>在未登录状态(如果已经登录就看不到这个效果了，需要先[退出],所以要先做[退出]教程，哈哈~ )，点击购买或者加入购物车就会弹出这个模态对话框</p>
+<p>在这个模态对话框上可以进行登录操作，如果账号和密码出错会出现 “账号密码错误” 提示</p>
+<p><img src="3928.png" alt=""></p>
+<h3 id="步骤-4-imgAndInfo-jsp"><a class="header-anchor" href="#步骤-4-imgAndInfo-jsp">¶</a>步骤 4 : imgAndInfo.jsp</h3>
+<p>立即购买和加入购物车这两个按钮的监听是放在[imgAndInfo.jsp]页面中</p>
+<p>这两个按钮都会通过[JQuery的.get方法]，用异步ajax的方式访问forecheckLogin，获取当前是否登录状态<br>
+如果返回的不是&quot;success&quot; 即表明是未登录状态，那么就会打开登录的模态窗口</p>
+<pre><code class="language-jsp">$(&quot;#loginModal&quot;).modal('show');
+</code></pre>
+<p>参考： [使用JS控制Bootstrap 模态窗口]</p>
+<pre><code class="language-java">//监听购买按钮
+$(&quot;.buyLink&quot;).click(function(){
+    var page = &quot;forecheckLogin&quot;;
+    $.get(
+            page,
+            function(result){
+                if(&quot;success&quot;==result){
+                    。。。略
+                }
+                else{
+                    $(&quot;#loginModal&quot;).modal('show');                    
+                }
+            }
+    );     
+    return false;
+});
+</code></pre>
+<pre><code class="language-java">//加入购物车按钮监听
+$(&quot;.addCartLink&quot;).click(function(){
+    var page = &quot;forecheckLogin&quot;;
+    $.get(
+            page,
+            function(result){
+                if(&quot;success&quot;==result){
+                    。。。略                   
+                }
+                else{
+                    $(&quot;#loginModal&quot;).modal('show');                    
+                }
+            }
+    );     
+    return false;
+});
+</code></pre>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+  
+&lt;script&gt;
+  
+$(function(){
+    var stock = ${p.stock};
+    $(&quot;.productNumberSetting&quot;).keyup(function(){
+        var num= $(&quot;.productNumberSetting&quot;).val();
+        num = parseInt(num);
+        if(isNaN(num))
+            num= 1;
+        if(num&lt;=0)
+            num = 1;
+        if(num&gt;stock)
+            num = stock;
+        $(&quot;.productNumberSetting&quot;).val(num);
+    });
+      
+    $(&quot;.increaseNumber&quot;).click(function(){
+        var num= $(&quot;.productNumberSetting&quot;).val();
+        num++;
+        if(num&gt;stock)
+            num = stock;
+        $(&quot;.productNumberSetting&quot;).val(num);
+    });
+    $(&quot;.decreaseNumber&quot;).click(function(){
+        var num= $(&quot;.productNumberSetting&quot;).val();
+        --num;
+        if(num&lt;=0)
+            num=1;
+        $(&quot;.productNumberSetting&quot;).val(num);
+    });
+      
+    $(&quot;.addCartLink&quot;).click(function(){
+        var page = &quot;forecheckLogin&quot;;
+        $.get(
+                page,
+                function(result){
+                    if(&quot;success&quot;==result){
+                        var pid = ${p.id};
+                        var num= $(&quot;.productNumberSetting&quot;).val();
+                        var addCartpage = &quot;foreaddCart&quot;;
+                        $.get(
+                                addCartpage,
+                                {&quot;pid&quot;:pid,&quot;num&quot;:num},
+                                function(result){
+                                    if(&quot;success&quot;==result){
+                                        $(&quot;.addCartButton&quot;).html(&quot;已加入购物车&quot;);
+                                        $(&quot;.addCartButton&quot;).attr(&quot;disabled&quot;,&quot;disabled&quot;);
+                                        $(&quot;.addCartButton&quot;).css(&quot;background-color&quot;,&quot;lightgray&quot;)
+                                        $(&quot;.addCartButton&quot;).css(&quot;border-color&quot;,&quot;lightgray&quot;)
+                                        $(&quot;.addCartButton&quot;).css(&quot;color&quot;,&quot;black&quot;)
+                                          
+                                    }
+                                    else{
+                                          
+                                    }
+                                }
+                        );                         
+                    }
+                    else{
+                        $(&quot;#loginModal&quot;).modal('show');                    
+                    }
+                }
+        );     
+        return false;
+    });
+    $(&quot;.buyLink&quot;).click(function(){
+        var page = &quot;forecheckLogin&quot;;
+        $.get(
+                page,
+                function(result){
+                    if(&quot;success&quot;==result){
+                        var num = $(&quot;.productNumberSetting&quot;).val();
+                        location.href= $(&quot;.buyLink&quot;).attr(&quot;href&quot;)+&quot;&amp;num=&quot;+num;
+                    }
+                    else{
+                        $(&quot;#loginModal&quot;).modal('show');                    
+                    }
+                }
+        );     
+        return false;
+    });
+      
+    $(&quot;button.loginSubmitButton&quot;).click(function(){
+        var name = $(&quot;#name&quot;).val();
+        var password = $(&quot;#password&quot;).val();
+          
+        if(0==name.length||0==password.length){
+            $(&quot;span.errorMessage&quot;).html(&quot;请输入账号密码&quot;);
+            $(&quot;div.loginErrorMessageDiv&quot;).show();          
+            return false;
+        }
+          
+        var page = &quot;foreloginAjax&quot;;
+        $.get(
+                page,
+                {&quot;name&quot;:name,&quot;password&quot;:password},
+                function(result){
+                    if(&quot;success&quot;==result){
+                        location.reload();
+                    }
+                    else{
+                        $(&quot;span.errorMessage&quot;).html(&quot;账号密码错误&quot;);
+                        $(&quot;div.loginErrorMessageDiv&quot;).show();                      
+                    }
+                }
+        );         
+          
+        return true;
+    });
+      
+    $(&quot;img.smallImage&quot;).mouseenter(function(){
+        var bigImageURL = $(this).attr(&quot;bigImageURL&quot;);
+        $(&quot;img.bigImg&quot;).attr(&quot;src&quot;,bigImageURL);
+    });
+      
+    $(&quot;img.bigImg&quot;).load(
+        function(){
+            $(&quot;img.smallImage&quot;).each(function(){
+                var bigImageURL = $(this).attr(&quot;bigImageURL&quot;);
+                img = new Image();
+                img.src = bigImageURL;
+                  
+                img.onload = function(){
+                    console.log(bigImageURL);  
+                    $(&quot;div.img4load&quot;).append($(img));
+                };
+            });    
+        }
+    );
+});
+  
+&lt;/script&gt;
+  
+&lt;div class=&quot;imgAndInfo&quot;&gt;
+  
+    &lt;div class=&quot;imgInimgAndInfo&quot;&gt;
+        &lt;img src=&quot;img/productSingle/${p.firstProductImage.id}.jpg&quot; class=&quot;bigImg&quot;&gt;
+        &lt;div class=&quot;smallImageDiv&quot;&gt;
+            &lt;c:forEach items=&quot;${p.productSingleImages}&quot; var=&quot;pi&quot;&gt;
+                &lt;img src=&quot;img/productSingle_small/${pi.id}.jpg&quot; bigImageURL=&quot;img/productSingle/${pi.id}.jpg&quot; class=&quot;smallImage&quot;&gt;
+            &lt;/c:forEach&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;img4load hidden&quot; &gt;&lt;/div&gt;
+    &lt;/div&gt;
+      
+    &lt;div class=&quot;infoInimgAndInfo&quot;&gt;
+          
+        &lt;div class=&quot;productTitle&quot;&gt;
+            ${p.name}
+        &lt;/div&gt;
+        &lt;div class=&quot;productSubTitle&quot;&gt;
+            ${p.subTitle}
+        &lt;/div&gt;
+          
+        &lt;div class=&quot;productPrice&quot;&gt;
+            &lt;div class=&quot;juhuasuan&quot;&gt;
+                &lt;span class=&quot;juhuasuanBig&quot; &gt;聚划算&lt;/span&gt;
+                &lt;span&gt;此商品即将参加聚划算，&lt;span class=&quot;juhuasuanTime&quot;&gt;1天19小时&lt;/span&gt;后开始，&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;productPriceDiv&quot;&gt;
+                &lt;div class=&quot;gouwujuanDiv&quot;&gt;&lt;img height=&quot;16px&quot; src=&quot;img/site/gouwujuan.png&quot;&gt;
+                &lt;span&gt; 全天猫实物商品通用&lt;/span&gt;
+                  
+                &lt;/div&gt;
+                &lt;div class=&quot;originalDiv&quot;&gt;
+                    &lt;span class=&quot;originalPriceDesc&quot;&gt;价格&lt;/span&gt;
+                    &lt;span class=&quot;originalPriceYuan&quot;&gt;¥&lt;/span&gt;
+                    &lt;span class=&quot;originalPrice&quot;&gt;
+                      
+                        &lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.orignalPrice}&quot; minFractionDigits=&quot;2&quot;/&gt;                
+                    &lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;promotionDiv&quot;&gt;
+                    &lt;span class=&quot;promotionPriceDesc&quot;&gt;促销价 &lt;/span&gt;
+                    &lt;span class=&quot;promotionPriceYuan&quot;&gt;¥&lt;/span&gt;
+                    &lt;span class=&quot;promotionPrice&quot;&gt;
+                        &lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.promotePrice}&quot; minFractionDigits=&quot;2&quot;/&gt;
+                    &lt;/span&gt;              
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;productSaleAndReviewNumber&quot;&gt;
+            &lt;div&gt;销量 &lt;span class=&quot;redColor boldWord&quot;&gt; ${p.saleCount }&lt;/span&gt;&lt;/div&gt;  
+            &lt;div&gt;累计评价 &lt;span class=&quot;redColor boldWord&quot;&gt; ${p.reviewCount}&lt;/span&gt;&lt;/div&gt;   
+        &lt;/div&gt;
+        &lt;div class=&quot;productNumber&quot;&gt;
+            &lt;span&gt;数量&lt;/span&gt;
+            &lt;span&gt;
+                &lt;span class=&quot;productNumberSettingSpan&quot;&gt;
+                &lt;input class=&quot;productNumberSetting&quot; type=&quot;text&quot; value=&quot;1&quot;&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;arrow&quot;&gt;
+                    &lt;a href=&quot;#nowhere&quot; class=&quot;increaseNumber&quot;&gt;
+                    &lt;span class=&quot;updown&quot;&gt;
+                            &lt;img src=&quot;img/site/increase.png&quot;&gt;
+                    &lt;/span&gt;
+                    &lt;/a&gt;
+                      
+                    &lt;span class=&quot;updownMiddle&quot;&gt; &lt;/span&gt;
+                    &lt;a href=&quot;#nowhere&quot;  class=&quot;decreaseNumber&quot;&gt;
+                    &lt;span class=&quot;updown&quot;&gt;
+                            &lt;img src=&quot;img/site/decrease.png&quot;&gt;
+                    &lt;/span&gt;
+                    &lt;/a&gt;
+                      
+                &lt;/span&gt;
+                      
+            件&lt;/span&gt;
+            &lt;span&gt;库存${p.stock}件&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;serviceCommitment&quot;&gt;
+            &lt;span class=&quot;serviceCommitmentDesc&quot;&gt;服务承诺&lt;/span&gt;
+            &lt;span class=&quot;serviceCommitmentLink&quot;&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;正品保证&lt;/a&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;极速退款&lt;/a&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;赠运费险&lt;/a&gt;
+                &lt;a href=&quot;#nowhere&quot;&gt;七天无理由退换&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;   
+          
+        &lt;div class=&quot;buyDiv&quot;&gt;
+            &lt;a class=&quot;buyLink&quot; href=&quot;forebuyone?pid=${p.id}&quot;&gt;&lt;button class=&quot;buyButton&quot;&gt;立即购买&lt;/button&gt;&lt;/a&gt;
+            &lt;a href=&quot;#nowhere&quot; class=&quot;addCartLink&quot;&gt;&lt;button class=&quot;addCartButton&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-shopping-cart&quot;&gt;&lt;/span&gt;加入购物车&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+      
+    &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+      
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-5-ForeServlet-checkLogin"><a class="header-anchor" href="#步骤-5-ForeServlet-checkLogin">¶</a>步骤 5 : ForeServlet.checkLogin()</h3>
+<p>在上一步的ajax访问路径/forecheckLogin会导致ForeServlet.checkLogin()方法被调用。<br>
+获取session中的&quot;user&quot;对象<br>
+如果不为空，即表示已经登录，返回字符串&quot;success&quot;<br>
+如果不空，即表示未经登录，返回字符串&quot;fail&quot;</p>
+<pre><code class="language-java">public String checkLogin(HttpServletRequest request, HttpServletResponse response, Page page) {
+    User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+    if(null!=user)
+        return &quot;%success&quot;;
+    return &quot;%fail&quot;;
+}
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }
+    public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+        request.getSession().removeAttribute(&quot;user&quot;);
+        return &quot;@forehome&quot;;
+    }
+ 
+    public String checkLogin(HttpServletRequest request, HttpServletResponse response, Page page) {
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        if(null!=user)
+            return &quot;%success&quot;;
+        return &quot;%fail&quot;;
+    }
+    public String loginAjax(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);    
+        PrintWriter p;
+        User user = userDAO.get(name,password);
+         
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;%fail&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;%success&quot;; 
+    }  
+}
+</code></pre>
+<h3 id="步骤-6-modal-jsp"><a class="header-anchor" href="#步骤-6-modal-jsp">¶</a>步骤 6 : modal.jsp</h3>
+<p>modal.jsp 页面被 [footer.jsp]所包含，所以每个页面都是加载了的。<br>
+通过[imgAndInfo.jsp]页面中的购买按钮或者加入购物车按钮显示出来。<br>
+点击登录按钮时，使用[imgAndInfo.jsp] 页面中的ajax代码进行登录验证：</p>
+<pre><code class="language-java">$(&quot;button.loginSubmitButton&quot;).click(function(){
+	var name = $(&quot;#name&quot;).val();
+	var password = $(&quot;#password&quot;).val();
+	if(0==name.length||0==password.length){
+		$(&quot;span.errorMessage&quot;).html(&quot;请输入账号密码&quot;);
+		$(&quot;div.loginErrorMessageDiv&quot;).show();			
+		return false;
+	}
+	var page = &quot;foreloginAjax&quot;;
+	$.get(
+            page,
+            {&quot;name&quot;:name,&quot;password&quot;:password},
+            function(result){
+            	if(&quot;success&quot;==result){
+            		location.reload();
+            	}
+            	else{
+            		$(&quot;span.errorMessage&quot;).html(&quot;账号密码错误&quot;);
+            		$(&quot;div.loginErrorMessageDiv&quot;).show();	            		
+            	}
+            }
+	);			
+	return true;
+});
+</code></pre>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;div class=&quot;modal &quot; id=&quot;loginModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; &gt;
+    &lt;div class=&quot;modal-dialog loginDivInProductPageModalDiv&quot;&gt;
+            &lt;div class=&quot;modal-content&quot;&gt;
+                    &lt;div class=&quot;loginDivInProductPage&quot;&gt;
+                        &lt;div class=&quot;loginErrorMessageDiv&quot;&gt;
+                            &lt;div class=&quot;alert alert-danger&quot; &gt;
+                              &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+                                &lt;span class=&quot;errorMessage&quot;&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                             
+                        &lt;div class=&quot;login_acount_text&quot;&gt;账户登录&lt;/div&gt;
+                        &lt;div class=&quot;loginInput &quot; &gt;
+                            &lt;span class=&quot;loginInputIcon &quot;&gt;
+                                &lt;span class=&quot; glyphicon glyphicon-user&quot;&gt;&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;input id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;手机/会员名/邮箱&quot; type=&quot;text&quot;&gt;        
+                        &lt;/div&gt;
+                         
+                        &lt;div class=&quot;loginInput &quot; &gt;
+                            &lt;span class=&quot;loginInputIcon &quot;&gt;
+                                &lt;span class=&quot; glyphicon glyphicon-lock&quot;&gt;&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;input id=&quot;password&quot; name=&quot;password&quot;  type=&quot;password&quot; placeholder=&quot;密码&quot; type=&quot;text&quot;&gt;          
+                        &lt;/div&gt;
+                                    &lt;span class=&quot;text-danger&quot;&gt;不要输入真实的天猫账号密码&lt;/span&gt;&lt;br&gt;&lt;br&gt;
+                        &lt;div&gt;
+                            &lt;a href=&quot;#nowhere&quot;&gt;忘记登录密码&lt;/a&gt;
+                            &lt;a href=&quot;register.jsp&quot; class=&quot;pull-right&quot;&gt;免费注册&lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div style=&quot;margin-top:20px&quot;&gt;
+                            &lt;button class=&quot;btn btn-block redButton loginSubmitButton&quot; type=&quot;submit&quot;&gt;登录&lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;   
+          &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+ 
+&lt;div class=&quot;modal&quot; id=&quot;deleteConfirmModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; &gt;
+    &lt;div class=&quot;modal-dialog deleteConfirmModalDiv&quot;&gt;
+       &lt;div class=&quot;modal-content&quot;&gt;
+          &lt;div class=&quot;modal-header&quot;&gt;
+            &lt;button data-dismiss=&quot;modal&quot; class=&quot;close&quot; type=&quot;button&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;×&lt;/span&gt;&lt;span class=&quot;sr-only&quot;&gt;Close&lt;/span&gt;&lt;/button&gt;
+            &lt;h4 class=&quot;modal-title&quot;&gt;确认删除？&lt;/h4&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;modal-footer&quot;&gt;
+            &lt;button data-dismiss=&quot;modal&quot; class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;关闭&lt;/button&gt;
+            &lt;button class=&quot;btn btn-primary deleteConfirmButton&quot; id=&quot;submit&quot; type=&quot;button&quot;&gt;确认&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-7-ForeServlet-loginAjax"><a class="header-anchor" href="#步骤-7-ForeServlet-loginAjax">¶</a>步骤 7 : ForeServlet.loginAjax()</h3>
+<p>在上一步[modal.jsp]中，点击了登录按钮之后，访问路径/foreloginAjax,导致ForeServlet.loginAjax()方法被调用</p>
+<ol>
+<li>获取账号密码</li>
+<li>通过账号密码获取User对象<br>
+2.1 如果User对象为空，那么就返回&quot;fail&quot;字符串。<br>
+2.2 如果User对象不为空，那么就把User对象放在session中，并返回&quot;success&quot; 字符串</li>
+</ol>
+<pre><code class="language-java">public String loginAjax(HttpServletRequest request, HttpServletResponse response, Page page) {
+    String name = request.getParameter(&quot;name&quot;);
+    String password = request.getParameter(&quot;password&quot;);    
+    User user = userDAO.get(name,password);
+     
+    if(null==user){
+        return &quot;%fail&quot;;
+    }
+    request.getSession().setAttribute(&quot;user&quot;, user);
+    return &quot;%success&quot;; 
+}
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }
+    public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+        request.getSession().removeAttribute(&quot;user&quot;);
+        return &quot;@forehome&quot;;
+    }
+ 
+    public String checkLogin(HttpServletRequest request, HttpServletResponse response, Page page) {
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        if(null!=user)
+            return &quot;%success&quot;;
+        return &quot;%fail&quot;;
+    }
+    public String loginAjax(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);    
+        PrintWriter p;
+        User user = userDAO.get(name,password);
+         
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;%fail&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;%success&quot;; 
+    }  
+}
+</code></pre>
+<h2 id="7、分类页"><a class="header-anchor" href="#7、分类页">¶</a>7、分类页</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v6"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v6">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v6"><a class="header-anchor" href="#步骤-2-模仿和排错-v6">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-页面效果-v2"><a class="header-anchor" href="#步骤-3-页面效果-v2">¶</a>步骤 3 : 页面效果</h3>
+<p><img src="3938.png" alt=""></p>
+<h3 id="步骤-4-5个Comparator比较器"><a class="header-anchor" href="#步骤-4-5个Comparator比较器">¶</a>步骤 4 : 5个Comparator比较器</h3>
+<p>分类这个页面有排序功能，所以在讲解ForeServlet之前，先准备5个Comparator比较器</p>
+<ol>
+<li>ProductAllComparator 综合比较器<br>
+把 销量x评价 高的放前面</li>
+<li>ProductReviewComparator 人气比较器<br>
+把 评价数量多的放前面</li>
+<li>ProductDateComparator 新品比较器<br>
+把 创建日期晚的放前面</li>
+<li>ProductSaleCountComparator 销量比较器<br>
+把 销量高的放前面</li>
+<li>ProductPriceComparator 价格比较器<br>
+把 价格低的放前面</li>
+</ol>
+<pre><code class="language-java">package tmall.comparator;
+ 
+import java.util.Comparator;
+ 
+import tmall.bean.Product;
+ 
+public class ProductAllComparator implements Comparator&lt;Product&gt;{
+ 
+    @Override
+    public int compare(Product p1, Product p2) {
+        return p2.getReviewCount()*p2.getSaleCount()-p1.getReviewCount()*p1.getSaleCount();
+    }
+ 
+}
+</code></pre>
+<pre><code class="language-java">package tmall.comparator;
+ 
+import java.util.Comparator;
+ 
+import tmall.bean.Product;
+ 
+public class ProductDateComparator implements Comparator&lt;Product&gt;{
+ 
+    @Override
+    public int compare(Product p1, Product p2) {
+        return p1.getCreateDate().compareTo(p2.getCreateDate());
+    }
+ 
+}
+</code></pre>
+<pre><code class="language-java">package tmall.comparator;
+ 
+import java.util.Comparator;
+ 
+import tmall.bean.Product;
+ 
+public class ProductPriceComparator implements Comparator&lt;Product&gt;{
+ 
+    @Override
+    public int compare(Product p1, Product p2) {
+        return (int) (p1.getPromotePrice()-p2.getPromotePrice());
+    }
+ 
+}
+</code></pre>
+<pre><code class="language-java">package tmall.comparator;
+ 
+import java.util.Comparator;
+ 
+import tmall.bean.Product;
+ 
+public class ProductReviewComparator implements Comparator&lt;Product&gt;{
+ 
+    @Override
+    public int compare(Product p1, Product p2) {
+        return p2.getReviewCount()-p1.getReviewCount();
+    }
+ 
+}
+</code></pre>
+<pre><code class="language-java">package tmall.comparator;
+ 
+import java.util.Comparator;
+ 
+import tmall.bean.Product;
+ 
+public class ProductSaleCountComparator implements Comparator&lt;Product&gt;{
+ 
+    @Override
+    public int compare(Product p1, Product p2) {
+        return p2.getSaleCount()-p1.getSaleCount();
+    }
+ 
+}
+</code></pre>
+<h3 id="步骤-5-ForeServlet-category"><a class="header-anchor" href="#步骤-5-ForeServlet-category">¶</a>步骤 5 : ForeServlet.category()</h3>
+<ol>
+<li>获取参数cid</li>
+<li>根据cid获取分类Category对象 c</li>
+<li>为c填充产品</li>
+<li>为产品填充销量和评价数据</li>
+<li>获取参数sort<br>
+5.1 如果sort==null，即不排序<br>
+5.2 如果sort!=null，则根据sort的值，从5个[Comparator比较器]中选择一个对应的排序器进行排序</li>
+<li>把c放在request中</li>
+<li>服务端跳转到 category.jsp</li>
+</ol>
+<pre><code class="language-java">public String category(HttpServletRequest request, HttpServletResponse response, Page page) {
+    int cid = Integer.parseInt(request.getParameter(&quot;cid&quot;));
+     
+    Category c = new CategoryDAO().get(cid);
+    new ProductDAO().fill(c);
+    new ProductDAO().setSaleAndReviewNumber(c.getProducts());      
+     
+    String sort = request.getParameter(&quot;sort&quot;);
+    if(null!=sort){
+    switch(sort){
+        case &quot;review&quot;:
+            Collections.sort(c.getProducts(),new ProductReviewComparator());
+            break;
+        case &quot;date&quot; :
+            Collections.sort(c.getProducts(),new ProductDateComparator());
+            break;
+             
+        case &quot;saleCount&quot; :
+            Collections.sort(c.getProducts(),new ProductSaleCountComparator());
+            break;
+             
+        case &quot;price&quot;:
+            Collections.sort(c.getProducts(),new ProductPriceComparator());
+            break;
+             
+        case &quot;all&quot;:
+            Collections.sort(c.getProducts(),new ProductAllComparator());
+            break;
+        }
+    }
+     
+    request.setAttribute(&quot;c&quot;, c);
+    return &quot;category.jsp&quot;;     
+}
+</code></pre>
+<h3 id="步骤-6-category-jsp"><a class="header-anchor" href="#步骤-6-category-jsp">¶</a>步骤 6 : category.jsp</h3>
+<p>与 [register.jsp] 相仿，category.jsp也包含了[header.jsp], [top.jsp], [simpleSearch.jsp]， [footer.jsp] 等公共页面。</p>
+<p>中间是分类业务页面 [categoryPage.jsp]</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/top.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/search.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/category/categoryPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<h3 id="步骤-7-categoryPage-jsp"><a class="header-anchor" href="#步骤-7-categoryPage-jsp">¶</a>步骤 7 : categoryPage.jsp</h3>
+<p>categoryPage.jsp 里有3个内容</p>
+<ol>
+<li>显示当前分类图片</li>
+</ol>
+<pre><code class="language-jsp">&lt;img src=&quot;img/category/${c.id}.jpg&quot;&gt;
+</code></pre>
+<ol start="2">
+<li>
+<p>排序条 [sortBar.jsp]</p>
+</li>
+<li>
+<p>产品列表 [productsByCategory.jsp]</p>
+</li>
+</ol>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+&lt;title&gt;模仿天猫官网-${c.name}&lt;/title&gt;
+&lt;div id=&quot;category&quot;&gt;
+    &lt;div class=&quot;categoryPageDiv&quot;&gt;
+        &lt;img src=&quot;img/category/${c.id}.jpg&quot;&gt;
+        &lt;%@include file=&quot;sortBar.jsp&quot;%&gt;
+        &lt;%@include file=&quot;productsByCategory.jsp&quot;%&gt;
+    &lt;/div&gt;
+ 
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-8-sortBar-jsp"><a class="header-anchor" href="#步骤-8-sortBar-jsp">¶</a>步骤 8 : sortBar.jsp</h3>
+<p>sortBar.jsp 即排序条，做了如下几个与数据相关的事情</p>
+<ol>
+<li>根据sort参数判断哪个排序按钮高亮</li>
+</ol>
+<pre><code class="language-jsp">&lt;td &lt;c:if test=&quot;${'all'==param.sort||empty param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt; &gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=all&quot;&gt;综合&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td &lt;c:if test=&quot;${'review'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt; &gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=review&quot;&gt;人气&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td &lt;c:if test=&quot;${'date'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt;&gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=date&quot;&gt;新品&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td &lt;c:if test=&quot;${'saleCount'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt;&gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=saleCount&quot;&gt;销量&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td &lt;c:if test=&quot;${'price'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt;&gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=price&quot;&gt;价格&lt;span class=&quot;glyphicon glyphicon-resize-vertical&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+</code></pre>
+<ol start="2">
+<li>每个排序按钮提交到本页面，即/forecategory，并带上参数sort</li>
+</ol>
+<p><img src="3944.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+&lt;%@ taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot;%&gt;
+ 
+&lt;script&gt;
+$(function(){
+    $(&quot;input.sortBarPrice&quot;).keyup(function(){
+        var num= $(this).val();
+        if(num.length==0){
+            $(&quot;div.productUnit&quot;).show();
+            return;
+        }
+             
+        num = parseInt(num);
+        if(isNaN(num))
+            num= 1;
+        if(num&lt;=0)
+            num = 1;
+        $(this).val(num);      
+         
+        var begin = $(&quot;input.beginPrice&quot;).val();
+        var end = $(&quot;input.endPrice&quot;).val();
+        if(!isNaN(begin) &amp;&amp; !isNaN(end)){
+            console.log(begin);
+            console.log(end);
+            $(&quot;div.productUnit&quot;).hide();
+            $(&quot;div.productUnit&quot;).each(function(){
+                var price = $(this).attr(&quot;price&quot;);
+                price = new Number(price);
+                 
+                if(price&lt;=end &amp;&amp; price&gt;=begin)
+                    $(this).show();
+            });
+        }
+         
+    });
+});
+&lt;/script&gt;
+&lt;div class=&quot;categorySortBar&quot;&gt;
+ 
+    &lt;table class=&quot;categorySortBarTable categorySortTable&quot;&gt;
+        &lt;tr&gt;
+            &lt;td &lt;c:if test=&quot;${'all'==param.sort||empty param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt; &gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=all&quot;&gt;综合&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td &lt;c:if test=&quot;${'review'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt; &gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=review&quot;&gt;人气&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td &lt;c:if test=&quot;${'date'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt;&gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=date&quot;&gt;新品&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td &lt;c:if test=&quot;${'saleCount'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt;&gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=saleCount&quot;&gt;销量&lt;span class=&quot;glyphicon glyphicon-arrow-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;td &lt;c:if test=&quot;${'price'==param.sort}&quot;&gt;class=&quot;grayColumn&quot;&lt;/c:if&gt;&gt;&lt;a href=&quot;?cid=${c.id}&amp;sort=price&quot;&gt;价格&lt;span class=&quot;glyphicon glyphicon-resize-vertical&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+     
+    &lt;table class=&quot;categorySortBarTable&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;input class=&quot;sortBarPrice beginPrice&quot; type=&quot;text&quot; placeholder=&quot;请输入&quot;&gt;&lt;/td&gt;
+            &lt;td class=&quot;grayColumn priceMiddleColumn&quot;&gt;-&lt;/td&gt;
+            &lt;td&gt;&lt;input class=&quot;sortBarPrice endPrice&quot; type=&quot;text&quot; placeholder=&quot;请输入&quot;&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+ 
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-9-productsByCategory-jsp"><a class="header-anchor" href="#步骤-9-productsByCategory-jsp">¶</a>步骤 9 : productsByCategory.jsp</h3>
+<p>productsByCategory.jsp现实当前分类下的所有产品</p>
+<p>通过forEach遍历c.products集合里的每个产品，并把产品标题，价格，图片，评价数，成交数打印出来</p>
+<p>解释下：categorycount，这个是用于测试的，在访问地址的时候加这个参数</p>
+<pre><code class="language-http">http://127.0.0.1:8080/tmall/forecategory?cid=74&amp;categorycount=2
+</code></pre>
+<p>这样就只显示2个产品，仅供测试使用，未免有同学不理解，特拿出来讲解一下</p>
+<pre><code class="language-jsp">&lt;c:if test=&quot;${empty param.categorycount}&quot;&gt;
+	&lt;c:set var=&quot;categorycount&quot; scope=&quot;page&quot; value=&quot;100&quot;/&gt;
+&lt;/c:if&gt;
+&lt;c:if test=&quot;${!empty param.categorycount}&quot;&gt;
+	&lt;c:set var=&quot;categorycount&quot; scope=&quot;page&quot; value=&quot;${param.categorycount}&quot;/&gt;
+&lt;/c:if&gt;
+</code></pre>
+<p><img src="3945.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+     
+&lt;c:if test=&quot;${empty param.categorycount}&quot;&gt;
+    &lt;c:set var=&quot;categorycount&quot; scope=&quot;page&quot; value=&quot;100&quot;/&gt;
+&lt;/c:if&gt;
+ 
+&lt;c:if test=&quot;${!empty param.categorycount}&quot;&gt;
+    &lt;c:set var=&quot;categorycount&quot; scope=&quot;page&quot; value=&quot;${param.categorycount}&quot;/&gt;
+&lt;/c:if&gt;
+     
+&lt;div class=&quot;categoryProducts&quot;&gt;
+    &lt;c:forEach items=&quot;${c.products}&quot; var=&quot;p&quot; varStatus=&quot;stc&quot;&gt;
+        &lt;c:if test=&quot;${stc.count&lt;=categorycount}&quot;&gt;
+        &lt;div class=&quot;productUnit&quot; price=&quot;${p.promotePrice}&quot;&gt;
+            &lt;div class=&quot;productUnitFrame&quot;&gt;
+                &lt;a href=&quot;foreproduct?pid=${p.id}&quot;&gt;
+                    &lt;img class=&quot;productImage&quot; src=&quot;img/productSingle_middle/${p.firstProductImage.id}.jpg&quot;&gt;
+                &lt;/a&gt;
+                &lt;span class=&quot;productPrice&quot;&gt;¥&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.promotePrice}&quot; minFractionDigits=&quot;2&quot;/&gt;&lt;/span&gt;
+                &lt;a class=&quot;productLink&quot; href=&quot;foreproduct?pid=${p.id}&quot;&gt;
+                 ${fn:substring(p.name, 0, 50)}
+                &lt;/a&gt;
+                 
+                &lt;a  class=&quot;tmallLink&quot; href=&quot;foreproduct?pid=${p.id}&quot;&gt;天猫专卖&lt;/a&gt;
+     
+                &lt;div class=&quot;show1 productInfo&quot;&gt;
+                    &lt;span class=&quot;monthDeal &quot;&gt;月成交 &lt;span class=&quot;productDealNumber&quot;&gt;${p.saleCount}笔&lt;/span&gt;&lt;/span&gt;
+                    &lt;span class=&quot;productReview&quot;&gt;评价&lt;span class=&quot;productReviewNumber&quot;&gt;${p.reviewCount}&lt;/span&gt;&lt;/span&gt;
+                    &lt;span class=&quot;wangwang&quot;&gt;
+                    &lt;a class=&quot;wangwanglink&quot; href=&quot;#nowhere&quot;&gt;
+                        &lt;img src=&quot;img/site/wangwang.png&quot;&gt;
+                    &lt;/a&gt;
+                     
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/c:if&gt;
+    &lt;/c:forEach&gt;
+        &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="8、搜索"><a class="header-anchor" href="#8、搜索">¶</a>8、搜索</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v7"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v7">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v7"><a class="header-anchor" href="#步骤-2-模仿和排错-v7">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-界面效果-v4"><a class="header-anchor" href="#步骤-3-界面效果-v4">¶</a>步骤 3 : 界面效果</h3>
+<p><img src="3891.png" alt=""></p>
+<h3 id="步骤-4-search-jsp以及simpleSearch-jsp"><a class="header-anchor" href="#步骤-4-search-jsp以及simpleSearch-jsp">¶</a>步骤 4 : search.jsp以及simpleSearch.jsp</h3>
+<p>每个页面都包含了搜索的jsp，首页和搜索结果页包含的是search.jsp，其他页面包含的是simpleSearch.jsp。</p>
+<p>这两个页面都提供了一个form，提交数据keyword到foresearch这个路径</p>
+<pre><code class="language-jsp">//search.jsp
+&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+    &lt;a href=&quot;${contextPath}&quot;&gt;
+        &lt;img id=&quot;logo&quot; src=&quot;img/site/logo.gif&quot; class=&quot;logo&quot;&gt;
+    &lt;/a&gt;
+     
+    &lt;form action=&quot;foresearch&quot; method=&quot;post&quot; &gt;
+        &lt;div class=&quot;searchDiv&quot;&gt;
+            &lt;input name=&quot;keyword&quot; type=&quot;text&quot; value=&quot;${param.keyword}&quot; placeholder=&quot;时尚男鞋  太阳镜 &quot;&gt;
+            &lt;button  type=&quot;submit&quot; class=&quot;searchButton&quot;&gt;搜索&lt;/button&gt;
+            &lt;div class=&quot;searchBelow&quot;&gt;
+                &lt;c:forEach items=&quot;${cs}&quot; var=&quot;c&quot; varStatus=&quot;st&quot;&gt;
+                    &lt;c:if test=&quot;${st.count&gt;=5 and st.count&lt;=8}&quot;&gt;
+                        &lt;span&gt;
+                            &lt;a href=&quot;forecategory?cid=${c.id}&quot;&gt;
+                                ${c.name}
+                            &lt;/a&gt;
+                            &lt;c:if test=&quot;${st.count!=8}&quot;&gt;             
+                                &lt;span&gt;|&lt;/span&gt;             
+                            &lt;/c:if&gt;
+                        &lt;/span&gt;          
+                    &lt;/c:if&gt;
+                &lt;/c:forEach&gt;     
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;  
+</code></pre>
+<pre><code class="language-jsp">//simpleSearch.jsp
+&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;div &gt;
+    &lt;a href=&quot;${contextPath}&quot;&gt;
+        &lt;img id=&quot;simpleLogo&quot; class=&quot;simpleLogo&quot; src=&quot;img/site/simpleLogo.png&quot;&gt;   
+    &lt;/a&gt;
+ 
+    &lt;form action=&quot;foresearch&quot; method=&quot;post&quot; &gt;
+    &lt;div class=&quot;simpleSearchDiv pull-right&quot;&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;平衡车 原汁机&quot;  value=&quot;${param.keyword}&quot; name=&quot;keyword&quot;&gt;
+        &lt;button class=&quot;searchButton&quot; type=&quot;submit&quot;&gt;搜天猫&lt;/button&gt;
+        &lt;div class=&quot;searchBelow&quot;&gt;
+            &lt;c:forEach items=&quot;${cs}&quot; var=&quot;c&quot; varStatus=&quot;st&quot;&gt;
+                &lt;c:if test=&quot;${st.count&gt;=8 and st.count&lt;=11}&quot;&gt;
+                    &lt;span&gt;
+                        &lt;a href=&quot;forecategory?cid=${c.id}&quot;&gt;
+                            ${c.name}
+                        &lt;/a&gt;
+                        &lt;c:if test=&quot;${st.count!=11}&quot;&gt;            
+                            &lt;span&gt;|&lt;/span&gt;             
+                        &lt;/c:if&gt;
+                    &lt;/span&gt;          
+                &lt;/c:if&gt;
+            &lt;/c:forEach&gt;         
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-5-ForeServlet-search"><a class="header-anchor" href="#步骤-5-ForeServlet-search">¶</a>步骤 5 : ForeServlet.search()</h3>
+<p>通过search.jsp或者simpleSearch.jsp提交数据到路径 /foresearch， 导致ForeServlet.search()方法被调用</p>
+<ol>
+<li>获取参数keyword</li>
+<li>根据keyword进行模糊查询，获取满足条件的前20个产品</li>
+<li>为这些产品设置销量和评价数量</li>
+<li>把产品结合设置在request的&quot;ps&quot;属性上</li>
+<li>服务端跳转到 searchResult.jsp 页面</li>
+</ol>
+<pre><code class="language-java">public String search(HttpServletRequest request, HttpServletResponse response, Page page){
+    String keyword = request.getParameter(&quot;keyword&quot;);
+    List&lt;Product&gt; ps= new ProductDAO().search(keyword,0,20);
+    productDAO.setSaleAndReviewNumber(ps);
+    request.setAttribute(&quot;ps&quot;,ps);
+    return &quot;searchResult.jsp&quot;;
+}  
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.comparator.ProductAllComparator;
+import tmall.comparator.ProductDateComparator;
+import tmall.comparator.ProductPriceComparator;
+import tmall.comparator.ProductReviewComparator;
+import tmall.comparator.ProductSaleCountComparator;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }
+    public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+        request.getSession().removeAttribute(&quot;user&quot;);
+        return &quot;@forehome&quot;;
+    }
+ 
+    public String checkLogin(HttpServletRequest request, HttpServletResponse response, Page page) {
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        if(null!=user)
+            return &quot;%success&quot;;
+        return &quot;%fail&quot;;
+    }
+    public String loginAjax(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);    
+        User user = userDAO.get(name,password);
+         
+        if(null==user){
+            return &quot;%fail&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;%success&quot;; 
+    }
+    public String category(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int cid = Integer.parseInt(request.getParameter(&quot;cid&quot;));
+         
+        Category c = new CategoryDAO().get(cid);
+        new ProductDAO().fill(c);
+        new ProductDAO().setSaleAndReviewNumber(c.getProducts());      
+         
+        String sort = request.getParameter(&quot;sort&quot;);
+        if(null!=sort){
+        switch(sort){
+            case &quot;review&quot;:
+                Collections.sort(c.getProducts(),new ProductReviewComparator());
+                break;
+            case &quot;date&quot; :
+                Collections.sort(c.getProducts(),new ProductDateComparator());
+                break;
+                 
+            case &quot;saleCount&quot; :
+                Collections.sort(c.getProducts(),new ProductSaleCountComparator());
+                break;
+                 
+            case &quot;price&quot;:
+                Collections.sort(c.getProducts(),new ProductPriceComparator());
+                break;
+                 
+            case &quot;all&quot;:
+                Collections.sort(c.getProducts(),new ProductAllComparator());
+                break;
+            }
+        }
+         
+        request.setAttribute(&quot;c&quot;, c);
+        return &quot;category.jsp&quot;;     
+    }
+     
+    public String search(HttpServletRequest request, HttpServletResponse response, Page page){
+        String keyword = request.getParameter(&quot;keyword&quot;);
+        List&lt;Product&gt; ps= new ProductDAO().search(keyword,0,20);
+        productDAO.setSaleAndReviewNumber(ps);
+        request.setAttribute(&quot;ps&quot;,ps);
+        return &quot;searchResult.jsp&quot;;
+    }  
+}
+</code></pre>
+<h3 id="步骤-6-searchResult-jsp"><a class="header-anchor" href="#步骤-6-searchResult-jsp">¶</a>步骤 6 : searchResult.jsp</h3>
+<p>与 [register.jsp] 相仿，searchResult.jsp 也包含了[header.jsp], [top.jsp], [search.jsp]， [footer.jsp] 等公共页面。<br>
+中间是搜索结果业务页面 [searchResultPage.jsp]</p>
+<p><strong>注：</strong> 在search.jsp中，又把参数keyword显示在输入框中</p>
+<pre><code class="language-jsp">&lt;input name=&quot;keyword&quot; type=&quot;text&quot; value=&quot;${param.keyword}&quot; placeholder=&quot;时尚男鞋  太阳镜 &quot;&gt;
+</code></pre>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/top.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/search.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/searchResultPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+    &lt;a href=&quot;${contextPath}&quot;&gt;
+        &lt;img id=&quot;logo&quot; src=&quot;img/site/logo.gif&quot; class=&quot;logo&quot;&gt;
+    &lt;/a&gt;
+     
+    &lt;form action=&quot;foresearch&quot; method=&quot;post&quot; &gt;
+        &lt;div class=&quot;searchDiv&quot;&gt;
+            &lt;input name=&quot;keyword&quot; type=&quot;text&quot; value=&quot;${param.keyword}&quot; placeholder=&quot;时尚男鞋  太阳镜 &quot;&gt;
+            &lt;button  type=&quot;submit&quot; class=&quot;searchButton&quot;&gt;搜索&lt;/button&gt;
+            &lt;div class=&quot;searchBelow&quot;&gt;
+                &lt;c:forEach items=&quot;${cs}&quot; var=&quot;c&quot; varStatus=&quot;st&quot;&gt;
+                    &lt;c:if test=&quot;${st.count&gt;=5 and st.count&lt;=8}&quot;&gt;
+                        &lt;span&gt;
+                            &lt;a href=&quot;forecategory?cid=${c.id}&quot;&gt;
+                                ${c.name}
+                            &lt;/a&gt;
+                            &lt;c:if test=&quot;${st.count!=8}&quot;&gt;             
+                                &lt;span&gt;|&lt;/span&gt;             
+                            &lt;/c:if&gt;
+                        &lt;/span&gt;          
+                    &lt;/c:if&gt;
+                &lt;/c:forEach&gt;     
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;  
+</code></pre>
+<h3 id="步骤-7-searchResultPage-jsp"><a class="header-anchor" href="#步骤-7-searchResultPage-jsp">¶</a>步骤 7 : searchResultPage.jsp</h3>
+<p>searchResultPage.jsp 本身没做什么。。。。 直接包含了 [productsBySearch.jsp]</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+     
+&lt;div id=&quot;searchResult&quot;&gt;
+     
+    &lt;div class=&quot;searchResultDiv&quot;&gt;
+        &lt;%@include file=&quot;productsBySearch.jsp&quot;%&gt;
+    &lt;/div&gt;
+ 
+&lt;/div&gt;
+</code></pre>
+<h3 id="步骤-8-productsBySearch-jsp"><a class="header-anchor" href="#步骤-8-productsBySearch-jsp">¶</a>步骤 8 : productsBySearch.jsp</h3>
+<p>productsBySearch.jsp 显示产寻结果：</p>
+<ol>
+<li>遍历ps，把每个产品的图片，价格，标题等信息显示出来</li>
+<li>如果ps为空，则显示 “没有满足条件的产品”</li>
+</ol>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+     
+&lt;div class=&quot;searchProducts&quot;&gt;
+     
+    &lt;c:forEach items=&quot;${ps}&quot; var=&quot;p&quot;&gt;
+        &lt;div class=&quot;productUnit&quot; price=&quot;${p.promotePrice}&quot;&gt;
+            &lt;a href=&quot;foreproduct?pid=${p.id}&quot;&gt;
+                &lt;img class=&quot;productImage&quot; src=&quot;img/productSingle/${p.firstProductImage.id}.jpg&quot;&gt;
+            &lt;/a&gt;
+            &lt;span class=&quot;productPrice&quot;&gt;¥&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${p.promotePrice}&quot; minFractionDigits=&quot;2&quot;/&gt;&lt;/span&gt;
+            &lt;a class=&quot;productLink&quot; href=&quot;foreproduct?pid=${p.id}&quot;&gt;
+             ${fn:substring(p.name, 0, 50)}
+            &lt;/a&gt;
+             
+            &lt;a class=&quot;tmallLink&quot; href=&quot;foreproduct?pid=${p.id}&quot;&gt;天猫专卖&lt;/a&gt;
+ 
+            &lt;div class=&quot;productInfo&quot;&gt;
+                &lt;span class=&quot;monthDeal &quot;&gt;月成交 &lt;span class=&quot;productDealNumber&quot;&gt;${p.saleCount}笔&lt;/span&gt;&lt;/span&gt;
+                &lt;span class=&quot;productReview&quot;&gt;评价&lt;span class=&quot;productReviewNumber&quot;&gt;${p.reviewCount}&lt;/span&gt;&lt;/span&gt;
+                &lt;span class=&quot;wangwang&quot;&gt;&lt;img src=&quot;img/site/wangwang.png&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+             
+        &lt;/div&gt;
+    &lt;/c:forEach&gt;
+    &lt;c:if test=&quot;${empty ps}&quot;&gt;
+        &lt;div class=&quot;noMatch&quot;&gt;没有满足条件的产品&lt;div&gt;
+    &lt;/c:if&gt;
+     
+        &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h1 id="十五、前台-需要登录"><a class="header-anchor" href="#十五、前台-需要登录">¶</a>十五、前台-需要登录</h1>
+<h2 id="1、购物流程"><a class="header-anchor" href="#1、购物流程">¶</a>1、购物流程</h2>
+<h3 id="步骤-1-概述"><a class="header-anchor" href="#步骤-1-概述">¶</a>步骤 1 : 概述</h3>
+<p>接下来就是需要登录的前台功能，这些功能都是和购买支付流程息息相关的，所以我们先把购买的业务流程捋一捋</p>
+<p>接着再把购物流程各个环节与表关系搞清楚，这个开发人员必须明白的部分，这个部分稀里糊涂，后面做出来的功能就会越来越乱</p>
+<h3 id="步骤-2-购买的业务流程"><a class="header-anchor" href="#步骤-2-购买的业务流程">¶</a>步骤 2 : 购买的业务流程</h3>
+<ol>
+<li>登录</li>
+<li>访问产品页</li>
+<li>立即购买</li>
+<li>进入结算页面</li>
+<li>加入购物车</li>
+<li>查看购物车</li>
+<li>选中购物车中的商品</li>
+<li>又到了第4步的结算页面</li>
+<li>在结算页面生成订单</li>
+<li>付款</li>
+<li>确认收货</li>
+<li>评价</li>
+</ol>
+<p><img src="3893.png" alt=""></p>
+<h3 id="步骤-3-购物流程环节与表关系"><a class="header-anchor" href="#步骤-3-购物流程环节与表关系">¶</a>步骤 3 : 购物流程环节与表关系</h3>
+<p>接着再把购物流程各个环节与表关系搞清楚，这个开发人员必须明白的部分，这个部分稀里糊涂，后面做出来的功能就会越来越乱。</p>
+<p>围绕购物流程最重要的两个表是OrderItem 和 Order表</p>
+<p>关于OrderItem的业务行为</p>
+<ol>
+<li>
+<p>立即购买 —— 新增 OrderItem</p>
+</li>
+<li>
+<p>加入购物车 —— 新增 OrderItem</p>
+</li>
+<li>
+<p>查看购物车 —— 显示未和Order关联的OrderItem</p>
+</li>
+<li>
+<p>选中购物车中的商品 —— 选中OrderItem</p>
+</li>
+<li>
+<p>结算页面 —— 显示选中的OrderItem</p>
+</li>
+<li>
+<p>生成订单 —— 新增Order<br>
+7 .付款 —— 修改Order状态</p>
+</li>
+<li>
+<p>我的订单 —— 显示Order</p>
+</li>
+<li>
+<p>确认收货 —— 修改Order状态</p>
+</li>
+</ol>
+<p><img src="3954.png" alt=""></p>
+<h2 id="2、立即购买"><a class="header-anchor" href="#2、立即购买">¶</a>2、立即购买</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v8"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v8">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v8"><a class="header-anchor" href="#步骤-2-模仿和排错-v8">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-运行效果"><a class="header-anchor" href="#步骤-3-运行效果">¶</a>步骤 3 : 运行效果</h3>
+<p>立即购买之后，在页面上会报错，因为截至目前的学习进度，购买成功之后跳转到的[结算页面]还没有开发，将在后续知识点开发。</p>
+<pre><code class="language-java">java.lang.NoSuchMethodException: tmall.servlet.ForeServlet.buy
+</code></pre>
+<p>那么点击购买都做了什么事情呢？ 会在OrderItem表里插入一条数据，这条数据会表示:</p>
+<ol>
+<li>pid =844 购买的商品id</li>
+<li>oid = -1, 这个订单项还没有生成对应的订单，即还在购物车中</li>
+<li>uid= 3，用户的id是3</li>
+<li>number=3, 购买了3件产品</li>
+</ol>
+<p><img src="3894.png" alt=""></p>
+<h3 id="步骤-4-在产品页点击立即购买"><a class="header-anchor" href="#步骤-4-在产品页点击立即购买">¶</a>步骤 4 : 在产品页点击立即购买</h3>
+<p>如果未登录，那么点击立即购买之前会弹出[模态登录窗口]，关于这个功能的详细介绍在[模态登录]，在此不做赘述。</p>
+<p>登录之后，点击立即购买，会访问地址</p>
+<pre><code class="language-http">http://127.0.0.1:8080/tmall/forebuyone?pid=844&amp;num=3
+</code></pre>
+<p>并带上了产品id 844和购买数量3</p>
+<p><img src="3955.png" alt=""></p>
+<h3 id="步骤-5-ForeServlet-buyone"><a class="header-anchor" href="#步骤-5-ForeServlet-buyone">¶</a>步骤 5 : ForeServlet.buyone()</h3>
+<p>通过上个步骤访问的地址 /forebuyone 导致ForeServlet.buyone()方法被调用</p>
+<ol>
+<li>获取参数pid</li>
+<li>获取参数num</li>
+<li>根据pid获取产品对象p</li>
+<li>从session中获取用户对象user</li>
+</ol>
+<p>接下来就是新增订单项OrderItem， 新增订单项要考虑两个情况<br>
+a. 如果已经存在这个产品对应的OrderItem，并且还没有生成订单，即还在购物车中。 那么就应该在对应的OrderItem基础上，调整数量<br>
+a.1 基于用户对象user，查询没有生成订单的订单项集合<br>
+a.2 遍历这个集合<br>
+a.3 如果产品是一样的话，就进行数量追加<br>
+a.4 获取这个订单项的 id</p>
+<p>b. 如果不存在对应的OrderItem,那么就新增一个订单项OrderItem<br>
+b.1 生成新的订单项<br>
+b.2 设置数量，用户和产品<br>
+b.3 插入到数据库<br>
+b.4 获取这个订单项的 id</p>
+<p>最后， 基于这个订单项id客户端跳转到[结算页面/forebuy]</p>
+<pre><code class="language-java">public String buyone(HttpServletRequest request, HttpServletResponse response, Page page) {
+    int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+    int num = Integer.parseInt(request.getParameter(&quot;num&quot;));
+    Product p = productDAO.get(pid);
+    int oiid = 0;
+     
+    User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+    boolean found = false;
+    List&lt;OrderItem&gt; ois = orderItemDAO.listByUser(user.getId());
+    for (OrderItem oi : ois) {
+        if(oi.getProduct().getId()==p.getId()){
+            oi.setNumber(oi.getNumber()+num);
+            orderItemDAO.update(oi);
+            found = true;
+            oiid = oi.getId();
+            break;
+        }
+    }      
+ 
+    if(!found){
+        OrderItem oi = new OrderItem();
+        oi.setUser(user);
+        oi.setNumber(num);
+        oi.setProduct(p);
+        orderItemDAO.add(oi);
+        oiid = oi.getId();
+    }
+    return &quot;@forebuy?oiid=&quot;+oiid;
+}
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.OrderItem;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.comparator.ProductAllComparator;
+import tmall.comparator.ProductDateComparator;
+import tmall.comparator.ProductPriceComparator;
+import tmall.comparator.ProductReviewComparator;
+import tmall.comparator.ProductSaleCountComparator;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }
+    public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+        request.getSession().removeAttribute(&quot;user&quot;);
+        return &quot;@forehome&quot;;
+    }
+ 
+    public String checkLogin(HttpServletRequest request, HttpServletResponse response, Page page) {
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        if(null!=user)
+            return &quot;%success&quot;;
+        return &quot;%fail&quot;;
+    }
+    public String loginAjax(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);    
+        User user = userDAO.get(name,password);
+         
+        if(null==user){
+            return &quot;%fail&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;%success&quot;; 
+    }
+    public String category(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int cid = Integer.parseInt(request.getParameter(&quot;cid&quot;));
+         
+        Category c = new CategoryDAO().get(cid);
+        new ProductDAO().fill(c);
+        new ProductDAO().setSaleAndReviewNumber(c.getProducts());      
+         
+        String sort = request.getParameter(&quot;sort&quot;);
+        if(null!=sort){
+        switch(sort){
+            case &quot;review&quot;:
+                Collections.sort(c.getProducts(),new ProductReviewComparator());
+                break;
+            case &quot;date&quot; :
+                Collections.sort(c.getProducts(),new ProductDateComparator());
+                break;
+                 
+            case &quot;saleCount&quot; :
+                Collections.sort(c.getProducts(),new ProductSaleCountComparator());
+                break;
+                 
+            case &quot;price&quot;:
+                Collections.sort(c.getProducts(),new ProductPriceComparator());
+                break;
+                 
+            case &quot;all&quot;:
+                Collections.sort(c.getProducts(),new ProductAllComparator());
+                break;
+            }
+        }
+         
+        request.setAttribute(&quot;c&quot;, c);
+        return &quot;category.jsp&quot;;     
+    }
+     
+    public String search(HttpServletRequest request, HttpServletResponse response, Page page){
+        String keyword = request.getParameter(&quot;keyword&quot;);
+        List&lt;Product&gt; ps= new ProductDAO().search(keyword,0,20);
+        productDAO.setSaleAndReviewNumber(ps);
+        request.setAttribute(&quot;ps&quot;,ps);
+        return &quot;searchResult.jsp&quot;;
+    }
+ 
+    public String buyone(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        int num = Integer.parseInt(request.getParameter(&quot;num&quot;));
+        Product p = productDAO.get(pid);
+        int oiid = 0;
+         
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        boolean found = false;
+        List&lt;OrderItem&gt; ois = orderItemDAO.listByUser(user.getId());
+        for (OrderItem oi : ois) {
+            if(oi.getProduct().getId()==p.getId()){
+                oi.setNumber(oi.getNumber()+num);
+                orderItemDAO.update(oi);
+                found = true;
+                oiid = oi.getId();
+                break;
+            }
+        }      
+ 
+        if(!found){
+            OrderItem oi = new OrderItem();
+            oi.setUser(user);
+            oi.setNumber(num);
+            oi.setProduct(p);
+            orderItemDAO.add(oi);
+            oiid = oi.getId();
+        }
+        return &quot;@forebuy?oiid=&quot;+oiid;
+    }
+}
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.OrderItem;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.comparator.ProductAllComparator;
+import tmall.comparator.ProductDateComparator;
+import tmall.comparator.ProductPriceComparator;
+import tmall.comparator.ProductReviewComparator;
+import tmall.comparator.ProductSaleCountComparator;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }
+    public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+        request.getSession().removeAttribute(&quot;user&quot;);
+        return &quot;@forehome&quot;;
+    }
+ 
+    public String checkLogin(HttpServletRequest request, HttpServletResponse response, Page page) {
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        if(null!=user)
+            return &quot;%success&quot;;
+        return &quot;%fail&quot;;
+    }
+    public String loginAjax(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);    
+        User user = userDAO.get(name,password);
+         
+        if(null==user){
+            return &quot;%fail&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;%success&quot;; 
+    }
+    public String category(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int cid = Integer.parseInt(request.getParameter(&quot;cid&quot;));
+         
+        Category c = new CategoryDAO().get(cid);
+        new ProductDAO().fill(c);
+        new ProductDAO().setSaleAndReviewNumber(c.getProducts());      
+         
+        String sort = request.getParameter(&quot;sort&quot;);
+        if(null!=sort){
+        switch(sort){
+            case &quot;review&quot;:
+                Collections.sort(c.getProducts(),new ProductReviewComparator());
+                break;
+            case &quot;date&quot; :
+                Collections.sort(c.getProducts(),new ProductDateComparator());
+                break;
+                 
+            case &quot;saleCount&quot; :
+                Collections.sort(c.getProducts(),new ProductSaleCountComparator());
+                break;
+                 
+            case &quot;price&quot;:
+                Collections.sort(c.getProducts(),new ProductPriceComparator());
+                break;
+                 
+            case &quot;all&quot;:
+                Collections.sort(c.getProducts(),new ProductAllComparator());
+                break;
+            }
+        }
+         
+        request.setAttribute(&quot;c&quot;, c);
+        return &quot;category.jsp&quot;;     
+    }
+     
+    public String search(HttpServletRequest request, HttpServletResponse response, Page page){
+        String keyword = request.getParameter(&quot;keyword&quot;);
+        List&lt;Product&gt; ps= new ProductDAO().search(keyword,0,20);
+        productDAO.setSaleAndReviewNumber(ps);
+        request.setAttribute(&quot;ps&quot;,ps);
+        return &quot;searchResult.jsp&quot;;
+    }
+ 
+    public String buyone(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        int num = Integer.parseInt(request.getParameter(&quot;num&quot;));
+        Product p = productDAO.get(pid);
+        int oiid = 0;
+         
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        boolean found = false;
+        List&lt;OrderItem&gt; ois = orderItemDAO.listByUser(user.getId());
+        for (OrderItem oi : ois) {
+            if(oi.getProduct().getId()==p.getId()){
+                oi.setNumber(oi.getNumber()+num);
+                orderItemDAO.update(oi);
+                found = true;
+                oiid = oi.getId();
+                break;
+            }
+        }      
+ 
+        if(!found){
+            OrderItem oi = new OrderItem();
+            oi.setUser(user);
+            oi.setNumber(num);
+            oi.setProduct(p);
+            orderItemDAO.add(oi);
+            oiid = oi.getId();
+        }
+        return &quot;@forebuy?oiid=&quot;+oiid;
+    }
+}
+</code></pre>
+<h2 id="3、结算页面"><a class="header-anchor" href="#3、结算页面">¶</a>3、结算页面</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v9"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v9">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v9"><a class="header-anchor" href="#步骤-2-模仿和排错-v9">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-界面效果-v5"><a class="header-anchor" href="#步骤-3-界面效果-v5">¶</a>步骤 3 : 界面效果</h3>
+<p><img src="3959.png" alt=""></p>
+<h3 id="步骤-4-ForeServlet-buy"><a class="header-anchor" href="#步骤-4-ForeServlet-buy">¶</a>步骤 4 : ForeServlet.buy()</h3>
+<p>在上个知识点[立即购买]最后，客户端跳转到结算路径： <strong>“@forebuy?oiid=”+oiid;</strong></p>
+<pre><code class="language-http">http://127.0.0.1:8080/tmall/forebuy?oiid=1
+</code></pre>
+<p>导致ForeServlet.buy()方法被调用</p>
+<ol>
+<li>通过getParameterValues获取参数oiid<br>
+为什么这里要用getParameterValues试图获取多个oiid，而不是getParameter仅仅获取一个oiid? 因为根据[购物流程环节与表关系]，结算页面还需要显示在购物车中选中的多条OrderItem数据，所以为了兼容从购物车页面跳转过来的需求，要用getParameterValues获取多个oiid</li>
+<li>准备一个泛型是OrderItem的集合ois</li>
+<li>根据前面步骤获取的oiids，从数据库中取出OrderItem对象，并放入ois集合中</li>
+<li>累计这些ois的价格总数，赋值在total上</li>
+<li>把订单项集合放在session的属性 “ois” 上</li>
+<li>把总价格放在 request的属性 “total” 上</li>
+<li>服务端跳转到buy.jsp</li>
+</ol>
+<p><img src="3961.png" alt=""></p>
+<pre><code class="language-java">public String buy(HttpServletRequest request, HttpServletResponse response, Page page){
+    String[] oiids=request.getParameterValues(&quot;oiid&quot;);
+    List&lt;OrderItem&gt; ois = new ArrayList&lt;&gt;();
+    float total = 0;
+ 
+    for (String strid : oiids) {
+        int oiid = Integer.parseInt(strid);
+        OrderItem oi= orderItemDAO.get(oiid);
+        total +=oi.getProduct().getPromotePrice()*oi.getNumber();
+        ois.add(oi);
+    }
+     
+    request.getSession().setAttribute(&quot;ois&quot;, ois);
+    request.setAttribute(&quot;total&quot;, total);
+    return &quot;buy.jsp&quot;;
+}  
+</code></pre>
+<pre><code class="language-java">package tmall.servlet;
+ 
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+import org.springframework.web.util.HtmlUtils;
+ 
+import tmall.bean.Category;
+import tmall.bean.OrderItem;
+import tmall.bean.Product;
+import tmall.bean.ProductImage;
+import tmall.bean.PropertyValue;
+import tmall.bean.Review;
+import tmall.bean.User;
+import tmall.comparator.ProductAllComparator;
+import tmall.comparator.ProductDateComparator;
+import tmall.comparator.ProductPriceComparator;
+import tmall.comparator.ProductReviewComparator;
+import tmall.comparator.ProductSaleCountComparator;
+import tmall.dao.CategoryDAO;
+import tmall.dao.ProductDAO;
+import tmall.dao.ProductImageDAO;
+import tmall.util.Page;
+ 
+public class ForeServlet extends BaseForeServlet {
+    public String home(HttpServletRequest request, HttpServletResponse response, Page page) {
+        List&lt;Category&gt; cs= new CategoryDAO().list();
+        new ProductDAO().fill(cs);
+        new ProductDAO().fillByRow(cs);
+        request.setAttribute(&quot;cs&quot;, cs);
+        return &quot;home.jsp&quot;;
+    }
+ 
+    public String register(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        System.out.println(name);
+        boolean exist = userDAO.isExist(name);
+         
+        if(exist){
+            request.setAttribute(&quot;msg&quot;, &quot;用户名已经被使用,不能使用&quot;);
+            return &quot;register.jsp&quot;; 
+        }
+         
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        userDAO.add(user);
+         
+        return &quot;@registerSuccess.jsp&quot;; 
+    }  
+    public String login(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        name = HtmlUtils.htmlEscape(name);
+        String password = request.getParameter(&quot;password&quot;);    
+         
+        User user = userDAO.get(name,password);
+          
+        if(null==user){
+            request.setAttribute(&quot;msg&quot;, &quot;账号密码错误&quot;);
+            return &quot;login.jsp&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;@forehome&quot;;
+    }  
+     
+    public String product(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+         
+        List&lt;ProductImage&gt; productSingleImages = productImageDAO.list(p, ProductImageDAO.type_single);
+        List&lt;ProductImage&gt; productDetailImages = productImageDAO.list(p, ProductImageDAO.type_detail);
+        p.setProductSingleImages(productSingleImages);
+        p.setProductDetailImages(productDetailImages);
+         
+        List&lt;PropertyValue&gt; pvs = propertyValueDAO.list(p.getId());      
+     
+        List&lt;Review&gt; reviews = reviewDAO.list(p.getId());
+         
+        productDAO.setSaleAndReviewNumber(p);
+ 
+        request.setAttribute(&quot;reviews&quot;, reviews);
+ 
+        request.setAttribute(&quot;p&quot;, p);
+        request.setAttribute(&quot;pvs&quot;, pvs);
+        return &quot;product.jsp&quot;;      
+    }
+    public String logout(HttpServletRequest request, HttpServletResponse response, Page page) {
+        request.getSession().removeAttribute(&quot;user&quot;);
+        return &quot;@forehome&quot;;
+    }
+ 
+    public String checkLogin(HttpServletRequest request, HttpServletResponse response, Page page) {
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        if(null!=user)
+            return &quot;%success&quot;;
+        return &quot;%fail&quot;;
+    }
+    public String loginAjax(HttpServletRequest request, HttpServletResponse response, Page page) {
+        String name = request.getParameter(&quot;name&quot;);
+        String password = request.getParameter(&quot;password&quot;);    
+        User user = userDAO.get(name,password);
+         
+        if(null==user){
+            return &quot;%fail&quot;;
+        }
+        request.getSession().setAttribute(&quot;user&quot;, user);
+        return &quot;%success&quot;; 
+    }
+    public String category(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int cid = Integer.parseInt(request.getParameter(&quot;cid&quot;));
+         
+        Category c = new CategoryDAO().get(cid);
+        new ProductDAO().fill(c);
+        new ProductDAO().setSaleAndReviewNumber(c.getProducts());      
+         
+        String sort = request.getParameter(&quot;sort&quot;);
+        if(null!=sort){
+        switch(sort){
+            case &quot;review&quot;:
+                Collections.sort(c.getProducts(),new ProductReviewComparator());
+                break;
+            case &quot;date&quot; :
+                Collections.sort(c.getProducts(),new ProductDateComparator());
+                break;
+                 
+            case &quot;saleCount&quot; :
+                Collections.sort(c.getProducts(),new ProductSaleCountComparator());
+                break;
+                 
+            case &quot;price&quot;:
+                Collections.sort(c.getProducts(),new ProductPriceComparator());
+                break;
+                 
+            case &quot;all&quot;:
+                Collections.sort(c.getProducts(),new ProductAllComparator());
+                break;
+            }
+        }
+         
+        request.setAttribute(&quot;c&quot;, c);
+        return &quot;category.jsp&quot;;     
+    }
+     
+    public String search(HttpServletRequest request, HttpServletResponse response, Page page){
+        String keyword = request.getParameter(&quot;keyword&quot;);
+        List&lt;Product&gt; ps= new ProductDAO().search(keyword,0,20);
+        productDAO.setSaleAndReviewNumber(ps);
+        request.setAttribute(&quot;ps&quot;,ps);
+        return &quot;searchResult.jsp&quot;;
+    }
+ 
+    public String buyone(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        int num = Integer.parseInt(request.getParameter(&quot;num&quot;));
+        Product p = productDAO.get(pid);
+        int oiid = 0;
+         
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        boolean found = false;
+        List&lt;OrderItem&gt; ois = orderItemDAO.listByUser(user.getId());
+        for (OrderItem oi : ois) {
+            if(oi.getProduct().getId()==p.getId()){
+                oi.setNumber(oi.getNumber()+num);
+                orderItemDAO.update(oi);
+                found = true;
+                oiid = oi.getId();
+                break;
+            }
+        }      
+ 
+        if(!found){
+            OrderItem oi = new OrderItem();
+            oi.setUser(user);
+            oi.setNumber(num);
+            oi.setProduct(p);
+            orderItemDAO.add(oi);
+            oiid = oi.getId();
+        }
+        return &quot;@forebuy?oiid=&quot;+oiid;
+    }
+ 
+    public String addCart(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+        int num = Integer.parseInt(request.getParameter(&quot;num&quot;));
+         
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        boolean found = false;
+ 
+        List&lt;OrderItem&gt; ois = orderItemDAO.listByUser(user.getId());
+        for (OrderItem oi : ois) {
+            if(oi.getProduct().getId()==p.getId()){
+                oi.setNumber(oi.getNumber()+num);
+                orderItemDAO.update(oi);
+                found = true;
+                break;
+            }
+        }      
+         
+        if(!found){
+            OrderItem oi = new OrderItem();
+            oi.setUser(user);
+            oi.setNumber(num);
+            oi.setProduct(p);
+            orderItemDAO.add(oi);
+        }
+        return &quot;%success&quot;;
+    }
+    public String buy(HttpServletRequest request, HttpServletResponse response, Page page){
+        String[] oiids=request.getParameterValues(&quot;oiid&quot;);
+        List&lt;OrderItem&gt; ois = new ArrayList&lt;&gt;();
+        float total = 0;
+ 
+        for (String strid : oiids) {
+            int oiid = Integer.parseInt(strid);
+            OrderItem oi= orderItemDAO.get(oiid);
+            total +=oi.getProduct().getPromotePrice()*oi.getNumber();
+            ois.add(oi);
+        }
+         
+        request.getSession().setAttribute(&quot;ois&quot;, ois);
+        request.setAttribute(&quot;total&quot;, total);
+        return &quot;buy.jsp&quot;;
+    }  
+}
+</code></pre>
+<h3 id="步骤-5-buy-jsp"><a class="header-anchor" href="#步骤-5-buy-jsp">¶</a>步骤 5 : buy.jsp</h3>
+<p>与 [register.jsp] 相仿，buy.jsp也包含了[header.jsp], [top.jsp], [footer.jsp] 等公共页面。</p>
+<p>中间是结算业务页面 [buyPage.jsp]</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/top.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/cart/buyPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<h3 id="步骤-6-buyPage-jsp"><a class="header-anchor" href="#步骤-6-buyPage-jsp">¶</a>步骤 6 : buyPage.jsp</h3>
+<ol>
+<li>
+<p>从63行到101行 遍历出订单项集合 ois 中的订单项数据<br>
+从[立即购买]跳转到结算页面来只会有一件产品</p>
+</li>
+<li>
+<p>显示总金额</p>
+</li>
+</ol>
+<p><img src="3963.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+&lt;div class=&quot;buyPageDiv&quot;&gt;
+  &lt;form action=&quot;forecreateOrder&quot; method=&quot;post&quot;&gt;
+   
+    &lt;div class=&quot;buyFlow&quot;&gt;
+        &lt;img class=&quot;pull-left&quot; src=&quot;img/site/simpleLogo.png&quot;&gt;
+        &lt;img class=&quot;pull-right&quot; src=&quot;img/site/buyflow.png&quot;&gt;
+        &lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;address&quot;&gt;
+        &lt;div class=&quot;addressTip&quot;&gt;输入收货地址&lt;/div&gt;
+        &lt;div&gt;
+         
+            &lt;table class=&quot;addressTable&quot;&gt;
+                &lt;tr&gt;
+                    &lt;td class=&quot;firstColumn&quot;&gt;详细地址&lt;span class=&quot;redStar&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
+                     
+                    &lt;td&gt;&lt;textarea name=&quot;address&quot; placeholder=&quot;建议您如实填写详细收货地址，例如接到名称，门牌好吗，楼层和房间号等信息&quot;&gt;&lt;/textarea&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;邮政编码&lt;/td&gt;
+                    &lt;td&gt;&lt;input  name=&quot;post&quot; placeholder=&quot;如果您不清楚邮递区号，请填写000000&quot; type=&quot;text&quot;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;收货人姓名&lt;span class=&quot;redStar&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;input  name=&quot;receiver&quot;  placeholder=&quot;长度不超过25个字符&quot; type=&quot;text&quot;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;手机号码 &lt;span class=&quot;redStar&quot;&gt;*&lt;/span&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;input name=&quot;mobile&quot;  placeholder=&quot;请输入11位手机号码&quot; type=&quot;text&quot;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+             
+        &lt;/div&gt;
+ 
+    &lt;/div&gt;
+    &lt;div class=&quot;productList&quot;&gt;
+        &lt;div class=&quot;productListTip&quot;&gt;确认订单信息&lt;/div&gt;
+         
+        &lt;table class=&quot;productListTable&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th colspan=&quot;2&quot; class=&quot;productListTableFirstColumn&quot;&gt;
+                        &lt;img class=&quot;tmallbuy&quot; src=&quot;img/site/tmallbuy.png&quot;&gt;
+                        &lt;a class=&quot;marketLink&quot; href=&quot;#nowhere&quot;&gt;店铺：天猫店铺&lt;/a&gt;
+                        &lt;a class=&quot;wangwanglink&quot; href=&quot;#nowhere&quot;&gt; &lt;span class=&quot;wangwangGif&quot;&gt;&lt;/span&gt; &lt;/a&gt;
+                    &lt;/th&gt;
+                    &lt;th&gt;单价&lt;/th&gt;
+                    &lt;th&gt;数量&lt;/th&gt;
+                    &lt;th&gt;小计&lt;/th&gt;
+                    &lt;th&gt;配送方式&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr class=&quot;rowborder&quot;&gt;
+                    &lt;td  colspan=&quot;2&quot; &gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&quot;productListTableTbody&quot;&gt;
+                &lt;c:forEach items=&quot;${ois}&quot; var=&quot;oi&quot; varStatus=&quot;st&quot; &gt;
+                    &lt;tr class=&quot;orderItemTR&quot;&gt;
+                        &lt;td class=&quot;orderItemFirstTD&quot;&gt;&lt;img class=&quot;orderItemImg&quot; src=&quot;img/productSingle_middle/${oi.product.firstProductImage.id}.jpg&quot;&gt;&lt;/td&gt;
+                        &lt;td class=&quot;orderItemProductInfo&quot;&gt;
+                        &lt;a  href=&quot;foreproduct?pid=${oi.product.id}&quot; class=&quot;orderItemProductLink&quot;&gt;
+                            ${oi.product.name}
+                        &lt;/a&gt;
+                         
+                            &lt;img src=&quot;img/site/creditcard.png&quot; title=&quot;支持信用卡支付&quot;&gt;
+                            &lt;img src=&quot;img/site/7day.png&quot; title=&quot;消费者保障服务,承诺7天退货&quot;&gt;
+                            &lt;img src=&quot;img/site/promise.png&quot; title=&quot;消费者保障服务,承诺如实描述&quot;&gt;
+                         
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                         
+                        &lt;span class=&quot;orderItemProductPrice&quot;&gt;￥&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${oi.product.promotePrice}&quot; minFractionDigits=&quot;2&quot;/&gt;&lt;/span&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                        &lt;span class=&quot;orderItemProductNumber&quot;&gt;${oi.number}&lt;/span&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;&lt;span class=&quot;orderItemUnitSum&quot;&gt;
+                        ￥&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${oi.number*oi.product.promotePrice}&quot; minFractionDigits=&quot;2&quot;/&gt;
+                        &lt;/span&gt;&lt;/td&gt;
+                        &lt;c:if test=&quot;${st.count==1}&quot;&gt;
+                        &lt;td rowspan=&quot;5&quot;  class=&quot;orderItemLastTD&quot;&gt;
+                        &lt;label class=&quot;orderItemDeliveryLabel&quot;&gt;
+                            &lt;input type=&quot;radio&quot; value=&quot;&quot; checked=&quot;checked&quot;&gt;
+                            普通配送
+                        &lt;/label&gt;
+                         
+                        &lt;select class=&quot;orderItemDeliverySelect&quot; class=&quot;form-control&quot;&gt;
+                            &lt;option&gt;快递 免邮费&lt;/option&gt;
+                        &lt;/select&gt;
+ 
+                        &lt;/td&gt;
+                        &lt;/c:if&gt;
+                         
+                    &lt;/tr&gt;
+                &lt;/c:forEach&gt;             
+                 
+            &lt;/tbody&gt;
+             
+        &lt;/table&gt;
+        &lt;div class=&quot;orderItemSumDiv&quot;&gt;
+            &lt;div class=&quot;pull-left&quot;&gt;
+                &lt;span class=&quot;leaveMessageText&quot;&gt;给卖家留言:&lt;/span&gt;
+                &lt;span&gt;
+                    &lt;img class=&quot;leaveMessageImg&quot; src=&quot;img/site/leaveMessage.png&quot;&gt;
+                &lt;/span&gt;
+                &lt;span class=&quot;leaveMessageTextareaSpan&quot;&gt;
+                    &lt;textarea name=&quot;userMessage&quot; class=&quot;leaveMessageTextarea&quot;&gt;&lt;/textarea&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;还可以输入200个字符&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+             
+            &lt;span class=&quot;pull-right&quot;&gt;店铺合计(含运费): ￥&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${total}&quot; minFractionDigits=&quot;2&quot;/&gt;&lt;/span&gt;
+        &lt;/div&gt;
+         
+    &lt;/div&gt;
+ 
+    &lt;div class=&quot;orderItemTotalSumDiv&quot;&gt;
+        &lt;div class=&quot;pull-right&quot;&gt;
+            &lt;span&gt;实付款：&lt;/span&gt;
+            &lt;span class=&quot;orderItemTotalSumSpan&quot;&gt;￥&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${total}&quot; minFractionDigits=&quot;2&quot;/&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+     
+    &lt;div class=&quot;submitOrderDiv&quot;&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;submitOrderButton&quot;&gt;提交订单&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;    
+&lt;/div&gt;
+</code></pre>
+<h2 id="4、加入购物车"><a class="header-anchor" href="#4、加入购物车">¶</a>4、加入购物车</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v10"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v10">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v10"><a class="header-anchor" href="#步骤-2-模仿和排错-v10">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-运行效果-v2"><a class="header-anchor" href="#步骤-3-运行效果-v2">¶</a>步骤 3 : 运行效果</h3>
+<p>在产品页面点击加入购物车的，除了得到像[立即购买运行效果]中在OrderItem表里插入一条数据外，把界面上的<strong>加入购物车</strong>按钮变成灰色并且不可点击</p>
+<p><img src="3896.png" alt=""></p>
+<h3 id="步骤-4-在产品页点击加入购物车"><a class="header-anchor" href="#步骤-4-在产品页点击加入购物车">¶</a>步骤 4 : 在产品页点击加入购物车</h3>
+<p>如果未登录，那么点击加入购物车会弹出[模态登录窗口]，关于这个功能的详细介绍在[模态登录]，在此不做赘述。</p>
+<p>登录之后，点击加入购物车，会使用Ajax一步访问地址</p>
+<pre><code class="language-http">http://127.0.0.1:8080/tmall/foreaddCart?pid=264&amp;num=4
+</code></pre>
+<p>并带上了产品id 264和购买数量4</p>
+<p><img src="3957.png" alt=""></p>
+<h3 id="步骤-5-ForeServlet-addCart"><a class="header-anchor" href="#步骤-5-ForeServlet-addCart">¶</a>步骤 5 : ForeServlet.addCart</h3>
+<p>上一步访问地址/foreaddCart导致ForeServlet.addCart()方法被调用<br>
+addCart()方法和立即购买中的 [ForeServlet.buyone()]步骤做的事情是一样的，区别在于返回不一样</p>
+<ol>
+<li>获取参数pid</li>
+<li>获取参数num</li>
+<li>根据pid获取产品对象p</li>
+<li>从session中获取用户对象user</li>
+</ol>
+<p>接下来就是新增订单项OrderItem， 新增订单项要考虑两个情况<br>
+a. 如果已经存在这个产品对应的OrderItem，并且还没有生成订单，即还在购物车中。 那么就应该在对应的OrderItem基础上，调整数量<br>
+a.1 基于用户对象user，查询没有生成订单的订单项集合<br>
+a.2 遍历这个集合<br>
+a.3 如果产品是一样的话，就进行数量追加<br>
+a.4 获取这个订单项的 id</p>
+<p>b. 如果不存在对应的OrderItem,那么就新增一个订单项OrderItem<br>
+b.1 生成新的订单项<br>
+b.2 设置数量，用户和产品<br>
+b.3 插入到数据库<br>
+b.4 获取这个订单项的 id</p>
+<p>与[ForeServlet.buyone()] 客户端跳转到[结算页面]不同的是， 最后返回字符串&quot;success&quot;，表示添加成功</p>
+<pre><code class="language-java">public String addCart(HttpServletRequest request, HttpServletResponse response, Page page) {
+        int pid = Integer.parseInt(request.getParameter(&quot;pid&quot;));
+        Product p = productDAO.get(pid);
+        int num = Integer.parseInt(request.getParameter(&quot;num&quot;));
+         
+        User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+        boolean found = false;
+ 
+        List&lt;OrderItem&gt; ois = orderItemDAO.listByUser(user.getId());
+        for (OrderItem oi : ois) {
+            if(oi.getProduct().getId()==p.getId()){
+                oi.setNumber(oi.getNumber()+num);
+                orderItemDAO.update(oi);
+                found = true;
+                break;
+            }
+        }      
+         
+        if(!found){
+            OrderItem oi = new OrderItem();
+            oi.setUser(user);
+            oi.setNumber(num);
+            oi.setProduct(p);
+            orderItemDAO.add(oi);
+        }
+        return &quot;%success&quot;;
+    }  
+</code></pre>
+<h2 id="5、查看购物车页面"><a class="header-anchor" href="#5、查看购物车页面">¶</a>5、查看购物车页面</h2>
+<h3 id="步骤-1-先运行，看到效果，再学习-v11"><a class="header-anchor" href="#步骤-1-先运行，看到效果，再学习-v11">¶</a>步骤 1 : 先运行，看到效果，再学习</h3>
+<p>老规矩，先下载右上角的可运行项目，配置运行起来，确认可用之后，再学习做了哪些步骤以达到这样的效果。</p>
+<h3 id="步骤-2-模仿和排错-v11"><a class="header-anchor" href="#步骤-2-模仿和排错-v11">¶</a>步骤 2 : 模仿和排错</h3>
+<p>在确保可运行项目能够正确无误地运行之后，再严格照着教程的步骤，对代码模仿一遍。<br>
+模仿过程难免代码有出入，导致无法得到期望的运行结果，此时此刻通过比较<strong>正确答案</strong> ( 可运行项目 ) 和自己的代码，来定位问题所在。<br>
+采用这种方式，<strong>学习有效果，排错有效率</strong>，可以较为明显地提升学习速度，跨过学习路上的各个槛。</p>
+<p>推荐使用diffmerge软件，进行文件夹比较。把你自己做的项目文件夹，和我的可运行项目文件夹进行比较。<br>
+这个软件很牛逼的，可以知道文件夹里哪两个文件不对，并且很明显地标记出来<br>
+这里提供了绿色安装和使用教程：[diffmerge 下载和使用教程]</p>
+<h3 id="步骤-3-界面效果-v6"><a class="header-anchor" href="#步骤-3-界面效果-v6">¶</a>步骤 3 : 界面效果</h3>
+<p><img src="3964.png" alt=""></p>
+<h3 id="步骤-4-ForeServlet-cart"><a class="header-anchor" href="#步骤-4-ForeServlet-cart">¶</a>步骤 4 : ForeServlet.cart()</h3>
+<p>访问地址/forecart导致ForeServlet.cart()方法被调用</p>
+<ol>
+<li>通过session获取当前用户<br>
+所以一定要登录才访问，否则拿不到用户对象</li>
+<li>获取被这个用户关联的订单项集合 ois</li>
+<li>把ois放在request中</li>
+<li>服务端跳转到cart.jsp</li>
+</ol>
+<pre><code class="language-java">public String cart(HttpServletRequest request, HttpServletResponse response, Page page) {
+    User user =(User) request.getSession().getAttribute(&quot;user&quot;);
+    List&lt;OrderItem&gt; ois = orderItemDAO.listByUser(user.getId());
+    request.setAttribute(&quot;ois&quot;, ois);
+    return &quot;cart.jsp&quot;;
+}  
+</code></pre>
+<h3 id="步骤-5-cart-jsp"><a class="header-anchor" href="#步骤-5-cart-jsp">¶</a>步骤 5 : cart.jsp</h3>
+<p>与 [register.jsp] 相仿，cart.jsp也包含了[header.jsp], [top.jsp], [simpleSearch.jsp]，</p>
+<p>[footer.jsp] 等公共页面。<br>
+中间是产品业务页面 [cartPage.jsp]</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/header.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/top.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/simpleSearch.jsp&quot;%&gt;
+ 
+&lt;%@include file=&quot;include/cart/cartPage.jsp&quot;%&gt;
+&lt;%@include file=&quot;include/footer.jsp&quot;%&gt;
+</code></pre>
+<h3 id="步骤-6-cartPage-jsp"><a class="header-anchor" href="#步骤-6-cartPage-jsp">¶</a>步骤 6 : cartPage.jsp</h3>
+<ol>
+<li>从238行到282行，遍历订单项集合ois<br>
+没了~</li>
+</ol>
+<p><img src="3968.png" alt=""></p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot; isELIgnored=&quot;false&quot;%&gt;
+     
+&lt;script&gt;
+var deleteOrderItem = false;
+var deleteOrderItemid = 0;
+$(function(){
+ 
+    $(&quot;a.deleteOrderItem&quot;).click(function(){
+        deleteOrderItem = false;
+        var oiid = $(this).attr(&quot;oiid&quot;)
+        deleteOrderItemid = oiid;
+        $(&quot;#deleteConfirmModal&quot;).modal('show');   
+    });
+    $(&quot;button.deleteConfirmButton&quot;).click(function(){
+        deleteOrderItem = true;
+        $(&quot;#deleteConfirmModal&quot;).modal('hide');
+    });
+     
+    $('#deleteConfirmModal').on('hidden.bs.modal', function (e) {
+        if(deleteOrderItem){
+            var page=&quot;foredeleteOrderItem&quot;;
+            $.post(
+                    page,
+                    {&quot;oiid&quot;:deleteOrderItemid},
+                    function(result){
+                        if(&quot;success&quot;==result){
+                            $(&quot;tr.cartProductItemTR[oiid=&quot;+deleteOrderItemid+&quot;]&quot;).hide();
+                        }
+                        else{
+                            location.href=&quot;login.jsp&quot;;
+                        }
+                    }
+                );
+             
+        }
+    }) 
+     
+    $(&quot;img.cartProductItemIfSelected&quot;).click(function(){
+        var selectit = $(this).attr(&quot;selectit&quot;)
+        if(&quot;selectit&quot;==selectit){
+            $(this).attr(&quot;src&quot;,&quot;img/site/cartNotSelected.png&quot;);
+            $(this).attr(&quot;selectit&quot;,&quot;false&quot;)
+            $(this).parents(&quot;tr.cartProductItemTR&quot;).css(&quot;background-color&quot;,&quot;#fff&quot;);
+        }
+        else{
+            $(this).attr(&quot;src&quot;,&quot;img/site/cartSelected.png&quot;);
+            $(this).attr(&quot;selectit&quot;,&quot;selectit&quot;)
+            $(this).parents(&quot;tr.cartProductItemTR&quot;).css(&quot;background-color&quot;,&quot;#FFF8E1&quot;);
+        }
+        syncSelect();
+        syncCreateOrderButton();
+        calcCartSumPriceAndNumber();
+    });
+    $(&quot;img.selectAllItem&quot;).click(function(){
+        var selectit = $(this).attr(&quot;selectit&quot;)
+        if(&quot;selectit&quot;==selectit){
+            $(&quot;img.selectAllItem&quot;).attr(&quot;src&quot;,&quot;img/site/cartNotSelected.png&quot;);
+            $(&quot;img.selectAllItem&quot;).attr(&quot;selectit&quot;,&quot;false&quot;)
+            $(&quot;.cartProductItemIfSelected&quot;).each(function(){
+                $(this).attr(&quot;src&quot;,&quot;img/site/cartNotSelected.png&quot;);
+                $(this).attr(&quot;selectit&quot;,&quot;false&quot;);
+                $(this).parents(&quot;tr.cartProductItemTR&quot;).css(&quot;background-color&quot;,&quot;#fff&quot;);
+            });        
+        }
+        else{
+            $(&quot;img.selectAllItem&quot;).attr(&quot;src&quot;,&quot;img/site/cartSelected.png&quot;);
+            $(&quot;img.selectAllItem&quot;).attr(&quot;selectit&quot;,&quot;selectit&quot;)
+            $(&quot;.cartProductItemIfSelected&quot;).each(function(){
+                $(this).attr(&quot;src&quot;,&quot;img/site/cartSelected.png&quot;);
+                $(this).attr(&quot;selectit&quot;,&quot;selectit&quot;);
+                $(this).parents(&quot;tr.cartProductItemTR&quot;).css(&quot;background-color&quot;,&quot;#FFF8E1&quot;);
+            });            
+        }
+        syncCreateOrderButton();
+        calcCartSumPriceAndNumber();
+         
+    });
+     
+    $(&quot;.orderItemNumberSetting&quot;).keyup(function(){
+        var pid=$(this).attr(&quot;pid&quot;);
+        var stock= $(&quot;span.orderItemStock[pid=&quot;+pid+&quot;]&quot;).text();
+        var price= $(&quot;span.orderItemPromotePrice[pid=&quot;+pid+&quot;]&quot;).text();
+         
+        var num= $(&quot;.orderItemNumberSetting[pid=&quot;+pid+&quot;]&quot;).val();
+        num = parseInt(num);
+        if(isNaN(num))
+            num= 1;
+        if(num&lt;=0)
+            num = 1;
+        if(num&gt;stock)
+            num = stock;
+         
+        syncPrice(pid,num,price);
+    });
+ 
+    $(&quot;.numberPlus&quot;).click(function(){
+         
+        var pid=$(this).attr(&quot;pid&quot;);
+        var stock= $(&quot;span.orderItemStock[pid=&quot;+pid+&quot;]&quot;).text();
+        var price= $(&quot;span.orderItemPromotePrice[pid=&quot;+pid+&quot;]&quot;).text();
+        var num= $(&quot;.orderItemNumberSetting[pid=&quot;+pid+&quot;]&quot;).val();
+ 
+        num++;
+        if(num&gt;stock)
+            num = stock;
+        syncPrice(pid,num,price);
+    });
+    $(&quot;.numberMinus&quot;).click(function(){
+        var pid=$(this).attr(&quot;pid&quot;);
+        var stock= $(&quot;span.orderItemStock[pid=&quot;+pid+&quot;]&quot;).text();
+        var price= $(&quot;span.orderItemPromotePrice[pid=&quot;+pid+&quot;]&quot;).text();
+         
+        var num= $(&quot;.orderItemNumberSetting[pid=&quot;+pid+&quot;]&quot;).val();
+        --num;
+        if(num&lt;=0)
+            num=1;
+        syncPrice(pid,num,price);
+    });
+     
+    $(&quot;button.createOrderButton&quot;).click(function(){
+        var params = &quot;&quot;;
+        $(&quot;.cartProductItemIfSelected&quot;).each(function(){
+            if(&quot;selectit&quot;==$(this).attr(&quot;selectit&quot;)){
+                var oiid = $(this).attr(&quot;oiid&quot;);
+                params += &quot;&amp;oiid=&quot;+oiid;
+            }
+        });
+        params = params.substring(1);
+        location.href=&quot;forebuy?&quot;+params;
+    });
+     
+})
+ 
+function syncCreateOrderButton(){
+    var selectAny = false;
+    $(&quot;.cartProductItemIfSelected&quot;).each(function(){
+        if(&quot;selectit&quot;==$(this).attr(&quot;selectit&quot;)){
+            selectAny = true;
+        }
+    });
+     
+    if(selectAny){
+        $(&quot;button.createOrderButton&quot;).css(&quot;background-color&quot;,&quot;#C40000&quot;);
+        $(&quot;button.createOrderButton&quot;).removeAttr(&quot;disabled&quot;);
+    }
+    else{
+        $(&quot;button.createOrderButton&quot;).css(&quot;background-color&quot;,&quot;#AAAAAA&quot;);
+        $(&quot;button.createOrderButton&quot;).attr(&quot;disabled&quot;,&quot;disabled&quot;);     
+    }
+         
+}
+function syncSelect(){
+    var selectAll = true;
+    $(&quot;.cartProductItemIfSelected&quot;).each(function(){
+        if(&quot;false&quot;==$(this).attr(&quot;selectit&quot;)){
+            selectAll = false;
+        }
+    });
+     
+    if(selectAll)
+        $(&quot;img.selectAllItem&quot;).attr(&quot;src&quot;,&quot;img/site/cartSelected.png&quot;);
+    else
+        $(&quot;img.selectAllItem&quot;).attr(&quot;src&quot;,&quot;img/site/cartNotSelected.png&quot;);
+     
+}
+function calcCartSumPriceAndNumber(){
+    var sum = 0;
+    var totalNumber = 0;
+    $(&quot;img.cartProductItemIfSelected[selectit='selectit']&quot;).each(function(){
+        var oiid = $(this).attr(&quot;oiid&quot;);
+        var price =$(&quot;.cartProductItemSmallSumPrice[oiid=&quot;+oiid+&quot;]&quot;).text();
+        price = price.replace(/,/g, &quot;&quot;);
+        price = price.replace(/￥/g, &quot;&quot;);
+        sum += new Number(price);  
+         
+        var num =$(&quot;.orderItemNumberSetting[oiid=&quot;+oiid+&quot;]&quot;).val();
+        totalNumber += new Number(num);
+         
+    });
+     
+    $(&quot;span.cartSumPrice&quot;).html(&quot;￥&quot;+formatMoney(sum));
+    $(&quot;span.cartTitlePrice&quot;).html(&quot;￥&quot;+formatMoney(sum));
+    $(&quot;span.cartSumNumber&quot;).html(totalNumber);
+}
+function syncPrice(pid,num,price){
+    $(&quot;.orderItemNumberSetting[pid=&quot;+pid+&quot;]&quot;).val(num);
+    var cartProductItemSmallSumPrice = formatMoney(num*price);
+    $(&quot;.cartProductItemSmallSumPrice[pid=&quot;+pid+&quot;]&quot;).html(&quot;￥&quot;+cartProductItemSmallSumPrice);
+    calcCartSumPriceAndNumber();
+     
+    var page = &quot;forechangeOrderItem&quot;;
+    $.post(
+            page,
+            {&quot;pid&quot;:pid,&quot;number&quot;:num},
+            function(result){
+                if(&quot;success&quot;!=result){
+                    location.href=&quot;login.jsp&quot;;
+                }
+            }
+        );
+ 
+}
+&lt;/script&gt;
+ 
+&lt;title&gt;购物车&lt;/title&gt;
+&lt;div class=&quot;cartDiv&quot;&gt;
+    &lt;div class=&quot;cartTitle pull-right&quot;&gt;
+        &lt;span&gt;已选商品  (不含运费)&lt;/span&gt;
+        &lt;span class=&quot;cartTitlePrice&quot;&gt;￥0.00&lt;/span&gt;
+        &lt;button class=&quot;createOrderButton&quot; disabled=&quot;disabled&quot;&gt;结 算&lt;/button&gt;
+    &lt;/div&gt;
+     
+    &lt;div class=&quot;cartProductList&quot;&gt;
+        &lt;table class=&quot;cartProductTable&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th class=&quot;selectAndImage&quot;&gt;
+                            &lt;img selectit=&quot;false&quot; class=&quot;selectAllItem&quot; src=&quot;img/site/cartNotSelected.png&quot;&gt;              
+                    全选
+                     
+                    &lt;/th&gt;
+                    &lt;th&gt;商品信息&lt;/th&gt;
+                    &lt;th&gt;单价&lt;/th&gt;
+                    &lt;th&gt;数量&lt;/th&gt;
+                    &lt;th width=&quot;120px&quot;&gt;金额&lt;/th&gt;
+                    &lt;th class=&quot;operation&quot;&gt;操作&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;c:forEach items=&quot;${ois }&quot; var=&quot;oi&quot;&gt;
+                    &lt;tr oiid=&quot;${oi.id}&quot; class=&quot;cartProductItemTR&quot;&gt;
+                        &lt;td&gt;
+                            &lt;img selectit=&quot;false&quot; oiid=&quot;${oi.id}&quot; class=&quot;cartProductItemIfSelected&quot; src=&quot;img/site/cartNotSelected.png&quot;&gt;
+                            &lt;a style=&quot;display:none&quot; href=&quot;#nowhere&quot;&gt;&lt;img src=&quot;img/site/cartSelected.png&quot;&gt;&lt;/a&gt;
+                            &lt;img class=&quot;cartProductImg&quot;  src=&quot;img/productSingle_middle/${oi.product.firstProductImage.id}.jpg&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;cartProductLinkOutDiv&quot;&gt;
+                                &lt;a href=&quot;foreproduct?pid=${oi.product.id}&quot; class=&quot;cartProductLink&quot;&gt;${oi.product.name}&lt;/a&gt;
+                                &lt;div class=&quot;cartProductLinkInnerDiv&quot;&gt;
+                                    &lt;img src=&quot;img/site/creditcard.png&quot; title=&quot;支持信用卡支付&quot;&gt;
+                                    &lt;img src=&quot;img/site/7day.png&quot; title=&quot;消费者保障服务,承诺7天退货&quot;&gt;
+                                    &lt;img src=&quot;img/site/promise.png&quot; title=&quot;消费者保障服务,承诺如实描述&quot;&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                             
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;span class=&quot;cartProductItemOringalPrice&quot;&gt;￥${oi.product.orignalPrice}&lt;/span&gt;
+                            &lt;span  class=&quot;cartProductItemPromotionPrice&quot;&gt;￥${oi.product.promotePrice}&lt;/span&gt;
+                             
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                         
+                            &lt;div class=&quot;cartProductChangeNumberDiv&quot;&gt;
+                                &lt;span class=&quot;hidden orderItemStock &quot; pid=&quot;${oi.product.id}&quot;&gt;${oi.product.stock}&lt;/span&gt;
+                                &lt;span class=&quot;hidden orderItemPromotePrice &quot; pid=&quot;${oi.product.id}&quot;&gt;${oi.product.promotePrice}&lt;/span&gt;
+                                &lt;a  pid=&quot;${oi.product.id}&quot; class=&quot;numberMinus&quot; href=&quot;#nowhere&quot;&gt;-&lt;/a&gt;
+                                &lt;input pid=&quot;${oi.product.id}&quot; oiid=&quot;${oi.id}&quot; class=&quot;orderItemNumberSetting&quot; autocomplete=&quot;off&quot; value=&quot;${oi.number}&quot;&gt;
+                                &lt;a  stock=&quot;${oi.product.stock}&quot; pid=&quot;${oi.product.id}&quot; class=&quot;numberPlus&quot; href=&quot;#nowhere&quot;&gt;+&lt;/a&gt;
+                            &lt;/div&gt;                   
+                         
+                         &lt;/td&gt;
+                        &lt;td &gt;
+                            &lt;span class=&quot;cartProductItemSmallSumPrice&quot; oiid=&quot;${oi.id}&quot; pid=&quot;${oi.product.id}&quot; &gt;
+                            ￥&lt;fmt:formatNumber type=&quot;number&quot; value=&quot;${oi.product.promotePrice*oi.number}&quot; minFractionDigits=&quot;2&quot;/&gt;
+                            &lt;/span&gt;
+                         
+                        &lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;a class=&quot;deleteOrderItem&quot; oiid=&quot;${oi.id}&quot;  href=&quot;#nowhere&quot;&gt;删除&lt;/a&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/c:forEach&gt;             
+            &lt;/tbody&gt;
+         
+        &lt;/table&gt;
+    &lt;/div&gt;
+     
+    &lt;div class=&quot;cartFoot&quot;&gt;
+        &lt;img selectit=&quot;false&quot; class=&quot;selectAllItem&quot; src=&quot;img/site/cartNotSelected.png&quot;&gt;
+        &lt;span&gt;全选&lt;/span&gt;
+&lt;!--         &lt;a href=&quot;#&quot;&gt;删除&lt;/a&gt; --&gt;
+         
+        &lt;div class=&quot;pull-right&quot;&gt;
+            &lt;span&gt;已选商品 &lt;span class=&quot;cartSumNumber&quot; &gt;0&lt;/span&gt; 件&lt;/span&gt;
+             
+            &lt;span&gt;合计 (不含运费): &lt;/span&gt;
+            &lt;span class=&quot;cartSumPrice&quot; &gt;￥0.00&lt;/span&gt;
+            &lt;button class=&quot;createOrderButton&quot; disabled=&quot;disabled&quot; &gt;结  算&lt;/button&gt;
+        &lt;/div&gt;
+         
+    &lt;/div&gt;
+     
+&lt;/div&gt;
+</code></pre>

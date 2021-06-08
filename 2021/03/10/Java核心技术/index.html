@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://yoursite.com/2021/03/10/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/14-2.png">
 <meta property="og:image" content="http://yoursite.com/2021/03/10/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/14-3.png">
 <meta property="article:published_time" content="2021-03-10T01:24:26.000Z">
-<meta property="article:modified_time" content="2021-03-23T09:18:22.164Z">
+<meta property="article:modified_time" content="2021-03-31T02:46:41.130Z">
 <meta property="article:author" content="潇 卟 甸">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="编程">
@@ -534,7 +534,7 @@
 <p>数组是java语言内置的数据类型，他是一个线性的序列，所有可以快速访问其他的元素，数组和其他语言不同，当你创建了一个数组时，他的容量是不变的，而且在生命周期也是不能改变的，还有JAVA数组会做边界检查，如果发现有越界现象，会报RuntimeException异常错误，当然检查边界会以效率为代价。</p>
 <h3 id="二、集合"><a class="header-anchor" href="#二、集合">¶</a>二、集合</h3>
 <p>**JAVA还提供其他集合，list，map，set，**他们处理对象的时候就好像这些对象没有自己的类型一样，而是直接归根于Object，这样只需要创建一个集合，把对象放进去，取出时转换成自己的类型就行了。</p>
-<h3 id="三、数组和集合的区别zz3q23q"><a class="header-anchor" href="#三、数组和集合的区别zz3q23q">¶</a>三、数组和集合的区别zz3q23q</h3>
+<h3 id="三、数组和集合的区别"><a class="header-anchor" href="#三、数组和集合的区别">¶</a>三、数组和集合的区别</h3>
 <p><font color="red">一、数组声明了它容纳的元素的类型，而集合不声明。</font></p>
 <p><font color="red">二、数组是静态的，一个数组实例具有固定的大小，一旦创建了就无法改变容量了。而集合是可以动态扩展容量，可以根据需要动态改变大小，集合提供更多的成员方法，能满足更多的需求。</font></p>
 <p><font color="red">三、数组的存放的类型只能是一种（基本类型/引用类型）,集合存放的类型可以不是一种(不加泛型时添加的类型是Object)。</font></p>
@@ -589,9 +589,7 @@
 <p>是哈希表实现的,HashSet中的数据是无序的，可以放入null，但只能放入一个null，两者中的值都不能重复，因为HashSet的底层实现是HashMap，但是HashSet只使用了HashMap的key来存取数据所以HashSet存的数据不能重复。</p>
 <p><font color="red">HashSet要求放入的对象必须实现HashCode()方法，放入的对象，是以hashcode码作为标识的，而具有相同内容的 String对象，hashcode是一样，所以放入的内容不能重复。但是同一个类的对象可以放入不同的实例 。</font></p>
 <h3 id="三、Map接口"><a class="header-anchor" href="#三、Map接口">¶</a><strong>三、Map接口</strong></h3>
-<p><font color="red"><strong>Map没有继承Collection接口</strong></font> ， Map 提供 key 到 value 的映射。<font color="red"> <strong>一个Map中不能包含相同的key，每个key只能映射一个value。</strong></font> Map 接口提供 3 种集合的视图， Map 的内容可以被当作一组 key 集合，一组 value 集合，或者一组 key-value 映射。<br>
-**<br>
-**</p>
+<p><font color="red"><strong>Map没有继承Collection接口</strong></font> ， Map 提供 key 到 value 的映射。<font color="red"> <strong>一个Map中不能包含相同的key，每个key只能映射一个value。</strong></font> Map 接口提供 3 种集合的视图， Map 的内容可以被当作一组 key 集合，一组 value 集合，或者一组 key-value 映射。</p>
 <p><strong>Hashtable类</strong><br>
 Hashtable继承Map接口，实现一个key-value映射的哈希表。<font color="red"><strong>任何非空（non-null）的对象都可作为key或者value。</strong></font><br>
 　　添加数据使用put(key, value)，取出数据使用get(key)，这两个基本操作的时间开销为常数。</p>
@@ -699,7 +697,7 @@ WeakHashMap是一种改进的HashMap，它对key实行“弱引用”，如果�
 <!-- 修改时间 -->
 <li>
   <strong>修改时间： </strong>
-  2021年03月23日 - 17时03分
+  2021年03月31日 - 10时03分
 </li>
 
 <!-- 引用链接 -->
@@ -794,6 +792,10 @@ clipboard.on("success", function(target) {
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2021/04/14/Spring%E5%AE%9E%E6%88%98%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89/" rel="prev" title="Spring实战">
+                Spring实战 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -878,7 +880,7 @@ clipboard.on("success", function(target) {
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -889,7 +891,7 @@ clipboard.on("success", function(target) {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -912,7 +914,7 @@ clipboard.on("success", function(target) {
 				<div class="widget-wrap">
 					<div id="myCanvasContainer" class="widget tagcloud">
 						<canvas width="250" height="250" id="resCanvas" style="width=100%">
-							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%AE%9E%E8%B7%B5/" rel="tag">Java实践</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E7%BA%A7/" rel="tag">中级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E4%BB%A3%E7%A0%81/" rel="tag">源代码</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/" rel="tag">电子书</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">4</span></li></ul>
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%AE%9E%E8%B7%B5/" rel="tag">Java实践</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E7%BA%A7/" rel="tag">中级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E4%BB%A3%E7%A0%81/" rel="tag">源代码</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/" rel="tag">电子书</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">4</span></li></ul>
 						</canvas>
 					</div>
 				</div>
@@ -936,23 +938,23 @@ clipboard.on("success", function(target) {
 				
 				
 					<li>
+					<a href="/2021/06/04/%E5%B0%9A%E7%A1%85%E8%B0%B7-MySQL%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/" title="尚硅谷-MySQL核心技术" target="_blank">尚硅谷-MySQL核心技术</a>
+					</li>
+				
+					<li>
+					<a href="/2021/04/16/%E5%B0%9A%E7%A1%85%E8%B0%B7-Java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" title="尚硅谷_Java核心基础" target="_blank">尚硅谷_Java核心基础</a>
+					</li>
+				
+					<li>
+					<a href="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/" title="Spring Boot实战" target="_blank">Spring Boot实战</a>
+					</li>
+				
+					<li>
+					<a href="/2021/04/14/Spring%E5%AE%9E%E6%88%98%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89/" title="Spring实战" target="_blank">Spring实战</a>
+					</li>
+				
+					<li>
 					<a href="/2021/03/10/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/" title="Java核心技术（卷一）" target="_blank">Java核心技术（卷一）</a>
-					</li>
-				
-					<li>
-					<a href="/2021/03/10/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%EF%BC%88%E5%8D%B7%E4%BA%8C%EF%BC%89/" title="Java核心技术（卷二）" target="_blank">Java核心技术（卷二）</a>
-					</li>
-				
-					<li>
-					<a href="/2020/09/22/%E5%B7%A5%E5%85%B7%E5%92%8C%E4%B8%AD%E9%97%B4%E4%BB%B6%E3%80%90HOW2J%E3%80%91/" title="工具和中间件【HOW2J】" target="_blank">工具和中间件【HOW2J】</a>
-					</li>
-				
-					<li>
-					<a href="/2020/09/08/Java%E6%A1%86%E6%9E%B6%E3%80%90HOW2J%E3%80%91/" title="Java框架【HOW2J】" target="_blank">Java框架【HOW2J】</a>
-					</li>
-				
-					<li>
-					<a href="/2020/08/21/J2EE%E3%80%90HOW2J%E3%80%91/" title="J2EE【HOW2J】" target="_blank">J2EE【HOW2J】</a>
 					</li>
 				
 				</ul>
@@ -1265,7 +1267,7 @@ if(canvas.getContext){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录："><span class="nav-text">目录：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组和集合的区别"><span class="nav-text">数组和集合的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组和集合的定义"><span class="nav-text">数组和集合的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、数组"><span class="nav-text">一、数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、集合"><span class="nav-text">二、集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、数组和集合的区别zz3q23q"><span class="nav-text">三、数组和集合的区别zz3q23q</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合体系结构"><span class="nav-text">集合体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、List接口"><span class="nav-text">一、List接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Set接口"><span class="nav-text">二、Set接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Map接口"><span class="nav-text">三、Map接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录："><span class="nav-text">目录：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组和集合的区别"><span class="nav-text">数组和集合的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组和集合的定义"><span class="nav-text">数组和集合的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、数组"><span class="nav-text">一、数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、集合"><span class="nav-text">二、集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、数组和集合的区别"><span class="nav-text">三、数组和集合的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合体系结构"><span class="nav-text">集合体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、List接口"><span class="nav-text">一、List接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Set接口"><span class="nav-text">二、Set接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Map接口"><span class="nav-text">三、Map接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>

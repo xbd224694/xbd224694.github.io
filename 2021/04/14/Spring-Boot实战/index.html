@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,编程,源代码,电子书," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第一版，全书共202页。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot实战">
+<meta property="og:url" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/index.html">
+<meta property="og:site_name" content="伶仃浩瀚">
+<meta property="og:description" content="第一版，全书共202页。">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/1-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/2-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/3-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/3-2.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/4-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/5-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/6-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/6-2.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/7-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/7-2.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/8-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/9-1.png">
+<meta property="article:published_time" content="2021-04-14T09:01:54.000Z">
+<meta property="article:modified_time" content="2021-04-15T03:56:24.797Z">
+<meta property="article:author" content="潇 卟 甸">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="源代码">
+<meta property="article:tag" content="电子书">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/1-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/04/14/Spring-Boot实战/"/>
+
+
+
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <title>Spring Boot实战 | 伶仃浩瀚</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://xbd224694.github.io" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">伶仃浩瀚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="潇 卟 甸">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伶仃浩瀚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spring Boot实战</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2021-04-14T17:01:54+08:00">
+                2021-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-Boot%E5%AE%9E%E6%88%98/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring-Boot实战</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/" class="leancloud_visitors" data-flag-title="Spring Boot实战">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+	 <span> ℃ </span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>第一版，全书共202页。</p>
+<a id="more"></a>
+<p>电子书：<a href="https://wws.lanzous.com/b01ca8wla" target="_blank" rel="noopener">https://wws.lanzous.com/b01ca8wla</a><br>
+密码:frzl</p>
+<h1 id="目录："><a class="header-anchor" href="#目录：">¶</a>目录：</h1>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/1-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/2-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/3-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/3-2.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/4-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/5-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/6-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/6-2.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/7-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/7-2.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/8-1.png" alt></p>
+<p><img src="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/9-1.png" alt></p>
+<h1 id="第一章-入-门"><a class="header-anchor" href="#第一章-入-门">¶</a>第一章 入 门</h1>
+<p>本章内容<br>
+  Spring Boot简化Spring应用程序开发<br>
+  Spring Boot的基本特性<br>
+  Spring Boot工作区的设置</p>
+<h2 id="1-1-Spring-风云再起"><a class="header-anchor" href="#1-1-Spring-风云再起">¶</a>1.1 Spring 风云再起</h2>
+<p>通过依赖注入和面向切面编程，用简单的Java对象（Plain Old Java Object，POJO）实现了EJB的功能。虽然Spring的组件代码是轻量级的，但它的配置却是重量级的。一开始，Spring用XML配置，而且是很多XML配置。Spring 2.5引入了基于注解的组件扫描，这消除了大量针对应用程序自身组件的显式XML配置。Spring 3.0引入了基于Java的配置，这是一种类型安全的可重构配置方式，可以代替XML。</p>
+<h3 id="1-1-1-重新认识-Spring"><a class="header-anchor" href="#1-1-1-重新认识-Spring">¶</a>1.1.1 重新认识 Spring</h3>
+<p>假设你受命用Spring开发一个简单的Hello World Web应用程序。<br>
+  一个项目结构，其中有一个包含必要依赖的Maven或者Gradle构建文件，最起码要有Spring<br>
+MVC和Servlet API这些依赖。<br>
+  一个web.xml文件（或者一个 WebApplicationInitializer 实现），其中声明了Spring<br>
+的 DispatcherServlet 。<br>
+  一个启用了Spring MVC的Spring配置。<br>
+  一个控制器类，以“Hello World”响应HTTP请求。<br>
+  一个用于部署应用程序的Web应用服务器，比如Tomcat。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">代码清单<span class="number">1</span><span class="number">-1</span> 一个完整的基于Groovy的Spring应用程序</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> &#123;</span></span><br><span class="line"></span><br><span class="line">  <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line">  <span class="keyword">def</span> hello() &#123;</span><br><span class="line">    <span class="string">"Hello World"</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-1-2-Spring-Boot-精要"><a class="header-anchor" href="#1-1-2-Spring-Boot-精要">¶</a>1.1.2 Spring Boot 精要</h3>
+<p>Spring Boot将很多魔法带入了Spring应用程序的开发之中，其中最重要的是以下四个核心。<br>
+  自动配置：针对很多Spring应用程序常见的应用功能，Spring Boot能自动提供相关配置。<br>
+  起步依赖：告诉Spring Boot需要什么功能，它就能引入需要的库。<br>
+  命令行界面：这是Spring Boot的可选特性，借此你只需写代码就能完成完整的应用程序，无需传统项目构建。<br>
+  Actuator：让你能够深入运行中的Spring Boot应用程序，一探究竟。</p>
+<h4 id="1-自动配置"><a class="header-anchor" href="#1-自动配置">¶</a>1. 自动配置</h4>
+<p>Spring Boot会为这些常见配置场景进行自动配置。如果Spring Boot在应用程序的Classpath里发现H2数据库的库，那么它就自动配置一个嵌入式H2数据库。</p>
+<h4 id="2-起步依赖"><a class="header-anchor" href="#2-起步依赖">¶</a>2. 起步依赖</h4>
+<p>它会根据依赖传递把其他所需依赖引入项目里</p>
+<h4 id="3-命令行界面"><a class="header-anchor" href="#3-命令行界面">¶</a>3. 命令行界面</h4>
+<p>Spring Boot CLI让只写代码即可实现应用程序成为可能。</p>
+<h4 id="4-Actuator"><a class="header-anchor" href="#4-Actuator">¶</a>4. Actuator</h4>
+<p>安装了Actuator就能窥探应用程序的内部情况了，包括如下细节：</p>
+<p>  Spring应用程序上下文里配置的Bean</p>
+<p>  Spring Boot的自动配置做的决策<br>
+  应用程序取到的环境变量、系统属性、配置属性和命令行参数<br>
+  应用程序里线程的当前状态<br>
+  应用程序最近处理过的HTTP请求的追踪情况<br>
+  各种和内存用量、垃圾回收、Web请求以及数据源用量相关的指标</p>
+<h3 id="1-1-3-Spring-Boot-不是什么"><a class="header-anchor" href="#1-1-3-Spring-Boot-不是什么">¶</a>1.1.3 Spring Boot 不是什么</h3>
+<p>Spring Boot不是应用服务器，在应用程序里嵌入了一个Servlet容器（Tomcat、Jetty或Undertow）。</p>
+<p>Spring Boot也没有实现诸如JPA或JMS，不过它自动配置了某个JPA实现（比如Hibernate）的Bean，以此支持JPA。</p>
+<p>Spring Boot没有引入任何形式的代码生成，而是利用了Spring 4的条件化配置特性，以及Maven和Gradle提供的传递依赖解析，以此实现Spring应用程序上下文里的自动配置。</p>
+<h2 id="1-2-Spring-Boot-入门"><a class="header-anchor" href="#1-2-Spring-Boot-入门">¶</a>1.2 Spring Boot 入门</h2>
+<h3 id="1-2-1-安装-Spring-Boot-CLI"><a class="header-anchor" href="#1-2-1-安装-Spring-Boot-CLI">¶</a>1.2.1 安装 Spring Boot CLI</h3>
+<p>Spring Boot CLI有好几种安装方式。<br>
+  用下载的分发包进行安装。<br>
+  用Groovy Environment Manager进行安装。<br>
+  通过OS X Homebrew进行安装。<br>
+  使用MacPorts进行安装。</p>
+<h3 id="1-2-2-使用-Spring-Initializr-初始化-Spring-Boot-项目"><a class="header-anchor" href="#1-2-2-使用-Spring-Initializr-初始化-Spring-Boot-项目">¶</a>1.2.2 使用 Spring Initializr 初始化 Spring Boot 项目</h3>
+<p>Spring Initializr有几种用法。<br>
+  通过Web界面使用。<br>
+  通过Spring Tool Suite使用。<br>
+  通过IntelliJ IDEA使用。<br>
+  使用Spring Boot CLI使用。</p>
+<h4 id="1-使用Spring-Initializr的Web界面"><a class="header-anchor" href="#1-使用Spring-Initializr的Web界面">¶</a>1. 使用Spring Initializr的Web界面</h4>
+<p>如你所见，项目里基本没有代码，除了几个空目录外，还包含了如下几样东西。<br>
+  build.gradle：Gradle构建说明文件。如果选择Maven项目，这就会换成pom.xml。<br>
+  Application.java ：一个带有 main() 方法的类，用于引导启动应用程序。<br>
+  ApplicationTests.java ：一个空的JUnit测试类，它加载了一个使用Spring Boot自动配置功能的Spring应用程序上下文。<br>
+  application.properties：一个空的properties文件，你可以根据需要添加配置属性。</p>
+<h4 id="2-在Spring-Tool-Suite里创建Spring-Boot项目"><a class="header-anchor" href="#2-在Spring-Tool-Suite里创建Spring-Boot项目">¶</a>2. 在Spring Tool Suite里创建Spring Boot项目</h4>
+<h4 id="3-在IntelliJ-IDEA里创建Spring-Boot项目"><a class="header-anchor" href="#3-在IntelliJ-IDEA里创建Spring-Boot项目">¶</a>3. 在IntelliJ IDEA里创建Spring Boot项目</h4>
+<h4 id="4-在Spring-Boot-CLI里使用Initializr"><a class="header-anchor" href="#4-在Spring-Boot-CLI里使用Initializr">¶</a>4. 在Spring Boot CLI里使用Initializr</h4>
+<h2 id="1-3-小结"><a class="header-anchor" href="#1-3-小结">¶</a>1.3 小结</h2>
+<p>本章大致概括了Spring Boot的功能。</p>
+<h1 id="第二章-开发第一个应用程序"><a class="header-anchor" href="#第二章-开发第一个应用程序">¶</a>第二章 开发第一个应用程序</h1>
+<p>本章内容<br>
+  使用Spring Boot起步依赖<br>
+  自动进行Spring配置</p>
+<h2 id="2-1-运用-Spring-Boot"><a class="header-anchor" href="#2-1-运用-Spring-Boot">¶</a>2.1 运用 Spring Boot</h2>
+<p>初始化应用程序。</p>
+<h3 id="2-1-1-查看初始化的-Spring-Boot-新项目"><a class="header-anchor" href="#2-1-1-查看初始化的-Spring-Boot-新项目">¶</a>2.1.1 查看初始化的 Spring Boot 新项目</h3>
+<p>主要应用程序代码位于src/main/java目录里，资源都在src/main/resources目录里，测试代码则在src/test/java目录里，测试资源放在src/test/resources里。</p>
+<p>  build.gradle：Gradle构建说明文件。<br>
+  ReadingListApplication.java ：应用程序的启动引导类（bootstrap class），也是主要<br>
+的Spring配置类。<br>
+  application.properties ：用于配置应用程序和Spring Boot的属性。<br>
+  ReadingListApplicationTests.java ：一个基本的集成测试类。</p>
+<h4 id="1-启动引导Spring"><a class="header-anchor" href="#1-启动引导Spring">¶</a>1. 启动引导Spring</h4>
+<p>ReadingListApplication 在Spring Boot应用程序里有两个作用：配置和启动引导。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">代码清单<span class="number">2</span>-<span class="number">1</span>  ReadingListApplication.java 不仅是启动引导类，还是配置类</span><br><span class="line"><span class="keyword">package</span> readinglist;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadingListApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(ReadingListApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>@SpringBootApplication 开启了Spring的组件扫描和Spring Boot的自动配置功能。实际上， @SpringBootApplication 将三个有用的注解组合在了一起。<br>
+  Spring的 @Configuration ：标明该类使用Spring基于Java的配置。虽然本书不会写太多配置，但我们会更倾向于使用基于Java而不是XML的配置。<br>
+  Spring的 @ComponentScan ：启用组件扫描，这样你写的Web控制器类和其他组件才能被自动发现并注册为Spring应用程序上下文里的Bean。本章稍后会写一个简单的Spring MVC控制器，使用 @Controller 进行注解，这样组件扫描才能找到它。<br>
+  Spring Boot 的 @EnableAutoConfiguration ： 这 个 不 起 眼 的 小 注 解 也 可 以 称 为@Abracadabra<br>
+，就是这一行配置开启了Spring Boot自动配置的魔力，让你不用再写成篇的配置了。</p>
+<h4 id="2-测试Spring-Boot应用程序"><a class="header-anchor" href="#2-测试Spring-Boot应用程序">¶</a>2. 测试Spring Boot应用程序</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">代码清单<span class="number">2</span>-<span class="number">2</span> <span class="meta">@SpringApplicationConfiguration</span> 加载Spring应用程序上下文</span><br><span class="line"><span class="keyword">package</span> readinglist;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.SpringApplicationConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.web.WebAppConfiguration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> readinglist.ReadingListApplication;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringApplicationConfiguration</span>(<span class="title">classes</span> </span>= ReadingListApplication<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">WebAppConfiguration</span></span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">ReadingListApplicationTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个典型的Spring集成测试会用 @ContextConfiguration 注解标识如何加载Spring的应用程序上下文。但是，为了充分发挥Spring Boot的魔力，这里应该用 @SpringApplication-Configuration 注解。</p>
+<p>ReadingListApplicationTests 里还有一个简单的测试方法，即 contextLoads() 。实际上它就是个空方法。但这个空方法足以证明应用程序上下文的加载没有问题。如果ReadingListApplication 里定义的配置是好的，就能通过测试。如果有问题，测试就会失败。</p>
+<h4 id="3-配置应用程序属性"><a class="header-anchor" href="#3-配置应用程序属性">¶</a>3. 配置应用程序属性</h4>
+<p>你完全不用告诉Spring Boot为你加载 application.properties ，只要它存在就会被加载，Spring和应用程序代码都能获取其中的属性。</p>
+<h3 id="2-1-2-Spring-Boot-项目构建过程解析"><a class="header-anchor" href="#2-1-2-Spring-Boot-项目构建过程解析">¶</a>2.1.2 Spring Boot 项目构建过程解析</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">代码清单<span class="number">2</span>-<span class="number">3</span> 使用Spring Boot的Gradle插件</span><br><span class="line">buildscript &#123;</span><br><span class="line">    ext &#123;</span><br><span class="line">        springBootVersion = <span class="string">'1.3.0.RELEASE'</span></span><br><span class="line">    &#125;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath(<span class="string">"org.springframework.boot:spring-boot-gradle-plugin:$&#123;springBootVersion&#125;"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">apply plugin: <span class="string">'java'</span></span><br><span class="line">apply plugin: <span class="string">'eclipse'</span></span><br><span class="line">apply plugin: <span class="string">'idea'</span></span><br><span class="line">apply plugin: <span class="string">'spring-boot'</span> </span><br><span class="line"></span><br><span class="line">jar &#123;</span><br><span class="line">    baseName = <span class="string">'readinglist'</span></span><br><span class="line">    version = <span class="string">'0.0.1-SNAPSHOT'</span></span><br><span class="line">&#125;</span><br><span class="line">sourceCompatibility = <span class="number">1.7</span></span><br><span class="line">targetCompatibility = <span class="number">1.7</span></span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile(<span class="string">"org.springframework.boot:spring-boot-starter-web"</span>)</span><br><span class="line">    compile(<span class="string">"org.springframework.boot:spring-boot-starter-data-jpa"</span>)</span><br><span class="line">    compile(<span class="string">"org.springframework.boot:spring-boot-starter-thymeleaf"</span>)</span><br><span class="line">    runtime(<span class="string">"com.h2database:h2"</span>)</span><br><span class="line">    testCompile(<span class="string">"org.springframework.boot:spring-boot-starter-test"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">eclipse &#123;</span><br><span class="line">    classpath &#123;</span><br><span class="line">         containers.remove(<span class="string">'org.eclipse.jdt.launching.JRE_CONTAINER'</span>)</span><br><span class="line">         containers <span class="string">'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">task <span class="title">wrapper</span><span class="params">(type: Wrapper)</span> </span>&#123;</span><br><span class="line">    gradleVersion = <span class="string">'1.12'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另一方面，要是选择用Maven来构建应用程序，Initializr会替你生成一个pom.xml文件，其中使用了Spring Boot的Maven插件。</p>
+<h2 id="2-2-使用起步依赖"><a class="header-anchor" href="#2-2-使用起步依赖">¶</a>2.2 使用起步依赖</h2>
+<p>我们要构建一个拥有如下功能的应用程序。<br>
+  这是一个Web应用程序。<br>
+  它用了Thymeleaf。<br>
+  它通过Spring Data JPA在关系型数据库里持久化数据。</p>
+<p>这正是Spring Boot起步依赖的功能。</p>
+<h3 id="2-2-1-指定基于功能的依赖"><a class="header-anchor" href="#2-2-1-指定基于功能的依赖">¶</a>2.2.1 指定基于功能的依赖</h3>
+<h3 id="2-2-2-覆盖起步依赖引入的传递依赖"><a class="header-anchor" href="#2-2-2-覆盖起步依赖引入的传递依赖">¶</a>2.2.2 覆盖起步依赖引入的传递依赖</h3>
+<p>如果在用Gradle，你可以这样排除传递依赖：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compile(<span class="string">"org.springframework.boot:spring-boot-starter-web"</span>) &#123;</span><br><span class="line">	exclude group: <span class="string">'com.fasterxml.jackson.core'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Maven里，可以用 &lt;exclusions&gt; 元素来排除传递依赖。</p>
+<h2 id="2-3-使用自动配置"><a class="header-anchor" href="#2-3-使用自动配置">¶</a>2.3 使用自动配置</h2>
+<p>  Spring的 JdbcTemplate 是不是在Classpath里？如果是，并且有 DataSource 的Bean，则<br>
+自动配置一个 JdbcTemplate 的Bean。<br>
+  Thymeleaf是不是在Classpath里？如果是，则配置Thymeleaf的模板解析器、视图解析器以<br>
+及模板引擎。<br>
+  Spring Security是不是在Classpath里？如果是，则进行一个非常基本的Web安全设置。</p>
+<h3 id="2-3-1-专注于应用程序功能"><a class="header-anchor" href="#2-3-1-专注于应用程序功能">¶</a>2.3.1 专注于应用程序功能</h3>
+<h4 id="1-定义领域模型"><a class="header-anchor" href="#1-定义领域模型">¶</a>1. 定义领域模型</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">代码清单<span class="number">2</span>-<span class="number">5</span> 表示列表里的书的 Book 类</span><br><span class="line"><span class="keyword">package</span> readinglist;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.persistence.Entity;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GenerationType;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Id</span></span><br><span class="line">	<span class="meta">@GeneratedValue</span>(strategy=GenerationType.AUTO)</span><br><span class="line">	<span class="keyword">private</span> Long id;</span><br><span class="line">	<span class="keyword">private</span> String reader;</span><br><span class="line">	<span class="keyword">private</span> String isbn;</span><br><span class="line">	<span class="keyword">private</span> String title;</span><br><span class="line">	<span class="keyword">private</span> String author;</span><br><span class="line">	<span class="keyword">private</span> String description;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Long <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getReader</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> reader;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setReader</span><span class="params">(String reader)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.reader = reader;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getIsbn</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> isbn;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIsbn</span><span class="params">(String isbn)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.isbn = isbn;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getTitle</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> title;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTitle</span><span class="params">(String title)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.title = title;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getAuthor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> author;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAuthor</span><span class="params">(String author)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.author = author;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> description;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String description)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.description = description;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>@Entity 注解表明它是一个JPA实体， id 属性加了 @Id 和 @GeneratedValue 注解，说明这个字段<br>
+是实体的唯一标识，并且这个字段的值是自动生成的。</p>
+<h4 id="2-定义仓库接口"><a class="header-anchor" href="#2-定义仓库接口">¶</a>2. 定义仓库接口</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> readinglist;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ReadingListRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">Book</span>, <span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function">List&lt;Book&gt; <span class="title">findByReader</span><span class="params">(String reader)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过扩展 JpaRepository ， ReadingListRepository 直接继承了18个执行常用持久化操作的方法。 JpaRepository 是个泛型接口，有两个参数：仓库操作的领域对象类型，及其ID属性的类型。此外，我还增加了一个 findByReader() 方法，可以根据读者的用户名来查找阅读列表。</p>
+<h4 id="3-创建Web界面"><a class="header-anchor" href="#3-创建Web界面">¶</a>3. 创建Web界面</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">代码清单<span class="number">2</span>-<span class="number">6</span> 作为阅读列表应用程序前端的Spring MVC控制器</span><br><span class="line"><span class="keyword">package</span> readinglist;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.ui.Model;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/readingList"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadingListController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String reader = <span class="string">"craig"</span>;</span><br><span class="line">  </span><br><span class="line">	<span class="keyword">private</span> ReadingListRepository readingListRepository;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ReadingListController</span><span class="params">(ReadingListRepository readingListRepository)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.readingListRepository = readingListRepository;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping</span>(method=RequestMethod.GET)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">readersBooks</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		List&lt;Book&gt; readingList = readingListRepository.findByReader(reader);</span><br><span class="line">		<span class="keyword">if</span> (readingList != <span class="keyword">null</span>) &#123;</span><br><span class="line">			model.addAttribute(<span class="string">"books"</span>, readingList);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"readingList"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@RequestMapping</span>(method=RequestMethod.POST)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">addToReadingList</span><span class="params">(Book book)</span> </span>&#123;</span><br><span class="line">		book.setReader(reader);</span><br><span class="line">		readingListRepository.save(book);</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"redirect:/readingList"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ReadingListController 使用了 @Controller 注解，这样组件扫描会自动将其注册为Spring应用程序上下文里的一个Bean。它还用了 @RequestMapping 注解，将其中所有的处理器方法都映射到了“/”这个URL路径上。该控制器有两个方法。<br>
+  readersBooks() ：处理/{reader}上的HTTP  GET 请求，根据路径里指定的读者，从（通过控制器的构造器注入的）仓库获取 Book 列表。随后将这个列表塞入模型，用的键是books ，最后返回 readingList 作为呈现模型的视图逻辑名称。<br>
+  addToReadingList() ：处理/{reader}上的HTTP  POST 请求，将请求正文里的数据绑定到一个 Book 对象上。该方法把 Book 对象的 reader 属性设置为读者的姓名，随后通过仓库的 save() 方法保存修改后的 Book 对象，最后重定向到/{reader}（控制器中的另一个方法会处理该请求）。</p>
+<p>readersBooks() 方法最后返回 readingList 作为逻辑视图名，为此必须创建该视图。因为在项目开始之初我就决定要用Thymeleaf来定义应用程序的视图，所以接下来就在src/main/resources/templates里创建一个名为readingList.html的文件，内容如代码清单2-7所示。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">代码清单2-7 呈现阅读列表的Thymeleaf模板</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Reading List<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/style.css&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">link</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Your Reading List<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:unless</span>=<span class="string">"$&#123;#lists.isEmpty(books)&#125;"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dl</span> <span class="attr">th:each</span>=<span class="string">"book : $&#123;books&#125;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dt</span> <span class="attr">class</span>=<span class="string">"bookHeadline"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.title&#125;"</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">span</span>&gt;</span> by </span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.author&#125;"</span>&gt;</span>Author<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          (ISBN: <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;book.isbn&#125;"</span>&gt;</span>ISBN<span class="tag">&lt;/<span class="name">span</span>&gt;</span>)</span><br><span class="line">        <span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span> <span class="attr">class</span>=<span class="string">"bookDescription"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:if</span>=<span class="string">"$&#123;book.description&#125;"</span> </span></span><br><span class="line"><span class="tag">                <span class="attr">th:text</span>=<span class="string">"$&#123;book.description&#125;"</span>&gt;</span>Description<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:if</span>=<span class="string">"$&#123;book.description eq null&#125;"</span>&gt;</span></span><br><span class="line">                No description available<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">th:if</span>=<span class="string">"$&#123;#lists.isEmpty(books)&#125;"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>You have no books in your book list<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span>/&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Add a book<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"title"</span>&gt;</span>Title:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"title"</span> <span class="attr">size</span>=<span class="string">"50"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"author"</span>&gt;</span>Author:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">size</span>=<span class="string">"50"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"isbn"</span>&gt;</span>ISBN:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"isbn"</span> <span class="attr">size</span>=<span class="string">"15"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"description"</span>&gt;</span>Description:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">cols</span>=<span class="string">"80"</span> <span class="attr">rows</span>=<span class="string">"5"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了美观，Thymeleaf模板引用了一个名为style.css的样式文件，该文件位于src/main/resources/static目录中，看起来是这样的</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#cccccc</span>;</span><br><span class="line">	<span class="attribute">font-family</span>: arial,helvetica,sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.bookHeadline</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">12pt</span>;</span><br><span class="line">	<span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.bookDescription</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">10pt</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">label</span> &#123;</span><br><span class="line">	<span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-2-运行应用程序"><a class="header-anchor" href="#2-3-2-运行应用程序">¶</a>2.3.2 运行应用程序</h4>
+<h4 id="2-3-3-刚刚发生了什么"><a class="header-anchor" href="#2-3-3-刚刚发生了什么">¶</a>2.3.3 刚刚发生了什么</h4>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+     
+         <div>
+ 
+  <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+   <span>-------- 本文结束 </span>
+   <i class="fa fa-paw"></i>
+   <span> 感谢阅读 --------</span>
+  </div>
+ 
+</div>
+     
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="潇 卟 甸 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="潇 卟 甸 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<ul class="post-copyright">
+<!-- 本文标题 -->
+<li>
+  <strong>本文标题： </strong>
+  Spring Boot实战
+</li>
+
+<!-- 本文作者 -->
+<li class="post-copyright-author">
+  <strong>本文作者： </strong>
+  
+</li>
+
+<!-- 创建时间 -->
+<li>
+  <strong>创建时间： </strong>
+  2021年04月14日 - 17时04分
+</li>
+
+<!-- 修改时间 -->
+<li>
+  <strong>修改时间： </strong>
+  2021年04月15日 - 11时04分
+</li>
+
+<!-- 引用链接 -->
+<li class="post-copyright-link">
+  <strong>本文链接：</strong>
+  <a href="http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/" title="Spring Boot实战"
+    >http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/</a
+  >
+  <span class="copy-path" title="点击复制引用链接"
+    ><i
+      style="cursor: pointer"
+      class="fa fa-clipboard"
+      data-clipboard-text="['s Blog | Spring Boot实战](http://yoursite.com/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/)"
+      aria-label="复制成功"
+    ></i
+  ></span>
+</li>
+
+<!-- 版权声明 -->
+<li class="post-copyright-license">
+  <strong
+    >版权声明：
+  </strong>
+  本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+</li>
+</ul>
+
+<script>
+var clipboard = new ClipboardJS(".fa-clipboard");
+clipboard.on("success", function(target) {
+  var message = document.createElement("div");
+  message.innerHTML =
+    '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+    target.trigger.getAttribute("aria-label") +
+    "</span>";
+  swal({
+    content: message,
+    className: "copy-success-message",
+    timer: 1000,
+    button: false
+  });
+});
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          
+            <a href="/tags/%E6%BA%90%E4%BB%A3%E7%A0%81/" rel="tag"><i class="fa fa-tag"></i> 源代码</a>
+          
+            <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/" rel="tag"><i class="fa fa-tag"></i> 电子书</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/04/14/Spring%E5%AE%9E%E6%88%98%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89/" rel="next" title="Spring实战">
+                <i class="fa fa-chevron-left"></i> Spring实战
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/04/16/%E5%B0%9A%E7%A1%85%E8%B0%B7-Java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" rel="prev" title="尚硅谷_Java核心基础">
+                尚硅谷_Java核心基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <a href="/">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/picture.jpg"
+                alt="潇 卟 甸" />
+              </a>
+            
+              <p class="site-author-name" itemprop="name">潇 卟 甸</p>
+              <p class="site-description motion-element" itemprop="description">总结自己一些知识，一些事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+			
+				<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+				<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+				<div class="widget-wrap">
+					<div id="myCanvasContainer" class="widget tagcloud">
+						<canvas width="250" height="250" id="resCanvas" style="width=100%">
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">26</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%AE%9E%E8%B7%B5/" rel="tag">Java实践</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E7%BA%A7/" rel="tag">中级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E4%BB%A3%E7%A0%81/" rel="tag">源代码</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/" rel="tag">电子书</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">4</span></li></ul>
+						</canvas>
+					</div>
+				</div>
+			
+
+          </nav>
+
+          
+
+          
+		  
+		  <!-- 添加近期文章 -->
+			
+				<div class="links-of-blogroll motion-element links-of-blogroll-block">
+				<div class="links-of-blogroll-title">
+				<!-- modify icon to fire by szw -->
+				<i class="fa fa-history fa-" aria-hidden="true"></i>
+				近期文章
+				</div>
+				<ul class="links-of-blogroll-list">
+				
+				
+					<li>
+					<a href="/2021/06/04/%E5%B0%9A%E7%A1%85%E8%B0%B7-MySQL%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/" title="尚硅谷-MySQL核心技术" target="_blank">尚硅谷-MySQL核心技术</a>
+					</li>
+				
+					<li>
+					<a href="/2021/04/16/%E5%B0%9A%E7%A1%85%E8%B0%B7-Java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" title="尚硅谷_Java核心基础" target="_blank">尚硅谷_Java核心基础</a>
+					</li>
+				
+					<li>
+					<a href="/2021/04/14/Spring-Boot%E5%AE%9E%E6%88%98/" title="Spring Boot实战" target="_blank">Spring Boot实战</a>
+					</li>
+				
+					<li>
+					<a href="/2021/04/14/Spring%E5%AE%9E%E6%88%98%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89/" title="Spring实战" target="_blank">Spring实战</a>
+					</li>
+				
+					<li>
+					<a href="/2021/03/10/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/" title="Java核心技术（卷一）" target="_blank">Java核心技术（卷一）</a>
+					</li>
+				
+				</ul>
+			</div>
+			
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sushan102.top/posts/1410804403/" title="博客搭建" target="_blank">博客搭建</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://how2j.cn?p=154642" title="HOW2J" target="_blank">HOW2J</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+		  
+		  
+			
+		  
+		  <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录："><span class="nav-text">目录：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-入-门"><span class="nav-text">第一章 入 门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Spring-风云再起"><span class="nav-text">1.1 Spring 风云再起</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-重新认识-Spring"><span class="nav-text">1.1.1 重新认识 Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Spring-Boot-精要"><span class="nav-text">1.1.2 Spring Boot 精要</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-自动配置"><span class="nav-text">1. 自动配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-起步依赖"><span class="nav-text">2. 起步依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-命令行界面"><span class="nav-text">3. 命令行界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Actuator"><span class="nav-text">4. Actuator</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-Spring-Boot-不是什么"><span class="nav-text">1.1.3 Spring Boot 不是什么</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Spring-Boot-入门"><span class="nav-text">1.2 Spring Boot 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-安装-Spring-Boot-CLI"><span class="nav-text">1.2.1 安装 Spring Boot CLI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-使用-Spring-Initializr-初始化-Spring-Boot-项目"><span class="nav-text">1.2.2 使用 Spring Initializr 初始化 Spring Boot 项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用Spring-Initializr的Web界面"><span class="nav-text">1. 使用Spring Initializr的Web界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在Spring-Tool-Suite里创建Spring-Boot项目"><span class="nav-text">2. 在Spring Tool Suite里创建Spring Boot项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-在IntelliJ-IDEA里创建Spring-Boot项目"><span class="nav-text">3. 在IntelliJ IDEA里创建Spring Boot项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在Spring-Boot-CLI里使用Initializr"><span class="nav-text">4. 在Spring Boot CLI里使用Initializr</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-小结"><span class="nav-text">1.3 小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-开发第一个应用程序"><span class="nav-text">第二章 开发第一个应用程序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-运用-Spring-Boot"><span class="nav-text">2.1 运用 Spring Boot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-查看初始化的-Spring-Boot-新项目"><span class="nav-text">2.1.1 查看初始化的 Spring Boot 新项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-启动引导Spring"><span class="nav-text">1. 启动引导Spring</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-测试Spring-Boot应用程序"><span class="nav-text">2. 测试Spring Boot应用程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-配置应用程序属性"><span class="nav-text">3. 配置应用程序属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Spring-Boot-项目构建过程解析"><span class="nav-text">2.1.2 Spring Boot 项目构建过程解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-使用起步依赖"><span class="nav-text">2.2 使用起步依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-指定基于功能的依赖"><span class="nav-text">2.2.1 指定基于功能的依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-覆盖起步依赖引入的传递依赖"><span class="nav-text">2.2.2 覆盖起步依赖引入的传递依赖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-使用自动配置"><span class="nav-text">2.3 使用自动配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-专注于应用程序功能"><span class="nav-text">2.3.1 专注于应用程序功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-定义领域模型"><span class="nav-text">1. 定义领域模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-定义仓库接口"><span class="nav-text">2. 定义仓库接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-创建Web界面"><span class="nav-text">3. 创建Web界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-运行应用程序"><span class="nav-text">2.3.2 运行应用程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3-刚刚发生了什么"><span class="nav-text">2.3.3 刚刚发生了什么</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script
+  async
+  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">潇 卟 甸</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+     我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+    </span>
+  
+
+  
+    <span class="site-pv">
+     历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz',
+        appKey: 'NMGzUaGqmpzSiSItkHBQGUaA',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz", "NMGzUaGqmpzSiSItkHBQGUaA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+ <script src="/js/src/activate-power-mode.js"></script>
+ <script>
+   POWERMODE.colorful = true;
+   POWERMODE.shake = false;
+   document.body.addEventListener('input', POWERMODE);
+ </script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20200610,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `我已在此等候你 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+
+
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+  
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

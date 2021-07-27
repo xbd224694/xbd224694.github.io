@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="b站视频,Java,编程,基础," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="网址： https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV18E411x7eT 四、JavaEE高级阶段 3.尚硅谷Spring Cloud教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="尚硅谷-SpringCloud教程">
+<meta property="og:url" content="http://yoursite.com/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="伶仃浩瀚">
+<meta property="og:description" content="网址： https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV18E411x7eT 四、JavaEE高级阶段 3.尚硅谷Spring Cloud教程">
+<meta property="article:published_time" content="2021-07-27T16:05:35.000Z">
+<meta property="article:modified_time" content="2021-07-27T16:38:42.953Z">
+<meta property="article:author" content="潇 卟 甸">
+<meta property="article:tag" content="b站视频">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="基础">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/07/28/尚硅谷-SpringCloud教程/"/>
+
+
+
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <title>尚硅谷-SpringCloud教程 | 伶仃浩瀚</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://xbd224694.github.io" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">伶仃浩瀚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="潇 卟 甸">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伶仃浩瀚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">尚硅谷-SpringCloud教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2021-07-28T00:05:35+08:00">
+                2021-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B0%9A%E7%A1%85%E8%B0%B7/" itemprop="url" rel="index">
+                    <span itemprop="name">尚硅谷</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/" class="leancloud_visitors" data-flag-title="尚硅谷-SpringCloud教程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+	 <span> ℃ </span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>网址：</strong></p>
+<p><a href="https://www.bilibili.com/video/BV18E411x7eT" target="_blank" rel="noopener">https://www.bilibili.com/video/BV18E411x7eT</a></p>
+<p><strong>四、JavaEE高级阶段</strong></p>
+<p>3.尚硅谷Spring Cloud教程</p>
+<a id="more"></a>
+<h1 id="学习路线"><a class="header-anchor" href="#学习路线">¶</a>学习路线</h1>
+<p>网址：</p>
+<p><a href="https://www.bilibili.com/read/cv5216534?spm_id_from=333.788.b_636f6d6d656e74.5" target="_blank" rel="noopener">https://www.bilibili.com/read/cv5216534?spm_id_from=333.788.b_636f6d6d656e74.5</a></p>
+<p>对应：<a href="https://wwa.lanzoui.com/b01ckciva" target="_blank" rel="noopener">https://wwa.lanzoui.com/b01ckciva</a><br>
+密码：a0ai</p>
+<p><strong>四、JavaEE高级阶段</strong></p>
+<p>3.尚硅谷Spring Cloud教程：</p>
+<p>既有传统Eureka、Ribbon、OpenFeign、Hystrix、Config等技术的升级讲解，又有Consul、Gateway、Bus、Stream、Sleuth、zipkin和阿里巴巴新的的Nacos、Sentinel、Seata等技术，分享了服务降级、服务熔断、服务限流、hotkey控制、分布式统一配置管理、分布式全局事务控制、RabbitMQ与Stream整合、Nacos和Nginx配置高可用集群等技术</p>
+<p>作者：尚硅谷</p>
+<p>复习（pdf）：</p>
+<h1 id="视频观看"><a class="header-anchor" href="#视频观看">¶</a>视频观看</h1>
+<p>Day01 21730</p>
+<p>Day02 21731</p>
+<p>Day03 2181</p>
+<h1 id="课程结构"><a class="header-anchor" href="#课程结构">¶</a>课程结构</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="#01__26">01_前言闲聊和课程说明</a></td>
+<td style="text-align:center"><a href="#02__32">02_零基础微服务架构理论入门</a></td>
+<td style="text-align:center"><a href="#03_BootCloud_132">03_第二季Boot和Cloud版本选型</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#04_Cloud_156">04_Cloud组件停更说明</a></td>
+<td style="text-align:center"><a href="#05_Project_200">05_父工程Project空间新建</a></td>
+<td style="text-align:center"><a href="#06_pom_226">06_父工程pom文件</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#07_DependencyManagementDependencies_333">07_复习DependencyManagement和Dependencies</a></td>
+<td style="text-align:center"><a href="#08__381">08_支付模块构建(上)</a></td>
+<td style="text-align:center"><a href="#09__527">09_支付模块构建(中)</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#10__740">10_支付模块构建(下)</a></td>
+<td style="text-align:center"><a href="#11_Devtools_761">11_热部署Devtools</a></td>
+<td style="text-align:center"><a href="#12__827">12_消费者订单模块(上)</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#13__1034">13_消费者订单模块(下)</a></td>
+<td style="text-align:center"><a href="#14__1075">14_工程重构</a></td>
+<td style="text-align:center"><a href="#15_Eureka_1148">15_Eureka基础知识</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#16_EurekaServer_1178">16_EurekaServer服务端安装</a></td>
+<td style="text-align:center"><a href="#17_8001EurekaServer_1301">17_支付微服务8001入驻进EurekaServer</a></td>
+<td style="text-align:center"><a href="#18_80EurekaServer_1376">18_订单微服务80入驻进EurekaServer</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#19_Eureka_1443">19_Eureka集群原理说明</a></td>
+<td style="text-align:center"><a href="#20_Eureka_1482">20_Eureka集群环境构建</a></td>
+<td style="text-align:center"><a href="#21_Eureka_1551">21_订单支付两微服务注册进Eureka集群</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#22__1578">22_支付微服务集群配置</a></td>
+<td style="text-align:center"><a href="#23_actuator_1685">23_actuator微服务信息完善</a></td>
+<td style="text-align:center"><a href="#24_Discovery_1738">24_服务发现Discovery</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#25_Eureka_1815">25_Eureka自我保护理论知识</a></td>
+<td style="text-align:center"><a href="#26__1859">26_怎么禁止自我保护</a></td>
+<td style="text-align:center"><a href="#27_Eureka_1924">27_Eureka停更说明</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#28_zookeeper_1938">28_支付服务注册进zookeeper</a></td>
+<td style="text-align:center"><a href="#29__2162">29_临时还是持久节点</a></td>
+<td style="text-align:center"><a href="#30_zookeeper_2168">30_订单服务注册进zookeeper</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#31_Consul_2333">31_Consul简介</a></td>
+<td style="text-align:center"><a href="#32_Consul_2379">32_安装并运行Consul</a></td>
+<td style="text-align:center"><a href="#33_Consul_2400">33_服务提供者注册进Consul</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#34_Consul_2552">34_服务消费者注册进Consul</a></td>
+<td style="text-align:center"><a href="#35__2714">35_三个注册中心异同点</a></td>
+<td style="text-align:center"><a href="#36_Ribbon_2780">36_Ribbon入门介绍</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#37_RibbonRest_2837">37_Ribbon的负载均衡和Rest调用</a></td>
+<td style="text-align:center"><a href="#38_Ribbon_2902">38_Ribbon默认自带的负载规则</a></td>
+<td style="text-align:center"><a href="#39_Ribbon_2918">39_Ribbon负载规则替换</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#40_Ribbon_2989">40_Ribbon默认负载轮询算法原理</a></td>
+<td style="text-align:center"><a href="#41_RoundRobinRule_3014">41_RoundRobinRule源码分析</a></td>
+<td style="text-align:center"><a href="#42_Ribbon_3143">42_Ribbon之手写轮询算法</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#43_OpenFeign_3304">43_OpenFeign是什么</a></td>
+<td style="text-align:center"><a href="#44_OpenFeign_3358">44_OpenFeign服务调用</a></td>
+<td style="text-align:center"><a href="#45_OpenFeign_3540">45_OpenFeign超时控制</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#46_OpenFeign_3639">46_OpenFeign日志增强</a></td>
+<td style="text-align:center"><a href="#47_Hystrix_3696">47_Hystrix是什么</a></td>
+<td style="text-align:center"><a href="#48_Hystrix_3726">48_Hystrix停更进维</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#49_Hystrix_3753">49_Hystrix的服务降级熔断限流概念初讲</a></td>
+<td style="text-align:center"><a href="#50_Hystrix_3784">50_Hystrix支付微服务构建</a></td>
+<td style="text-align:center"><a href="#51_JMeter_3987">51_JMeter高并发压测后卡顿</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#52__4021">52_订单微服务调用支付服务出现卡顿</a></td>
+<td style="text-align:center"><a href="#53__4221">53_降级容错解决的维度要求</a></td>
+<td style="text-align:center"><a href="#54_Hystrixfallback_4237">54_Hystrix之服务降级支付侧fallback</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#55_Hystrixfallback_4313">55_Hystrix之服务降级订单侧fallback</a></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="#56_HystrixDefaultProperties_26">56_Hystrix之全局服务降级DefaultProperties</a></td>
+<td style="text-align:center"><a href="#57_HystrixFeignFallback_94">57_Hystrix之通配服务降级FeignFallback</a></td>
+<td style="text-align:center"><a href="#58_Hystrix_204">58_Hystrix之服务熔断理论</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#59_Hystrix_222">59_Hystrix之服务熔断案例(上)</a></td>
+<td style="text-align:center"><a href="#60_Hystrix_309">60_Hystrix之服务熔断案例(下)</a></td>
+<td style="text-align:center"><a href="#61_Hystrix_350">61_Hystrix之服务熔断总结</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#62_Hystrix_514">62_Hystrix工作流程最后总结</a></td>
+<td style="text-align:center"><a href="#63_HystrixDashboard_556">63_Hystrix图形化Dashboard搭建</a></td>
+<td style="text-align:center"><a href="#64_HystrixDashboard_664">64_Hystrix图形化Dashboard监控实战</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#65_GateWayZuul_763">65_GateWay和Zuul课程说明</a></td>
+<td style="text-align:center"><a href="#66_GateWay_771">66_GateWay是什么</a></td>
+<td style="text-align:center"><a href="#67_GateWay_814">67_GateWay非阻塞异步模型</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#68_Gateway_880">68_Gateway工作流程</a></td>
+<td style="text-align:center"><a href="#69_Gateway9527_918">69_Gateway9527搭建</a></td>
+<td style="text-align:center"><a href="#70_Gateway_1093">70_Gateway配置路由的两种方式</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#71_GateWay_1166">71_GateWay配置动态路由</a></td>
+<td style="text-align:center"><a href="#72_GateWayPredicate_1244">72_GateWay常用的Predicate</a></td>
+<td style="text-align:center"><a href="#73_GateWayFilter_1413">73_GateWay的Filter</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#74_Config_1524">74_Config分布式配置中心介绍</a></td>
+<td style="text-align:center"><a href="#75_Config_1574">75_Config配置总控中心搭建</a></td>
+<td style="text-align:center"><a href="#76_Config_1795">76_Config客户端配置与测试</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#77_Config_1985">77_Config动态刷新之手动版</a></td>
+<td style="text-align:center"><a href="#78_Bus_2078">78_Bus消息总线是什么</a></td>
+<td style="text-align:center"><a href="#79_BusRabbitMQ_2118">79_Bus之RabbitMQ环境配置</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#80_Bus_2150">80_Bus动态刷新全局广播的设计思想和选型</a></td>
+<td style="text-align:center"><a href="#81_Bus_2339">81_Bus动态刷新全局广播配置实现</a></td>
+<td style="text-align:center"><a href="#82_Bus_2544">82_Bus动态刷新定点通知</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#83_Stream_2576">83_Stream为什么被引入</a></td>
+<td style="text-align:center"><a href="#84_StreamBinder_2595">84_Stream是什么及Binder介绍</a></td>
+<td style="text-align:center"><a href="#85_Stream_2620">85_Stream的设计思想</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#86_Stream_2671">86_Stream编码常用注解简介</a></td>
+<td style="text-align:center"><a href="#87_Stream_2714">87_Stream消息驱动之生产者</a></td>
+<td style="text-align:center"><a href="#88_Stream_2915">88_Stream消息驱动之消费者</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#89_Stream_3072">89_Stream之消息重复消费</a></td>
+<td style="text-align:center"><a href="#90_Streamgroup_3113">90_Stream之group解决消息重复消费</a></td>
+<td style="text-align:center"><a href="#91_Stream_3177">91_Stream之消息持久化</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#92_Sleuth_3191">92_Sleuth是什么</a></td>
+<td style="text-align:center"><a href="#93_Sleuthzipkin_3225">93_Sleuth之zipkin搭建安装</a></td>
+<td style="text-align:center"><a href="#94_Sleuth_3274">94_Sleuth链路监控展现</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#95_Cloud_Alibaba_3390">95_Cloud Alibaba简介</a></td>
+<td style="text-align:center"><a href="#96_Nacos_3488">96_Nacos简介和下载</a></td>
+<td style="text-align:center"><a href="#97_Nacos_3531">97_Nacos安装</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#98_Nacos_3543">98_Nacos之服务提供者注册</a></td>
+<td style="text-align:center"><a href="#99_Nacos_3710">99_Nacos之服务消费者注册和负载</a></td>
+<td style="text-align:center"><a href="#100_Nacos_3886">100_Nacos服务注册中心对比提升</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#101_Nacos_3928">101_Nacos之服务配置中心</a></td>
+<td style="text-align:center"><a href="#102_NacosDataID_4147">102_Nacos之命名空间分组和DataID三者关系</a></td>
+<td style="text-align:center"><a href="#103_NacosDataID_4204">103_Nacos之DataID配置</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#104_NacosGroup_4235">104_Nacos之Group分组方案</a></td>
+<td style="text-align:center"><a href="#105_NacosNamespace_4259">105_Nacos之Namespace空间方案</a></td>
+<td style="text-align:center"><a href="#106_Nacos__4308">106_Nacos集群_架构说明</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#107_Nacos_4383">107_Nacos持久化切换配置</a></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+<th style="text-align:center">-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="#108_NacosLinux_22">108_Nacos之Linux版本安装</a></td>
+<td style="text-align:center"><a href="#109_Nacos_47">109_Nacos集群配置(上)</a></td>
+<td style="text-align:center"><a href="#110_Nacos_143">110_Nacos集群配置(下)</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#111_Sentinel_240">111_Sentinel是什么</a></td>
+<td style="text-align:center"><a href="#112_Sentinel_294">112_Sentinel下载安装运行</a></td>
+<td style="text-align:center"><a href="#113_Sentinel_334">113_Sentinel初始化监控</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#114_Sentinel_530">114_Sentinel流控规则简介</a></td>
+<td style="text-align:center"><a href="#115_SentinelQPS_557">115_Sentinel流控-QPS直接失败</a></td>
+<td style="text-align:center"><a href="#116_Sentinel_595">116_Sentinel流控-线程数直接失败</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#117_Sentinel_603">117_Sentinel流控-关联</a></td>
+<td style="text-align:center"><a href="#118_Sentinel_661">118_Sentinel流控-预热</a></td>
+<td style="text-align:center"><a href="#119_Sentinel_705">119_Sentinel流控-排队等待</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#120_Sentinel_764">120_Sentinel降级简介</a></td>
+<td style="text-align:center"><a href="#121_SentinelRT_807">121_Sentinel降级-RT</a></td>
+<td style="text-align:center"><a href="#122_Sentinel_867">122_Sentinel降级-异常比例</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#123_Sentinel_925">123_Sentinel降级-异常数</a></td>
+<td style="text-align:center"><a href="#124_Sentinelkey_975">124_Sentinel热点key(上)</a></td>
+<td style="text-align:center"><a href="#125_Sentinelkey_1071">125_Sentinel热点key(下)</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#126_Sentinel_1140">126_Sentinel系统规则</a></td>
+<td style="text-align:center"><a href="#127_SentinelResource_1164">127_SentinelResource配置(上)</a></td>
+<td style="text-align:center"><a href="#128_SentinelResource_1289">128_SentinelResource配置(中)</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#129_SentinelResource_1345">129_SentinelResource配置(下)</a></td>
+<td style="text-align:center"><a href="#130_SentinelRibbon_1378">130_Sentinel服务熔断Ribbon环境预说</a></td>
+<td style="text-align:center"><a href="#131_Sentinel_1794">131_Sentinel服务熔断无配置</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#132_Sentinelfallback_1827">132_Sentinel服务熔断只配置fallback</a></td>
+<td style="text-align:center"><a href="#133_SentinelblockHandler_1879">133_Sentinel服务熔断只配置blockHandler</a></td>
+<td style="text-align:center"><a href="#134_SentinelfallbackblockHandler_1929">134_Sentinel服务熔断fallback和blockHandler都配置</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#135_SentinelexceptionsToIgnore_1975">135_Sentinel服务熔断exceptionsToIgnore</a></td>
+<td style="text-align:center"><a href="#136_SentinelOpenFeign_2010">136_Sentinel服务熔断OpenFeign</a></td>
+<td style="text-align:center"><a href="#137_Sentinel_2147">137_Sentinel持久化规则</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#138__2270">138_分布式事务问题由来</a></td>
+<td style="text-align:center"><a href="#139_Seata_2287">139_Seata术语</a></td>
+<td style="text-align:center"><a href="#140_SeataServer_2325">140_Seata-Server安装</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#141_Seata_2524">141_Seata业务数据库准备</a></td>
+<td style="text-align:center"><a href="#142_SeataOrderModule_2648">142_Seata之Order-Module配置搭建</a></td>
+<td style="text-align:center"><a href="#143_SeataOrderModule_3063">143_Seata之Order-Module撸码(上)</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#144_SeataOrderModule_3225">144_Seata之Order-Module撸码(下)</a></td>
+<td style="text-align:center"><a href="#145_SeataStorageModule_3343">145_Seata之Storage-Module说明</a></td>
+<td style="text-align:center"><a href="#146_SeataAccountModule_3548">146_Seata之Account-Module说明</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#147_SeataGlobalTransactional_3785">147_Seata之@GlobalTransactional验证</a></td>
+<td style="text-align:center"><a href="#148_Seata_3885">148_Seata之原理简介</a></td>
+<td style="text-align:center"><a href="#149__3962">149_大厂面试第三季预告片之雪花算法(上)</a></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#150__4080">150_大厂面试第三季预告片之雪花算法(下)</a></td>
+<td style="text-align:center"><a href="#Spring_Cloud_4391">Spring Cloud组件总结</a></td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<h1 id="笔记"><a class="header-anchor" href="#笔记">¶</a>笔记</h1>
+<p><a href="https://blog.csdn.net/u011863024/article/details/114298270" target="_blank" rel="noopener">Spring Cloud 学习笔记（1 / 3）_KISS-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/u011863024/article/details/114298282" target="_blank" rel="noopener">Spring Cloud 学习笔记（2 / 3）_KISS-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/u011863024/article/details/114298288" target="_blank" rel="noopener">Spring Cloud 学习笔记（3 / 3）_KISS-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/m0_37583655/article/details/112797219" target="_blank" rel="noopener">微服务 SpringCloud详解_靖节先生的博客-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/qq_45408390/category_11208312.html?spm=1001.2014.3001.5482" target="_blank" rel="noopener">SpringCloud Alibaba_cV展示的博客-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/MyAzhe0ci3/article/details/117994140" target="_blank" rel="noopener">spring Cloud(初级版)笔记(最新最详细)周阳老师2021年6月更新(一)_MyAzhe0ci3的博客-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/MyAzhe0ci3/article/details/118094752" target="_blank" rel="noopener">spring Cloud(初级版)笔记(最新最详细)周阳老师2021年6月更新(二)_MyAzhe0ci3的博客-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/MyAzhe0ci3/article/details/118387571" target="_blank" rel="noopener">spring Cloud(初级版)笔记(最新最详细)周阳老师2021年6月更新(三)_MyAzhe0ci3的博客-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/weixin_46558851/article/details/112330685" target="_blank" rel="noopener">尚硅谷周阳老师2020最新Springcloud完整版学习_知道越多，知道越少的博客-CSDN博客</a></p>
+<p><a href="https://github.com/seata/seata/blob/develop/script/server/db/mysql.sql" target="_blank" rel="noopener">seata/mysql.sql at develop · seata/seata · GitHub</a></p>
+<p><a href="https://repo1.maven.org/maven2/io/zipkin/zipkin-server/" target="_blank" rel="noopener">Central Repository: io/zipkin/zipkin-server (maven.org)</a></p>
+<p><a href="https://www.yuque.com/books/share/31d864d1-b6ff-4bd1-8569-2dec720e8306?" target="_blank" rel="noopener">java笔记 · 语雀 (yuque.com)</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+     
+         <div>
+ 
+  <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+   <span>-------- 本文结束 </span>
+   <i class="fa fa-paw"></i>
+   <span> 感谢阅读 --------</span>
+  </div>
+ 
+</div>
+     
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="潇 卟 甸 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="潇 卟 甸 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<ul class="post-copyright">
+<!-- 本文标题 -->
+<li>
+  <strong>本文标题： </strong>
+  尚硅谷-SpringCloud教程
+</li>
+
+<!-- 本文作者 -->
+<li class="post-copyright-author">
+  <strong>本文作者： </strong>
+  
+</li>
+
+<!-- 创建时间 -->
+<li>
+  <strong>创建时间： </strong>
+  2021年07月28日 - 00时07分
+</li>
+
+<!-- 修改时间 -->
+<li>
+  <strong>修改时间： </strong>
+  2021年07月28日 - 00时07分
+</li>
+
+<!-- 引用链接 -->
+<li class="post-copyright-link">
+  <strong>本文链接：</strong>
+  <a href="http://yoursite.com/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/" title="尚硅谷-SpringCloud教程"
+    >http://yoursite.com/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/</a
+  >
+  <span class="copy-path" title="点击复制引用链接"
+    ><i
+      style="cursor: pointer"
+      class="fa fa-clipboard"
+      data-clipboard-text="['s Blog | 尚硅谷-SpringCloud教程](http://yoursite.com/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/)"
+      aria-label="复制成功"
+    ></i
+  ></span>
+</li>
+
+<!-- 版权声明 -->
+<li class="post-copyright-license">
+  <strong
+    >版权声明：
+  </strong>
+  本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+</li>
+</ul>
+
+<script>
+var clipboard = new ClipboardJS(".fa-clipboard");
+clipboard.on("success", function(target) {
+  var message = document.createElement("div");
+  message.innerHTML =
+    '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+    target.trigger.getAttribute("aria-label") +
+    "</span>";
+  swal({
+    content: message,
+    className: "copy-success-message",
+    timer: 1000,
+    button: false
+  });
+});
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag"><i class="fa fa-tag"></i> b站视频</a>
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          
+            <a href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/07/26/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringBoot2%E6%95%99%E7%A8%8B/" rel="next" title="尚硅谷-SpringBoot2教程">
+                <i class="fa fa-chevron-left"></i> 尚硅谷-SpringBoot2教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <a href="/">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/picture.jpg"
+                alt="潇 卟 甸" />
+              </a>
+            
+              <p class="site-author-name" itemprop="name">潇 卟 甸</p>
+              <p class="site-description motion-element" itemprop="description">总结自己一些知识，一些事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+			
+				<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+				<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+				<div class="widget-wrap">
+					<div id="myCanvasContainer" class="widget tagcloud">
+						<canvas width="250" height="250" id="resCanvas" style="width=100%">
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">45</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%AE%9E%E8%B7%B5/" rel="tag">Java实践</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E7%BA%A7/" rel="tag">中级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E4%BB%A3%E7%A0%81/" rel="tag">源代码</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/" rel="tag">电子书</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">4</span></li></ul>
+						</canvas>
+					</div>
+				</div>
+			
+
+          </nav>
+
+          
+
+          
+		  
+		  <!-- 添加近期文章 -->
+			
+				<div class="links-of-blogroll motion-element links-of-blogroll-block">
+				<div class="links-of-blogroll-title">
+				<!-- modify icon to fire by szw -->
+				<i class="fa fa-history fa-" aria-hidden="true"></i>
+				近期文章
+				</div>
+				<ul class="links-of-blogroll-list">
+				
+				
+					<li>
+					<a href="/2021/07/28/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringCloud%E6%95%99%E7%A8%8B/" title="尚硅谷-SpringCloud教程" target="_blank">尚硅谷-SpringCloud教程</a>
+					</li>
+				
+					<li>
+					<a href="/2021/07/26/%E5%B0%9A%E7%A1%85%E8%B0%B7-SpringBoot2%E6%95%99%E7%A8%8B/" title="尚硅谷-SpringBoot2教程" target="_blank">尚硅谷-SpringBoot2教程</a>
+					</li>
+				
+					<li>
+					<a href="/2021/07/24/%E5%B0%9A%E7%A1%85%E8%B0%B7-RabbitMQ%E6%95%99%E7%A8%8B/" title="尚硅谷-RabbitMQ教程" target="_blank">尚硅谷-RabbitMQ教程</a>
+					</li>
+				
+					<li>
+					<a href="/2021/07/22/%E5%B0%9A%E7%A1%85%E8%B0%B7-%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B9%8BActiveMQ/" title="尚硅谷-消息中间件之ActiveMQ" target="_blank">尚硅谷-消息中间件之ActiveMQ</a>
+					</li>
+				
+					<li>
+					<a href="/2021/07/21/%E5%B0%9A%E7%A1%85%E8%B0%B7-Dubbo%E6%95%99%E7%A8%8B/" title="尚硅谷-Dubbo教程" target="_blank">尚硅谷-Dubbo教程</a>
+					</li>
+				
+				</ul>
+			</div>
+			
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sushan102.top/posts/1410804403/" title="博客搭建" target="_blank">博客搭建</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://how2j.cn?p=154642" title="HOW2J" target="_blank">HOW2J</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+		  
+		  
+			
+		  
+		  <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习路线"><span class="nav-text">学习路线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视频观看"><span class="nav-text">视频观看</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程结构"><span class="nav-text">课程结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#笔记"><span class="nav-text">笔记</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script
+  async
+  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">潇 卟 甸</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+     我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+    </span>
+  
+
+  
+    <span class="site-pv">
+     历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz',
+        appKey: 'NMGzUaGqmpzSiSItkHBQGUaA',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz", "NMGzUaGqmpzSiSItkHBQGUaA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+ <script src="/js/src/activate-power-mode.js"></script>
+ <script>
+   POWERMODE.colorful = true;
+   POWERMODE.shake = false;
+   document.body.addEventListener('input', POWERMODE);
+ </script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20200610,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `我已在此等候你 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+
+
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+  
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

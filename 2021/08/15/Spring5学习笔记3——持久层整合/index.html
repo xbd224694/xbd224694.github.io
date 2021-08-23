@@ -92,17 +92,16 @@
 <meta property="og:url" content="http://yoursite.com/2021/08/15/Spring5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88/index.html">
 <meta property="og:site_name" content="伶仃浩瀚">
 <meta property="og:description" content="网址： https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV185411477k">
-<meta property="og:image" content="https://i.loli.net/2020/10/08/wlvk8EpROAhDi6z.png">
-<meta property="og:image" content="https://i.loli.net/2020/10/09/s4YVzUJ9tgjpD67.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/15/Spring5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88/3-1.png">
 <meta property="article:published_time" content="2021-08-15T06:25:27.000Z">
-<meta property="article:modified_time" content="2021-08-15T06:26:44.815Z">
+<meta property="article:modified_time" content="2021-08-21T15:53:16.863Z">
 <meta property="article:author" content="潇 卟 甸">
 <meta property="article:tag" content="b站视频">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="编程">
 <meta property="article:tag" content="基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2020/10/08/wlvk8EpROAhDi6z.png">
+<meta name="twitter:image" content="http://yoursite.com/2021/08/15/Spring5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88/3-1.png">
 
 
 
@@ -486,7 +485,7 @@
 <h5 id="3-2-Mybatis在开发过程中存在问题"><a class="header-anchor" href="#3-2-Mybatis在开发过程中存在问题">¶</a>3.2 Mybatis在开发过程中存在问题</h5>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">配置繁琐  代码冗余 </span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>实体</span><br><span class="line"><span class="bullet">2. </span>实体别名         配置繁琐 </span><br><span class="line"><span class="bullet">3. </span>表</span><br><span class="line"><span class="bullet">4. </span>创建DAO接口</span><br><span class="line"><span class="bullet">5. </span>实现Mapper文件</span><br><span class="line"><span class="bullet">6. </span>注册Mapper文件   配置繁琐 </span><br><span class="line"><span class="bullet">7. </span>MybatisAPI调用  代码冗余</span><br></pre></td></tr></table></figure>
 <h5 id="3-3-Spring与Mybatis整合思路分析"><a class="header-anchor" href="#3-3-Spring与Mybatis整合思路分析">¶</a>3.3 Spring与Mybatis整合思路分析</h5>
-<p><img src="https://i.loli.net/2020/10/08/wlvk8EpROAhDi6z.png" alt="image-20200504141407141"></p>
+<p><img src="/2021/08/15/Spring5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88/3-1.png" alt></p>
 <h5 id="3-4-Spring与Mybatis整合的开发步骤分析："><a class="header-anchor" href="#3-4-Spring与Mybatis整合的开发步骤分析：">¶</a>3.4 Spring与Mybatis整合的开发步骤分析：</h5>
 <ul>
 <li>
@@ -556,7 +555,7 @@
 <ul>
 <li>
 <p>隔离属性的概念</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">概念：他描述了事务解决并发问题的特征</span><br><span class="line"><span class="bullet">1. </span>什么是并发</span><br><span class="line"><span class="code">       多个事务(用户)在同一时间，访问操作了相同的数据</span></span><br><span class="line"><span class="code">       </span></span><br><span class="line"><span class="code">       同一时间：0.000几秒 微小前 微小后</span></span><br><span class="line"><span class="bullet">2. </span>并发会产生那些问题</span><br><span class="line"><span class="bullet">       1. </span>脏读</span><br><span class="line"><span class="bullet">       2. </span>不可重复读</span><br><span class="line"><span class="bullet">       3. </span>幻影读</span><br><span class="line"><span class="bullet">3. </span>并发问题如何解决</span><br><span class="line"><span class="code">       通过隔离属性解决，隔离属性中设置不同的值，解决并发处理过程中的问题。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">概念：他描述了事务解决并发问题的特征</span><br><span class="line"><span class="bullet">1. </span>什么是并发</span><br><span class="line"><span class="code">       多个事务(用户)在同一时间，访问操作了相同的数据</span></span><br><span class="line"><span class="code">       </span></span><br><span class="line"><span class="code">       同一时间：0.000几秒 微小前 微小后</span></span><br><span class="line"><span class="bullet">2. </span>并发会产生哪些问题</span><br><span class="line"><span class="bullet">       1. </span>脏读</span><br><span class="line"><span class="bullet">       2. </span>不可重复读</span><br><span class="line"><span class="bullet">       3. </span>幻影读</span><br><span class="line"><span class="bullet">3. </span>并发问题如何解决</span><br><span class="line"><span class="code">       通过隔离属性解决，隔离属性中设置不同的值，解决并发处理过程中的问题。</span></span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>事务并发会产生的问题</p>
@@ -638,7 +637,6 @@
 <li>
 <p>传播属性的概念：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">概念：他描述了事务解决嵌套问题的特征</span><br><span class="line"></span><br><span class="line">什么叫做事务的嵌套：他指的是一个大的事务中，包含了若干个小的事务</span><br><span class="line"></span><br><span class="line">问题：大事务中融入了很多小的事务，他们彼此影响，最终就会导致外部大的事务，丧失了事务的原子性</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2020/10/09/s4YVzUJ9tgjpD67.png" alt="image-20201009152618662"></p>
 </li>
 <li>
 <p>传播属性的值极其用法：</p>
@@ -708,14 +706,14 @@
 </li>
 </ul>
 <h5 id="3-3-只读属性-readOnly"><a class="header-anchor" href="#3-3-只读属性-readOnly">¶</a>3.3 只读属性(readOnly)</h5>
-<p>针对于只进行查询操作的业务方法，可以加入只读属性，提供运行效率</p>
+<p>针对于只进行查询操作的业务方法，可以加入只读属性，提高运行效率</p>
 <p>默认值：false</p>
 <h5 id="3-4-超时属性-timeout"><a class="header-anchor" href="#3-4-超时属性-timeout">¶</a>3.4 超时属性(timeout)</h5>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">指定了事务等待的最长时间</span><br><span class="line"></span><br><span class="line"><span class="bullet">1. </span>为什么事务进行等待？</span><br><span class="line">   当前事务访问数据时，有可能访问的数据被别的事务进行加锁的处理，那么此时本事务就必须进行等待。</span><br><span class="line"><span class="bullet">2. </span>等待时间 秒</span><br><span class="line"><span class="bullet">3. </span>如何应用 @Transactional(timeout=2)</span><br><span class="line"><span class="bullet">4. </span>超时属性的默认值 -1 </span><br><span class="line">   最终由对应的数据库来指定</span><br></pre></td></tr></table></figure>
 <h5 id="3-5-异常属性"><a class="header-anchor" href="#3-5-异常属性">¶</a>3.5 异常属性</h5>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Spring事务处理过程中</span><br><span class="line">默认 对于RuntimeException及其子类 采用的是回滚的策略</span><br><span class="line">默认 对于Exception及其子类 采用的是提交的策略</span><br><span class="line"></span><br><span class="line">rollbackFor = &#123;java.lang.Exception,xxx,xxx&#125; </span><br><span class="line">noRollbackFor = &#123;java.lang.RuntimeException,xxx,xx&#125;</span><br><span class="line"></span><br><span class="line">@Transactional(rollbackFor = &#123;java.lang.Exception.class&#125;,noRollbackFor = &#123;java.lang.RuntimeException.class&#125;)</span><br><span class="line"></span><br><span class="line">建议：实战中使用RuntimeExceptin及其子类 使用事务异常属性的默认值</span><br></pre></td></tr></table></figure>
 <h4 id="4-事务属性常见配置总结"><a class="header-anchor" href="#4-事务属性常见配置总结">¶</a>4. 事务属性常见配置总结</h4>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>隔离属性   默认值 </span><br><span class="line"><span class="bullet">2. </span>传播属性   Required(默认值) 增删改   Supports 查询操作</span><br><span class="line"><span class="bullet">3. </span>只读属性   readOnly false  增删改   true 查询操作</span><br><span class="line"><span class="bullet">4. </span>超时属性   默认值 -1</span><br><span class="line"><span class="bullet">5. </span>异常属性   默认值 </span><br><span class="line"></span><br><span class="line">增删改操作   @Transactional</span><br><span class="line">查询操作     @Transactional(propagation=Propagation.SUPPORTS,readOnly=true)</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>隔离属性   默认值 </span><br><span class="line"><span class="bullet">2. </span>传播属性   Required(默认值) 增删改   Supports 查询操作</span><br><span class="line"><span class="bullet">3. </span>只读属性   readOnly false  增删改   true 查询操作</span><br><span class="line"><span class="bullet">4. </span>超时属性   默认值 -1</span><br><span class="line"><span class="bullet">5. </span>异常属性   默认值 </span><br><span class="line"> </span><br><span class="line">增删改操作   @Transactional</span><br><span class="line">查询操作     @Transactional(propagation=Propagation.SUPPORTS,readOnly=true)</span><br></pre></td></tr></table></figure>
 <h4 id="5-基于标签的事务配置方式-事务开发的第二种形式"><a class="header-anchor" href="#5-基于标签的事务配置方式-事务开发的第二种形式">¶</a>5.  基于标签的事务配置方式(事务开发的第二种形式)</h4>
 <ul>
 <li>
@@ -815,7 +813,7 @@
 <!-- 修改时间 -->
 <li>
   <strong>修改时间： </strong>
-  2021年08月15日 - 14时08分
+  2021年08月21日 - 23时08分
 </li>
 
 <!-- 引用链接 -->

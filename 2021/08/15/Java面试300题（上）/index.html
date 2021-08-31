@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="b站视频,Java,编程,面试题," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="网址： https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Mv411E7Mm?p&#x3D;4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试300题（上）">
+<meta property="og:url" content="http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
+<meta property="og:site_name" content="伶仃浩瀚">
+<meta property="og:description" content="网址： https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Mv411E7Mm?p&#x3D;4">
+<meta property="og:image" content="http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/5.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/18.png">
+<meta property="article:published_time" content="2021-08-15T00:52:18.000Z">
+<meta property="article:modified_time" content="2021-08-26T01:08:37.126Z">
+<meta property="article:author" content="潇 卟 甸">
+<meta property="article:tag" content="b站视频">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/5.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/08/15/Java面试300题（上）/"/>
+
+
+
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <title>Java面试300题（上） | 伶仃浩瀚</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://xbd224694.github.io" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">伶仃浩瀚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="潇 卟 甸">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伶仃浩瀚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java面试300题（上）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2021-08-15T08:52:18+08:00">
+                2021-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Monkey/" itemprop="url" rel="index">
+                    <span itemprop="name">Monkey</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/" class="leancloud_visitors" data-flag-title="Java面试300题（上）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+	 <span> ℃ </span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  19 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>网址：</strong></p>
+<p><a href="https://www.bilibili.com/video/BV1Mv411E7Mm?p=4" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1Mv411E7Mm?p=4</a></p>
+<a id="more"></a>
+<h1 id="4、说一下HashMap的Put方法"><a class="header-anchor" href="#4、说一下HashMap的Put方法">¶</a>4、说一下HashMap的Put方法</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">先说HashMap的Put方法的大体流程:</span><br><span class="line"><span class="bullet">1. </span>根据Key通过哈希算法与与运算得出数组下标</span><br><span class="line"><span class="bullet">2. </span>如果数组下标位置元素为空，则将key和value封装为Entry对象(JDK1.7中是Entry对象，JDK1.8中是Node对象)）并放入该位置</span><br><span class="line"></span><br><span class="line"><span class="bullet">3. </span>如果数组下标位置元素不为空，则要分情况讨论</span><br><span class="line"><span class="code">		a.如果是JDK1.7，则先判断是否需要扩容，如果要扩容就进行扩容，如果不用扩容就生成Entry对象，并使用头插法添加到当前位置的链表中</span></span><br><span class="line"><span class="code">		b.如果是JDK1.8，则会先判断当前位置上的Node的类型，看是红黑树Node，还是链表Node</span></span><br><span class="line"><span class="code">			i.如果是红黑树Node，则将key和value封装为一个红黑树节点并添加到红黑树中去，在这个过程中会判断红黑树中是否存在当前key,如果存在则更新value</span></span><br><span class="line"><span class="code">			ii.如果此位置上的Node对象是链表节点，则将key和value封装为一个链表Node并通过尾插法插入到链表的最后位置去，因为是尾插法，所以需要遍历链表，在遍历链表的过程中会判断是否存在当前key,如果存在则更新value，当遍历完链表后，将新键表Node插入到链表中，插入到链表后，会看当前链表的节点个数，如果大于等于8，那么则会将该链表转成红黑树</span></span><br><span class="line"><span class="code">			iii.将key和value封装位Node插入到链表或红黑树中后，再判断是否需要进行扩容，如果需要就扩容，如果不需要就结束PUT方法</span></span><br></pre></td></tr></table></figure>
+<h1 id="5、说一下JVM中，哪些是共享区-哪些可以作为gc-root"><a class="header-anchor" href="#5、说一下JVM中，哪些是共享区-哪些可以作为gc-root">¶</a>5、说一下JVM中，哪些是共享区!哪些可以作为gc root</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>堆区和方法区是所有线程共享的，栈、本地方法栈、程序计数器是每个线程独有的</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/5.png" alt></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">2. </span>什么是gc root，JVM在进行垃圾回收时，需要找到“垃圾”对象，也就是没有被引用的对象，但是直接找“垃圾”对象是比较耗时的，所以反过来，先找“非垃圾”对象,也就是正常对象，那么就需要从某些“根”开始去找，根据这些“根”的引用路径找到正常对象，而这些“根”有一个特征，就是它只会引用其他对象，而不会被其他对象引用，例如:栈中的本地变量、方法区中的静态变量、本地方法栈中的变量、正在运行的线程等可以作为gc root。</span><br></pre></td></tr></table></figure>
+<h1 id="7、如何查看线程死锁"><a class="header-anchor" href="#7、如何查看线程死锁">¶</a>7、如何查看线程死锁</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>可以通过jstack命令来进行查看，jstack命令中会显示发生了死锁的线程</span><br><span class="line"><span class="bullet">2. </span>或者两个线程去操作数据库时，数据库发生了死锁，这是可以查询数据库的死锁情况</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1、查询是否锁表</span><br><span class="line">show OPEN TABLES where In_use &gt; 0;</span><br><span class="line">2、查询进程</span><br><span class="line">show processlist;</span><br><span class="line">3、查看正在锁的事务</span><br><span class="line">SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;</span><br><span class="line">4、查看等待锁的事务</span><br><span class="line">SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS;</span><br></pre></td></tr></table></figure>
+<h1 id="8、线程之间如何进行通讯的"><a class="header-anchor" href="#8、线程之间如何进行通讯的">¶</a>8、线程之间如何进行通讯的</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>线程之间可以通过共享内存或基于网络来进行通信</span><br><span class="line"><span class="bullet">2. </span>如果是通过共享内存来进行通信，则需要考虑并发问题，什么时候阻塞，什么时候唤醒</span><br><span class="line"></span><br><span class="line"><span class="bullet">3. </span>像Java中的wait()、notify()就是阻塞和唤醒</span><br><span class="line"><span class="bullet">4. </span>通过网络就比较简单了，通过网络连接将通信数据发送给对方，当然也要考虑到并发问题，处理方式就是加锁等方式</span><br></pre></td></tr></table></figure>
+<h1 id="14、还读过哪些框架源码介绍一下你还熟悉的"><a class="header-anchor" href="#14、还读过哪些框架源码介绍一下你还熟悉的">¶</a>14、还读过哪些框架源码介绍一下你还熟悉的</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这个问题比较广泛，你即可以说:HashMap、线程池等"JDK白带的源码，也可以说Mybatis、Spring Boot、Spring Cloud、消息队列等开发框架或中间件的源码</span><br></pre></td></tr></table></figure>
+<h1 id="15、说一下ThreadLocal"><a class="header-anchor" href="#15、说一下ThreadLocal">¶</a>15、说一下ThreadLocal</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>ThreadLocal是Java中所提供的线程本地存储机制，可以利用该机制将数据缓存在某个线程内部，该线程可以在任意时刻、任意方法中获取缓存的数据</span><br><span class="line"><span class="bullet">2. </span>ThreadLocal底层是通过ThreadlocalMap来实现的，每个Thread对象、(注意不是Threadlocal对象)中都存在一个ThreadlocalMap，Map的key为Threadloca对象，Map的value为需要缓存的值</span><br><span class="line"><span class="bullet">3. </span>如果在线程池中使用Threadlocal会造成内存泄漏，因为当Threadlocal对象使用完之后，应该要把设置的Key , value，也就是Enty对象进行回收，但线程池中的线程不会回收，而线程对象是通过强引用指向TheadLoclMap,TheadLocalMap也是通过强引用指向Enty对象，线程不被回收，Enty对象也就不会被回收，从而出现内存泄漏，解决办法是，在使用了ThreadLocal对象之后，手动调用ThreadLocal的remove方法，手动清除Entry对象</span><br><span class="line"><span class="bullet">4. </span>ThreadLocal经典的应用场景就是连接管理（一个线程持有一个连接，该连接对象可以在不同的方法之间进行传递，线程之间不共享同一个连接)</span><br></pre></td></tr></table></figure>
+<h1 id="16、Jdk1-7到Jdk1-8-HashMap发生了什么变化-底层"><a class="header-anchor" href="#16、Jdk1-7到Jdk1-8-HashMap发生了什么变化-底层">¶</a>16、Jdk1.7到Jdk1.8 HashMap发生了什么变化(底层)?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>1.7中底层是数组+链表，1.8中底层是数组+链表+红黑树，加红黑树的目的是提高HashMap插入和查询整体效率</span><br><span class="line"><span class="bullet">2. </span>1.7中链表插入使用的是头插法，1.8中链表插入使用的是尾插法，因为1.8中插入key和Value时需要判断铤表元素个数，所以需要遍历链表统计链表元素个数，所以正好就直接使用尾插法</span><br><span class="line"><span class="bullet">3. </span>1.7中哈希算法比较复杂，存在各种右移与异或运算，1.8中进行了简化，因为复杂的哈希算法的目的就是提高散列性，来提供HashMap的整体效率，而1.8中新增了红黑树，所以可以适当的简化哈希算法，节省CPU资源</span><br></pre></td></tr></table></figure>
+<h1 id="17、Jdk1-7到Jdk1-8-java虚拟机发生了什么变化"><a class="header-anchor" href="#17、Jdk1-7到Jdk1-8-java虚拟机发生了什么变化">¶</a>17、Jdk1.7到Jdk1.8 java虚拟机发生了什么变化?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.7中存在永久代，1.8中没有永久代，替换它的是元空间，元空间所占的内存不是在虚拟机内部，而是本地内存空间，这么做的原因是，不管是永久代还是元空间，他们都是方法区的具体实现，之所以元空间所占的内存改成本地内存，官方的说法是为了和JRockit统一，不过额外还有一些原因，比如方法区所存储的类信息通常是比较难确定的，所以对于方法区的大小是比较难指定的，太小了容易出现方去区溢出，太大了又会占用了太多虚拟机的内存空间，而转移到本地内存后则不会影响虚拟机所占用的内存</span><br></pre></td></tr></table></figure>
+<h1 id="18、如何实现AOP，项目哪些地方用到了AOP"><a class="header-anchor" href="#18、如何实现AOP，项目哪些地方用到了AOP">¶</a>18、如何实现AOP，项目哪些地方用到了AOP</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">利用动态代理技术来实现AOP，比如JDK动态代理或Cglib动态代理，利用动态代理技术，可以针对某个类生成代理对象，当调用代理对象的某个方法时，可以任意控制该方法的执行，比如可以先打印执行时间，再执行该方法，并且该方法执行完成后，再次打印执行时间。</span><br><span class="line">项目中，比如事务、权限控制、方法执行时长日志都是通过AOP技术来实现的，凡是需要对某些方法做统一处理的都可以用AOP来实现，利用AOP可以做到业务无侵入。</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/18.png" alt></p>
+<h1 id="19、Spring中后置处理器的作用"><a class="header-anchor" href="#19、Spring中后置处理器的作用">¶</a>19、Spring中后置处理器的作用</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Spring中的后置处理器分为BeanFactory后置处理器和Bean后置处理器，它们是Spring底层源码架构设计中非常重要的一种机制，同时开发者也可以利用这两种后置处理器来进行扩展。Beanfactony后置处理器表示针对BeanFactoy的处理器，Spring启动过程中，会先创建出BeanFactory实例，然后利用Beanfactony处理器来加工Beanfactory，比如Spring的扫描就是基于Beanfactoy后置处理器来实现的，而Bean后置处理器也类似，Spring在创建一个Bean的过程中，首先会实例化得到一个对象，然后再利用Bean后置处理器来对该实例对象进行加工，比如我们常说的依赖注入就是基于一个Bean后置处理器来实现的，通过该Bean后置处理器来给实例对象中加了@Autowired注解的属性自动赋值，还比如我们常说的AOP，也是利用一个Bean后置处理器来实现的，基于原实例对象，判断是否需要进行AOP，如果需要，那么就基于原实例对象进行动态代理，生成一个代理对象。</span><br></pre></td></tr></table></figure>
+<h1 id="20、说说常用的SpringBoot注解，及其实现"><a class="header-anchor" href="#20、说说常用的SpringBoot注解，及其实现">¶</a>20、说说常用的SpringBoot注解，及其实现</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>@SpringBootApplication注解:这个注解标识了一个SpringBoot工程，它实际上是另外三个注解的组合，这三个注解是:</span><br><span class="line"><span class="code">		a.@SprirgBootConfiguration:这个注解实际就是一个@Configuration，表示启动类也是一个配置类</span></span><br><span class="line"><span class="code">		b.@EnableAutoConfiguration:向Spring容器中导入了一个Selector，用来加载Classpath下SpringFacories中所定义的自动配置类，将这些自动加载为配置Bean</span></span><br><span class="line"><span class="code">		c.@ComponentScan:标识扫描路径，因为默认是没有配置实际扫描路径，所以SpringBoot扫描的路径是启动类所在的当前目录</span></span><br><span class="line"><span class="bullet">2. </span>@Bean注解:用来定义Bean，类似于XML中的cbean&gt;标签，Spring在启动时，会对加了@Bean注解的方法进行解析，将方法的名字做为beanName，并通过执行方法得到bean对象</span><br><span class="line"><span class="bullet">3. </span>@Controller、@Service、@ResponseBody、@Autowired都可以说</span><br></pre></td></tr></table></figure>
+<h1 id="21、说说你了解的分布式锁实现"><a class="header-anchor" href="#21、说说你了解的分布式锁实现">¶</a>21、说说你了解的分布式锁实现</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">分布式锁所要解决的问题的本质是:能够对分布在多台机器中的线程对共享资源的互斥访问。在这个原理上可以有很多的实现方式:</span><br><span class="line"><span class="bullet">1. </span>基于Mysql，分布式环境中的线程连接同一个数据库，利用数据库中的行锁来达到互斥访问，但是Mysql的加锁和释放锁的性能会比较低，不适合真正的实际生产环境</span><br><span class="line"><span class="bullet">2. </span>基于Zookeeper,Zookeeper中的数据是存在内存的，所以相对于Mysql性能上是适合实际环境的，并且基于Zookeeper的顺序节点、临时节点、Watch机制能非常好的来实现的分布式锁</span><br><span class="line"><span class="bullet">3. </span>基于Redis，Redis中的数据也是在内存，基于Redis的消费订阅功能、数据超时时间，lua脚本等功能，也能很好的实现的分布式锁</span><br></pre></td></tr></table></figure>
+<h1 id="22、Redis的数据结构及使用场景"><a class="header-anchor" href="#22、Redis的数据结构及使用场景">¶</a>22、Redis的数据结构及使用场景</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Redis的数据结构有:</span><br><span class="line"><span class="bullet">1. </span>字符串:可以用来做最简单的数据缓存，可以缓存某个简单的字符串，也可以缓存某个json格式的字符串，Redis分布式锁的实现就利用了这种数据结构，还包括可以实现计数器、Session共享、分布式ID</span><br><span class="line"><span class="bullet">2. </span>哈希表:可以用来存储一些key-value对，更适合用来存储对象</span><br><span class="line"><span class="bullet">3. </span>列表: Redis的列表通过命令的组合，既可以当做栈，也可以当做队列来使用，可以用来缓存类似微信公众号、微博等消息流数据</span><br><span class="line"><span class="bullet">4. </span>集合:和列表类似，也可以存储多个元素，但是不能重复，集合可以进行交集、并集、差集操作，从而可以实现类似，我和某人共同关注的人、朋友圈点赞等功能</span><br><span class="line"><span class="bullet">5. </span>有序集合:集合是无序的，有序集合可以设置顺序，可以用来实现排行榜功能</span><br></pre></td></tr></table></figure>
+<h1 id="23、Redis集群策略"><a class="header-anchor" href="#23、Redis集群策略">¶</a>23、Redis集群策略</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Redis提供了三种集群策略:</span><br><span class="line"><span class="bullet">1. </span>主从模式:这种模式比较简单，主库可以读写，并且会和从库进行数据同步，这种模式下，客户端直接连主库或某个从库，但是但主库或从库宕机后，客户端需要手动修改IP，另外，这种模式也比较难进行扩容，整个集群所能存储的数据受到某台机器的内存容量，所以不可能支持特大数据量</span><br><span class="line"><span class="bullet">2. </span>哨兵模式:这种模式在主从的基础上新增了哨兵节点，但主库节点宕机后，哨兵会发现主库节点宕机，然后在从库中选择一个库作为进的主库，另外哨兵也可以做集群，从而可以保证但某一个哨兵节点宕机后，还有其他哨兵节点可以继续工作，这种模式可以比较好的保证Redis集群的高可用，但是仍然不能很好的解决Redis的容量上限问题。</span><br><span class="line"><span class="bullet">3. </span>Cluster模式:Custer模式是用得比较多的模式，它支持多主多从，这种模式会按照key进行槽位的分配，可以使得不同的Key分散到不同的主节点上，利用这种模式可以使得整个集群支持更大的数据容量，同时每个主节点可以拥有自己的多个从节点，如果该主节点宕机，会从它的从节点中选举一个新的主节点</span><br><span class="line">对于这三种模式，如果Redis要存的数据量不大，可以选择哨兵模式，如果Redis要存的数据量大，并且需要持续的扩容，那么选择Cluster模式.</span><br></pre></td></tr></table></figure>
+<h1 id="24、Mysql数据库中，什么情况下设置了索引但无法使用"><a class="header-anchor" href="#24、Mysql数据库中，什么情况下设置了索引但无法使用">¶</a>24、Mysql数据库中，什么情况下设置了索引但无法使用?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>没有符合最左前缀原则</span><br><span class="line"><span class="bullet">2. </span>字段进行了隐式数据类型转化</span><br><span class="line"><span class="bullet">3. </span>走索引没有全表扫描效率高</span><br></pre></td></tr></table></figure>
+<h1 id="25、Innodb是如何实现事务的"><a class="header-anchor" href="#25、Innodb是如何实现事务的">¶</a>25、Innodb是如何实现事务的</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Innodb通过Buffer Pool，LogBuffer，Redo Log,Undo Log来实现事务，以一个update语句为例:</span><br><span class="line"><span class="bullet">1. </span>lnnodb在收到一个update语句后，会先根据条件找到数据所在的页，并将该页缓存在Buffer Pool中</span><br><span class="line"><span class="bullet">2. </span>执行update语句，修改Buffer Pool中的数据，也就是内存中的数据</span><br><span class="line"><span class="bullet">3. </span>针对update语句生成—个RedoLog对象，并存入LogBuffer中</span><br><span class="line"><span class="bullet">4. </span>针对update语句生成undolog日志，用于事务回滚</span><br><span class="line"><span class="bullet">5. </span>如果事务提交，那么则把RedoLog对象进行持久化，后续还有其他机制将Buffer Pool中所修改的数据页持久化到磁盘中</span><br><span class="line"><span class="bullet">6. </span>如果事务回滚，则利用undolog日志进行回滚</span><br></pre></td></tr></table></figure>
+<h1 id="26、聊聊你最有成就感的项目"><a class="header-anchor" href="#26、聊聊你最有成就感的项目">¶</a>26、聊聊你最有成就感的项目</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>预目是做什么的</span><br><span class="line"><span class="bullet">2. </span>用了什么技术</span><br><span class="line"><span class="bullet">3. </span>你在项目中担任的职位</span><br><span class="line"><span class="bullet">4. </span>收获了什么</span><br></pre></td></tr></table></figure>
+<h1 id="27、自己最有挑战的项目、难点"><a class="header-anchor" href="#27、自己最有挑战的项目、难点">¶</a>27、自己最有挑战的项目、难点</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>使用什么技术解决了什么项目难点</span><br><span class="line"><span class="bullet">2. </span>使用什么技术优化了什么项目功能</span><br><span class="line"><span class="bullet">3. </span>使用什么技术节省了多少成本</span><br></pre></td></tr></table></figure>
+<h1 id="28、遇到过哪些设计模式"><a class="header-anchor" href="#28、遇到过哪些设计模式">¶</a>28、遇到过哪些设计模式?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在学习一些框架或中间件的底层源码的时候遇到过一些设计模式:</span><br><span class="line"><span class="bullet">1. </span>代理模式: Mybatis中用到JDK动态代理来生成Mapper的代理对象，在执行代理对象的方法时会去执行SQL，Spring中AOP、包括@Configration注解的底层实现也都用到了代理模式</span><br><span class="line"><span class="bullet">2. </span>责任链模式: Tomcat中的Pipeline实现，以及Dubbo中的Filter机制都使用了责任链模式</span><br><span class="line"><span class="bullet">3. </span>工厂模式: Spring中的BeanFactory就是一种工厂模式的实现</span><br><span class="line"><span class="bullet">4. </span>适配器模式: Spring中的Bean销毁的生命周期中用到了适配器模式，用来适配各种Bean销毁逻辑的执行方式</span><br><span class="line"><span class="bullet">5. </span>外观模式: Tomcat中的Request和RequestFacade之间体现的就是外观模式</span><br><span class="line"><span class="bullet">6. </span>模板方法模式: Spring中的refresh方法中就提供了给子类继承重写的方法，就用到了模板方法模式</span><br></pre></td></tr></table></figure>
+<h1 id="29、Java死锁如何避免"><a class="header-anchor" href="#29、Java死锁如何避免">¶</a>29、Java死锁如何避免?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">造成死锁的几个原因:</span><br><span class="line"><span class="bullet">1. </span>一个资源每次只能被一个线程使用</span><br><span class="line"><span class="bullet">2. </span>一个线程在阻塞等待某个资源时，不释放已占有资源</span><br><span class="line"><span class="bullet">3. </span>一个线程已经获得的资源，在未使用完之前，不能被强行剥夺</span><br><span class="line"><span class="bullet">4. </span>若干线程形成头尾相接的循环等待资源关系</span><br><span class="line"></span><br><span class="line">这是造成死锁必须要达到的4个条件，如果要避免死锁，只需要不满足其中某一个条件即可。而其中前3个条件是作为锁要符合的条件，所以要避免死锁就需要打破第4个条件不出现循环等待锁的关系。</span><br><span class="line"></span><br><span class="line">在开发过程中:</span><br><span class="line"><span class="bullet">1. </span>要注意加锁顺序，保证每个线程按同样的顺序进行加锁</span><br><span class="line"><span class="bullet">2. </span>要注意加锁时限，可以针对所设置一个超时时间</span><br><span class="line"><span class="bullet">3. </span>要注意死锁检查，这是一种预防机制，确保在第一时间发现死锁并进行解决</span><br></pre></td></tr></table></figure>
+<h1 id="30、深拷贝和浅拷贝"><a class="header-anchor" href="#30、深拷贝和浅拷贝">¶</a>30、深拷贝和浅拷贝</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">深拷贝和浅拷贝就是指对象的拷贝，一个对象中存在两种类型的属性，一种是基本数据类型，一种是实例对象的引用。</span><br><span class="line"><span class="bullet">1. </span>浅拷贝是指，只会拷贝基本数据类型的值，以及实例对象的引用地址，并不会复制一份引用地址所指向的对象，也就是浅拷贝出来的对象内部的类属性指向的是同一个对象</span><br><span class="line"><span class="bullet">2. </span>深拷贝是指，既会拷贝基本数据类型的值，也会针对实例对象的引用地址所指向的对象进行复制，深拷贝出来的对象，内部的属性指向的不是同一个对象</span><br></pre></td></tr></table></figure>
+<h1 id="31、如果你提交任务时，线程池队列已满，这时会发生什么"><a class="header-anchor" href="#31、如果你提交任务时，线程池队列已满，这时会发生什么">¶</a>31、如果你提交任务时，线程池队列已满，这时会发生什么</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>如果使用的无界队列，那么可以继续提交任务时没关系的</span><br><span class="line"><span class="bullet">2. </span>如果使用的有界队列，提交任务时，如果队列满了，如果核心线程数没有达到上限，那么则增加线程，如果线程数已经达到了最大值，则使用拒绝策略进行拒绝</span><br></pre></td></tr></table></figure>
+<h1 id="32、谈谈ConcurrentHashMap的扩容机制"><a class="header-anchor" href="#32、谈谈ConcurrentHashMap的扩容机制">¶</a>32、谈谈ConcurrentHashMap的扩容机制</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.7版本</span><br><span class="line"><span class="bullet">1. </span>1.7版本的ConcurrentHashMap是基于segment分段实现的</span><br><span class="line"><span class="bullet">2. </span>每个segment相对于一个小型的HashMap</span><br><span class="line"><span class="bullet">3. </span>每个Segment内部会进行扩容，和HashMap的扩容逻辑类似</span><br><span class="line"><span class="bullet">4. </span>先生成新的数组，然后转移原数到新数组中</span><br><span class="line"><span class="bullet">5. </span>扩容的判断也是每个Segment内部单独判断的，判断是否超过阈值</span><br><span class="line"></span><br><span class="line">1.8版本</span><br><span class="line"><span class="bullet">1. </span>1.8版本的ConcurrentHashMap不再基于Segment实现</span><br><span class="line"><span class="bullet">2. </span>当某个线程进行put时，如果发现ConcurrentHashMap正在进行扩容那么该线程一起进行扩容</span><br><span class="line"><span class="bullet">3. </span>如果某个线程put时，发现没有正在进行扩容，则将key-value添加到ConcurrentHashMap中，然后判断是否超过阈值，超过了则进行扩容</span><br><span class="line"><span class="bullet">4. </span>ConcurrentHashMap是支持多个线程同时扩容的</span><br><span class="line"><span class="bullet">5. </span>扩容之前也先生成一个新的数组</span><br><span class="line"><span class="bullet">6. </span>在转移元素时，先将原数组分组，将每组分给不同的线程来进行元素的转移，每个线程负责一组或多组的元素转移工作</span><br></pre></td></tr></table></figure>
+<h1 id="33、Spring中Bean是线程安全的吗"><a class="header-anchor" href="#33、Spring中Bean是线程安全的吗">¶</a>33、Spring中Bean是线程安全的吗?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Spring本身并没有针对Bean做线程安全的处理，所以:</span><br><span class="line"><span class="bullet">1. </span>如果Bean是无状态的，那么Bean则是线程安全的</span><br><span class="line"><span class="bullet">2. </span>如果Bean是有状态的，那么Bean则不是线程安全的</span><br><span class="line"></span><br><span class="line">另外，Bean是不是线程安全，跟Bean的作用域没有关系，Bean的作用域只是表示Bean的生命周期范围，对于任何生命周期的Bean都是一个对象，这个对象是不是线程安全的，还是得看这个Bean对象本身。</span><br></pre></td></tr></table></figure>
+<h1 id="34、说说你常用的Linux基本操作命令"><a class="header-anchor" href="#34、说说你常用的Linux基本操作命令">¶</a>34、说说你常用的Linux基本操作命令</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>增删查改</span><br><span class="line"><span class="bullet">2. </span>防火墙相关</span><br><span class="line"><span class="bullet">3. </span>ssh/scp</span><br><span class="line"><span class="bullet">4. </span>软件下载、解压、安装</span><br><span class="line"><span class="bullet">5. </span>修改权限</span><br></pre></td></tr></table></figure>
+<h1 id="35、Maven中Package和lnstall的区别"><a class="header-anchor" href="#35、Maven中Package和lnstall的区别">¶</a>35、Maven中Package和lnstall的区别</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>Package是打包，打成Jar或war</span><br><span class="line"><span class="bullet">2. </span>Install表示将Jar或War安装到本地仓库中</span><br></pre></td></tr></table></figure>
+<h1 id="36、SpringCloud各组件功能，与Dubbo的区别"><a class="header-anchor" href="#36、SpringCloud各组件功能，与Dubbo的区别">¶</a>36、SpringCloud各组件功能，与Dubbo的区别</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>Eupreka:注册中心，用来进行服务的自动注册和发现</span><br><span class="line"><span class="bullet">2. </span>Ribbon:负载均衡组件，用来在消费者调用服务时进行负载均衡</span><br><span class="line"><span class="bullet">3. </span>Feign:基于接口的申明式的服务调用客户端，让调用变得更简单</span><br><span class="line"><span class="bullet">4. </span>Hystrix:断路器，负责服务容错</span><br><span class="line"><span class="bullet">5. </span>Zuul:服务网关，可以进行服务路由、服务降级、负载均衡等</span><br><span class="line"><span class="bullet">6. </span>Nacos:分布式配置中心以及注册中心</span><br><span class="line"><span class="bullet">7. </span>Sentinel:服务的熔断降级，包括限流</span><br><span class="line"><span class="bullet">8. </span>Seata:分布式事务</span><br><span class="line"><span class="bullet">9. </span>Spring Cloud Config:分布式配置中心</span><br><span class="line"><span class="bullet">10. </span>Spring Cloud Bus:消息总线</span><br><span class="line"><span class="bullet">11. </span>...</span><br><span class="line"></span><br><span class="line">   Sping Cloud是一个微服务框架，提供了微服务领域中的很多功能组件，Dubbo一开始是一个RPC调用框架，核心是解决服务调用间的问题，Spring Cloud是一个大而全的框架，Dubo则更侧重于服务调用，所以Dubbo所提供的功能没有Sping Cloud全面，但是Dubbo的服务调用性能比Spring Cloud高，不过Spring Cloud和Dubbo并不是对立的,是可以结合起来一起使用的。</span><br></pre></td></tr></table></figure>
+<h1 id="37、说说类加载器双亲委派模型"><a class="header-anchor" href="#37、说说类加载器双亲委派模型">¶</a>37、说说类加载器双亲委派模型</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">JVM中存在三个默认的类加载器:</span><br><span class="line"><span class="bullet">1. </span>BootstrapClassLoader</span><br><span class="line"><span class="bullet">2. </span>ExtClassLoader</span><br><span class="line"><span class="bullet">3. </span>AppClassLoader</span><br><span class="line"></span><br><span class="line">AppClassLoader的父加载器是ExtClassLoader，ExtClassLoader的父加载器是BootstrapClassLoader。</span><br><span class="line"></span><br><span class="line">JVM在加载一个类时，会调用AppClassLoader的loadClass方法来加载这个类，不过在这个方法中，会先使用ExtClssloader的loadClass方法来加载类，同样ExtClassLoader的loadClass方法中会先使用BootstrapClassLoader来加载类，如果BootstrapClassLoader加载到了就直接成功，如果BootstrapClassLoader没有加载到，那么ExtClassLoader就会自己尝试加载该类，如果没有加载到。那么则会由AppClassLoader来加载这个类。</span><br><span class="line"></span><br><span class="line">所以，双亲委派指得是，JVM在加载类时，会委派给Ext和Bootstrap进行加载，如果没加载到才由自己进行加载。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+     
+         <div>
+ 
+  <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+   <span>-------- 本文结束 </span>
+   <i class="fa fa-paw"></i>
+   <span> 感谢阅读 --------</span>
+  </div>
+ 
+</div>
+     
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="潇 卟 甸 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="潇 卟 甸 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<ul class="post-copyright">
+<!-- 本文标题 -->
+<li>
+  <strong>本文标题： </strong>
+  Java面试300题（上）
+</li>
+
+<!-- 本文作者 -->
+<li class="post-copyright-author">
+  <strong>本文作者： </strong>
+  
+</li>
+
+<!-- 创建时间 -->
+<li>
+  <strong>创建时间： </strong>
+  2021年08月15日 - 08时08分
+</li>
+
+<!-- 修改时间 -->
+<li>
+  <strong>修改时间： </strong>
+  2021年08月26日 - 09时08分
+</li>
+
+<!-- 引用链接 -->
+<li class="post-copyright-link">
+  <strong>本文链接：</strong>
+  <a href="http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/" title="Java面试300题（上）"
+    >http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/</a
+  >
+  <span class="copy-path" title="点击复制引用链接"
+    ><i
+      style="cursor: pointer"
+      class="fa fa-clipboard"
+      data-clipboard-text="['s Blog | Java面试300题（上）](http://yoursite.com/2021/08/15/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8A%EF%BC%89/)"
+      aria-label="复制成功"
+    ></i
+  ></span>
+</li>
+
+<!-- 版权声明 -->
+<li class="post-copyright-license">
+  <strong
+    >版权声明：
+  </strong>
+  本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+</li>
+</ul>
+
+<script>
+var clipboard = new ClipboardJS(".fa-clipboard");
+clipboard.on("success", function(target) {
+  var message = document.createElement("div");
+  message.innerHTML =
+    '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+    target.trigger.getAttribute("aria-label") +
+    "</span>";
+  swal({
+    content: message,
+    className: "copy-success-message",
+    timer: 1000,
+    button: false
+  });
+});
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag"><i class="fa fa-tag"></i> b站视频</a>
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          
+            <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/08/13/80%E4%B8%AAJava%E9%9D%A2%E8%AF%95%E5%BF%85%E8%80%83%E9%A2%98/" rel="next" title="80个Java面试必考题">
+                <i class="fa fa-chevron-left"></i> 80个Java面试必考题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/08/15/Spring5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82/" rel="prev" title="Spring5学习笔记1——工厂">
+                Spring5学习笔记1——工厂 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <a href="/">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/picture.jpg"
+                alt="潇 卟 甸" />
+              </a>
+            
+              <p class="site-author-name" itemprop="name">潇 卟 甸</p>
+              <p class="site-description motion-element" itemprop="description">总结自己一些知识，一些事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+			
+				<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+				<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+				<div class="widget-wrap">
+					<div id="myCanvasContainer" class="widget tagcloud">
+						<canvas width="250" height="250" id="resCanvas" style="width=100%">
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%AE%9E%E8%B7%B5/" rel="tag">Java实践</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E7%BA%A7/" rel="tag">中级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E4%BB%A3%E7%A0%81/" rel="tag">源代码</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/" rel="tag">电子书</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a><span class="tag-list-count">7</span></li></ul>
+						</canvas>
+					</div>
+				</div>
+			
+
+          </nav>
+
+          
+
+          
+		  
+		  <!-- 添加近期文章 -->
+			
+				<div class="links-of-blogroll motion-element links-of-blogroll-block">
+				<div class="links-of-blogroll-title">
+				<!-- modify icon to fire by szw -->
+				<i class="fa fa-history fa-" aria-hidden="true"></i>
+				近期文章
+				</div>
+				<ul class="links-of-blogroll-list">
+				
+				
+					<li>
+					<a href="/2021/08/31/%E5%B0%9A%E7%A1%85%E8%B0%B7-Elasticsearch%E6%95%99%E7%A8%8B/" title="尚硅谷-Elasticsearch教程" target="_blank">尚硅谷-Elasticsearch教程</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8B%EF%BC%89/" title="Java面试300题（下）" target="_blank">Java面试300题（下）</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/" title="Java面试300题（中）" target="_blank">Java面试300题（中）</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/23/mybatis%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="mybatis源码分析" target="_blank">mybatis源码分析</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/23/SpringMVC-Thymeleaf%E7%89%88/" title="SpringMVC(Thymeleaf版)" target="_blank">SpringMVC(Thymeleaf版)</a>
+					</li>
+				
+				</ul>
+			</div>
+			
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sushan102.top/posts/1410804403/" title="博客搭建" target="_blank">博客搭建</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://how2j.cn?p=154642" title="HOW2J" target="_blank">HOW2J</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+		  
+		  
+			
+		  
+		  <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#4、说一下HashMap的Put方法"><span class="nav-text">4、说一下HashMap的Put方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、说一下JVM中，哪些是共享区-哪些可以作为gc-root"><span class="nav-text">5、说一下JVM中，哪些是共享区!哪些可以作为gc root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7、如何查看线程死锁"><span class="nav-text">7、如何查看线程死锁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8、线程之间如何进行通讯的"><span class="nav-text">8、线程之间如何进行通讯的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14、还读过哪些框架源码介绍一下你还熟悉的"><span class="nav-text">14、还读过哪些框架源码介绍一下你还熟悉的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15、说一下ThreadLocal"><span class="nav-text">15、说一下ThreadLocal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16、Jdk1-7到Jdk1-8-HashMap发生了什么变化-底层"><span class="nav-text">16、Jdk1.7到Jdk1.8 HashMap发生了什么变化(底层)?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17、Jdk1-7到Jdk1-8-java虚拟机发生了什么变化"><span class="nav-text">17、Jdk1.7到Jdk1.8 java虚拟机发生了什么变化?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18、如何实现AOP，项目哪些地方用到了AOP"><span class="nav-text">18、如何实现AOP，项目哪些地方用到了AOP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19、Spring中后置处理器的作用"><span class="nav-text">19、Spring中后置处理器的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20、说说常用的SpringBoot注解，及其实现"><span class="nav-text">20、说说常用的SpringBoot注解，及其实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21、说说你了解的分布式锁实现"><span class="nav-text">21、说说你了解的分布式锁实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22、Redis的数据结构及使用场景"><span class="nav-text">22、Redis的数据结构及使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23、Redis集群策略"><span class="nav-text">23、Redis集群策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24、Mysql数据库中，什么情况下设置了索引但无法使用"><span class="nav-text">24、Mysql数据库中，什么情况下设置了索引但无法使用?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25、Innodb是如何实现事务的"><span class="nav-text">25、Innodb是如何实现事务的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26、聊聊你最有成就感的项目"><span class="nav-text">26、聊聊你最有成就感的项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27、自己最有挑战的项目、难点"><span class="nav-text">27、自己最有挑战的项目、难点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28、遇到过哪些设计模式"><span class="nav-text">28、遇到过哪些设计模式?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#29、Java死锁如何避免"><span class="nav-text">29、Java死锁如何避免?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#30、深拷贝和浅拷贝"><span class="nav-text">30、深拷贝和浅拷贝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31、如果你提交任务时，线程池队列已满，这时会发生什么"><span class="nav-text">31、如果你提交任务时，线程池队列已满，这时会发生什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32、谈谈ConcurrentHashMap的扩容机制"><span class="nav-text">32、谈谈ConcurrentHashMap的扩容机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#33、Spring中Bean是线程安全的吗"><span class="nav-text">33、Spring中Bean是线程安全的吗?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34、说说你常用的Linux基本操作命令"><span class="nav-text">34、说说你常用的Linux基本操作命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#35、Maven中Package和lnstall的区别"><span class="nav-text">35、Maven中Package和lnstall的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#36、SpringCloud各组件功能，与Dubbo的区别"><span class="nav-text">36、SpringCloud各组件功能，与Dubbo的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#37、说说类加载器双亲委派模型"><span class="nav-text">37、说说类加载器双亲委派模型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script
+  async
+  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">潇 卟 甸</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+     我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+    </span>
+  
+
+  
+    <span class="site-pv">
+     历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz',
+        appKey: 'NMGzUaGqmpzSiSItkHBQGUaA',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz", "NMGzUaGqmpzSiSItkHBQGUaA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+ <script src="/js/src/activate-power-mode.js"></script>
+ <script>
+   POWERMODE.colorful = true;
+   POWERMODE.shake = false;
+   document.body.addEventListener('input', POWERMODE);
+ </script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20200610,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `我已在此等候你 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+
+
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+  
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>

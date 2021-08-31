@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="b站视频,Java,编程,面试题," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="网址： https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Mv411E7Mm?p&#x3D;4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试300题（中）">
+<meta property="og:url" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/index.html">
+<meta property="og:site_name" content="伶仃浩瀚">
+<meta property="og:description" content="网址： https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Mv411E7Mm?p&#x3D;4">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-1.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-2.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-3.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-4.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-5.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-6.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-7.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-8.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-9.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-10.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-11.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-12.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-13.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-14.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-15.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-16.png">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-17.png">
+<meta property="article:published_time" content="2021-08-26T01:10:18.000Z">
+<meta property="article:modified_time" content="2021-08-29T08:14:13.970Z">
+<meta property="article:author" content="潇 卟 甸">
+<meta property="article:tag" content="b站视频">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/08/26/Java面试300题（中）/"/>
+
+
+
+
+
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+  <title>Java面试300题（中） | 伶仃浩瀚</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://xbd224694.github.io" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">伶仃浩瀚</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="潇 卟 甸">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伶仃浩瀚">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java面试300题（中）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2021-08-26T09:10:18+08:00">
+                2021-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Monkey/" itemprop="url" rel="index">
+                    <span itemprop="name">Monkey</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/" class="leancloud_visitors" data-flag-title="Java面试300题（中）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+	 <span> ℃ </span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  8.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  33 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>网址：</strong></p>
+<p><a href="https://www.bilibili.com/video/BV1Mv411E7Mm?p=4" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1Mv411E7Mm?p=4</a></p>
+<a id="more"></a>
+<h1 id="100、井字游戏"><a class="header-anchor" href="#100、井字游戏">¶</a>100、井字游戏</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用字符串数组作为井字游戏的游戏板board，判断该游戏板有没有可能最终形成</span><br><span class="line"></span><br><span class="line">游戏板是一个3x3数组，由字符""，"X"和"O"组成。字符""代表一个空位。两个玩家轮流将字符放入空位，一个玩家执X棋,另一个玩家执O棋</span><br><span class="line">“X”和“O”只允许放置在空位中，不允许对已放有字符的位置进行填充。当有3个相同（且非空）的字符填充任何行、列或对角线时，游戏结束，board生成</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TicTacToe</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(validBoard(<span class="keyword">new</span> String[]&#123;<span class="string">"XXX"</span>, <span class="string">" XO"</span>, <span class="string">"O O"</span>&#125;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">validBoard</span><span class="params">(String[ ] board)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//X赢了  X - O = 1</span></span><br><span class="line">        <span class="comment">//o赢了  X - O = 0</span></span><br><span class="line">        <span class="comment">//胜负未分   X -0 = 1  X - O = 0</span></span><br><span class="line">        <span class="keyword">int</span> xCount = <span class="number">0</span>, oCount = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(String row : board)&#123;</span><br><span class="line">            <span class="keyword">for</span>( <span class="keyword">char</span> c : row.toCharArray())&#123;</span><br><span class="line">                <span class="keyword">if</span>(c == <span class="string">'X'</span>)&#123;</span><br><span class="line">                    xCount++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(c == <span class="string">'O'</span>)&#123;</span><br><span class="line">                    oCount++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>( xCount != oCount &amp;&amp; xCount - oCount !=<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>( win(board,<span class="string">"XXX"</span>) &amp;&amp; xCount - oCount !=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>( win(board,<span class="string">"OOO"</span>) &amp;&amp; xCount - oCount !=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">win</span><span class="params">(String[] board, String flag)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">            <span class="comment">//纵向3连</span></span><br><span class="line">            <span class="keyword">if</span>(flag.equals(<span class="string">""</span> + board[<span class="number">0</span>].charAt(i) + board[<span class="number">1</span>].charAt(i) + board[<span class="number">2</span>].charAt(i)))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//横向3连</span></span><br><span class="line">            <span class="keyword">if</span>(flag.equals(board[i]))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  \ 向3连</span></span><br><span class="line">         <span class="keyword">if</span>(flag.equals(<span class="string">""</span> + board[<span class="number">0</span>].charAt(<span class="number">0</span>) + board[<span class="number">1</span>].charAt(<span class="number">1</span>) + board[<span class="number">2</span>].charAt(<span class="number">2</span>)))&#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span>(flag.equals(<span class="string">""</span> + board[<span class="number">2</span>].charAt(<span class="number">2</span>) + board[<span class="number">1</span>].charAt(<span class="number">1</span>) + board[<span class="number">0</span>].charAt(<span class="number">0</span>)))&#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="101、字符串搜索-BF和RK"><a class="header-anchor" href="#101、字符串搜索-BF和RK">¶</a>101、字符串搜索-BF和RK</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定两个字符串A、B,判断B在A中是否存在，存在返回A中的下标,不存在返回-1</span><br><span class="line">例:	A: ABCABCAABCABCD</span><br><span class="line"><span class="code">	 B: ABCABCD</span></span><br><span class="line">返回值:7</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>BF:暴力算法</span><br><span class="line"><span class="code">	逐字符地进行匹配(比较A[i]和B[j])，如果当前字符匹配成功（A[i]==B[j])，就匹配下一个字符(++i，++j) ，如果失配，i回溯，j置为0 ( i=i-j+1，j=0) 。</span></span><br><span class="line"><span class="code">	时间复杂度:o(m*n)，与主串和模式串的长度都正相关</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-1.png" alt></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">2. </span>RK算法: hash算法</span><br><span class="line"><span class="code">	基于BF进行优化，将A中字符按照顺序和B串的长度进行截取，abc、bcd、cde、def、efg。hash运算然后与B的hash值进行比较。时间复杂度:o(m*n),hash算法参与的字符位数(模式串的长度)、及主串长度正相关</span></span><br><span class="line"><span class="code">	优化: hash算法:按26进制取和，abc = 1 + 2 + 3 = 6</span></span><br><span class="line"><span class="code">	则每一个子串的hash值是前一个子串的hash值减去子串最小下标值、加上本串的最大下标值bcd = abc - a +d=6-1+4= 9</span></span><br><span class="line"><span class="code">	据此时间复杂度变为:O(N)，只与主串长度相关，但是hash冲突极端情况下会退化为BF</span></span><br></pre></td></tr></table></figure>
+<h1 id="102、字符串搜索-BM"><a class="header-anchor" href="#102、字符串搜索-BM">¶</a>102、字符串搜索-BM</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">3. </span>BM算法</span><br><span class="line"><span class="code">	坏字符规则:从右往左匹配，找到A中第一个不匹配的字符(坏字符)，将B串右移、直到B串出现与A串坏字符对齐的字符，再从右往左寻找坏字符。如果B串中没有该坏字符、则直接移到该坏字符的下一位即可。</span></span><br><span class="line"><span class="code">	好后缀规则:从右往左匹配，找到坏字符(意味着该坏字符后面的串是匹配的，该串即为好后缀)，往左寻找B中是否还有该好后缀，如果有、将B右移到该位置与A好后缀对齐。重复该规则。如果B串往右没有该好后缀，则右移到好后缀的往右错一位的位置，重复该规则。避免B串的前缀与好后缀的后缀匹配</span></span><br><span class="line"><span class="code">	两种规则综合使用，哪种移动的位数多使用哪种</span></span><br><span class="line"><span class="code">	时间复杂度:O(n/m)，最坏O(m*n)</span></span><br></pre></td></tr></table></figure>
+<h1 id="103、字符串搜索-KMP"><a class="header-anchor" href="#103、字符串搜索-KMP">¶</a>103、字符串搜索-KMP</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">4. </span>KMP</span><br><span class="line"><span class="code">	前缀:字符串A和B，A=B+S，S非空，则B为A的前缀</span></span><br><span class="line"><span class="code">	后缀:A=S+B，S非空，则B为A的后缀</span></span><br><span class="line"><span class="code">	PMT值:前缀集合和后缀集合的交集中，最长元素的长度</span></span><br><span class="line"><span class="code">	部分匹配表:PMT值集合，字符串的所有前缀的PMT值</span></span><br><span class="line"><span class="code">	prefix:每一个下标位置对应一个PMT值，组成的数组</span></span><br><span class="line"><span class="code">	next: prefix向石移—个下标位置，组成next数组</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-2.png" alt></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">下标5: ABCABC</span><br><span class="line"><span class="code">	下标5的前缀集合:A、AB、ABC、ABCA、ABCAB</span></span><br><span class="line"><span class="code">	下标5的后缀集合:C、BC、ABC、CABC、BCABC</span></span><br><span class="line"><span class="code">	最长交集元素长度:3 (ABC)</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line">下标6:ABCABCD</span><br><span class="line"><span class="code">	下标6的前缀集合:A、AB、ABC、ABCA、ABCAB、ABCABC</span></span><br><span class="line"><span class="code">	下标6的后缀集合:D、CD、BCD、ABCD、CABCD、BCABCD</span></span><br><span class="line"><span class="code">	最长交集元素长度:0</span></span><br></pre></td></tr></table></figure>
+<h1 id="104、-打家劫舍-动态规划"><a class="header-anchor" href="#104、-打家劫舍-动态规划">¶</a>104、 打家劫舍-动态规划</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</span><br><span class="line">给定一个代表每个房屋存放金额的非负整数数组，计算你不触动警报装置的情况下，一夜之内能够偷窃到的最高金额。</span><br><span class="line">输入:[1,2,3,1]	输出:4</span><br><span class="line">输入:[2,7,9,3,1]	输出:12</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-3.png" alt></p>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-4.png" alt></p>
+<h1 id="105、打家劫舍2-动态规划"><a class="header-anchor" href="#105、打家劫舍2-动态规划">¶</a>105、打家劫舍2-动态规划</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>优化</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-5.png" alt></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">2. </span>首尾相连</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-6.png" alt></p>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-7.png" alt></p>
+<h1 id="106、打家劫舍3-动态规划"><a class="header-anchor" href="#106、打家劫舍3-动态规划">¶</a>106、打家劫舍3-动态规划</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。如果两个直接相连的房子在同一天晚上被打劫,房屋将自动报警。</span><br><span class="line"></span><br><span class="line">计算在不触动警报的情况下,小偷一晚能够盗取的最高金额。</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-8.png" alt></p>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-9.png" alt></p>
+<h1 id="107、Dota2参议院-贪心"><a class="header-anchor" href="#107、Dota2参议院-贪心">¶</a>107、Dota2参议院-贪心</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Dota2的世界里有两个阵营:Radiant(天辉)和 Dire(夜魇)</span><br><span class="line"></span><br><span class="line">Dota2参议院由来自两派的参议员组成。现在参议院希望对一个 Dota2游戏里的改变作出决定。他们以一个基于轮为过程的投票进行。在每一轮中，每一位参议员都可以行使两项权利中的一项:</span><br><span class="line"></span><br><span class="line">禁止一名参议员的权利:参议员可以让另一位参议员在这一轮和随后的几轮中丧失所有的权利。宣布胜利:如果参议员发现有权利投票的参议员都是同一个阵营的，他可以宣布胜利并决定在游戏中的有关变化。</span><br><span class="line"></span><br><span class="line">给定一个字符串代表每个参议员的阵营。字母“R”和“D”分别代表了Radiant（天辉）和Dire（夜魇）。然后，如果有n个参议员，给定字符串的大小将是n。</span><br><span class="line">以轮为基础的过程从给定顺序的第一个参议员开始到最后一个参议员结束。这一过程将持续到投票结束。所有失去权利的参议员将在过程中被跳过。</span><br><span class="line"></span><br><span class="line">假设每一位参议员都足够聪明，会为自己的政党做出最好的策略，你需要预测哪一方最终会宣布胜利并在Dota2游戏中决定改变。输出应该是 Radiant或 Dire</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-10.png" alt></p>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-11.png" alt></p>
+<h1 id="108、优势洗牌-田忌赛马-贪心"><a class="header-anchor" href="#108、优势洗牌-田忌赛马-贪心">¶</a>108、优势洗牌(田忌赛马)-贪心</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给定两个大小相等的数组A和B,A相对于B的优势可以用满足A[i]&gt;B[i]的索引i的数目来描述。</span><br><span class="line">返回A的任意排列,使其相对于B的优势最大化。</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-12.png" alt></p>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-13.png" alt></p>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-14.png" alt></p>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-15.png" alt></p>
+<h1 id="109、面向对象"><a class="header-anchor" href="#109、面向对象">¶</a>109、面向对象</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">什么是面向对象?</span><br><span class="line">对比面向过程，是两种不同的处理问题的角度</span><br><span class="line">面向过程更注重事情的每一个步骤及顺序，面向对象更注重事情有哪些参与者（对象）、及各自需要做什么</span><br><span class="line"></span><br><span class="line">比如:洗衣机洗衣服I</span><br><span class="line">面向过程会将任务拆解成一系列的步骤（函数)，1、打开洗衣机----&gt;2、放衣服----&gt;3、放洗衣粉----&gt;4、清洗-----&gt;5、烘干</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">面向对象会拆出人和洗衣机两个对象:</span><br><span class="line">人:打开洗衣机，放衣服放洗衣粉</span><br><span class="line">洗衣机:清洗烘干</span><br><span class="line"></span><br><span class="line">从以上例子能看出，面向过程比较直接高效，而面向对象更易于复用、扩展和维护</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>封装:封装的意义，在于明确标识出允许外部使用的所有成员函数和数据项</span><br><span class="line">内部细书对外部调用透明，外部调用无需修改或者关心内部实现</span><br><span class="line"><span class="code">    1、javabean的属性私有，提供getset对外访问，因为属性的赋值或者获取逻辑只能由javabean本身决定。而不能由外部胡乱修改</span></span><br><span class="line"><span class="code">        private string name ;</span></span><br><span class="line"><span class="code">        public void setName (string name&gt;&#123;</span></span><br><span class="line"><span class="code">            this.name = "tu1ing_"+name ;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">        该name有自己的命名规则,明显不能由外部直接赋值</span></span><br><span class="line"></span><br><span class="line"><span class="code">    2、orm框架</span></span><br><span class="line"><span class="code">    操作数据库，我们不需要关心链接是如何建立的、 sql是如何执行的，只需要引入mybatis，调方法即可</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">2. </span>继承:继承基类的方法。并做出白己的改变和/或扩展</span><br><span class="line"><span class="code">	子类共性的方法或者属性直接使用父类的，而不需要自己再定义，只需扩展自己个性化的</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">3. </span>多态:基于对象所属类的不同，外部对同一个方法的调用，实际执行的逻辑不同。</span><br><span class="line"><span class="code">    继承，方法重写，父类引用指向子类对象</span></span><br><span class="line"><span class="code">    	父类类型 变量名 = new 子类对象;</span></span><br><span class="line"><span class="code">    	变量名.方法名();</span></span><br><span class="line"><span class="code">    无法调用子类特有的功能</span></span><br></pre></td></tr></table></figure>
+<h1 id="110、JDK、JRE、JVM区别和联系"><a class="header-anchor" href="#110、JDK、JRE、JVM区别和联系">¶</a>110、JDK、JRE、JVM区别和联系</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">JDK:</span><br><span class="line">Java Develpment kit java开发工旱</span><br><span class="line">JRE:</span><br><span class="line">Java Runtime Environment java运行时环境</span><br><span class="line">JVM:</span><br><span class="line">java Virtual Machine java虚拟机</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-16.png" alt></p>
+<h1 id="111、-和equals比较"><a class="header-anchor" href="#111、-和equals比较">¶</a>111、==和equals比较</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">==对比比的是栈中的值，基本数据类型是变量值，引用类型是堆中内存对象的地址</span><br><span class="line">equals：object中默认也是采用==比较，通常会重写</span><br></pre></td></tr></table></figure>
+<p>Object</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">pub1ic boo1ean <span class="title">equa1s</span> <span class="params">(object obj)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>String</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span> <span class="params">(object anobject)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> ==anobject)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">if</span> (anobject <span class="keyword">instanceof</span> string)&#123;</span><br><span class="line">        string anotherString = (string)anobject;</span><br><span class="line">        <span class="keyword">int</span> n = value.length ;</span><br><span class="line">        <span class="keyword">if</span> (n == anotherString.value.length) &#123;</span><br><span class="line">            <span class="keyword">char</span> v1[] = value;</span><br><span class="line">            <span class="keyword">char</span> v2[] = anotherstring.value;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n-- != <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (v1[i] != v2[i]）</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码可以看出，String类中被复写的equals()方法其实是比较两个字符串的内容。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">stringDemo</span> <span class="title">i</span></span></span><br><span class="line">    public static void main(string args []) &#123;</span><br><span class="line">        string str1 = <span class="string">"Hello"</span>;</span><br><span class="line">        string str2 = <span class="keyword">new</span> string( <span class="string">"Hello"</span>);</span><br><span class="line">    	string str3 = str2; <span class="comment">//引用传递</span></span><br><span class="line">        System.out.println(str1 == str2);<span class="comment">//false</span></span><br><span class="line">    	System.out.println(str1 == str3);<span class="comment">//false</span></span><br><span class="line">    	System.out.println(str2 == str3);<span class="comment">//true</span></span><br><span class="line">        System.out.println(str1.equals(str2));<span class="comment">//true</span></span><br><span class="line">    	System.out.println(str1.equals(str3));<span class="comment">//true</span></span><br><span class="line">    	System.out.println(str2.equals(str3));<span class="comment">//true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="112、final"><a class="header-anchor" href="#112、final">¶</a>112、final</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>简述final作用</span><br><span class="line"><span class="code">	最终的</span></span><br><span class="line"><span class="code">		·修饰赛:表示类不可被继承</span></span><br><span class="line"><span class="code">		·修饰方法:表示方法不可被子类覆盖，但是可以重载</span></span><br><span class="line"><span class="code">		·修饰变量:表示变量—旦被赋值就不可以更改它的值。</span></span><br><span class="line"><span class="code">		(1）修饰成员变量</span></span><br><span class="line"><span class="code">			·如果final修饰的是类变量，只能在静态初始化块中指定初始值或者声明该类变量时指定初始值。</span></span><br><span class="line"><span class="code">			·如果final修饰的是成员变量，可以在非静态初始化块、声明该变量或者构造器中执行初始值。</span></span><br><span class="line"><span class="code">		(2）修饰局部变量</span></span><br><span class="line"><span class="code">			系统不会为局部变量进行初始化，局部变量必须由程序员显示初始化。因此使用final修饰局部变量时，即可以在定义时指定默认值（后面的代码不能对变量再赋值)，也可以不指定默认值，而在后面的代码中对final变量赋初值(仅一次)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fina1var</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">0</span>;<span class="comment">//在声明的时候就需要赋值或者静态代码块赋值</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    static&#123;</span></span><br><span class="line"><span class="comment">    a = 0;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> b = <span class="number">0</span>;<span class="comment">//再声明的时候就需要赋值 或者代码块中赋值  或者构造器赋值</span></span><br><span class="line">    <span class="comment">/*&#123;</span></span><br><span class="line"><span class="comment">    b = 0;</span></span><br><span class="line"><span class="comment">    &#125;*/</span></span><br><span class="line">    <span class="function">pub1ic <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(string[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> localA;<span class="comment">//局部变量只声明没有初始化，不会报错，与final无关。</span></span><br><span class="line">        localA = <span class="number">0</span>;<span class="comment">//在使用之前一定要赋值</span></span><br><span class="line">        <span class="comment">//1ocalA = 1;但是不允许第二次赋值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(3)修饰基本类型数据和引用类型数据</span><br><span class="line">·如果是基本数据类型的变量，则其数值一旦在初始化之后便不能更改;</span><br><span class="line">·如果是引用类型的变量，则在对其初始化之后便不能再让其指向另一个对象。但是引用的值是可变的。</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalReferenceTest</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span>[] iArr=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line">        iArr[<span class="number">2</span>]=-<span class="number">3</span>;<span class="comment">//合法</span></span><br><span class="line">        iArr=nu11;<span class="comment">//非法，对iArr不能重新赋值</span></span><br><span class="line">        </span><br><span class="line">        fina1 Person p = <span class="keyword">new</span> Person(<span class="number">25</span>);</span><br><span class="line">        p.setAge(<span class="number">24</span>);<span class="comment">//合法</span></span><br><span class="line">        p=nu11;<span class="comment">//非法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">2. </span>为什么局部内部类和匿名内部类只能访问局部final变量?</span><br><span class="line"><span class="code">    编译之后会生成两个class文件，Test.class Test1.class</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(string[] args)</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//局部final变量a,b</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//匿名内部类</span></span><br><span class="line">        <span class="keyword">new</span> Thread()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">            	System.out.println(a);</span><br><span class="line">                System.out.println(b);</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OutClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age = <span class="number">12</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">outPrint</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Inclass</span> </span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">InPrint</span><span class="params">( &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">            	system.out.print1n(x)</span></span>;</span><br><span class="line">                system.out.print1n(age);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    	<span class="keyword">new</span> Inc1ass().InPrint();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">首先需要知道的一点是:内部类和外部类是处于同一个级别的，内部类不会因为定义在方法中就会随着方法的执行完毕就被销毁。</span><br><span class="line"></span><br><span class="line">这里就会产生问题:当外部类的方法结束时，局部变量就会被销毁了，但是内部类对象可能还存在(只有没有人再引用它时，才会死亡)。这里就出现了一个矛盾:内部类对象访问了一个不存在的变量。为了解决这个问题就将局部变量复制了一份作为内部类的成员变量，这样当局部变量死亡后，内部类仍可以访问它，实际访问的是局部变的"copy"。这样就好像延长了局部变量的生命周期</span><br><span class="line"></span><br><span class="line">将局部变量复制为内部类的成员变量时，必须保证这两个变量是一样的，也就是如果我们在内部类中修改了成员变量，方法中的局部变量也得跟着改变，怎么解决问题呢?</span><br><span class="line"></span><br><span class="line">就将局部变量设置为final，对它初始化后，我就不让你再去修改这个变量，就保证了内部类的成员变量和方法的局部变量的一致性。这实际上也是一种妥协。使得局部变量与内部类内建立的拷贝保持一致。</span><br></pre></td></tr></table></figure>
+<h1 id="113、String、StringBuffer、StringBuilder区别及使用场景"><a class="header-anchor" href="#113、String、StringBuffer、StringBuilder区别及使用场景">¶</a>113、String、StringBuffer、StringBuilder区别及使用场景</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String是final修饰的，不可变，每次操作都会产生新的String对象</span><br><span class="line">StringBuffer和StringBuilder都是在原对象上操作</span><br><span class="line">stringBuffer是线程安全的，StringBuilder线程不安全的</span><br><span class="line">StringBuffer方法都是synchronized修饰的</span><br><span class="line">性能: StringBuilder &gt; StringBuffer &gt; String</span><br><span class="line"></span><br><span class="line">场景:经常需要改变字符串内容时使用后面两个</span><br><span class="line">优先使用StringBuilder，多线程使用共享变量时使用StringBuffer</span><br></pre></td></tr></table></figure>
+<h1 id="114、重载和重写的区别"><a class="header-anchor" href="#114、重载和重写的区别">¶</a>114、重载和重写的区别</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">重载:发生在同一个类中，方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同，发生在编译时。</span><br><span class="line">重写:发生在父子类中，方法名、参数列表必须相同，返回值范围小于等于父类，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类;如果父类方法访问修饰符为private则子类就不能重写该方法。</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">pub1ic <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,string b)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> string <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,string b)</span></span></span><br><span class="line"><span class="function"><span class="comment">//编译报错</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="115、接口和抽象类的区别"><a class="header-anchor" href="#115、接口和抽象类的区别">¶</a>115、接口和抽象类的区别</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">	·抽象类可以存在普通成员函数，而接口中只能存在public abstract方法。</span></span><br><span class="line"><span class="code">	·抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是public static final类型的。</span></span><br><span class="line"><span class="code">	·抽象类只能继承一个，接口可以实现多个。</span></span><br><span class="line">接口的设计目的，是对类的行为进行约束(更准确的说是一种"有"约束，因为接口不能规定类不可以有什么行为)，也就是提供一种机制,可以强制要求不同的类具有相同的行为。它只约束了行为的有无，但不对如何实现行为进行限制。</span><br><span class="line">而抽象类的设计目的，是代码复用。当不同的类具有某些相同的行为(记为行为集合A)，且其中一部分行为的实现方式一致时(A的非真子集，记为B)，可以让这些类都派生于一个抽象类。在这个抽象类中实现了B，避免让所有的子类来实现B，这就达到了代码复用的目的。而A减B的部分，留给各个子类自己实现。正是因为A-B在这里没有实现，所以抽象类不允许实例化出来（否则当调用到A-B时，无法执行)。</span><br><span class="line">抽象类是对类本质的抽象，表达的是is a的关系，比如:BMW is a car。抽象类包含并实现子类的通用特性，将子类存在差异化的特性进行抽象，交由子类去实现。</span><br><span class="line">而接口是对行为的抽象，表达的是like a的关系。比如: Bird like a Aircraft(像飞行器一样可以飞)</span><br><span class="line">，但其本质上 is a Bird。接口的核心是定义行为，即实现类可以做什么，至于实现类主体是谁、是如何实现的接口并不关心。</span><br><span class="line">使用场景:当你关注一个事物的本质的时候，用抽象类;当你关注一个操作的时候，用接口。</span><br><span class="line">抽象类的功能要远超过接口，但是，定义抽象类的代价高。因为高级语言来说(从实际设计上来说也是)每个类只能继承一个类。在这个类中，你必须继承或编写出其所有子类的所有共性。虽然接口在功能上会弱化许多，但是它只是针对一个动作的描述。而且你可以在一个类中同时实现多个接口。在设计阶段会降低难度</span><br></pre></td></tr></table></figure>
+<h1 id="116、List和Set的区别"><a class="header-anchor" href="#116、List和Set的区别">¶</a>116、List和Set的区别</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">· List:有序，按对象进入的顺序保存对象，可重复，允许多个Null元素对象，可以使用Iterator取出所有元素，在逐一遍历，还可以使用get(int index)获取指定下标的元素</span><br><span class="line">. Set:无序，不可重复，最多允许有一个Null元素对象，取元素时只能用Iterator接口取得所有元素在逐一遍历各个元素</span><br></pre></td></tr></table></figure>
+<h1 id="117、hashCode与equals"><a class="header-anchor" href="#117、hashCode与equals">¶</a>117、hashCode与equals</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>hashCode介绍</span><br><span class="line"><span class="code">    hashCode()的作用是获取哈希码，也称为散列码;它实际上是返回一个int整数。这个哈希码的作用是确定该对象在哈希表中的索引位置。hashCode()定义在JDK的Object.java中，Java中的任何类都包含有hashCode()函数。散列表存储的是键值对(key-value)，它的特点是:能根据"键"快速的检索出对应的“值”。这其中就利用到了散列码!(可以快速找到所需要的对象)</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="bullet">2. </span>为什么要有hashCode</span><br><span class="line"><span class="code">    以"HashSet如何检查重复”为例子来说明为什么要有hashcode:</span></span><br><span class="line"><span class="code">    	对象加入HashSet时，HashSet会先计算对象的hashcode值来判断对象加入的位置，看该位置是否有值如果没有、HashSet会假设对象没有重复出现。但是如果发现有值，这时会调用equals ()方法来检查两个对象是否真的相同。如果两者相同,HashSet就不会让其加入操作成功。如果不同的话，就会重新散列到其他位置。这样就大大减少了equals的次数，相应就大大提高了执行速度。</span></span><br><span class="line"><span class="code">    	</span></span><br><span class="line"><span class="code">    	·如果两个对象相等，则hashcode—定也是相同的</span></span><br><span class="line"><span class="code">		·两个对象相等,对两个对象分别调用equals方法都返回true</span></span><br><span class="line"><span class="code">		·两个对象有相同的hashcode值，它们也不一定是相等的</span></span><br><span class="line"><span class="code">		·因此,equals方法被覆盖过，则hashCode方法也必须被覆盖</span></span><br><span class="line"><span class="code">		· hashCode()的默认行为是对堆上的对象产生独特值。如果没有重写hashCode()，则该class的两个对象无论如何都不会相等(即使这两个对象指向相同的数据)</span></span><br></pre></td></tr></table></figure>
+<h1 id="118、ArrayList和LinkedList区别"><a class="header-anchor" href="#118、ArrayList和LinkedList区别">¶</a>118、ArrayList和LinkedList区别</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList:基于动态数组，连续内存存储，适合下标访问(随机访问)，扩容机制:因为数组长度固定，超出长度存数据时需要新建数组，然后将老数组的数据拷贝到新数组，如果不是尾部插入数据还会涉及到元素的移动(往后复制一份，插入新元素)，使用尾插法并指定初始容量可以极大提升性能、甚至超过linkedList(需要创建大量的node对象)</span><br><span class="line"></span><br><span class="line">LinkedList:基于链表，可以存储在分散的内存中，适合做数据插入及删除操作，不适合查询:需要逐一遍历</span><br><span class="line"></span><br><span class="line">遍历LinkedList必须使用iterator不能使用for循环，因为每次for循环体内通过get(i)取得某一元素时都需要对list重新进行遍历，性能消耗极大。</span><br><span class="line">另外不要试图使用indexOf等返回元素索引，并利用其进行遍历，使用indexOf对list进行了遍历，当结果为空时会遍历整个列表。</span><br></pre></td></tr></table></figure>
+<h1 id="119、HashMap和HashTable有什么区别-其底层实现是什么"><a class="header-anchor" href="#119、HashMap和HashTable有什么区别-其底层实现是什么">¶</a>119、HashMap和HashTable有什么区别?其底层实现是什么?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>区别:</span><br><span class="line"><span class="code">	(1) HashMap方法没有synchronized修饰，线程非安全，HashTable线程安全;</span></span><br><span class="line"><span class="code">	(2) HashMap允许key和value为null，而HashTable不允许</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">2. </span>底层实现:数组+链表实现</span><br><span class="line"><span class="code">	jdk8开始链表高度到8、数组长度超过64，链表转变为红黑树，元素以内部类Node节点存在</span></span><br><span class="line"><span class="code">		·计算key的hash值，二次hash然后对数组长度取模，对应到数组下标，</span></span><br><span class="line"><span class="code">		·如果没有产生hash冲突(下标位置没有元素)，则直接创建Node存入数组，</span></span><br><span class="line"><span class="code">		·如果产生hash冲突，先进行equal此较，相同则取代该元素，不同，则判断链表高度插入链表，链表高度达到8，并且数组长度到64则转变为红黑树，长度低于6则将红黑树转回链表</span></span><br><span class="line"><span class="code">		. key为null，存在下标0的位置</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">3. </span>数组扩容</span><br></pre></td></tr></table></figure>
+<h1 id="120、ConcurrentHashMap原理"><a class="header-anchor" href="#120、ConcurrentHashMap原理">¶</a>120、ConcurrentHashMap原理,</h1>
+<p>jdk7和jdk8版本的区别</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>jdk7:</span><br><span class="line"><span class="code">	数据结构: ReentrantLock+Segment+HashEntry, 一个Segment中包含一 个HashEntry数组， 每个HashEntry又是一个链表结构</span></span><br><span class="line"><span class="code">	元素查询:二次hash,第一次Hash定位到Segment, 第二次Hash定位到元素所在的链表的头部</span></span><br><span class="line"><span class="code">	锁: Segment分段锁Segment继承了ReentrantLock,锁定操作的Segment, 其他的Segment不受影响，并发度为segment个数，可以通过构造函数指定,数组扩容不会影响其他的segment</span></span><br><span class="line"><span class="code">	get方法无需加锁，volatile保证</span></span><br><span class="line"><span class="bullet">2. </span>jdk8:</span><br><span class="line"><span class="code">	数据结构: synchronized+CAS+Node+红黑树, Node的vaI和next都用volatile修饰， 保证可见性</span></span><br><span class="line"><span class="code">	查找，替换，赋值操作都使用CAS</span></span><br><span class="line"><span class="code">	锁:锁链表的head节点，不影响其他元素的读写，锁粒度更细,效率更高，扩容时,阻塞所有的读写操作、并发扩容</span></span><br><span class="line"><span class="code">	读操作无锁:</span></span><br><span class="line"><span class="code">		Node的val和next使用volatile修饰，读写线程对该变量互相可见</span></span><br><span class="line"><span class="code">		数组用volatile修饰，保证扩容时被读线程感知</span></span><br></pre></td></tr></table></figure>
+<h1 id="121、如何实现一个IOC容器"><a class="header-anchor" href="#121、如何实现一个IOC容器">¶</a>121、如何实现一个IOC容器</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、配置文件配置包扫描路径</span><br><span class="line">2、递归包扫描获取.class文件</span><br><span class="line">3、反射、确定需要交给IOC管理的类</span><br><span class="line">4、对需要注入的类进行依赖注入</span><br><span class="line"><span class="code">    ●配置文件中指定需要扫描的包路径</span></span><br><span class="line"><span class="code">    ●定义一些注解，分别表示访问控制层、业务服务层、数据持久层、依赖注入注解、获取配置文件注解</span></span><br><span class="line"><span class="code">    ●从配置文件中获取需要扫描的包路径，获取到当前路径下的文件信息及文件夹信息，我们将当前路径下所有以.class结尾的文件添加到一个Set集合中进行存储</span></span><br><span class="line"><span class="code">    ●遍历这个set集合,获取在类上有指定注解的类,并将其交给IOC容器， 定义一个安全的Map用来存储这些对象</span></span><br><span class="line"><span class="code">    ●遍历这个IOC容器，获取到每一个类的实例，判断里面是有有依赖其他的类的实例，然后进行递归注入</span></span><br></pre></td></tr></table></figure>
+<h1 id="122、什么是字节码-采用字节码的好处是什么"><a class="header-anchor" href="#122、什么是字节码-采用字节码的好处是什么">¶</a>122、什么是字节码?采用字节码的好处是什么?</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>java中的编译器和解释器:</span><br><span class="line"><span class="code">    Java中引入了虚拟机的概念，即在机器和编译程序之间加入了一层抽象的虚拟的机器。这台虚拟的机器在任何平台上都提供给编译程序一个的共同的接口。</span></span><br><span class="line"><span class="code">    编译程序只需要面向虚拟机，生成虚拟机能够理解的代码,然后由解释器来将虚拟机代码转换为特定系统的机器码</span></span><br><span class="line"><span class="code">    执行。在Java中，这种供虚拟机理解的代码叫做字节码(即扩 展名为.class的文件)， 它不面向任何特定的处理器，只面向虚拟机。</span></span><br><span class="line"><span class="code">    每种平台的解释器是不同的， 但是实现的虚拟机是相同的。Java源程序经过编译器编译后变成字节码，字节码由</span></span><br><span class="line"><span class="code">    虚拟机解释执行，虚拟机将每一条要执行的字 节码送给解释器，解释器将其翻译成特定机器上的机器码,然后在特定的机器上运行。这也就是解释了Java的编译与解释并存的特点。</span></span><br><span class="line"><span class="code">    Java源代--&gt;编译器---&gt;jvm可执行的Java字节码(即虚拟指令--&gt;jvm---&gt;jvmn中解释器---&gt;机器可执行的二进制机器--&gt;程序运行。</span></span><br><span class="line"><span class="bullet">2. </span>采用字节码的好处:</span><br><span class="line"><span class="code">    Java语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以ava程序运行时比较高效,且,由于字节码并不专对一种特定的机器，因此, Java程序无须重新编译便可在多种不同的计算机上运行。</span></span><br></pre></td></tr></table></figure>
+<h1 id="123、Java类加载器"><a class="header-anchor" href="#123、Java类加载器">¶</a>123、Java类加载器</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JDK自带有三个类加载器: bootstrap ClassLoader. ExtClassLoader. AppClassLoader。</span><br><span class="line">BootStrapClassLoader是ExtClassLoader的父类加载器，默认负责加载%JAVA_HOME%lib下的jar包和class文件。</span><br><span class="line">ExtClassLoader是AppClassLoader的父类加载器，负责加载%JAVA_ HOME%/lib/ext文件夹 下的jar包和class类。</span><br><span class="line">AppClassLoader是自定义类加载器的父类，负责加载classpath下的类文件。系统类加载器，线程上下文加载器</span><br><span class="line">继承ClassLoader实现自定义类加载器</span><br></pre></td></tr></table></figure>
+<h1 id="124、双亲委托模型"><a class="header-anchor" href="#124、双亲委托模型">¶</a>124、双亲委托模型</h1>
+<p><img src="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/100-17.png" alt></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">双亲委派模型的好处: .</span><br><span class="line"><span class="code">	●主要是为了安全性,避免用户自己编写的类动态替换Java的一些核心类，比如String。</span></span><br><span class="line"><span class="code">	●同时也避免了类的重复加载，因为JVM中区分不同类，不仅仅是根据类名，相同的class文件被不同的ClassLoader加载就是不同的两个类</span></span><br></pre></td></tr></table></figure>
+<h1 id="125、Java中的异常体系"><a class="header-anchor" href="#125、Java中的异常体系">¶</a>125、Java中的异常体系</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Java中的所有异常都来自顶级父类Throwable,</span><br><span class="line">Throwable下有两个子类Exception和Error。</span><br><span class="line">Error是程序无法处理的错误，一旦出现这个错误，则程序将被迫停止运行。</span><br><span class="line">Exception不会导致程序停止，又分为两个部分RunTimeException运行时异常和CheckedException检查异常。</span><br><span class="line">RunTimeException常常发生在程序运行过程中，会导致程序当前线程执行失败。CheckedException常常发生在程序编译过程中，会导致程序编译不通过。</span><br></pre></td></tr></table></figure>
+<h1 id="126、GC如何判断对象可以被回收"><a class="header-anchor" href="#126、GC如何判断对象可以被回收">¶</a>126、GC如何判断对象可以被回收</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">●引用计数法:每个对象有一个引用计数属性,新增一个引用时计数加1,引用释放时计数减1,计数为0时可以</span><br><span class="line">回收,</span><br><span class="line">●可达性分析法:从GC Roots开始向下搜索，搜索所走过的路径称为引用链。当一个对象到GC Roots没有任</span><br><span class="line">何引用链相连时，则证明此对象是不可用的，那么虚拟机就判断是可回收对象。</span><br><span class="line"><span class="code">    引用计数法，可能会出现A引用了B, B又引用了A,这时候就算他们都不再使用了，但因为相互引用计数器=1永远无法被回收。</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line">GC Roots的对象有:</span><br><span class="line"><span class="code">	●虚拟机栈(栈帧中的本地变量表)中引用的对象</span></span><br><span class="line"><span class="code">	●方法区中类静态属性引用的对象</span></span><br><span class="line"><span class="code">	●方法区中常量引 用的对象</span></span><br><span class="line"><span class="code">	●本地方法栈中JNI(即一般说的Native方法)引用的对象</span></span><br><span class="line"></span><br><span class="line">可达性算法中的不可达对象并不是立即死亡的，对象拥有一次自我拯救的机会。对象被系统宣告死亡至少要经历两次标记过程:第一次是经过可达性分析发现没有与GC Roots相连接的引用链,第二次是在由虚拟机自动建立的Finalizer队列中判断是否需要执行finalize()方法。</span><br><span class="line">当对象变成(GC Roots)不可达时，GC会判断该对象是否覆盖了finalize方法,若未覆盖,则直接将其回收。否则,若对象未执行过finalize方法,将其放入F-Queue队列，由一低优先级线程执行该队列中对象的finalize方法。 执行finalize方法完毕后，GC会再次判断该对象是否可达,若不可达,则进行回收,否则，对象”复活"</span><br><span class="line">每个对象只能触发一次finalize()方法</span><br><span class="line">由于finalize()方法运行代价高昂，不确定性大，无法保证各个对象的调用顺序，不推荐大家使用,建议遗忘它。</span><br></pre></td></tr></table></figure>
+<h1 id="127、线程的生命周期-线程有几种状态"><a class="header-anchor" href="#127、线程的生命周期-线程有几种状态">¶</a>127、线程的生命周期?线程有几种状态</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>线程通常有五种状态，创建,就绪,运行、阻塞和死亡状态。</span><br><span class="line"><span class="bullet">2. </span>阻塞的情况又分为三种:</span><br><span class="line"><span class="code">    (1)、等待阻塞:运行的线程执行wait方法，该线程会释放占用的所有资源，JVM会把该线程放入“等待池”中。进入这个状态后，是不能自动唤醒的,必须依靠其他线程调用notify或notifyAll方法才能被唤醒, wait是object类的方</span></span><br><span class="line"><span class="code">    (2)、同步阻塞:运行的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入”锁池”中。</span></span><br><span class="line"><span class="code">    (3)、其他阻塞:运行的线程执行sleep或join方法,或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep状态超时、join等待线程终止或者超时、或者I/O处理完毕时, 线程重新转入就绪状态。sleep是Thread类的方法</span></span><br><span class="line"><span class="code">    </span></span><br><span class="line"><span class="bullet">1. </span>新建状态(New) :新创建了一个线程对象。</span><br><span class="line"><span class="bullet">2. </span>就绪状态(Runnable) : 线程对象创建后，其他线程调用了该对象的start方法。该状态的线程位于可运行线程池中，变得可运行，等待获取CPU的使用权。</span><br><span class="line"><span class="bullet">3. </span>运行状态(Running) :就绪状态的线程获取了CPU,执行程序代码。</span><br><span class="line"><span class="bullet">4. </span>阻塞状态(Blocked) :阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。</span><br></pre></td></tr></table></figure>
+<h1 id="128、sleep-、wait-、-join-、-yield-的区别"><a class="header-anchor" href="#128、sleep-、wait-、-join-、-yield-的区别">¶</a>128、sleep()、wait()、 join()、 yield()的区别</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1. </span>锁池</span><br><span class="line"><span class="code">    所有需要竞争同步锁的线程都会放在锁池当中，比如当前对象的锁E经被其中一个线程得到，则其他线程需要在这个锁池进行等待，当前面的线程释放同步锁后锁池中的线程去竞争同步锁，当某个线程得到后会进入就绪队列进行等待cpu资源分配。</span></span><br><span class="line"><span class="bullet">2.	</span>等待池</span><br><span class="line"><span class="code">    当我们调用wait () 方法后，线程会放到等待池当中，等待池的线程是不会去竞争同步锁。只有调用了notify ()或notifyAll()后等待池的线程才会开始去竞争锁，notify () 是随机从等待池选出一个线程放到锁池，而notifyAll()是将等待池的所有线程放到锁池当中</span></span><br><span class="line"></span><br><span class="line">1、sleep是Thread类的静态本地方法，wait则是Object类的本地方法。</span><br><span class="line">2、sleep方法不会释放lock, 但是wait会释放,且会加入到等待队列中。</span><br><span class="line"><span class="code">    sleep就是把cpu的执行资格和执行权释放出去，不再运行此线程，当定时时间结束再取回cpu资源，参与cpu的调度，获取到cpu资源后就可以继续运行了。而如果sleep时该线程有锁，那么sleep不会释放这个锁，而是把锁带着进入了冻结状态，也就是说其他需要这个锁的线程根本不可能获取到这个锁。也就是说无法执行程序。如果在睡眠期间其他线程调用了这个线程的interrupt方法，那么这个线程也会抛出interruptexception异常返回，这点和wait是一样的。</span></span><br><span class="line">3、sleep方法不依赖于同步器synchronized,但是wait需要依赖synchronized关键字。</span><br><span class="line">4、sleep不需要被唤醒(休眠之后退出阻塞)， 但是wait需要 (不指定时间需要被别人中断)。</span><br><span class="line">5、sleep一般用于当前线程休眠，或者轮循暂停操作，wait 则多用于多线程之间的通信。</span><br><span class="line">6、sleep 会让出CPU执行时间且强制上下文切换,而wait则不一定, wait 后可能还是有机会重新竞争到锁继续执行的。</span><br><span class="line"></span><br><span class="line">yield()执行后线程直接进入就绪状态，马上释放了cpu的执行权，但是依然保留了cpu的执行资格，所以有可能cpu下次进行线程调度还会让这个线程获取到执行权继续执行</span><br><span class="line"></span><br><span class="line">join ()执行后线程进入阻塞状态，例如在线程B中调用线程A的join ()，那线程B会进入到阻塞队列，直到线程A结束或中断线程</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">pub1ic <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(string[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    Thread t1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable()&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">				Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">            &#125;<span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">"22222222"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    t1.start();</span><br><span class="line">    t1.join();</span><br><span class="line">    <span class="comment">//这行代码必须要等t1全部执行完毕，才会执行</span></span><br><span class="line">    System.out.println(<span class="string">"1111"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//22222222</span></span><br><span class="line"><span class="comment">//1111</span></span><br></pre></td></tr></table></figure>
+<h1 id="129、"><a class="header-anchor" href="#129、">¶</a>129、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="130、"><a class="header-anchor" href="#130、">¶</a>130、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="131、"><a class="header-anchor" href="#131、">¶</a>131、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="132、"><a class="header-anchor" href="#132、">¶</a>132、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="133、"><a class="header-anchor" href="#133、">¶</a>133、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="134、"><a class="header-anchor" href="#134、">¶</a>134、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="135、"><a class="header-anchor" href="#135、">¶</a>135、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="136、"><a class="header-anchor" href="#136、">¶</a>136、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="137、"><a class="header-anchor" href="#137、">¶</a>137、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="138、"><a class="header-anchor" href="#138、">¶</a>138、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="139、"><a class="header-anchor" href="#139、">¶</a>139、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="140、"><a class="header-anchor" href="#140、">¶</a>140、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="141、"><a class="header-anchor" href="#141、">¶</a>141、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="142、"><a class="header-anchor" href="#142、">¶</a>142、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="143、"><a class="header-anchor" href="#143、">¶</a>143、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="144、"><a class="header-anchor" href="#144、">¶</a>144、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="145、"><a class="header-anchor" href="#145、">¶</a>145、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="146、"><a class="header-anchor" href="#146、">¶</a>146、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="147、"><a class="header-anchor" href="#147、">¶</a>147、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="148、"><a class="header-anchor" href="#148、">¶</a>148、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="149、"><a class="header-anchor" href="#149、">¶</a>149、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="150、"><a class="header-anchor" href="#150、">¶</a>150、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="151、"><a class="header-anchor" href="#151、">¶</a>151、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="152、"><a class="header-anchor" href="#152、">¶</a>152、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="153、"><a class="header-anchor" href="#153、">¶</a>153、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="154、"><a class="header-anchor" href="#154、">¶</a>154、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="155、"><a class="header-anchor" href="#155、">¶</a>155、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="156、"><a class="header-anchor" href="#156、">¶</a>156、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="157、"><a class="header-anchor" href="#157、">¶</a>157、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="158、"><a class="header-anchor" href="#158、">¶</a>158、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="159、"><a class="header-anchor" href="#159、">¶</a>159、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="160、"><a class="header-anchor" href="#160、">¶</a>160、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="161、"><a class="header-anchor" href="#161、">¶</a>161、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="162、"><a class="header-anchor" href="#162、">¶</a>162、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="163、"><a class="header-anchor" href="#163、">¶</a>163、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="164、"><a class="header-anchor" href="#164、">¶</a>164、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="165、"><a class="header-anchor" href="#165、">¶</a>165、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="166、"><a class="header-anchor" href="#166、">¶</a>166、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="167、"><a class="header-anchor" href="#167、">¶</a>167、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="168、"><a class="header-anchor" href="#168、">¶</a>168、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="169、"><a class="header-anchor" href="#169、">¶</a>169、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="170、"><a class="header-anchor" href="#170、">¶</a>170、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="171、"><a class="header-anchor" href="#171、">¶</a>171、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="172、"><a class="header-anchor" href="#172、">¶</a>172、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="173、"><a class="header-anchor" href="#173、">¶</a>173、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="174、"><a class="header-anchor" href="#174、">¶</a>174、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="175、"><a class="header-anchor" href="#175、">¶</a>175、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="176、"><a class="header-anchor" href="#176、">¶</a>176、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="177、"><a class="header-anchor" href="#177、">¶</a>177、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="178、"><a class="header-anchor" href="#178、">¶</a>178、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="179、"><a class="header-anchor" href="#179、">¶</a>179、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="180、"><a class="header-anchor" href="#180、">¶</a>180、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="181、"><a class="header-anchor" href="#181、">¶</a>181、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="182、"><a class="header-anchor" href="#182、">¶</a>182、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="183、"><a class="header-anchor" href="#183、">¶</a>183、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="184、"><a class="header-anchor" href="#184、">¶</a>184、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="185、"><a class="header-anchor" href="#185、">¶</a>185、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="186、"><a class="header-anchor" href="#186、">¶</a>186、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="187、"><a class="header-anchor" href="#187、">¶</a>187、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="188、"><a class="header-anchor" href="#188、">¶</a>188、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="189、"><a class="header-anchor" href="#189、">¶</a>189、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="190、"><a class="header-anchor" href="#190、">¶</a>190、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="191、"><a class="header-anchor" href="#191、">¶</a>191、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="192、"><a class="header-anchor" href="#192、">¶</a>192、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="193、"><a class="header-anchor" href="#193、">¶</a>193、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="194、"><a class="header-anchor" href="#194、">¶</a>194、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="195、"><a class="header-anchor" href="#195、">¶</a>195、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="196、"><a class="header-anchor" href="#196、">¶</a>196、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="197、"><a class="header-anchor" href="#197、">¶</a>197、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="198、"><a class="header-anchor" href="#198、">¶</a>198、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="199、"><a class="header-anchor" href="#199、">¶</a>199、</h1>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+     
+         <div>
+ 
+  <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+   <span>-------- 本文结束 </span>
+   <i class="fa fa-paw"></i>
+   <span> 感谢阅读 --------</span>
+  </div>
+ 
+</div>
+     
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="潇 卟 甸 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="潇 卟 甸 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <!-- JS库 clipboard 拷贝内容到粘贴板-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 显示提示信息-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<ul class="post-copyright">
+<!-- 本文标题 -->
+<li>
+  <strong>本文标题： </strong>
+  Java面试300题（中）
+</li>
+
+<!-- 本文作者 -->
+<li class="post-copyright-author">
+  <strong>本文作者： </strong>
+  
+</li>
+
+<!-- 创建时间 -->
+<li>
+  <strong>创建时间： </strong>
+  2021年08月26日 - 09时08分
+</li>
+
+<!-- 修改时间 -->
+<li>
+  <strong>修改时间： </strong>
+  2021年08月29日 - 16时08分
+</li>
+
+<!-- 引用链接 -->
+<li class="post-copyright-link">
+  <strong>本文链接：</strong>
+  <a href="http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/" title="Java面试300题（中）"
+    >http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/</a
+  >
+  <span class="copy-path" title="点击复制引用链接"
+    ><i
+      style="cursor: pointer"
+      class="fa fa-clipboard"
+      data-clipboard-text="['s Blog | Java面试300题（中）](http://yoursite.com/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/)"
+      aria-label="复制成功"
+    ></i
+  ></span>
+</li>
+
+<!-- 版权声明 -->
+<li class="post-copyright-license">
+  <strong
+    >版权声明：
+  </strong>
+  本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+</li>
+</ul>
+
+<script>
+var clipboard = new ClipboardJS(".fa-clipboard");
+clipboard.on("success", function(target) {
+  var message = document.createElement("div");
+  message.innerHTML =
+    '<i class="fa fa-check-circle message-icon"></i><span class="message-content">' +
+    target.trigger.getAttribute("aria-label") +
+    "</span>";
+  swal({
+    content: message,
+    className: "copy-success-message",
+    timer: 1000,
+    button: false
+  });
+});
+</script>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag"><i class="fa fa-tag"></i> b站视频</a>
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          
+            <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/08/23/mybatis%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" rel="next" title="mybatis源码分析">
+                <i class="fa fa-chevron-left"></i> mybatis源码分析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8B%EF%BC%89/" rel="prev" title="Java面试300题（下）">
+                Java面试300题（下） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <a href="/">
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/picture.jpg"
+                alt="潇 卟 甸" />
+              </a>
+            
+              <p class="site-author-name" itemprop="name">潇 卟 甸</p>
+              <p class="site-description motion-element" itemprop="description">总结自己一些知识，一些事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+			
+				<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+				<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+				<div class="widget-wrap">
+					<div id="myCanvasContainer" class="widget tagcloud">
+						<canvas width="250" height="250" id="resCanvas" style="width=100%">
+							<ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%AE%9E%E8%B7%B5/" rel="tag">Java实践</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/b%E7%AB%99%E8%A7%86%E9%A2%91/" rel="tag">b站视频</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E7%BA%A7/" rel="tag">中级</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85/" rel="tag">喜马拉雅</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E4%BB%A3%E7%A0%81/" rel="tag">源代码</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/" rel="tag">电子书</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag">英语</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E6%8E%A8%E8%8D%90/" rel="tag">读书推荐</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9B%E9%98%B6/" rel="tag">进阶</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a><span class="tag-list-count">7</span></li></ul>
+						</canvas>
+					</div>
+				</div>
+			
+
+          </nav>
+
+          
+
+          
+		  
+		  <!-- 添加近期文章 -->
+			
+				<div class="links-of-blogroll motion-element links-of-blogroll-block">
+				<div class="links-of-blogroll-title">
+				<!-- modify icon to fire by szw -->
+				<i class="fa fa-history fa-" aria-hidden="true"></i>
+				近期文章
+				</div>
+				<ul class="links-of-blogroll-list">
+				
+				
+					<li>
+					<a href="/2021/08/31/%E5%B0%9A%E7%A1%85%E8%B0%B7-Elasticsearch%E6%95%99%E7%A8%8B/" title="尚硅谷-Elasticsearch教程" target="_blank">尚硅谷-Elasticsearch教程</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%8B%EF%BC%89/" title="Java面试300题（下）" target="_blank">Java面试300题（下）</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/26/Java%E9%9D%A2%E8%AF%95300%E9%A2%98%EF%BC%88%E4%B8%AD%EF%BC%89/" title="Java面试300题（中）" target="_blank">Java面试300题（中）</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/23/mybatis%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" title="mybatis源码分析" target="_blank">mybatis源码分析</a>
+					</li>
+				
+					<li>
+					<a href="/2021/08/23/SpringMVC-Thymeleaf%E7%89%88/" title="SpringMVC(Thymeleaf版)" target="_blank">SpringMVC(Thymeleaf版)</a>
+					</li>
+				
+				</ul>
+			</div>
+			
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://sushan102.top/posts/1410804403/" title="博客搭建" target="_blank">博客搭建</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://how2j.cn?p=154642" title="HOW2J" target="_blank">HOW2J</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+		  
+		  
+			
+		  
+		  <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#100、井字游戏"><span class="nav-text">100、井字游戏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#101、字符串搜索-BF和RK"><span class="nav-text">101、字符串搜索-BF和RK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#102、字符串搜索-BM"><span class="nav-text">102、字符串搜索-BM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#103、字符串搜索-KMP"><span class="nav-text">103、字符串搜索-KMP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#104、-打家劫舍-动态规划"><span class="nav-text">104、 打家劫舍-动态规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#105、打家劫舍2-动态规划"><span class="nav-text">105、打家劫舍2-动态规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#106、打家劫舍3-动态规划"><span class="nav-text">106、打家劫舍3-动态规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#107、Dota2参议院-贪心"><span class="nav-text">107、Dota2参议院-贪心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#108、优势洗牌-田忌赛马-贪心"><span class="nav-text">108、优势洗牌(田忌赛马)-贪心</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#109、面向对象"><span class="nav-text">109、面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#110、JDK、JRE、JVM区别和联系"><span class="nav-text">110、JDK、JRE、JVM区别和联系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#111、-和equals比较"><span class="nav-text">111、&#x3D;&#x3D;和equals比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#112、final"><span class="nav-text">112、final</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#113、String、StringBuffer、StringBuilder区别及使用场景"><span class="nav-text">113、String、StringBuffer、StringBuilder区别及使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#114、重载和重写的区别"><span class="nav-text">114、重载和重写的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#115、接口和抽象类的区别"><span class="nav-text">115、接口和抽象类的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#116、List和Set的区别"><span class="nav-text">116、List和Set的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#117、hashCode与equals"><span class="nav-text">117、hashCode与equals</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#118、ArrayList和LinkedList区别"><span class="nav-text">118、ArrayList和LinkedList区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#119、HashMap和HashTable有什么区别-其底层实现是什么"><span class="nav-text">119、HashMap和HashTable有什么区别?其底层实现是什么?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#120、ConcurrentHashMap原理"><span class="nav-text">120、ConcurrentHashMap原理,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#121、如何实现一个IOC容器"><span class="nav-text">121、如何实现一个IOC容器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#122、什么是字节码-采用字节码的好处是什么"><span class="nav-text">122、什么是字节码?采用字节码的好处是什么?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#123、Java类加载器"><span class="nav-text">123、Java类加载器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#124、双亲委托模型"><span class="nav-text">124、双亲委托模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#125、Java中的异常体系"><span class="nav-text">125、Java中的异常体系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#126、GC如何判断对象可以被回收"><span class="nav-text">126、GC如何判断对象可以被回收</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#127、线程的生命周期-线程有几种状态"><span class="nav-text">127、线程的生命周期?线程有几种状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#128、sleep-、wait-、-join-、-yield-的区别"><span class="nav-text">128、sleep()、wait()、 join()、 yield()的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#129、"><span class="nav-text">129、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#130、"><span class="nav-text">130、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#131、"><span class="nav-text">131、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#132、"><span class="nav-text">132、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#133、"><span class="nav-text">133、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#134、"><span class="nav-text">134、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#135、"><span class="nav-text">135、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#136、"><span class="nav-text">136、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#137、"><span class="nav-text">137、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#138、"><span class="nav-text">138、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#139、"><span class="nav-text">139、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#140、"><span class="nav-text">140、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#141、"><span class="nav-text">141、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#142、"><span class="nav-text">142、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#143、"><span class="nav-text">143、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#144、"><span class="nav-text">144、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#145、"><span class="nav-text">145、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#146、"><span class="nav-text">146、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#147、"><span class="nav-text">147、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#148、"><span class="nav-text">148、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#149、"><span class="nav-text">149、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#150、"><span class="nav-text">150、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#151、"><span class="nav-text">151、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#152、"><span class="nav-text">152、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#153、"><span class="nav-text">153、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#154、"><span class="nav-text">154、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#155、"><span class="nav-text">155、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#156、"><span class="nav-text">156、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#157、"><span class="nav-text">157、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#158、"><span class="nav-text">158、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#159、"><span class="nav-text">159、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#160、"><span class="nav-text">160、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#161、"><span class="nav-text">161、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#162、"><span class="nav-text">162、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#163、"><span class="nav-text">163、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#164、"><span class="nav-text">164、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#165、"><span class="nav-text">165、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#166、"><span class="nav-text">166、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#167、"><span class="nav-text">167、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#168、"><span class="nav-text">168、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#169、"><span class="nav-text">169、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#170、"><span class="nav-text">170、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#171、"><span class="nav-text">171、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#172、"><span class="nav-text">172、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#173、"><span class="nav-text">173、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#174、"><span class="nav-text">174、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#175、"><span class="nav-text">175、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#176、"><span class="nav-text">176、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#177、"><span class="nav-text">177、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#178、"><span class="nav-text">178、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#179、"><span class="nav-text">179、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#180、"><span class="nav-text">180、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#181、"><span class="nav-text">181、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#182、"><span class="nav-text">182、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#183、"><span class="nav-text">183、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#184、"><span class="nav-text">184、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#185、"><span class="nav-text">185、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#186、"><span class="nav-text">186、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#187、"><span class="nav-text">187、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#188、"><span class="nav-text">188、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#189、"><span class="nav-text">189、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#190、"><span class="nav-text">190、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#191、"><span class="nav-text">191、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#192、"><span class="nav-text">192、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#193、"><span class="nav-text">193、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#194、"><span class="nav-text">194、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#195、"><span class="nav-text">195、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#196、"><span class="nav-text">196、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#197、"><span class="nav-text">197、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#198、"><span class="nav-text">198、</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#199、"><span class="nav-text">199、</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script
+  async
+  src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">潇 卟 甸</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+     我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+    </span>
+  
+
+  
+    <span class="site-pv">
+     历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz',
+        appKey: 'NMGzUaGqmpzSiSItkHBQGUaA',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("w1mVK8MFY7n2fWIKlq2t9EJn-gzGzoHsz", "NMGzUaGqmpzSiSItkHBQGUaA");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+ <script src="/js/src/activate-power-mode.js"></script>
+ <script>
+   POWERMODE.colorful = true;
+   POWERMODE.shake = false;
+   document.body.addEventListener('input', POWERMODE);
+ </script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20200610,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `我已在此等候你 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+
+
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+
+  
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
